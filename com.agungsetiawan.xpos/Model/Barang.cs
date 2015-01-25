@@ -15,5 +15,6 @@ namespace com.agungsetiawan.xpos.Model
         public int Stok { get; set; }
         public string Keterangan { get; set; }
         public Kategori Kategori { get; set; }
+        public int KategoriId { get; set; }
     }
 }

@@ -38,7 +38,20 @@
     <Reference Include="DevExpress.XtraBars.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraNavBar.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\packages\MySql.Data.6.9.5\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.5\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,8 +63,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201501250135115_InitBarangDanKategori.cs" />
+    <Compile Include="Migrations\201501250135115_InitBarangDanKategori.Designer.cs">
+      <DependentUpon>201501250135115_InitBarangDanKategori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IGenericRepository.cs" />
+    <Compile Include="Repository\XPosContext.cs" />
     <Compile Include="View\VBarang\ListBarang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +105,9 @@
     <Compile Include="View\VKategori\ListKategori.Designer.cs">
       <DependentUpon>ListKategori.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Migrations\201501250135115_InitBarangDanKategori.resx">
+      <DependentUpon>201501250135115_InitBarangDanKategori.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\VBarang\ListBarang.resx">
       <DependentUpon>ListBarang.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +133,7 @@
     <EmbeddedResource Include="View\VKategori\ListKategori.resx">
       <DependentUpon>ListKategori.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
