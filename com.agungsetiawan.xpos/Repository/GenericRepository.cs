@@ -18,9 +18,9 @@ namespace com.agungsetiawan.xpos.Repository
             table = db.Set<T>();
         }
 
-        public List<T> Get(int offset, int size)
+        public List<T> Get()
         {
-            return table.Skip(offset).Take(size).ToList();
+            return table.ToList();
         }
 
         public T Get(int id)

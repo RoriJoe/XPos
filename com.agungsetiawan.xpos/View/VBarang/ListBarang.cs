@@ -8,23 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using com.agungsetiawan.xpos.Model;
+using com.agungsetiawan.xpos.Repository;
 
 namespace com.agungsetiawan.xpos.View.VBarang
 {
     public partial class ListBarang : Form
     {
+        BarangRepository barangRepository;
         public ListBarang()
         {
             InitializeComponent();
+            barangRepository = new BarangRepository();
 
-            var Barangs = new List<Barang>()
-            {
-                new Barang(){Id=1,NamaBarang="Xmen",Stok=10,Keterangan="apik",Kategori=null,HargaBeli=45000,HargaJual=50000},
-                new Barang(){Id=2,NamaBarang="Lmen",Stok=11,Keterangan="apik",Kategori=null,HargaBeli=45000,HargaJual=50000},
-                new Barang(){Id=3,NamaBarang="Superman",Stok=4,Keterangan="apik",Kategori=null,HargaBeli=45000,HargaJual=50000},
-                new Barang(){Id=4,NamaBarang="Batman",Stok=9,Keterangan="apik",Kategori=null,HargaBeli=45000,HargaJual=50000},
-                new Barang(){Id=5,NamaBarang="Spiderman",Stok=12,Keterangan="apik",Kategori=null,HargaBeli=45000,HargaJual=50000}
-            };
+            var Barangs = barangRepository.Get().Skip(0).Take(10).ToList();
 
             dataGridViewBarang.DataSource = Barangs;
             dataGridViewBarang.Columns[0].Visible = false;

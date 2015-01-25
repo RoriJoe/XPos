@@ -8,7 +8,7 @@ namespace com.agungsetiawan.xpos.Repository
 {
     interface IGenericRepository<T> where T:class
     {
-        List<T> Get(int offset, int size);
+        List<T> Get();
         T Get(int id);
         void Post(T entity);
         void Put(T entity);
