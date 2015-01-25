@@ -19,3 +19,4 @@ D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\bin\Debug\MySql.Data
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\bin\Debug\EntityFramework.xml
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\bin\Debug\EntityFramework.SqlServer.xml
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.InitBarangDanKategori.resources
+D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.ubahJadiVarcharDanLength.resources
