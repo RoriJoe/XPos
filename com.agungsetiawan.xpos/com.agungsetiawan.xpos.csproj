@@ -72,10 +72,12 @@
       <DependentUpon>201501250228360_ubahJadiVarcharDanLength.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ModelView\BarangView.cs" />
     <Compile Include="Repository\BarangRepository.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IGenericRepository.cs" />
     <Compile Include="Repository\XPosContext.cs" />
+    <Compile Include="Service\BarangService.cs" />
     <Compile Include="View\VBarang\ListBarang.cs">
       <SubType>Form</SubType>
     </Compile>

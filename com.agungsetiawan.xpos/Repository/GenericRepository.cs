@@ -9,7 +9,7 @@ namespace com.agungsetiawan.xpos.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T:class
     {
-        XPosContext db;
+        protected XPosContext db;
         DbSet<T> table;
 
         public GenericRepository()

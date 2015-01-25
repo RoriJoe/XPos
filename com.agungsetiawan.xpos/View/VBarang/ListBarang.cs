@@ -9,18 +9,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using com.agungsetiawan.xpos.Model;
 using com.agungsetiawan.xpos.Repository;
+using com.agungsetiawan.xpos.Service;
 
 namespace com.agungsetiawan.xpos.View.VBarang
 {
     public partial class ListBarang : Form
     {
-        BarangRepository barangRepository;
+        BarangService barangService;
         public ListBarang()
         {
             InitializeComponent();
-            barangRepository = new BarangRepository();
+            barangService = new BarangService();
 
-            var Barangs = barangRepository.Get().Skip(0).Take(10).ToList();
+            var Barangs = barangService.Get().Skip(0).Take(10).ToList();
 
             dataGridViewBarang.DataSource = Barangs;
             dataGridViewBarang.Columns[0].Visible = false;
