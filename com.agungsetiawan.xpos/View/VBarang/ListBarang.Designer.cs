@@ -32,7 +32,7 @@
             this.dataGridViewBarang = new System.Windows.Forms.DataGridView();
             this.btnTambah = new DevExpress.XtraEditors.SimpleButton();
             this.btnUbah = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnHapus = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBarang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,23 +75,24 @@
             this.btnUbah.Text = "Ubah";
             this.btnUbah.Click += new System.EventHandler(this.btnUbah_Click);
             // 
-            // simpleButton3
+            // btnHapus
             // 
-            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton3.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.Image")));
-            this.simpleButton3.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.simpleButton3.Location = new System.Drawing.Point(221, 325);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(89, 35);
-            this.simpleButton3.TabIndex = 3;
-            this.simpleButton3.Text = "Hapus";
+            this.btnHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnHapus.Image = ((System.Drawing.Image)(resources.GetObject("btnHapus.Image")));
+            this.btnHapus.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnHapus.Location = new System.Drawing.Point(221, 325);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.Size = new System.Drawing.Size(89, 35);
+            this.btnHapus.TabIndex = 3;
+            this.btnHapus.Text = "Hapus";
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // ListBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 372);
-            this.Controls.Add(this.simpleButton3);
+            this.Controls.Add(this.btnHapus);
             this.Controls.Add(this.btnUbah);
             this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.dataGridViewBarang);
@@ -104,9 +105,9 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridViewBarang;
+        public System.Windows.Forms.DataGridView dataGridViewBarang;
         private DevExpress.XtraEditors.SimpleButton btnTambah;
         private DevExpress.XtraEditors.SimpleButton btnUbah;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraEditors.SimpleButton btnHapus;
     }
 }

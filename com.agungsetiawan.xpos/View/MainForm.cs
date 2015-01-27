@@ -23,9 +23,10 @@ namespace com.agungsetiawan.xpos.View
 
         private void navBarDataBarang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            ListBarang form = new ListBarang();
+            ListBarang form = ListBarang.GetForm();
             form.MdiParent = this;
             form.Show();
+            form.Activate();
         }
 
         private void navBarDataKategori_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -33,6 +34,14 @@ namespace com.agungsetiawan.xpos.View
             ListKategori form = new ListKategori();
             form.MdiParent = this;
             form.Show();
+        }
+
+        private void barBtnDataBarang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ListBarang form = ListBarang.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
         }
     }
 }

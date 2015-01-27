@@ -10,32 +10,47 @@ using System.Windows.Forms;
 using com.agungsetiawan.xpos.Model;
 using com.agungsetiawan.xpos.Repository;
 using com.agungsetiawan.xpos.Service;
+using com.agungsetiawan.xpos.ModelView;
 
 namespace com.agungsetiawan.xpos.View.VBarang
 {
     public partial class ListBarang : Form
     {
         BarangService barangService;
-        public ListBarang()
+        static ListBarang form;
+
+        private ListBarang()
         {
             InitializeComponent();
             barangService = new BarangService();
 
-            var Barangs = barangService.Get().Skip(0).Take(10).ToList();
-
+            var Barangs = barangService.Get();
             dataGridViewBarang.DataSource = Barangs;
             dataGridViewBarang.Columns[0].Visible = false;
+        }
+
+        public static ListBarang GetForm()
+        {
+            if(form==null || form.IsDisposed)
+            {
+                form = new ListBarang();
+            }
+
+            return form;
         }
 
         private void btnTambah_Click(object sender, EventArgs e)
         {
             TambahBarang form = new TambahBarang();
+            form.ParentForm = this;
             form.ShowDialog();
         }
 
         private void btnUbah_Click(object sender, EventArgs e)
         {
             UbahBarang form = new UbahBarang();
+            form.ParentForm = this;
+            form.PopulateData();
             form.ShowDialog();
         }
 
@@ -56,6 +71,19 @@ namespace com.agungsetiawan.xpos.View.VBarang
 
             e.Graphics.DrawString(index, font, SystemBrushes.ControlText,
                 headerBounds, centerFormat);
+        }
+
+        private void btnHapus_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(dataGridViewBarang.SelectedRows[0].Cells[0].Value.ToString());
+            var barang = barangService.Get(id);
+
+            DialogResult result= MessageBox.Show("Hapus data " + barang.NamaBarang + " ?", "Hapus", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if(result==DialogResult.OK)
+            {
+                barangService.Delete(barang);
+                dataGridViewBarang.DataSource = barangService.Get();
+            }
         }
     }
 }

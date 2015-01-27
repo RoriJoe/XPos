@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UbahBarang));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TambahBarang));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,12 +36,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBoxNamaBarang = new System.Windows.Forms.TextBox();
+            this.textBoxHargaJual = new System.Windows.Forms.TextBox();
+            this.textBoxHargaBeli = new System.Windows.Forms.TextBox();
+            this.textBoxStok = new System.Windows.Forms.TextBox();
+            this.textBoxKeterangan = new System.Windows.Forms.TextBox();
+            this.comboBoxKategori = new System.Windows.Forms.ComboBox();
             this.btnBatal = new DevExpress.XtraEditors.SimpleButton();
             this.btnSimpan = new DevExpress.XtraEditors.SimpleButton();
             this.SuspendLayout();
@@ -116,54 +116,54 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Kategori";
             // 
-            // textBox1
+            // textBoxNamaBarang
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(130, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 20);
-            this.textBox1.TabIndex = 7;
+            this.textBoxNamaBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNamaBarang.Location = new System.Drawing.Point(130, 58);
+            this.textBoxNamaBarang.Name = "textBoxNamaBarang";
+            this.textBoxNamaBarang.Size = new System.Drawing.Size(240, 20);
+            this.textBoxNamaBarang.TabIndex = 7;
             // 
-            // textBox2
+            // textBoxHargaJual
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(130, 86);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(240, 20);
-            this.textBox2.TabIndex = 8;
+            this.textBoxHargaJual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxHargaJual.Location = new System.Drawing.Point(130, 86);
+            this.textBoxHargaJual.Name = "textBoxHargaJual";
+            this.textBoxHargaJual.Size = new System.Drawing.Size(240, 20);
+            this.textBoxHargaJual.TabIndex = 8;
             // 
-            // textBox3
+            // textBoxHargaBeli
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(130, 116);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(240, 20);
-            this.textBox3.TabIndex = 9;
+            this.textBoxHargaBeli.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxHargaBeli.Location = new System.Drawing.Point(130, 116);
+            this.textBoxHargaBeli.Name = "textBoxHargaBeli";
+            this.textBoxHargaBeli.Size = new System.Drawing.Size(240, 20);
+            this.textBoxHargaBeli.TabIndex = 9;
             // 
-            // textBox4
+            // textBoxStok
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(130, 146);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(240, 20);
-            this.textBox4.TabIndex = 10;
+            this.textBoxStok.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxStok.Location = new System.Drawing.Point(130, 146);
+            this.textBoxStok.Name = "textBoxStok";
+            this.textBoxStok.Size = new System.Drawing.Size(240, 20);
+            this.textBoxStok.TabIndex = 10;
             // 
-            // textBox5
+            // textBoxKeterangan
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(130, 178);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(240, 20);
-            this.textBox5.TabIndex = 11;
+            this.textBoxKeterangan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxKeterangan.Location = new System.Drawing.Point(130, 178);
+            this.textBoxKeterangan.Name = "textBoxKeterangan";
+            this.textBoxKeterangan.Size = new System.Drawing.Size(240, 20);
+            this.textBoxKeterangan.TabIndex = 11;
             // 
-            // comboBox1
+            // comboBoxKategori
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(130, 211);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(240, 21);
-            this.comboBox1.TabIndex = 12;
+            this.comboBoxKategori.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxKategori.FormattingEnabled = true;
+            this.comboBoxKategori.Location = new System.Drawing.Point(130, 211);
+            this.comboBoxKategori.Name = "comboBoxKategori";
+            this.comboBoxKategori.Size = new System.Drawing.Size(240, 21);
+            this.comboBoxKategori.TabIndex = 12;
             // 
             // btnBatal
             // 
@@ -187,8 +187,9 @@
             this.btnSimpan.Size = new System.Drawing.Size(89, 35);
             this.btnSimpan.TabIndex = 13;
             this.btnSimpan.Text = "Simpan";
+            this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
-            // UbahBarang
+            // TambahBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -196,12 +197,12 @@
             this.ClientSize = new System.Drawing.Size(382, 312);
             this.Controls.Add(this.btnBatal);
             this.Controls.Add(this.btnSimpan);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.comboBoxKategori);
+            this.Controls.Add(this.textBoxKeterangan);
+            this.Controls.Add(this.textBoxStok);
+            this.Controls.Add(this.textBoxHargaBeli);
+            this.Controls.Add(this.textBoxHargaJual);
+            this.Controls.Add(this.textBoxNamaBarang);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -214,7 +215,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "UbahBarang";
+            this.Name = "TambahBarang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -230,12 +231,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBoxNamaBarang;
+        private System.Windows.Forms.TextBox textBoxHargaJual;
+        private System.Windows.Forms.TextBox textBoxHargaBeli;
+        private System.Windows.Forms.TextBox textBoxStok;
+        private System.Windows.Forms.TextBox textBoxKeterangan;
+        private System.Windows.Forms.ComboBox comboBoxKategori;
         private DevExpress.XtraEditors.SimpleButton btnBatal;
         private DevExpress.XtraEditors.SimpleButton btnSimpan;
     }

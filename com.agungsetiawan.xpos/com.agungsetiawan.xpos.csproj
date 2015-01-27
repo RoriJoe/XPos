@@ -78,8 +78,10 @@
     <Compile Include="Repository\BarangRepository.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IGenericRepository.cs" />
+    <Compile Include="Repository\KategoriRepository.cs" />
     <Compile Include="Repository\XPosContext.cs" />
     <Compile Include="Service\BarangService.cs" />
+    <Compile Include="Service\KategoriService.cs" />
     <Compile Include="View\VBarang\ListBarang.cs">
       <SubType>Form</SubType>
     </Compile>

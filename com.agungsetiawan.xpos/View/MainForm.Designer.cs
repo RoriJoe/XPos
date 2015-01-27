@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnDataBarang = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
@@ -82,7 +82,7 @@
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
-            this.barButtonItem1,
+            this.barBtnDataBarang,
             this.barButtonItem2,
             this.barButtonItem3,
             this.barButtonItem4,
@@ -100,13 +100,14 @@
             this.ribbonPage1});
             this.ribbonControl1.Size = new System.Drawing.Size(709, 142);
             // 
-            // barButtonItem1
+            // barBtnDataBarang
             // 
-            this.barButtonItem1.Caption = "Data Barang";
-            this.barButtonItem1.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.Glyph")));
-            this.barButtonItem1.Id = 1;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnDataBarang.Caption = "Data Barang";
+            this.barBtnDataBarang.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnDataBarang.Glyph")));
+            this.barBtnDataBarang.Id = 1;
+            this.barBtnDataBarang.Name = "barBtnDataBarang";
+            this.barBtnDataBarang.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnDataBarang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnDataBarang_ItemClick);
             // 
             // barButtonItem2
             // 
@@ -201,7 +202,7 @@
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barBtnDataBarang);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Master Data";
@@ -274,7 +275,6 @@
             // navBarGroup1
             // 
             this.navBarGroup1.Caption = "Master Data";
-            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDataBarang),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDataKategori)});
@@ -439,7 +439,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barBtnDataBarang;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;

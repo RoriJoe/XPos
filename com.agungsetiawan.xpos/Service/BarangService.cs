@@ -1,4 +1,5 @@
-﻿using com.agungsetiawan.xpos.ModelView;
+﻿using com.agungsetiawan.xpos.Model;
+using com.agungsetiawan.xpos.ModelView;
 using com.agungsetiawan.xpos.Repository;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,26 @@ namespace com.agungsetiawan.xpos.Service
                                   }).ToList();
 
             return barangViews;
+        }
+
+        public Barang Get(int id)
+        {
+            return barangRepository.Get(id);
+        }
+
+        public void Post(Barang barang)
+        {
+            barangRepository.Post(barang);
+        }
+
+        public void Put(Barang barang)
+        {
+            barangRepository.Put(barang);
+        }
+
+        public void Delete(Barang barang)
+        {
+            barangRepository.Delete(barang);
         }
     }
 }
