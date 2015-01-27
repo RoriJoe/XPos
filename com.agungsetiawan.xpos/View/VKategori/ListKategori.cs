@@ -1,4 +1,5 @@
 ﻿using com.agungsetiawan.xpos.Model;
+using com.agungsetiawan.xpos.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,20 +14,26 @@ namespace com.agungsetiawan.xpos.View.VKategori
 {
     public partial class ListKategori : Form
     {
-        public ListKategori()
+        static ListKategori form;
+        KategoriService kategoriService;
+        private ListKategori()
         {
             InitializeComponent();
 
-            var Kategoris = new List<Kategori>()
-            {
-                new Kategori(){Id=1,NamaKategori="Kategori 1",Keterangan="Keterangan"},
-                new Kategori(){Id=2,NamaKategori="Kategori 2",Keterangan="Keterangan"},
-                new Kategori(){Id=3,NamaKategori="Kategori 3",Keterangan="Keterangan"},
-                new Kategori(){Id=4,NamaKategori="Kategori 4",Keterangan="Keterangan"},
-                new Kategori(){Id=5,NamaKategori="Kategori 5",Keterangan="Keterangan"}
-            };
+            kategoriService = new KategoriService();
 
+            var Kategoris = kategoriService.Get();
             dataGridViewKategori.DataSource = Kategoris;
+        }
+
+        public static ListKategori GetForm()
+        {
+            if(form==null || form.IsDisposed)
+            {
+                form = new ListKategori();
+            }
+
+            return form;
         }
     }
 }

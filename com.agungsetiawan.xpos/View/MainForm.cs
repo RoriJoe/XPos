@@ -31,9 +31,10 @@ namespace com.agungsetiawan.xpos.View
 
         private void navBarDataKategori_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
-            ListKategori form = new ListKategori();
+            ListKategori form = ListKategori.GetForm();
             form.MdiParent = this;
             form.Show();
+            form.Activate();
         }
 
         private void barBtnDataBarang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

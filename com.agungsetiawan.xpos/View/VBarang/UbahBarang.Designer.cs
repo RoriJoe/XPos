@@ -237,7 +237,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UbahBarang";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.ResumeLayout(false);
             this.PerformLayout();
 
