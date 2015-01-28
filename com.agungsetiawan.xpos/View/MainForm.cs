@@ -44,5 +44,13 @@ namespace com.agungsetiawan.xpos.View
             form.Show();
             form.Activate();
         }
+
+        private void barBtnDataKategori_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ListKategori form = ListKategori.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
     }
 }

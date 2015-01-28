@@ -85,6 +85,7 @@
             this.dataGridViewKategori.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewKategori.Size = new System.Drawing.Size(694, 335);
             this.dataGridViewKategori.TabIndex = 4;
+            this.dataGridViewKategori.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewKategori_RowPostPaint);
             // 
             // ListKategori
             // 
@@ -96,7 +97,7 @@
             this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.dataGridViewKategori);
             this.Name = "ListKategori";
-            this.Text = "ListKategori";
+            this.Text = "Daftar Kategori";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKategori)).EndInit();
             this.ResumeLayout(false);
 

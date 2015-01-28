@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barBtnDataBarang = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnDataKategori = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
@@ -83,7 +83,7 @@
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.barBtnDataBarang,
-            this.barButtonItem2,
+            this.barBtnDataKategori,
             this.barButtonItem3,
             this.barButtonItem4,
             this.barButtonItem5,
@@ -109,13 +109,14 @@
             this.barBtnDataBarang.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barBtnDataBarang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnDataBarang_ItemClick);
             // 
-            // barButtonItem2
+            // barBtnDataKategori
             // 
-            this.barButtonItem2.Caption = "Data Kategori";
-            this.barButtonItem2.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.Glyph")));
-            this.barButtonItem2.Id = 2;
-            this.barButtonItem2.Name = "barButtonItem2";
-            this.barButtonItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnDataKategori.Caption = "Data Kategori";
+            this.barBtnDataKategori.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnDataKategori.Glyph")));
+            this.barBtnDataKategori.Id = 2;
+            this.barBtnDataKategori.Name = "barBtnDataKategori";
+            this.barBtnDataKategori.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnDataKategori.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnDataKategori_ItemClick);
             // 
             // barButtonItem3
             // 
@@ -203,7 +204,7 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.barBtnDataBarang);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barBtnDataKategori);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Master Data";
             // 
@@ -413,6 +414,7 @@
             // 
             // xtraTabbedMdiManager
             // 
+            this.xtraTabbedMdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager.MdiParent = this;
             // 
             // MainForm
@@ -440,7 +442,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem barBtnDataBarang;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barBtnDataKategori;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
