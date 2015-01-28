@@ -1,4 +1,5 @@
 ﻿using com.agungsetiawan.xpos.View;
+using com.agungsetiawan.xpos.View.VPenjualan;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace com.agungsetiawan.xpos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            Application.Run(new TransaksiPenjualan());
         }
     }
 }

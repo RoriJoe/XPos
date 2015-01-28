@@ -37,7 +37,10 @@
     <Reference Include="DevExpress.Utils.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraEditors.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraNavBar.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v14.2, Version=14.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -128,6 +131,12 @@
     <Compile Include="View\VKategori\UbahKategori.Designer.cs">
       <DependentUpon>UbahKategori.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VPenjualan\TransaksiPenjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VPenjualan\TransaksiPenjualan.Designer.cs">
+      <DependentUpon>TransaksiPenjualan.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Migrations\201501250135115_InitBarangDanKategori.resx">
       <DependentUpon>201501250135115_InitBarangDanKategori.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VKategori\UbahKategori.resx">
       <DependentUpon>UbahKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VPenjualan\TransaksiPenjualan.resx">
+      <DependentUpon>TransaksiPenjualan.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
