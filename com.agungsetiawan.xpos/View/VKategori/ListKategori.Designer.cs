@@ -29,45 +29,48 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListKategori));
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnHapus = new DevExpress.XtraEditors.SimpleButton();
+            this.btnUbah = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTambah = new DevExpress.XtraEditors.SimpleButton();
             this.dataGridViewKategori = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKategori)).BeginInit();
             this.SuspendLayout();
             // 
-            // simpleButton3
+            // btnHapus
             // 
-            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton3.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.Image")));
-            this.simpleButton3.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.simpleButton3.Location = new System.Drawing.Point(216, 341);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(89, 35);
-            this.simpleButton3.TabIndex = 7;
-            this.simpleButton3.Text = "Hapus";
+            this.btnHapus.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnHapus.Image = ((System.Drawing.Image)(resources.GetObject("btnHapus.Image")));
+            this.btnHapus.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnHapus.Location = new System.Drawing.Point(216, 341);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.Size = new System.Drawing.Size(89, 35);
+            this.btnHapus.TabIndex = 7;
+            this.btnHapus.Text = "Hapus";
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
-            // simpleButton2
+            // btnUbah
             // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
-            this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.simpleButton2.Location = new System.Drawing.Point(116, 341);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(89, 35);
-            this.simpleButton2.TabIndex = 6;
-            this.simpleButton2.Text = "Ubah";
+            this.btnUbah.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnUbah.Image = ((System.Drawing.Image)(resources.GetObject("btnUbah.Image")));
+            this.btnUbah.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnUbah.Location = new System.Drawing.Point(116, 341);
+            this.btnUbah.Name = "btnUbah";
+            this.btnUbah.Size = new System.Drawing.Size(89, 35);
+            this.btnUbah.TabIndex = 6;
+            this.btnUbah.Text = "Ubah";
+            this.btnUbah.Click += new System.EventHandler(this.btnUbah_Click);
             // 
-            // simpleButton1
+            // btnTambah
             // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.simpleButton1.Location = new System.Drawing.Point(12, 341);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(89, 35);
-            this.simpleButton1.TabIndex = 5;
-            this.simpleButton1.Text = "Tambah";
+            this.btnTambah.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnTambah.Image = ((System.Drawing.Image)(resources.GetObject("btnTambah.Image")));
+            this.btnTambah.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnTambah.Location = new System.Drawing.Point(12, 341);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.Size = new System.Drawing.Size(89, 35);
+            this.btnTambah.TabIndex = 5;
+            this.btnTambah.Text = "Tambah";
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
             // 
             // dataGridViewKategori
             // 
@@ -88,9 +91,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 388);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton2);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnHapus);
+            this.Controls.Add(this.btnUbah);
+            this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.dataGridViewKategori);
             this.Name = "ListKategori";
             this.Text = "ListKategori";
@@ -101,9 +104,9 @@
 
         #endregion
 
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private System.Windows.Forms.DataGridView dataGridViewKategori;
+        private DevExpress.XtraEditors.SimpleButton btnHapus;
+        private DevExpress.XtraEditors.SimpleButton btnUbah;
+        private DevExpress.XtraEditors.SimpleButton btnTambah;
+        public System.Windows.Forms.DataGridView dataGridViewKategori;
     }
 }

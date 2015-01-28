@@ -116,6 +116,18 @@
     <Compile Include="View\VKategori\ListKategori.Designer.cs">
       <DependentUpon>ListKategori.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VKategori\TambahKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VKategori\TambahKategori.Designer.cs">
+      <DependentUpon>TambahKategori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VKategori\UbahKategori.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VKategori\UbahKategori.Designer.cs">
+      <DependentUpon>UbahKategori.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Migrations\201501250135115_InitBarangDanKategori.resx">
       <DependentUpon>201501250135115_InitBarangDanKategori.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +159,13 @@
     <EmbeddedResource Include="View\VKategori\ListKategori.resx">
       <DependentUpon>ListKategori.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\VKategori\TambahKategori.resx">
+      <DependentUpon>TambahKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VKategori\UbahKategori.resx">
+      <DependentUpon>UbahKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

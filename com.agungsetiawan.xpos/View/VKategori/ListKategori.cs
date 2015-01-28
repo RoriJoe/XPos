@@ -35,5 +35,33 @@ namespace com.agungsetiawan.xpos.View.VKategori
 
             return form;
         }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            TambahKategori form = new TambahKategori();
+            form.ParentForm = this;
+            form.ShowDialog();
+        }
+
+        private void btnUbah_Click(object sender, EventArgs e)
+        {
+            UbahKategori form = new UbahKategori();
+            form.ParentForm = this;
+            form.PopulateData();
+            form.ShowDialog();
+        }
+
+        private void btnHapus_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(dataGridViewKategori.SelectedRows[0].Cells[0].Value.ToString());
+            var kategori = kategoriService.Get(id);
+
+            DialogResult result = MessageBox.Show("Hapus data " + kategori.NamaKategori + " ?", "Hapus", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
+            {
+                kategoriService.Delete(kategori);
+                dataGridViewKategori.DataSource = kategoriService.Get();
+            }
+        }
     }
 }

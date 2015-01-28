@@ -25,5 +25,20 @@ namespace com.agungsetiawan.xpos.Service
         {
             return kategoriRepository.Get(id);
         }
+
+        public void Post(Kategori kategori)
+        {
+            kategoriRepository.Post(kategori);
+        }
+
+        public void Put(Kategori kategori)
+        {
+            kategoriRepository.Put(kategori);
+        }
+
+        public void Delete(Kategori kategori)
+        {
+            kategoriRepository.Delete(kategori);
+        }
     }
 }
