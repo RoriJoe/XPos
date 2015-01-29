@@ -109,7 +109,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 dataGridViewTransaksiPenjualan.Refresh();
             }
 
-            if(e.KeyCode==Keys.F10)
+            if(e.KeyCode==Keys.Delete)
             {
                 int row = dataGridViewTransaksiPenjualan.Rows.Count;
                 dataGridViewTransaksiPenjualan.Rows.RemoveAt(row - 2);
