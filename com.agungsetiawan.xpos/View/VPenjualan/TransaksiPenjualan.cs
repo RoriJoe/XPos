@@ -61,7 +61,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                     total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString());
                 }
 
-                labelTotal.Text = String.Format("{0:N}", total);
+                labelTotal.Text = total.ToString("N2", System.Globalization.CultureInfo.GetCultureInfo("de")); //String.Format("{0:N}", total);
 
                 dataGridViewTransaksiPenjualan.Refresh();
 
