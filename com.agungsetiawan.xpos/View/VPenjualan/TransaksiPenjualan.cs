@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,17 +52,17 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[0].Value = barang.Id;
                 dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[1].Value = barang.NamaBarang;
                 dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value = 1;
-                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[3].Value =barang.HargaJual;
+                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[3].Value = barang.HargaJual.ToString("N2", CultureInfo.GetCultureInfo("de"));
                 dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[4].Value = 0f;
-                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value = barang.HargaJual;
+                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value = barang.HargaJual.ToString("N2", CultureInfo.GetCultureInfo("de"));
 
                 decimal total=0;
-                for (int i = 0; i < row - 1;i++ )
+                for (int i = 0; i < row - 1; i++)
                 {
-                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString());
+                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
                 }
 
-                labelTotal.Text = total.ToString("N2", System.Globalization.CultureInfo.GetCultureInfo("de")); //String.Format("{0:N}", total);
+                labelTotal.Text = total.ToString("N2", CultureInfo.GetCultureInfo("de"));
 
                 dataGridViewTransaksiPenjualan.Refresh();
 
@@ -74,16 +75,16 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value = n+1;
 
                 n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
-                decimal price = decimal.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[3].Value.ToString());
-                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value =price * n;
+                decimal price = decimal.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[3].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value =(price * n).ToString("N2", CultureInfo.GetCultureInfo("de"));;
 
                 decimal total = 0;
                 for (int i = 0; i < row - 1; i++)
                 {
-                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString());
+                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
                 }
 
-                labelTotal.Text = String.Format("{0:N}", total);
+                labelTotal.Text = total.ToString("N2", CultureInfo.GetCultureInfo("de"));
 
                 dataGridViewTransaksiPenjualan.Refresh();
             }
@@ -95,16 +96,16 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value = n - 1;
 
                 n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
-                decimal price = decimal.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[3].Value.ToString());
-                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value = price * n;
+                decimal price = decimal.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[3].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value = (price * n).ToString("N2", CultureInfo.GetCultureInfo("de")); ;
 
                 decimal total = 0;
                 for (int i = 0; i < row - 1; i++)
                 {
-                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString());
+                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
                 }
 
-                labelTotal.Text = String.Format("{0:N}", total);
+                labelTotal.Text = total.ToString("N2", CultureInfo.GetCultureInfo("de"));
 
                 dataGridViewTransaksiPenjualan.Refresh();
             }
@@ -117,10 +118,10 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 decimal total = 0;
                 for (int i = 0; i < row - 2; i++)
                 {
-                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString());
+                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
                 }
 
-                labelTotal.Text = String.Format("{0:N}", total);
+                labelTotal.Text = total.ToString("N2", CultureInfo.GetCultureInfo("de"));
 
                 dataGridViewTransaksiPenjualan.Refresh();
             }
