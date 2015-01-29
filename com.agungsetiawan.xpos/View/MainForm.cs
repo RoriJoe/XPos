@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using com.agungsetiawan.xpos.View.VBarang;
 using com.agungsetiawan.xpos.View.VKategori;
+using com.agungsetiawan.xpos.View.VPenjualan;
 
 namespace com.agungsetiawan.xpos.View
 {
@@ -48,6 +49,14 @@ namespace com.agungsetiawan.xpos.View
         private void barBtnDataKategori_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ListKategori form = ListKategori.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
+
+        private void navBarPenjualan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            TransaksiPenjualan form = TransaksiPenjualan.GetForm();
             form.MdiParent = this;
             form.Show();
             form.Activate();

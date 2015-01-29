@@ -57,7 +57,7 @@
             this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem6 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarPenjualan = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem7 = new DevExpress.XtraNavBar.NavBarItem();
             this.Pembelian = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
@@ -253,7 +253,7 @@
             this.navBarItem3,
             this.navBarItem4,
             this.navBarItem5,
-            this.navBarItem6,
+            this.navBarPenjualan,
             this.navBarItem7,
             this.Pembelian,
             this.navBarItem8,
@@ -276,6 +276,7 @@
             // navBarGroup1
             // 
             this.navBarGroup1.Caption = "Master Data";
+            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDataBarang),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDataKategori)});
@@ -322,18 +323,20 @@
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Penjualan";
+            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem6),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPenjualan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem7),
             new DevExpress.XtraNavBar.NavBarItemLink(this.Pembelian),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8)});
             this.navBarGroup3.Name = "navBarGroup3";
             this.navBarGroup3.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup3.SmallImage")));
             // 
-            // navBarItem6
+            // navBarPenjualan
             // 
-            this.navBarItem6.Caption = "Penjualan";
-            this.navBarItem6.Name = "navBarItem6";
+            this.navBarPenjualan.Caption = "Penjualan";
+            this.navBarPenjualan.Name = "navBarPenjualan";
+            this.navBarPenjualan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarPenjualan_LinkClicked);
             // 
             // navBarItem7
             // 
@@ -465,7 +468,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem4;
         private DevExpress.XtraNavBar.NavBarItem navBarItem5;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem6;
+        private DevExpress.XtraNavBar.NavBarItem navBarPenjualan;
         private DevExpress.XtraNavBar.NavBarItem navBarItem7;
         private DevExpress.XtraNavBar.NavBarItem Pembelian;
         private DevExpress.XtraNavBar.NavBarItem navBarItem8;

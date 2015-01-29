@@ -18,7 +18,7 @@ namespace com.agungsetiawan.xpos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TransaksiPenjualan());
+            Application.Run(new MainForm());
         }
     }
 }

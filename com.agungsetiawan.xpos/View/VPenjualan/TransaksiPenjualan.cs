@@ -14,10 +14,21 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 {
     public partial class TransaksiPenjualan : Form
     {
-        public TransaksiPenjualan()
+        static TransaksiPenjualan form;
+        private TransaksiPenjualan()
         {
             InitializeComponent();
-            dataGridView1.Rows.Add("", "", "", "");
+            dataGridViewTransaksiPenjualan.Rows.Add("", "", "", "");
+        }
+
+        public static TransaksiPenjualan GetForm()
+        {
+            if(form==null || form.IsDisposed)
+            {
+                form = new TransaksiPenjualan();
+            }
+
+            return form;
         }
 
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
@@ -27,33 +38,98 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             if(e.KeyCode==Keys.Enter)
             {
-                int row = dataGridView1.Rows.Count;
-                int id = int.Parse(dataGridView1[0, row-2].Value.ToString());
+                int row = dataGridViewTransaksiPenjualan.Rows.Count;
+                int id = int.Parse(dataGridViewTransaksiPenjualan[0, row-2].Value.ToString());
                 var barang = service.Get(id);
 
-                dataGridView1.Rows[row - 2].Cells[0].Value = barang.Id;
-                dataGridView1.Rows[row - 2].Cells[1].Value = barang.NamaBarang;
-                dataGridView1.Rows[row - 2].Cells[2].Value = 1;
-                dataGridView1.Rows[row - 2].Cells[3].Value =barang.HargaJual;
+                if(barang==null)
+                {
+                    MessageBox.Show("NULL");
+                    return;
+                }
 
-                dataGridView1.Refresh();
+                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[0].Value = barang.Id;
+                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[1].Value = barang.NamaBarang;
+                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value = 1;
+                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[3].Value =barang.HargaJual;
+                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[4].Value = 0f;
+                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value = barang.HargaJual;
+
+                decimal total=0;
+                for (int i = 0; i < row - 1;i++ )
+                {
+                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString());
+                }
+
+                labelTotal.Text = String.Format("{0:N}", total);
+
+                dataGridViewTransaksiPenjualan.Refresh();
 
             }
 
             if(e.KeyCode==Keys.F12)
             {
-                int row = dataGridView1.Rows.Count;
-                int n = int.Parse(dataGridView1.Rows[row - 2].Cells[2].Value.ToString());
-                dataGridView1.Rows[row - 2].Cells[2].Value = n+1;
-                dataGridView1.Refresh();
+                int row = dataGridViewTransaksiPenjualan.Rows.Count;
+                int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
+                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value = n+1;
+
+                n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
+                decimal price = decimal.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[3].Value.ToString());
+                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value =price * n;
+
+                decimal total = 0;
+                for (int i = 0; i < row - 1; i++)
+                {
+                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString());
+                }
+
+                labelTotal.Text = String.Format("{0:N}", total);
+
+                dataGridViewTransaksiPenjualan.Refresh();
             }
 
             if (e.KeyCode == Keys.F11)
             {
-                int row = dataGridView1.Rows.Count;
-                int n = int.Parse(dataGridView1.Rows[row - 2].Cells[2].Value.ToString());
-                dataGridView1.Rows[row - 2].Cells[2].Value = n - 1;
-                dataGridView1.Refresh();
+                int row = dataGridViewTransaksiPenjualan.Rows.Count;
+                int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
+                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value = n - 1;
+
+                n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
+                decimal price = decimal.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[3].Value.ToString());
+                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value = price * n;
+
+                decimal total = 0;
+                for (int i = 0; i < row - 1; i++)
+                {
+                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString());
+                }
+
+                labelTotal.Text = String.Format("{0:N}", total);
+
+                dataGridViewTransaksiPenjualan.Refresh();
+            }
+
+            if(e.KeyCode==Keys.F10)
+            {
+                int row = dataGridViewTransaksiPenjualan.Rows.Count;
+                dataGridViewTransaksiPenjualan.Rows.RemoveAt(row - 2);
+
+                decimal total = 0;
+                for (int i = 0; i < row - 2; i++)
+                {
+                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString());
+                }
+
+                labelTotal.Text = String.Format("{0:N}", total);
+
+                dataGridViewTransaksiPenjualan.Refresh();
+            }
+
+            if(e.KeyCode==Keys.F9)
+            {
+                ApplyHarga form = new ApplyHarga();
+                form.ParentForm = this;
+                form.ShowDialog();
             }
         }
     }
