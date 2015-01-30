@@ -132,6 +132,14 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 form.ParentForm = this;
                 form.ShowDialog();
             }
+
+            if (e.KeyCode == Keys.F5)
+            {
+                Pembayaran form = new Pembayaran();
+                form.ParentForm = this;
+                form.PopulateData();
+                form.ShowDialog();
+            }
         }
     }
 }
