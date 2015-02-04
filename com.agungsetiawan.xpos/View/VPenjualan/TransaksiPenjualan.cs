@@ -1,4 +1,5 @@
-﻿using com.agungsetiawan.xpos.Model;
+﻿using com.agungsetiawan.xpos.Common;
+using com.agungsetiawan.xpos.Model;
 using com.agungsetiawan.xpos.Service;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,15 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
     public partial class TransaksiPenjualan : Form
     {
         static TransaksiPenjualan form;
+        PenjualanService penjualanService;
         private TransaksiPenjualan()
         {
             InitializeComponent();
+
+            penjualanService = new PenjualanService();
+
+            label2.Text = KodeTransaksiHelper.Get(penjualanService.GetKodeTransaksiTerakhir());
+
             dataGridViewTransaksiPenjualan.Rows.Add("", "", "", "");
         }
 
