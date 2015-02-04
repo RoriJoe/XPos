@@ -1,4 +1,5 @@
 ﻿using com.agungsetiawan.xpos.Common;
+using com.agungsetiawan.xpos.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,53 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 textBoxJumlahBayar.Text = bayar.ToString("N2", CultureInfo.GetCultureInfo("de"));
                 textBoxSisa.Text = kembali.ToString("N2", CultureInfo.GetCultureInfo("de"));
             }
+        }
+
+        private void btnSimpan_Click(object sender, EventArgs e)
+        {
+            DataGridView data = this.ParentForm.dataGridViewTransaksiPenjualan;
+
+            int row = data.Rows.Count;
+
+            Penjualan penjualan = new Penjualan();
+            PenjualanDetail pDetail;
+
+            for(int i=0;i<row-1;i++)
+            {
+                var kodeBarang = int.Parse(data.Rows[i].Cells[0].Value.ToString());
+                var namaBarang = data.Rows[i].Cells[1].Value.ToString();
+                var jumlahJual = int.Parse(data.Rows[i].Cells[2].Value.ToString());
+                var hargaJual = decimal.Parse(data.Rows[i].Cells[3].Value.ToString(),NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                var diskon = float.Parse(data.Rows[i].Cells[4].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                var subtotal = decimal.Parse(data.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+
+                pDetail = new PenjualanDetail()
+                {
+                    Penjualan=penjualan,
+                    BarangId=kodeBarang,
+                    Harga=hargaJual,
+                    Jumlah=jumlahJual,
+                    SubTotal=subtotal,
+                    Diskon=diskon
+                };
+
+                penjualan.PenjualanDetails.Add(pDetail);
+            }
+
+            penjualan.KodeTransaksi = "TS04022015000001";
+            penjualan.Tanggal = DateTime.Now;
+            penjualan.TotalHargaJual = decimal.Parse(labelTotal.Text, NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+
+            com.agungsetiawan.xpos.Repository.XPosContext db = new Repository.XPosContext();
+
+            var pengguna = db.Penggunas.Find(1);
+            var pelanggan = db.Penggunas.Find(1);
+
+            penjualan.PenggunaId = pengguna.Id;
+            penjualan.PelangganId = pelanggan.Id;
+
+            db.Penjualans.Add(penjualan);
+            db.SaveChanges();
         }
 
     }

@@ -77,6 +77,18 @@
     <Compile Include="Migrations\201501250228360_ubahJadiVarcharDanLength.Designer.cs">
       <DependentUpon>201501250228360_ubahJadiVarcharDanLength.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502040908044_PenjualanDanPenjualanDetail.cs" />
+    <Compile Include="Migrations\201502040908044_PenjualanDanPenjualanDetail.Designer.cs">
+      <DependentUpon>201502040908044_PenjualanDanPenjualanDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502040916287_UbahTanggalPenjualanJadiDateTime.cs" />
+    <Compile Include="Migrations\201502040916287_UbahTanggalPenjualanJadiDateTime.Designer.cs">
+      <DependentUpon>201502040916287_UbahTanggalPenjualanJadiDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502040927003_PenggunaDanPelanggan.cs" />
+    <Compile Include="Migrations\201502040927003_PenggunaDanPelanggan.Designer.cs">
+      <DependentUpon>201502040927003_PenggunaDanPelanggan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelView\BarangView.cs" />
     <Compile Include="Model\Pelanggan.cs" />
@@ -159,6 +171,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201501250228360_ubahJadiVarcharDanLength.resx">
       <DependentUpon>201501250228360_ubahJadiVarcharDanLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502040908044_PenjualanDanPenjualanDetail.resx">
+      <DependentUpon>201502040908044_PenjualanDanPenjualanDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502040916287_UbahTanggalPenjualanJadiDateTime.resx">
+      <DependentUpon>201502040916287_UbahTanggalPenjualanJadiDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502040927003_PenggunaDanPelanggan.resx">
+      <DependentUpon>201502040927003_PenggunaDanPelanggan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VBarang\ListBarang.resx">
       <DependentUpon>ListBarang.cs</DependentUpon>

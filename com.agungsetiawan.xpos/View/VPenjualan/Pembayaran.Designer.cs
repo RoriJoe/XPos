@@ -30,14 +30,14 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Pembayaran));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnBatal = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSimpan = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelTotal = new System.Windows.Forms.Label();
             this.labelTerbilang = new System.Windows.Forms.Label();
+            this.labelTotal = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBoxJumlahBayar = new System.Windows.Forms.TextBox();
             this.textBoxSisa = new System.Windows.Forms.TextBox();
-            this.btnSimpan = new DevExpress.XtraEditors.SimpleButton();
-            this.btnBatal = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -60,6 +60,28 @@
             this.panelControl1.Size = new System.Drawing.Size(754, 58);
             this.panelControl1.TabIndex = 0;
             // 
+            // btnBatal
+            // 
+            this.btnBatal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBatal.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnBatal.Image = ((System.Drawing.Image)(resources.GetObject("btnBatal.Image")));
+            this.btnBatal.Location = new System.Drawing.Point(620, 9);
+            this.btnBatal.Name = "btnBatal";
+            this.btnBatal.Size = new System.Drawing.Size(92, 34);
+            this.btnBatal.TabIndex = 1;
+            this.btnBatal.Text = "Batal";
+            // 
+            // btnSimpan
+            // 
+            this.btnSimpan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSimpan.Image = ((System.Drawing.Image)(resources.GetObject("btnSimpan.Image")));
+            this.btnSimpan.Location = new System.Drawing.Point(511, 9);
+            this.btnSimpan.Name = "btnSimpan";
+            this.btnSimpan.Size = new System.Drawing.Size(92, 34);
+            this.btnSimpan.TabIndex = 0;
+            this.btnSimpan.Text = "Simpan";
+            this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
+            // 
             // panelControl2
             // 
             this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -77,16 +99,17 @@
             this.panelControl2.Size = new System.Drawing.Size(674, 100);
             this.panelControl2.TabIndex = 1;
             // 
-            // label1
+            // labelTerbilang
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Italic);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(4, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Total";
+            this.labelTerbilang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTerbilang.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Italic);
+            this.labelTerbilang.ForeColor = System.Drawing.Color.White;
+            this.labelTerbilang.Location = new System.Drawing.Point(270, 51);
+            this.labelTerbilang.Name = "labelTerbilang";
+            this.labelTerbilang.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.labelTerbilang.Size = new System.Drawing.Size(384, 35);
+            this.labelTerbilang.TabIndex = 2;
+            this.labelTerbilang.Text = "Seratus Dua Puluh Ribu Rupiah";
             // 
             // labelTotal
             // 
@@ -100,17 +123,16 @@
             this.labelTotal.TabIndex = 1;
             this.labelTotal.Text = "120.000,00";
             // 
-            // labelTerbilang
+            // label1
             // 
-            this.labelTerbilang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTerbilang.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Italic);
-            this.labelTerbilang.ForeColor = System.Drawing.Color.White;
-            this.labelTerbilang.Location = new System.Drawing.Point(270, 51);
-            this.labelTerbilang.Name = "labelTerbilang";
-            this.labelTerbilang.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.labelTerbilang.Size = new System.Drawing.Size(384, 35);
-            this.labelTerbilang.TabIndex = 2;
-            this.labelTerbilang.Text = "Seratus Dua Puluh Ribu Rupiah";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Italic);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(4, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(56, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Total";
             // 
             // textBoxJumlahBayar
             // 
@@ -133,27 +155,6 @@
             this.textBoxSisa.Size = new System.Drawing.Size(240, 20);
             this.textBoxSisa.TabIndex = 3;
             this.textBoxSisa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // btnSimpan
-            // 
-            this.btnSimpan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSimpan.Image = ((System.Drawing.Image)(resources.GetObject("btnSimpan.Image")));
-            this.btnSimpan.Location = new System.Drawing.Point(511, 9);
-            this.btnSimpan.Name = "btnSimpan";
-            this.btnSimpan.Size = new System.Drawing.Size(92, 34);
-            this.btnSimpan.TabIndex = 0;
-            this.btnSimpan.Text = "Simpan";
-            // 
-            // btnBatal
-            // 
-            this.btnBatal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBatal.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnBatal.Image = ((System.Drawing.Image)(resources.GetObject("btnBatal.Image")));
-            this.btnBatal.Location = new System.Drawing.Point(620, 9);
-            this.btnBatal.Name = "btnBatal";
-            this.btnBatal.Size = new System.Drawing.Size(92, 34);
-            this.btnBatal.TabIndex = 1;
-            this.btnBatal.Text = "Batal";
             // 
             // label2
             // 

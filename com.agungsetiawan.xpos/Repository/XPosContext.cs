@@ -19,5 +19,10 @@ namespace com.agungsetiawan.xpos.Repository
 
         public DbSet<Barang> Barangs { get; set; }
         public DbSet<Kategori> Kategoris { get; set; }
+        public DbSet<Penjualan> Penjualans { get; set; }
+        public DbSet<PenjualanDetail> PenjualanDetails { get; set; }
+
+        public DbSet<Pengguna> Penggunas { get; set; }
+        public DbSet<Pelanggan> Pelanggans { get; set; }
     }
 }
