@@ -46,6 +46,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxId = new System.Windows.Forms.TextBox();
+            this.panelNamaBarang = new System.Windows.Forms.Panel();
+            this.panelHargaJual = new System.Windows.Forms.Panel();
+            this.panelHargaBeli = new System.Windows.Forms.Panel();
+            this.panelStok = new System.Windows.Forms.Panel();
+            this.panelKeterangan = new System.Windows.Forms.Panel();
+            this.panelNamaBarang.SuspendLayout();
+            this.panelHargaJual.SuspendLayout();
+            this.panelHargaBeli.SuspendLayout();
+            this.panelStok.SuspendLayout();
+            this.panelKeterangan.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBatal
@@ -54,7 +64,7 @@
             this.btnBatal.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBatal.Image = ((System.Drawing.Image)(resources.GetObject("btnBatal.Image")));
             this.btnBatal.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnBatal.Location = new System.Drawing.Point(110, 302);
+            this.btnBatal.Location = new System.Drawing.Point(110, 372);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(89, 35);
             this.btnBatal.TabIndex = 29;
@@ -65,7 +75,7 @@
             this.btnSimpan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSimpan.Image = ((System.Drawing.Image)(resources.GetObject("btnSimpan.Image")));
             this.btnSimpan.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnSimpan.Location = new System.Drawing.Point(15, 302);
+            this.btnSimpan.Location = new System.Drawing.Point(15, 372);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(89, 35);
             this.btnSimpan.TabIndex = 28;
@@ -74,51 +84,57 @@
             // 
             // comboBoxKategori
             // 
+            this.comboBoxKategori.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxKategori.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxKategori.FormattingEnabled = true;
-            this.comboBoxKategori.Location = new System.Drawing.Point(130, 239);
+            this.comboBoxKategori.Location = new System.Drawing.Point(130, 240);
             this.comboBoxKategori.Name = "comboBoxKategori";
             this.comboBoxKategori.Size = new System.Drawing.Size(240, 21);
             this.comboBoxKategori.TabIndex = 27;
             // 
             // textBoxKeterangan
             // 
+            this.textBoxKeterangan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxKeterangan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxKeterangan.Location = new System.Drawing.Point(130, 206);
+            this.textBoxKeterangan.Location = new System.Drawing.Point(6, 3);
             this.textBoxKeterangan.Name = "textBoxKeterangan";
-            this.textBoxKeterangan.Size = new System.Drawing.Size(240, 20);
+            this.textBoxKeterangan.Size = new System.Drawing.Size(228, 13);
             this.textBoxKeterangan.TabIndex = 26;
             // 
             // textBoxStok
             // 
+            this.textBoxStok.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxStok.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxStok.Location = new System.Drawing.Point(130, 174);
+            this.textBoxStok.Location = new System.Drawing.Point(6, 5);
             this.textBoxStok.Name = "textBoxStok";
-            this.textBoxStok.Size = new System.Drawing.Size(240, 20);
+            this.textBoxStok.Size = new System.Drawing.Size(228, 13);
             this.textBoxStok.TabIndex = 25;
             // 
             // textBoxHargaBeli
             // 
+            this.textBoxHargaBeli.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxHargaBeli.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxHargaBeli.Location = new System.Drawing.Point(130, 144);
+            this.textBoxHargaBeli.Location = new System.Drawing.Point(6, 5);
             this.textBoxHargaBeli.Name = "textBoxHargaBeli";
-            this.textBoxHargaBeli.Size = new System.Drawing.Size(240, 20);
+            this.textBoxHargaBeli.Size = new System.Drawing.Size(228, 13);
             this.textBoxHargaBeli.TabIndex = 24;
             // 
             // textBoxHargaJual
             // 
+            this.textBoxHargaJual.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxHargaJual.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxHargaJual.Location = new System.Drawing.Point(130, 114);
+            this.textBoxHargaJual.Location = new System.Drawing.Point(6, 5);
             this.textBoxHargaJual.Name = "textBoxHargaJual";
-            this.textBoxHargaJual.Size = new System.Drawing.Size(240, 20);
+            this.textBoxHargaJual.Size = new System.Drawing.Size(228, 13);
             this.textBoxHargaJual.TabIndex = 23;
             // 
             // textBoxNamaBarang
             // 
+            this.textBoxNamaBarang.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxNamaBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNamaBarang.Location = new System.Drawing.Point(130, 86);
+            this.textBoxNamaBarang.Location = new System.Drawing.Point(6, 5);
             this.textBoxNamaBarang.Name = "textBoxNamaBarang";
-            this.textBoxNamaBarang.Size = new System.Drawing.Size(240, 20);
+            this.textBoxNamaBarang.Size = new System.Drawing.Size(228, 13);
             this.textBoxNamaBarang.TabIndex = 22;
             // 
             // label7
@@ -212,21 +228,71 @@
             this.textBoxId.Size = new System.Drawing.Size(240, 20);
             this.textBoxId.TabIndex = 31;
             // 
+            // panelNamaBarang
+            // 
+            this.panelNamaBarang.BackColor = System.Drawing.SystemColors.Window;
+            this.panelNamaBarang.Controls.Add(this.textBoxNamaBarang);
+            this.panelNamaBarang.Location = new System.Drawing.Point(130, 86);
+            this.panelNamaBarang.Name = "panelNamaBarang";
+            this.panelNamaBarang.Padding = new System.Windows.Forms.Padding(3);
+            this.panelNamaBarang.Size = new System.Drawing.Size(240, 22);
+            this.panelNamaBarang.TabIndex = 32;
+            // 
+            // panelHargaJual
+            // 
+            this.panelHargaJual.BackColor = System.Drawing.SystemColors.Window;
+            this.panelHargaJual.Controls.Add(this.textBoxHargaJual);
+            this.panelHargaJual.Location = new System.Drawing.Point(130, 116);
+            this.panelHargaJual.Name = "panelHargaJual";
+            this.panelHargaJual.Padding = new System.Windows.Forms.Padding(3);
+            this.panelHargaJual.Size = new System.Drawing.Size(240, 22);
+            this.panelHargaJual.TabIndex = 33;
+            // 
+            // panelHargaBeli
+            // 
+            this.panelHargaBeli.BackColor = System.Drawing.SystemColors.Window;
+            this.panelHargaBeli.Controls.Add(this.textBoxHargaBeli);
+            this.panelHargaBeli.Location = new System.Drawing.Point(130, 146);
+            this.panelHargaBeli.Name = "panelHargaBeli";
+            this.panelHargaBeli.Padding = new System.Windows.Forms.Padding(3);
+            this.panelHargaBeli.Size = new System.Drawing.Size(240, 22);
+            this.panelHargaBeli.TabIndex = 34;
+            // 
+            // panelStok
+            // 
+            this.panelStok.BackColor = System.Drawing.SystemColors.Window;
+            this.panelStok.Controls.Add(this.textBoxStok);
+            this.panelStok.Location = new System.Drawing.Point(130, 178);
+            this.panelStok.Name = "panelStok";
+            this.panelStok.Padding = new System.Windows.Forms.Padding(3);
+            this.panelStok.Size = new System.Drawing.Size(240, 22);
+            this.panelStok.TabIndex = 35;
+            // 
+            // panelKeterangan
+            // 
+            this.panelKeterangan.BackColor = System.Drawing.SystemColors.Window;
+            this.panelKeterangan.Controls.Add(this.textBoxKeterangan);
+            this.panelKeterangan.Location = new System.Drawing.Point(130, 210);
+            this.panelKeterangan.Name = "panelKeterangan";
+            this.panelKeterangan.Padding = new System.Windows.Forms.Padding(3);
+            this.panelKeterangan.Size = new System.Drawing.Size(240, 22);
+            this.panelKeterangan.TabIndex = 36;
+            // 
             // UbahBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 347);
+            this.ClientSize = new System.Drawing.Size(779, 417);
+            this.Controls.Add(this.panelKeterangan);
+            this.Controls.Add(this.panelStok);
+            this.Controls.Add(this.panelHargaBeli);
+            this.Controls.Add(this.panelHargaJual);
+            this.Controls.Add(this.panelNamaBarang);
             this.Controls.Add(this.textBoxId);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnBatal);
             this.Controls.Add(this.btnSimpan);
             this.Controls.Add(this.comboBoxKategori);
-            this.Controls.Add(this.textBoxKeterangan);
-            this.Controls.Add(this.textBoxStok);
-            this.Controls.Add(this.textBoxHargaBeli);
-            this.Controls.Add(this.textBoxHargaJual);
-            this.Controls.Add(this.textBoxNamaBarang);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -238,6 +304,17 @@
             this.MinimizeBox = false;
             this.Name = "UbahBarang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.UbahBarang_Paint);
+            this.panelNamaBarang.ResumeLayout(false);
+            this.panelNamaBarang.PerformLayout();
+            this.panelHargaJual.ResumeLayout(false);
+            this.panelHargaJual.PerformLayout();
+            this.panelHargaBeli.ResumeLayout(false);
+            this.panelHargaBeli.PerformLayout();
+            this.panelStok.ResumeLayout(false);
+            this.panelStok.PerformLayout();
+            this.panelKeterangan.ResumeLayout(false);
+            this.panelKeterangan.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,5 +339,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxId;
+        private System.Windows.Forms.Panel panelNamaBarang;
+        private System.Windows.Forms.Panel panelHargaJual;
+        private System.Windows.Forms.Panel panelHargaBeli;
+        private System.Windows.Forms.Panel panelStok;
+        private System.Windows.Forms.Panel panelKeterangan;
     }
 }

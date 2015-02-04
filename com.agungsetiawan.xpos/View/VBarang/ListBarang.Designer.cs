@@ -42,6 +42,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewBarang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewBarang.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewBarang.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewBarang.Location = new System.Drawing.Point(-2, 0);
             this.dataGridViewBarang.MultiSelect = false;

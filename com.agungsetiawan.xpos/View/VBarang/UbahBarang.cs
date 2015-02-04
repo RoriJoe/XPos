@@ -23,6 +23,8 @@ namespace com.agungsetiawan.xpos.View.VBarang
         public UbahBarang()
         {
             InitializeComponent();
+            this.ActiveControl = this.textBoxNamaBarang;
+
             kategoriService = new KategoriService();
             barangService = new BarangService();
 
@@ -141,6 +143,45 @@ namespace com.agungsetiawan.xpos.View.VBarang
 
             this.ParentForm.dataGridViewBarang.DataSource = barangService.Get();
             this.Dispose();
+        }
+
+        private void UbahBarang_Paint(object sender, PaintEventArgs e)
+        {
+            System.Drawing.Rectangle rectNamaBarang = new Rectangle(panelNamaBarang.Location.X, panelNamaBarang.Location.Y,
+                                                          panelNamaBarang.ClientSize.Width, panelNamaBarang.ClientSize.Height);
+
+            System.Drawing.Rectangle rectHargaJual = new Rectangle(panelHargaJual.Location.X, panelHargaJual.Location.Y,
+                                                          panelHargaJual.ClientSize.Width, panelHargaJual.ClientSize.Height);
+
+            System.Drawing.Rectangle rectHargaBeli = new Rectangle(panelHargaBeli.Location.X, panelHargaBeli.Location.Y,
+                                                          panelHargaBeli.ClientSize.Width, panelHargaBeli.ClientSize.Height);
+
+            System.Drawing.Rectangle rectStok = new Rectangle(panelStok.Location.X, panelStok.Location.Y,
+                                                          panelStok.ClientSize.Width, panelStok.ClientSize.Height);
+
+            System.Drawing.Rectangle rectKeterangan = new Rectangle(panelKeterangan.Location.X, panelKeterangan.Location.Y,
+                                                          panelKeterangan.ClientSize.Width, panelKeterangan.ClientSize.Height);
+
+            System.Drawing.Rectangle rectKategori = new Rectangle(comboBoxKategori.Location.X, comboBoxKategori.Location.Y,
+                                                          comboBoxKategori.ClientSize.Width, comboBoxKategori.ClientSize.Height);
+
+            rectNamaBarang.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectNamaBarang, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+
+            rectHargaJual.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectHargaJual, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+
+            rectHargaBeli.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectHargaBeli, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+
+            rectStok.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectStok, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+
+            rectKeterangan.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectKeterangan, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+
+            rectKategori.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectKategori, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
         }
     }
 }

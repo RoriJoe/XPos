@@ -78,6 +78,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewKategori.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridViewKategori.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dataGridViewKategori.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewKategori.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewKategori.Location = new System.Drawing.Point(-3, 0);
             this.dataGridViewKategori.MultiSelect = false;

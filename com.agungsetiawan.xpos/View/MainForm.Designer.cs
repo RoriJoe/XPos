@@ -241,6 +241,7 @@
             // navBarControl1
             // 
             this.navBarControl1.ActiveGroup = this.navBarGroup1;
+            this.navBarControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.navBarControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.navBarControl1.Groups.AddRange(new DevExpress.XtraNavBar.NavBarGroup[] {
             this.navBarGroup1,
@@ -267,6 +268,7 @@
             this.navBarItem15,
             this.navBarItem16});
             this.navBarControl1.Location = new System.Drawing.Point(0, 142);
+            this.navBarControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.navBarControl1.Name = "navBarControl1";
             this.navBarControl1.OptionsNavPane.ExpandedWidth = 162;
             this.navBarControl1.Size = new System.Drawing.Size(162, 263);

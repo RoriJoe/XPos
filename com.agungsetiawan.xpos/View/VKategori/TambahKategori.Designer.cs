@@ -36,6 +36,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelNamaKategori = new System.Windows.Forms.Panel();
+            this.panelKeterangan = new System.Windows.Forms.Panel();
+            this.panelNamaKategori.SuspendLayout();
+            this.panelKeterangan.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBatal
@@ -44,7 +48,7 @@
             this.btnBatal.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBatal.Image = ((System.Drawing.Image)(resources.GetObject("btnBatal.Image")));
             this.btnBatal.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnBatal.Location = new System.Drawing.Point(112, 126);
+            this.btnBatal.Location = new System.Drawing.Point(112, 149);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(89, 35);
             this.btnBatal.TabIndex = 29;
@@ -55,7 +59,7 @@
             this.btnSimpan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSimpan.Image = ((System.Drawing.Image)(resources.GetObject("btnSimpan.Image")));
             this.btnSimpan.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnSimpan.Location = new System.Drawing.Point(17, 126);
+            this.btnSimpan.Location = new System.Drawing.Point(17, 149);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(89, 35);
             this.btnSimpan.TabIndex = 28;
@@ -64,18 +68,20 @@
             // 
             // textBoxKeterangan
             // 
+            this.textBoxKeterangan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxKeterangan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxKeterangan.Location = new System.Drawing.Point(132, 87);
+            this.textBoxKeterangan.Location = new System.Drawing.Point(6, 4);
             this.textBoxKeterangan.Name = "textBoxKeterangan";
-            this.textBoxKeterangan.Size = new System.Drawing.Size(240, 20);
+            this.textBoxKeterangan.Size = new System.Drawing.Size(228, 13);
             this.textBoxKeterangan.TabIndex = 23;
             // 
             // textBoxNamaKategori
             // 
+            this.textBoxNamaKategori.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxNamaKategori.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNamaKategori.Location = new System.Drawing.Point(132, 59);
+            this.textBoxNamaKategori.Location = new System.Drawing.Point(6, 4);
             this.textBoxNamaKategori.Name = "textBoxNamaKategori";
-            this.textBoxNamaKategori.Size = new System.Drawing.Size(240, 20);
+            this.textBoxNamaKategori.Size = new System.Drawing.Size(228, 13);
             this.textBoxNamaKategori.TabIndex = 22;
             // 
             // label3
@@ -110,16 +116,36 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Tambah Data Kategori";
             // 
+            // panelNamaKategori
+            // 
+            this.panelNamaKategori.BackColor = System.Drawing.SystemColors.Window;
+            this.panelNamaKategori.Controls.Add(this.textBoxNamaKategori);
+            this.panelNamaKategori.Location = new System.Drawing.Point(132, 59);
+            this.panelNamaKategori.Name = "panelNamaKategori";
+            this.panelNamaKategori.Padding = new System.Windows.Forms.Padding(3);
+            this.panelNamaKategori.Size = new System.Drawing.Size(240, 22);
+            this.panelNamaKategori.TabIndex = 30;
+            // 
+            // panelKeterangan
+            // 
+            this.panelKeterangan.BackColor = System.Drawing.SystemColors.Window;
+            this.panelKeterangan.Controls.Add(this.textBoxKeterangan);
+            this.panelKeterangan.Location = new System.Drawing.Point(132, 89);
+            this.panelKeterangan.Name = "panelKeterangan";
+            this.panelKeterangan.Padding = new System.Windows.Forms.Padding(3);
+            this.panelKeterangan.Size = new System.Drawing.Size(240, 22);
+            this.panelKeterangan.TabIndex = 31;
+            // 
             // TambahKategori
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnBatal;
-            this.ClientSize = new System.Drawing.Size(385, 178);
+            this.ClientSize = new System.Drawing.Size(396, 201);
+            this.Controls.Add(this.panelKeterangan);
+            this.Controls.Add(this.panelNamaKategori);
             this.Controls.Add(this.btnBatal);
             this.Controls.Add(this.btnSimpan);
-            this.Controls.Add(this.textBoxKeterangan);
-            this.Controls.Add(this.textBoxNamaKategori);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -128,6 +154,11 @@
             this.Name = "TambahKategori";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TambahKategori";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TambahKategori_Paint);
+            this.panelNamaKategori.ResumeLayout(false);
+            this.panelNamaKategori.PerformLayout();
+            this.panelKeterangan.ResumeLayout(false);
+            this.panelKeterangan.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +173,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelNamaKategori;
+        private System.Windows.Forms.Panel panelKeterangan;
     }
 }
