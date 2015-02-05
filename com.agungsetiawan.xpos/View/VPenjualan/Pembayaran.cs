@@ -79,7 +79,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             com.agungsetiawan.xpos.Repository.XPosContext db = new Repository.XPosContext();
 
-            var pengguna = db.Penggunas.Find(1);
+            var pengguna = LoginContext.Pengguna;
             var pelanggan = db.Penggunas.Find(1);
 
             penjualan.PenggunaId = pengguna.Id;

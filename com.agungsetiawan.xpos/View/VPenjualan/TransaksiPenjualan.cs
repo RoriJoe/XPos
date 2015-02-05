@@ -28,6 +28,8 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             textBoxTanggal.Text = DateTime.Today.ToString("dd MMMM yyyy", CultureInfo.GetCultureInfo("id-ID"));
 
+            textBoxKaryawan.Text = LoginContext.Pengguna.Nama;
+
             dataGridViewTransaksiPenjualan.Rows.Add("", "", "", "");
         }
 
@@ -162,6 +164,12 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             System.Drawing.Rectangle rectKaryawan = new Rectangle(panelKaryawan.Location.X, panelKaryawan.Location.Y,
                                                           panelKaryawan.ClientSize.Width, panelKaryawan.ClientSize.Height);
 
+            System.Drawing.Rectangle rectKodePelanggan = new Rectangle(panelKodePelanggan.Location.X, panelKodePelanggan.Location.Y,
+                                                         panelKodePelanggan.ClientSize.Width, panelKodePelanggan.ClientSize.Height);
+
+            System.Drawing.Rectangle rectPelanggan = new Rectangle(panelPelanggan.Location.X, panelPelanggan.Location.Y,
+                                                         panelPelanggan.ClientSize.Width, panelPelanggan.ClientSize.Height);
+
             rectKodeTransaksi.Inflate(1, 1); // border thickness
             System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectKodeTransaksi, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
 
@@ -170,6 +178,12 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             rectKaryawan.Inflate(1, 1); // border thickness
             System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectKaryawan, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+
+            rectKodePelanggan.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectKodePelanggan, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+
+            rectPelanggan.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectPelanggan, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
         }
     }
 }

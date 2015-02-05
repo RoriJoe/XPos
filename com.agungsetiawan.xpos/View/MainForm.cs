@@ -11,6 +11,8 @@ using DevExpress.XtraEditors;
 using com.agungsetiawan.xpos.View.VBarang;
 using com.agungsetiawan.xpos.View.VKategori;
 using com.agungsetiawan.xpos.View.VPenjualan;
+using com.agungsetiawan.xpos.Repository;
+using com.agungsetiawan.xpos.Common;
 
 namespace com.agungsetiawan.xpos.View
 {
@@ -20,6 +22,12 @@ namespace com.agungsetiawan.xpos.View
         {
             InitializeComponent();
             xtraTabbedMdiManager.MdiParent = this;
+
+            //dummy
+            PenggunaRepository penggunaRepository=new PenggunaRepository();
+            var pengguna = penggunaRepository.Get(1);
+            LoginContext.Pengguna = pengguna;
+            //dummy
         }
 
         private void navBarDataBarang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)

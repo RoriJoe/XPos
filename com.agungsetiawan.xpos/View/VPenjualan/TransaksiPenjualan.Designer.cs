@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewTransaksiPenjualan = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,12 +49,20 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panelKaryawan = new System.Windows.Forms.Panel();
             this.textBoxKaryawan = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panelKodePelanggan = new System.Windows.Forms.Panel();
+            this.textBoxKodePelanggan = new System.Windows.Forms.TextBox();
+            this.buttonPelanggan = new System.Windows.Forms.Button();
+            this.panelPelanggan = new System.Windows.Forms.Panel();
+            this.textBoxPelanggan = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransaksiPenjualan)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelKodeTransaksi.SuspendLayout();
             this.panelTanggal.SuspendLayout();
             this.panelKaryawan.SuspendLayout();
+            this.panelKodePelanggan.SuspendLayout();
+            this.panelPelanggan.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewTransaksiPenjualan
@@ -63,15 +71,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewTransaksiPenjualan.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewTransaksiPenjualan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(113)))), ((int)(((byte)(214)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(8);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTransaksiPenjualan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(113)))), ((int)(((byte)(214)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTransaksiPenjualan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTransaksiPenjualan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTransaksiPenjualan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -254,12 +262,75 @@
             this.textBoxKaryawan.Size = new System.Drawing.Size(158, 13);
             this.textBoxKaryawan.TabIndex = 7;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(356, 53);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Pelanggan";
+            // 
+            // panelKodePelanggan
+            // 
+            this.panelKodePelanggan.BackColor = System.Drawing.SystemColors.Window;
+            this.panelKodePelanggan.Controls.Add(this.textBoxKodePelanggan);
+            this.panelKodePelanggan.Location = new System.Drawing.Point(422, 49);
+            this.panelKodePelanggan.Name = "panelKodePelanggan";
+            this.panelKodePelanggan.Padding = new System.Windows.Forms.Padding(3);
+            this.panelKodePelanggan.Size = new System.Drawing.Size(144, 22);
+            this.panelKodePelanggan.TabIndex = 18;
+            // 
+            // textBoxKodePelanggan
+            // 
+            this.textBoxKodePelanggan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxKodePelanggan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxKodePelanggan.Location = new System.Drawing.Point(6, 5);
+            this.textBoxKodePelanggan.Name = "textBoxKodePelanggan";
+            this.textBoxKodePelanggan.Size = new System.Drawing.Size(132, 13);
+            this.textBoxKodePelanggan.TabIndex = 7;
+            // 
+            // buttonPelanggan
+            // 
+            this.buttonPelanggan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.buttonPelanggan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPelanggan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonPelanggan.Location = new System.Drawing.Point(568, 48);
+            this.buttonPelanggan.Name = "buttonPelanggan";
+            this.buttonPelanggan.Size = new System.Drawing.Size(26, 23);
+            this.buttonPelanggan.TabIndex = 22;
+            this.buttonPelanggan.Text = "...";
+            this.buttonPelanggan.UseVisualStyleBackColor = false;
+            // 
+            // panelPelanggan
+            // 
+            this.panelPelanggan.BackColor = System.Drawing.SystemColors.Window;
+            this.panelPelanggan.Controls.Add(this.textBoxPelanggan);
+            this.panelPelanggan.Location = new System.Drawing.Point(422, 76);
+            this.panelPelanggan.Name = "panelPelanggan";
+            this.panelPelanggan.Padding = new System.Windows.Forms.Padding(3);
+            this.panelPelanggan.Size = new System.Drawing.Size(170, 22);
+            this.panelPelanggan.TabIndex = 18;
+            // 
+            // textBoxPelanggan
+            // 
+            this.textBoxPelanggan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPelanggan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPelanggan.Location = new System.Drawing.Point(6, 5);
+            this.textBoxPelanggan.Name = "textBoxPelanggan";
+            this.textBoxPelanggan.Size = new System.Drawing.Size(158, 13);
+            this.textBoxPelanggan.TabIndex = 7;
+            // 
             // TransaksiPenjualan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1038, 733);
+            this.Controls.Add(this.panelPelanggan);
+            this.Controls.Add(this.buttonPelanggan);
+            this.Controls.Add(this.panelKodePelanggan);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.panelKaryawan);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -282,6 +353,10 @@
             this.panelTanggal.PerformLayout();
             this.panelKaryawan.ResumeLayout(false);
             this.panelKaryawan.PerformLayout();
+            this.panelKodePelanggan.ResumeLayout(false);
+            this.panelKodePelanggan.PerformLayout();
+            this.panelPelanggan.ResumeLayout(false);
+            this.panelPelanggan.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,5 +384,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panelKaryawan;
         private System.Windows.Forms.TextBox textBoxKaryawan;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panelKodePelanggan;
+        private System.Windows.Forms.TextBox textBoxKodePelanggan;
+        private System.Windows.Forms.Button buttonPelanggan;
+        private System.Windows.Forms.Panel panelPelanggan;
+        private System.Windows.Forms.TextBox textBoxPelanggan;
     }
 }

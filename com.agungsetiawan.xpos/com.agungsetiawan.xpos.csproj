@@ -69,6 +69,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\KodeTransaksiHelper.cs" />
+    <Compile Include="Common\LoginContext.cs" />
     <Compile Include="Common\Terbilang.cs" />
     <Compile Include="Migrations\201501250135115_InitBarangDanKategori.cs" />
     <Compile Include="Migrations\201501250135115_InitBarangDanKategori.Designer.cs">
@@ -100,6 +101,7 @@
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IGenericRepository.cs" />
     <Compile Include="Repository\KategoriRepository.cs" />
+    <Compile Include="Repository\PenggunaRepository.cs" />
     <Compile Include="Repository\PenjualanRepository.cs" />
     <Compile Include="Repository\XPosContext.cs" />
     <Compile Include="Service\BarangService.cs" />
