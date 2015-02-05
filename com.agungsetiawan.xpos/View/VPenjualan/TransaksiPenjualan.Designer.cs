@@ -40,10 +40,21 @@
             this.labelTotal = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.panelKodeTransaksi = new System.Windows.Forms.Panel();
+            this.textBoxKodeTransaksi = new System.Windows.Forms.TextBox();
+            this.textBoxTanggal = new System.Windows.Forms.TextBox();
+            this.panelTanggal = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panelKaryawan = new System.Windows.Forms.Panel();
+            this.textBoxKaryawan = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransaksiPenjualan)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelKodeTransaksi.SuspendLayout();
+            this.panelTanggal.SuspendLayout();
+            this.panelKaryawan.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewTransaksiPenjualan
@@ -157,14 +168,91 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "[Del]=Hapus  |  [F11]=Minus  |  [F12]=Tambah  |  [F9]=Custom Harga ";
             // 
+            // panelKodeTransaksi
+            // 
+            this.panelKodeTransaksi.BackColor = System.Drawing.SystemColors.Control;
+            this.panelKodeTransaksi.Controls.Add(this.textBoxKodeTransaksi);
+            this.panelKodeTransaksi.Location = new System.Drawing.Point(127, 20);
+            this.panelKodeTransaksi.Name = "panelKodeTransaksi";
+            this.panelKodeTransaksi.Padding = new System.Windows.Forms.Padding(3);
+            this.panelKodeTransaksi.Size = new System.Drawing.Size(170, 22);
+            this.panelKodeTransaksi.TabIndex = 16;
+            // 
+            // textBoxKodeTransaksi
+            // 
+            this.textBoxKodeTransaksi.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxKodeTransaksi.Enabled = false;
+            this.textBoxKodeTransaksi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxKodeTransaksi.Location = new System.Drawing.Point(6, 5);
+            this.textBoxKodeTransaksi.Name = "textBoxKodeTransaksi";
+            this.textBoxKodeTransaksi.Size = new System.Drawing.Size(158, 13);
+            this.textBoxKodeTransaksi.TabIndex = 7;
+            // 
+            // textBoxTanggal
+            // 
+            this.textBoxTanggal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxTanggal.Enabled = false;
+            this.textBoxTanggal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTanggal.Location = new System.Drawing.Point(6, 5);
+            this.textBoxTanggal.Name = "textBoxTanggal";
+            this.textBoxTanggal.Size = new System.Drawing.Size(158, 13);
+            this.textBoxTanggal.TabIndex = 7;
+            // 
+            // panelTanggal
+            // 
+            this.panelTanggal.BackColor = System.Drawing.SystemColors.Control;
+            this.panelTanggal.Controls.Add(this.textBoxTanggal);
+            this.panelTanggal.Location = new System.Drawing.Point(127, 49);
+            this.panelTanggal.Name = "panelTanggal";
+            this.panelTanggal.Padding = new System.Windows.Forms.Padding(3);
+            this.panelTanggal.Size = new System.Drawing.Size(170, 22);
+            this.panelTanggal.TabIndex = 17;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 47);
+            this.label2.Location = new System.Drawing.Point(23, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Kode Transaksi";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(23, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Tanggal";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(353, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Karyawan";
+            // 
+            // panelKaryawan
+            // 
+            this.panelKaryawan.BackColor = System.Drawing.SystemColors.Window;
+            this.panelKaryawan.Controls.Add(this.textBoxKaryawan);
+            this.panelKaryawan.Location = new System.Drawing.Point(422, 20);
+            this.panelKaryawan.Name = "panelKaryawan";
+            this.panelKaryawan.Padding = new System.Windows.Forms.Padding(3);
+            this.panelKaryawan.Size = new System.Drawing.Size(170, 22);
+            this.panelKaryawan.TabIndex = 17;
+            // 
+            // textBoxKaryawan
+            // 
+            this.textBoxKaryawan.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxKaryawan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxKaryawan.Location = new System.Drawing.Point(6, 5);
+            this.textBoxKaryawan.Name = "textBoxKaryawan";
+            this.textBoxKaryawan.Size = new System.Drawing.Size(158, 13);
+            this.textBoxKaryawan.TabIndex = 7;
             // 
             // TransaksiPenjualan
             // 
@@ -172,16 +260,28 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(1038, 733);
+            this.Controls.Add(this.panelKaryawan);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.panelTanggal);
+            this.Controls.Add(this.panelKodeTransaksi);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridViewTransaksiPenjualan);
             this.Name = "TransaksiPenjualan";
             this.Text = "TransaksiPenjualan";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TransaksiPenjualan_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransaksiPenjualan)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panelKodeTransaksi.ResumeLayout(false);
+            this.panelKodeTransaksi.PerformLayout();
+            this.panelTanggal.ResumeLayout(false);
+            this.panelTanggal.PerformLayout();
+            this.panelKaryawan.ResumeLayout(false);
+            this.panelKaryawan.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,6 +300,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Panel panelKodeTransaksi;
+        private System.Windows.Forms.TextBox textBoxKodeTransaksi;
+        private System.Windows.Forms.TextBox textBoxTanggal;
+        private System.Windows.Forms.Panel panelTanggal;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panelKaryawan;
+        private System.Windows.Forms.TextBox textBoxKaryawan;
     }
 }

@@ -24,7 +24,9 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             penjualanService = new PenjualanService();
 
-            label2.Text = KodeTransaksiHelper.Get(penjualanService.GetKodeTransaksiTerakhir());
+            textBoxKodeTransaksi.Text=KodeTransaksiHelper.Get(penjualanService.GetKodeTransaksiTerakhir());
+
+            textBoxTanggal.Text = DateTime.Today.ToString("dd MMMM yyyy", CultureInfo.GetCultureInfo("id-ID"));
 
             dataGridViewTransaksiPenjualan.Rows.Add("", "", "", "");
         }
@@ -147,6 +149,27 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 form.PopulateData();
                 form.ShowDialog();
             }
+        }
+
+        private void TransaksiPenjualan_Paint(object sender, PaintEventArgs e)
+        {
+            System.Drawing.Rectangle rectKodeTransaksi = new Rectangle(panelKodeTransaksi.Location.X, panelKodeTransaksi.Location.Y,
+                                                          panelKodeTransaksi.ClientSize.Width, panelKodeTransaksi.ClientSize.Height);
+
+            System.Drawing.Rectangle rectTanggal = new Rectangle(panelTanggal.Location.X, panelTanggal.Location.Y,
+                                                          panelTanggal.ClientSize.Width, panelTanggal.ClientSize.Height);
+
+            System.Drawing.Rectangle rectKaryawan = new Rectangle(panelKaryawan.Location.X, panelKaryawan.Location.Y,
+                                                          panelKaryawan.ClientSize.Width, panelKaryawan.ClientSize.Height);
+
+            rectKodeTransaksi.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectKodeTransaksi, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+
+            rectTanggal.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectTanggal, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+
+            rectKaryawan.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectKaryawan, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
         }
     }
 }
