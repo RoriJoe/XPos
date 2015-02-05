@@ -151,6 +151,13 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 form.PopulateData();
                 form.ShowDialog();
             }
+
+            if (e.KeyCode == Keys.F6)
+            {
+                CariPelanggan form = new CariPelanggan();
+                form.ParentForm = this;
+                form.ShowDialog();
+            }
         }
 
         private void TransaksiPenjualan_Paint(object sender, PaintEventArgs e)
@@ -184,6 +191,13 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             rectPelanggan.Inflate(1, 1); // border thickness
             System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectPelanggan, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+        }
+
+        private void buttonPelanggan_Click(object sender, EventArgs e)
+        {
+            CariPelanggan form = new CariPelanggan();
+            form.ParentForm = this;
+            form.ShowDialog();
         }
     }
 }
