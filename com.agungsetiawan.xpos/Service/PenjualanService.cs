@@ -1,4 +1,5 @@
-﻿using com.agungsetiawan.xpos.Repository;
+﻿using com.agungsetiawan.xpos.Model;
+using com.agungsetiawan.xpos.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,11 @@ namespace com.agungsetiawan.xpos.Service
         {
             var last=penjualanRepository.GetKodeTransaksiTerakhir();
             return last[0];
+        }
+
+        public void Post(Penjualan penjualan)
+        {
+            penjualanRepository.Post(penjualan);
         }
     }
 }

@@ -377,7 +377,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Panel panelKodeTransaksi;
-        private System.Windows.Forms.TextBox textBoxKodeTransaksi;
+        public System.Windows.Forms.TextBox textBoxKodeTransaksi;
         private System.Windows.Forms.TextBox textBoxTanggal;
         private System.Windows.Forms.Panel panelTanggal;
         private System.Windows.Forms.Label label2;

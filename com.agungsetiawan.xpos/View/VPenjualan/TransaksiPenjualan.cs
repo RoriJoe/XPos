@@ -199,5 +199,16 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             form.ParentForm = this;
             form.ShowDialog();
         }
+
+        public void Clear()
+        {
+            textBoxKodeTransaksi.Text = KodeTransaksiHelper.Get(penjualanService.GetKodeTransaksiTerakhir());
+            textBoxKodePelanggan.Text = string.Empty;
+            textBoxPelanggan.Text = string.Empty;
+            this.ActiveControl = this.dataGridViewTransaksiPenjualan;
+            dataGridViewTransaksiPenjualan.Rows.Clear();
+            dataGridViewTransaksiPenjualan.CurrentCell = dataGridViewTransaksiPenjualan.Rows[0].Cells[0];
+            
+        }
     }
 }
