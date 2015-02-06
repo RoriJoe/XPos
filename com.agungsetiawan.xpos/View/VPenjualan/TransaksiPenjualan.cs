@@ -205,6 +205,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             textBoxKodeTransaksi.Text = KodeTransaksiHelper.Get(penjualanService.GetKodeTransaksiTerakhir());
             textBoxKodePelanggan.Text = string.Empty;
             textBoxPelanggan.Text = string.Empty;
+            labelTotal.Text = "0.00";
             this.ActiveControl = this.dataGridViewTransaksiPenjualan;
             dataGridViewTransaksiPenjualan.Rows.Clear();
             dataGridViewTransaksiPenjualan.CurrentCell = dataGridViewTransaksiPenjualan.Rows[0].Cells[0];
