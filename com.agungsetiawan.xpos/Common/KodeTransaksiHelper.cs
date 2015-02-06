@@ -22,7 +22,7 @@ namespace com.agungsetiawan.xpos.Common
 
             if (date.Equals(today))
             {
-                currentNumber = int.Parse(last.Substring(10, 6));
+                currentNumber = int.Parse(last.Substring(10, 3));
                 nextNumber = currentNumber + 1;
                 return GenerateNextCode(nextNumber);
             }
@@ -38,7 +38,7 @@ namespace com.agungsetiawan.xpos.Common
 
         private static String GenerateNextCode(int nextNumber)
         {
-            string nextNumberString = nextNumber.ToString().PadLeft(6, '0');
+            string nextNumberString = nextNumber.ToString().PadLeft(3, '0');
             string nextCode = "TS" + today + nextNumberString;
             return nextCode;
         }
