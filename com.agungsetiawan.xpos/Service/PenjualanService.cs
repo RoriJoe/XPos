@@ -11,9 +11,11 @@ namespace com.agungsetiawan.xpos.Service
     public class PenjualanService
     {
         PenjualanRepository penjualanRepository;
+        BarangRepository barangRepository;
         public PenjualanService()
         {
             penjualanRepository = new PenjualanRepository();
+            barangRepository = new BarangRepository();
         }
 
         public String GetKodeTransaksiTerakhir()
@@ -24,6 +26,15 @@ namespace com.agungsetiawan.xpos.Service
 
         public void Post(Penjualan penjualan)
         {
+            var penjualanDetails = penjualan.PenjualanDetails;
+
+            foreach(var detail in penjualanDetails)
+            {
+                var barang = barangRepository.Get(detail.BarangId);
+                barang.Stok = barang.Stok - detail.Jumlah;
+                barangRepository.Put(barang);
+            }
+
             penjualanRepository.Post(penjualan);
         }
     }
