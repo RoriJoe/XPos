@@ -51,7 +51,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             if(e.KeyCode==Keys.Enter)
             {
                 int row = dataGridViewTransaksiPenjualan.Rows.Count;
-                int id = int.Parse(dataGridViewTransaksiPenjualan[0, row-2].Value.ToString());
+                int id = int.Parse(dataGridViewTransaksiPenjualan[0, row-1].Value.ToString());
                 var barang = service.Get(id);
 
                 if(barang==null)
@@ -60,15 +60,49 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                     return;
                 }
 
-                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[0].Value = barang.Id;
-                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[1].Value = barang.NamaBarang;
-                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value = 1;
-                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[3].Value = barang.HargaJual.ToString("N2", CultureInfo.GetCultureInfo("de"));
-                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[4].Value = 0f;
-                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value = barang.HargaJual.ToString("N2", CultureInfo.GetCultureInfo("de"));
+                bool IsNew = true;
+                if(row!=1)
+                {
+                    for (int i = 0; i < row - 1; i++)
+                    {
+                        if (id == int.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[0].Value.ToString()))
+                        {
+                            dataGridViewTransaksiPenjualan.Rows[i].Cells[2].Value = (int.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[2].Value.ToString())) + 1;
+                            dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value = ((decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"))) + barang.HargaJual)
+                                                                                    .ToString("N2", CultureInfo.GetCultureInfo("de"));
+                            IsNew = false;
+                            dataGridViewTransaksiPenjualan.Rows.RemoveAt(row-1);
+                            break;
+                        }
+                        else
+                        {
+                            IsNew = true;
+                        }
+                    }
+                }
 
+                if(IsNew)
+                {
+                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[0].Value = barang.Id;
+                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[1].Value = barang.NamaBarang;
+                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[2].Value = 1;
+                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[3].Value = barang.HargaJual.ToString("N2", CultureInfo.GetCultureInfo("de"));
+                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[4].Value = 0f;
+                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[5].Value = barang.HargaJual.ToString("N2", CultureInfo.GetCultureInfo("de"));
+
+                    dataGridViewTransaksiPenjualan.Rows.Add("", "", "", "");
+                }
+                
                 decimal total=0;
-                for (int i = 0; i < row - 1; i++)
+                //recalculate row after deletion is id is the same
+
+                if (!IsNew)
+                {
+                    row = dataGridViewTransaksiPenjualan.Rows.Count;
+                    dataGridViewTransaksiPenjualan.Rows.Add("", "", "", "");
+                }
+
+                for (int i = 0; i < row; i++)
                 {
                     total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
                 }
@@ -90,7 +124,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value =(price * n).ToString("N2", CultureInfo.GetCultureInfo("de"));;
 
                 decimal total = 0;
-                for (int i = 0; i < row - 1; i++)
+                for (int i = 0; i < row-1; i++)
                 {
                     total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
                 }
@@ -111,7 +145,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value = (price * n).ToString("N2", CultureInfo.GetCultureInfo("de")); ;
 
                 decimal total = 0;
-                for (int i = 0; i < row - 1; i++)
+                for (int i = 0; i < row-1 ; i++)
                 {
                     total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
                 }
@@ -124,10 +158,19 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             if(e.KeyCode==Keys.Delete)
             {
                 int row = dataGridViewTransaksiPenjualan.Rows.Count;
-                dataGridViewTransaksiPenjualan.Rows.RemoveAt(row - 2);
+                if(row>1)
+                {
+                    dataGridViewTransaksiPenjualan.Rows.RemoveAt(row - 1);
+                    dataGridViewTransaksiPenjualan.Rows.RemoveAt(row - 2);
+                    dataGridViewTransaksiPenjualan.Rows.Add();
+                }
 
                 decimal total = 0;
-                for (int i = 0; i < row - 2; i++)
+                row = dataGridViewTransaksiPenjualan.Rows.Count;
+
+                dataGridViewTransaksiPenjualan.CurrentCell = dataGridViewTransaksiPenjualan.Rows[row-1].Cells[0];
+                
+                for (int i = 0; i < row - 1; i++)
                 {
                     total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
                 }
@@ -208,6 +251,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             labelTotal.Text = "0.00";
             this.ActiveControl = this.dataGridViewTransaksiPenjualan;
             dataGridViewTransaksiPenjualan.Rows.Clear();
+            dataGridViewTransaksiPenjualan.Rows.Add();
             dataGridViewTransaksiPenjualan.CurrentCell = dataGridViewTransaksiPenjualan.Rows[0].Cells[0];
             
         }
