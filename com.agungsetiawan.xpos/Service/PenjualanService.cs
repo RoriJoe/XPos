@@ -21,6 +21,12 @@ namespace com.agungsetiawan.xpos.Service
         public String GetKodeTransaksiTerakhir()
         {
             var last=penjualanRepository.GetKodeTransaksiTerakhir();
+
+            if(last.Length==0)
+            {
+                return "";
+            }
+
             return last[0];
         }
 
