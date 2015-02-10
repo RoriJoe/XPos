@@ -51,12 +51,21 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             if(e.KeyCode==Keys.Enter)
             {
                 int row = dataGridViewTransaksiPenjualan.Rows.Count;
-                int id = int.Parse(dataGridViewTransaksiPenjualan[0, row-1].Value.ToString());
+                int id;
+
+                bool isValidId=int.TryParse(dataGridViewTransaksiPenjualan[0, row - 1].Value.ToString(),out id);
+
                 var barang = service.Get(id);
 
-                if(barang==null)
+                if (barang == null || !isValidId)
                 {
-                    MessageBox.Show("NULL");
+                    MessageBox.Show("Tidak ada barang dengan ID tersebut","Pesan",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    return;
+                }
+
+                if(barang.Stok==0)
+                {
+                    MessageBox.Show("Stok barang habis", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
@@ -117,6 +126,16 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             {
                 int row = dataGridViewTransaksiPenjualan.Rows.Count;
                 int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
+                
+                int id=int.Parse(dataGridViewTransaksiPenjualan[0, row - 2].Value.ToString());
+                var barang = service.Get(id);
+
+                if((n+1)>barang.Stok)
+                {
+                    MessageBox.Show("Stok barang tidak memadahi", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
                 dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value = n+1;
 
                 n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
