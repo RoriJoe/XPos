@@ -11,6 +11,7 @@ using com.agungsetiawan.xpos.Model;
 using com.agungsetiawan.xpos.Repository;
 using com.agungsetiawan.xpos.Service;
 using com.agungsetiawan.xpos.ModelView;
+using com.agungsetiawan.xpos.Report;
 
 namespace com.agungsetiawan.xpos.View.VBarang
 {
@@ -84,6 +85,18 @@ namespace com.agungsetiawan.xpos.View.VBarang
                 barangService.Delete(barang);
                 dataGridViewBarang.DataSource = barangService.Get();
             }
+        }
+
+        private void btnCetak_Click(object sender, EventArgs e)
+        {
+            BarangReport barangReport = new BarangReport();
+
+            var barangs = barangService.Get();
+            barangReport.SetDataSource(barangs);
+
+            BarangReportViewer barangReportViewer = new BarangReportViewer();
+            barangReportViewer.setDataReport(barangReport);
+            barangReportViewer.ShowDialog();
         }
     }
 }
