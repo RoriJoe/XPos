@@ -61,3 +61,5 @@ D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungs
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPenjualan.CariPelanggan.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPenjualan.Pembayaran.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VBarang.BarangReportViewer.resources
+D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VBarang.BarangReportViewer.resources
+D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VKategori.KategoriReportViewer.resources

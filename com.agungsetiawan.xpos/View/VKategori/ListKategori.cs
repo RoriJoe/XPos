@@ -1,4 +1,5 @@
 ﻿using com.agungsetiawan.xpos.Model;
+using com.agungsetiawan.xpos.Report;
 using com.agungsetiawan.xpos.Service;
 using System;
 using System.Collections.Generic;
@@ -81,6 +82,17 @@ namespace com.agungsetiawan.xpos.View.VKategori
 
             e.Graphics.DrawString(index, font, SystemBrushes.ControlText,
                 headerBounds, centerFormat);
+        }
+
+        private void btnCetak_Click(object sender, EventArgs e)
+        {
+            var kategoris = kategoriService.Get();
+            KategoriReport kategoriReport = new KategoriReport();
+            kategoriReport.SetDataSource(kategoris);
+
+            KategoriReportViewer kategoriReportViewer = new KategoriReportViewer();
+            kategoriReportViewer.setDataReport(kategoriReport);
+            kategoriReportViewer.ShowDialog();
         }
     }
 }

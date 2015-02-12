@@ -33,6 +33,7 @@
             this.btnUbah = new DevExpress.XtraEditors.SimpleButton();
             this.btnTambah = new DevExpress.XtraEditors.SimpleButton();
             this.dataGridViewKategori = new System.Windows.Forms.DataGridView();
+            this.btnCetak = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewKategori)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,11 +90,24 @@
             this.dataGridViewKategori.TabIndex = 4;
             this.dataGridViewKategori.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewKategori_RowPostPaint);
             // 
+            // btnCetak
+            // 
+            this.btnCetak.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCetak.Image = ((System.Drawing.Image)(resources.GetObject("btnCetak.Image")));
+            this.btnCetak.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnCetak.Location = new System.Drawing.Point(315, 341);
+            this.btnCetak.Name = "btnCetak";
+            this.btnCetak.Size = new System.Drawing.Size(89, 35);
+            this.btnCetak.TabIndex = 8;
+            this.btnCetak.Text = "Cetak";
+            this.btnCetak.Click += new System.EventHandler(this.btnCetak_Click);
+            // 
             // ListKategori
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 388);
+            this.Controls.Add(this.btnCetak);
             this.Controls.Add(this.btnHapus);
             this.Controls.Add(this.btnUbah);
             this.Controls.Add(this.btnTambah);
@@ -111,5 +125,6 @@
         private DevExpress.XtraEditors.SimpleButton btnUbah;
         private DevExpress.XtraEditors.SimpleButton btnTambah;
         public System.Windows.Forms.DataGridView dataGridViewKategori;
+        private DevExpress.XtraEditors.SimpleButton btnCetak;
     }
 }

@@ -16,14 +16,14 @@ namespace com.agungsetiawan.xpos.Report {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class BarangReport : ReportClass {
+    public class KategoriReport : ReportClass {
         
-        public BarangReport() {
+        public KategoriReport() {
         }
         
         public override string ResourceName {
             get {
-                return "BarangReport.rpt";
+                return "KategoriReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace com.agungsetiawan.xpos.Report {
         
         public override string FullResourceName {
             get {
-                return "com.agungsetiawan.xpos.Report.BarangReport.rpt";
+                return "com.agungsetiawan.xpos.Report.KategoriReport.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace com.agungsetiawan.xpos.Report {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedBarangReport : Component, ICachedReport {
+    public class CachedKategoriReport : Component, ICachedReport {
         
-        public CachedBarangReport() {
+        public CachedKategoriReport() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace com.agungsetiawan.xpos.Report {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            BarangReport rpt = new BarangReport();
+            KategoriReport rpt = new KategoriReport();
             rpt.Site = this.Site;
             return rpt;
         }
