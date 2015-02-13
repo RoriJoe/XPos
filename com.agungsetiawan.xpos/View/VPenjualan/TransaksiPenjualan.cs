@@ -199,7 +199,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 dataGridViewTransaksiPenjualan.Refresh();
             }
 
-            if(e.KeyCode==Keys.F9)
+            if(e.KeyCode==Keys.F8)
             {
                 ApplyHarga form = new ApplyHarga();
                 form.ParentForm = this;

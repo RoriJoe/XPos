@@ -169,13 +169,14 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
-            this.label1.Location = new System.Drawing.Point(4, 8);
+            this.label1.Location = new System.Drawing.Point(4, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(684, 25);
+            this.label1.Size = new System.Drawing.Size(791, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "[Del]=Hapus  |  [F11]=Minus  |  [F12]=Tambah  |  [F9]=Custom Harga ";
+            this.label1.Text = "[F5]=Bayar | [F6]=Cari Pelanggan | [F7]=Cari Barang | [F8]=Custom Harga | [Del]=H" +
+    "apus  |  [F11]=Minus  |  [F12]=Tambah    ";
             // 
             // panelKodeTransaksi
             // 
