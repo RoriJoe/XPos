@@ -192,6 +192,12 @@
     <Compile Include="View\VPenjualan\ApplyHarga.Designer.cs">
       <DependentUpon>ApplyHarga.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VPenjualan\CariBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VPenjualan\CariBarang.Designer.cs">
+      <DependentUpon>CariBarang.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VPenjualan\CariPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VPenjualan\ApplyHarga.resx">
       <DependentUpon>ApplyHarga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VPenjualan\CariBarang.resx">
+      <DependentUpon>CariBarang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VPenjualan\CariPelanggan.resx">
       <DependentUpon>CariPelanggan.cs</DependentUpon>

@@ -55,5 +55,23 @@ namespace com.agungsetiawan.xpos.Service
         {
             barangRepository.Delete(barang);
         }
+
+        public List<BarangView> FindByNama(String nama)
+        {
+            var barangs = barangRepository.FindByNama(nama);
+            var barangViews = (from b in barangs
+                               select new BarangView
+                               {
+                                   Id = b.Id,
+                                   NamaBarang = b.NamaBarang,
+                                   HargaJual = b.HargaJual,
+                                   HargaBeli = b.HargaBeli,
+                                   Stok = b.Stok,
+                                   Keterangan = b.Keterangan,
+                                   Kategori = b.Kategori.NamaKategori
+                               }).ToList();
+
+            return barangViews;
+        }
     }
 }

@@ -13,5 +13,10 @@ namespace com.agungsetiawan.xpos.Repository
         {
             return db.Barangs.Include("Kategori").ToList();
         }
+
+        public List<Barang> FindByNama(String nama)
+        {
+            return db.Barangs.Where(b => b.NamaBarang.ToLower().Contains(nama.ToLower())).ToList();
+        }
     }
 }

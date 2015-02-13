@@ -232,6 +232,13 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 form.ParentForm = this;
                 form.ShowDialog();
             }
+
+            if (e.KeyCode == Keys.F7)
+            {
+                CariBarang form = new CariBarang();
+                form.ParentForm = this;
+                form.ShowDialog();
+            }
         }
 
         private void TransaksiPenjualan_Paint(object sender, PaintEventArgs e)
