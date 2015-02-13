@@ -125,6 +125,12 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             if(e.KeyCode==Keys.F12)
             {
                 int row = dataGridViewTransaksiPenjualan.Rows.Count;
+
+                if(row<2)
+                {
+                    return;
+                }
+
                 int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
                 
                 int id=int.Parse(dataGridViewTransaksiPenjualan[0, row - 2].Value.ToString());
@@ -156,6 +162,12 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             if (e.KeyCode == Keys.F11)
             {
                 int row = dataGridViewTransaksiPenjualan.Rows.Count;
+
+                if (row < 2)
+                {
+                    return;
+                }
+
                 int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
                 dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value = n - 1;
 
