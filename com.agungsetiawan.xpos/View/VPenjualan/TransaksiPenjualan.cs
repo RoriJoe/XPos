@@ -18,11 +18,15 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
     {
         static TransaksiPenjualan form;
         PenjualanService penjualanService;
+        PelangganService pelangganService;
+        BarangService service;
         private TransaksiPenjualan()
         {
             InitializeComponent();
 
             penjualanService = new PenjualanService();
+            pelangganService = new PelangganService();
+            service = new BarangService();
 
             textBoxKodeTransaksi.Text=KodeTransaksiHelper.Get(penjualanService.GetKodeTransaksiTerakhir());
 
@@ -46,10 +50,16 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
         {
 
-            BarangService service = new BarangService();
-
             if(e.KeyCode==Keys.Enter)
             {
+                
+                var pelanggan = pelangganService.Get(int.Parse(textBoxKodePelanggan.Text));
+                float diskon;
+                if (pelanggan != null)
+                    diskon = pelanggan.Member.Diskon;
+                else
+                    diskon = 0;
+
                 int row = dataGridViewTransaksiPenjualan.Rows.Count;
                 int id;
 
@@ -77,7 +87,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                         if (id == int.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[0].Value.ToString()))
                         {
                             dataGridViewTransaksiPenjualan.Rows[i].Cells[2].Value = (int.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[2].Value.ToString())) + 1;
-                            dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value = ((decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"))) + barang.HargaJual)
+                            dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value = ((decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"))) + barang.HargaJual - (barang.HargaJual * (decimal)(diskon / 100)))
                                                                                     .ToString("N2", CultureInfo.GetCultureInfo("de"));
                             IsNew = false;
                             dataGridViewTransaksiPenjualan.Rows.RemoveAt(row-1);
@@ -96,8 +106,13 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                     dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[1].Value = barang.NamaBarang;
                     dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[2].Value = 1;
                     dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[3].Value = barang.HargaJual.ToString("N2", CultureInfo.GetCultureInfo("de"));
-                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[4].Value = 0f;
-                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[5].Value = barang.HargaJual.ToString("N2", CultureInfo.GetCultureInfo("de"));
+
+                    if(pelanggan!=null)
+                        dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[4].Value = diskon;
+                    else
+                        dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[4].Value = 0f;
+
+                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[5].Value = (barang.HargaJual - (barang.HargaJual * (decimal) (diskon/100) )).ToString("N2", CultureInfo.GetCultureInfo("de"));
 
                     dataGridViewTransaksiPenjualan.Rows.Add("", "", "", "");
                 }
@@ -124,6 +139,13 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             if(e.KeyCode==Keys.F12)
             {
+                var pelanggan = pelangganService.Get(int.Parse(textBoxKodePelanggan.Text));
+                float diskon;
+                if (pelanggan != null)
+                    diskon = pelanggan.Member.Diskon;
+                else
+                    diskon = 0;
+
                 int row = dataGridViewTransaksiPenjualan.Rows.Count;
 
                 if(row<2)
@@ -146,7 +168,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
                 n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
                 decimal price = decimal.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[3].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
-                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value =(price * n).ToString("N2", CultureInfo.GetCultureInfo("de"));;
+                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value =((price-(price*(decimal) (diskon/100))) * n).ToString("N2", CultureInfo.GetCultureInfo("de"));
 
                 decimal total = 0;
                 for (int i = 0; i < row-1; i++)
@@ -161,6 +183,13 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             if (e.KeyCode == Keys.F11)
             {
+                var pelanggan = pelangganService.Get(int.Parse(textBoxKodePelanggan.Text));
+                float diskon;
+                if (pelanggan != null)
+                    diskon = pelanggan.Member.Diskon;
+                else
+                    diskon = 0;
+
                 int row = dataGridViewTransaksiPenjualan.Rows.Count;
 
                 if (row < 2)
@@ -173,7 +202,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
                 n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
                 decimal price = decimal.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[3].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
-                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value = (price * n).ToString("N2", CultureInfo.GetCultureInfo("de")); ;
+                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value = ((price - (price * (decimal)(diskon / 100))) * n).ToString("N2", CultureInfo.GetCultureInfo("de"));
 
                 decimal total = 0;
                 for (int i = 0; i < row-1 ; i++)

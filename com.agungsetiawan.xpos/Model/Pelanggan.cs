@@ -23,7 +23,7 @@ namespace com.agungsetiawan.xpos.Model
         [StringLength(20)]
         public string NoTelepon { get; set; }
 
-        public Member Member { get; set; }
+        public virtual Member Member { get; set; }
         public int MemberId { get; set; }
     }
 }
