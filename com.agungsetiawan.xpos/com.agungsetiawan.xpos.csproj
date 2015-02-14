@@ -98,8 +98,17 @@
     <Compile Include="Migrations\201502040927003_PenggunaDanPelanggan.Designer.cs">
       <DependentUpon>201502040927003_PenggunaDanPelanggan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201502140531574_TambahMemberUbahPelanggan.cs" />
+    <Compile Include="Migrations\201502140531574_TambahMemberUbahPelanggan.Designer.cs">
+      <DependentUpon>201502140531574_TambahMemberUbahPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201502140538372_UbahNamaMemberJadiVarchar.cs" />
+    <Compile Include="Migrations\201502140538372_UbahNamaMemberJadiVarchar.Designer.cs">
+      <DependentUpon>201502140538372_UbahNamaMemberJadiVarchar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelView\BarangView.cs" />
+    <Compile Include="Model\Member.cs" />
     <Compile Include="Model\Pelanggan.cs" />
     <Compile Include="Model\Pengguna.cs" />
     <Compile Include="Model\Penjualan.cs" />
@@ -120,6 +129,7 @@
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IGenericRepository.cs" />
     <Compile Include="Repository\KategoriRepository.cs" />
+    <Compile Include="Repository\MemberRepository.cs" />
     <Compile Include="Repository\PelangganRepository.cs" />
     <Compile Include="Repository\PenggunaRepository.cs" />
     <Compile Include="Repository\PenjualanRepository.cs" />
@@ -186,6 +196,12 @@
     <Compile Include="View\VKategori\UbahKategori.Designer.cs">
       <DependentUpon>UbahKategori.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VMember\ListMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VMember\ListMember.Designer.cs">
+      <DependentUpon>ListMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VPenjualan\ApplyHarga.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +246,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201502040927003_PenggunaDanPelanggan.resx">
       <DependentUpon>201502040927003_PenggunaDanPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502140531574_TambahMemberUbahPelanggan.resx">
+      <DependentUpon>201502140531574_TambahMemberUbahPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201502140538372_UbahNamaMemberJadiVarchar.resx">
+      <DependentUpon>201502140538372_UbahNamaMemberJadiVarchar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\BarangReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -276,6 +298,9 @@
     <EmbeddedResource Include="View\VKategori\UbahKategori.resx">
       <DependentUpon>UbahKategori.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\VMember\ListMember.resx">
+      <DependentUpon>ListMember.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\VPenjualan\ApplyHarga.resx">
       <DependentUpon>ApplyHarga.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,6 +333,7 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

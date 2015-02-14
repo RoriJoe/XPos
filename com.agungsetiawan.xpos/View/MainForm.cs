@@ -13,6 +13,7 @@ using com.agungsetiawan.xpos.View.VKategori;
 using com.agungsetiawan.xpos.View.VPenjualan;
 using com.agungsetiawan.xpos.Repository;
 using com.agungsetiawan.xpos.Common;
+using com.agungsetiawan.xpos.View.VMember;
 
 namespace com.agungsetiawan.xpos.View
 {
@@ -65,6 +66,14 @@ namespace com.agungsetiawan.xpos.View
         private void navBarPenjualan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             TransaksiPenjualan form = TransaksiPenjualan.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
+
+        private void navBarItem5_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            ListMember form = ListMember.GetForm();
             form.MdiParent = this;
             form.Show();
             form.Activate();

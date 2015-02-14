@@ -279,7 +279,6 @@
             // navBarGroup1
             // 
             this.navBarGroup1.Caption = "Master Data";
-            this.navBarGroup1.Expanded = true;
             this.navBarGroup1.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDataBarang),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDataKategori)});
@@ -322,11 +321,11 @@
             // 
             this.navBarItem5.Caption = "Member";
             this.navBarItem5.Name = "navBarItem5";
+            this.navBarItem5.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem5_LinkClicked);
             // 
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Penjualan";
-            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPenjualan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem7),

@@ -22,5 +22,8 @@ namespace com.agungsetiawan.xpos.Model
         [Column(TypeName = "varchar")]
         [StringLength(20)]
         public string NoTelepon { get; set; }
+
+        public Member Member { get; set; }
+        public int MemberId { get; set; }
     }
 }

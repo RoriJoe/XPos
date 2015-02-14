@@ -64,3 +64,6 @@ D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungs
 D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VBarang.BarangReportViewer.resources
 D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VKategori.KategoriReportViewer.resources
 D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPenjualan.CariBarang.resources
+D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VMember.ListMember.resources
+D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.TambahMemberUbahPelanggan.resources
+D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.UbahNamaMemberJadiVarchar.resources
