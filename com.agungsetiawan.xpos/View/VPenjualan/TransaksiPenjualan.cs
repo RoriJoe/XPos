@@ -52,9 +52,14 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             if(e.KeyCode==Keys.Enter)
             {
-                
-                var pelanggan = pelangganService.Get(int.Parse(textBoxKodePelanggan.Text));
+
+                int kodePelanggan;
+                bool IsValidKodePelanggan = int.TryParse(textBoxKodePelanggan.Text, out kodePelanggan);
+
                 float diskon;
+
+                var pelanggan = pelangganService.Get(kodePelanggan);
+
                 if (pelanggan != null)
                     diskon = pelanggan.Member.Diskon;
                 else
@@ -106,12 +111,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                     dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[1].Value = barang.NamaBarang;
                     dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[2].Value = 1;
                     dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[3].Value = barang.HargaJual.ToString("N2", CultureInfo.GetCultureInfo("de"));
-
-                    if(pelanggan!=null)
-                        dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[4].Value = diskon;
-                    else
-                        dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[4].Value = 0f;
-
+                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[4].Value = diskon;
                     dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[5].Value = (barang.HargaJual - (barang.HargaJual * (decimal) (diskon/100) )).ToString("N2", CultureInfo.GetCultureInfo("de"));
 
                     dataGridViewTransaksiPenjualan.Rows.Add("", "", "", "");
@@ -139,8 +139,13 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             if(e.KeyCode==Keys.F12)
             {
-                var pelanggan = pelangganService.Get(int.Parse(textBoxKodePelanggan.Text));
+                int kodePelanggan;
+                bool IsValidKodePelanggan = int.TryParse(textBoxKodePelanggan.Text,out kodePelanggan);
+
                 float diskon;
+
+                var pelanggan = pelangganService.Get(kodePelanggan);
+                
                 if (pelanggan != null)
                     diskon = pelanggan.Member.Diskon;
                 else
@@ -183,8 +188,13 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             if (e.KeyCode == Keys.F11)
             {
-                var pelanggan = pelangganService.Get(int.Parse(textBoxKodePelanggan.Text));
+                int kodePelanggan;
+                bool IsValidKodePelanggan = int.TryParse(textBoxKodePelanggan.Text, out kodePelanggan);
+
                 float diskon;
+
+                var pelanggan = pelangganService.Get(kodePelanggan);
+
                 if (pelanggan != null)
                     diskon = pelanggan.Member.Diskon;
                 else
