@@ -108,6 +108,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelView\BarangView.cs" />
+    <Compile Include="ModelView\PelangganView.cs" />
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\Pelanggan.cs" />
     <Compile Include="Model\Pengguna.cs" />

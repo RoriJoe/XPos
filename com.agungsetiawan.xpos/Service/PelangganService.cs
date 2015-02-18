@@ -1,4 +1,5 @@
 ﻿using com.agungsetiawan.xpos.Model;
+using com.agungsetiawan.xpos.ModelView;
 using com.agungsetiawan.xpos.Repository;
 using System;
 using System.Collections.Generic;
@@ -16,9 +17,19 @@ namespace com.agungsetiawan.xpos.Service
         {
             pelangganRepository = new PelangganRepository();
         }
-        public List<Pelanggan> Get()
+        public List<PelangganView> Get()
         {
-            return pelangganRepository.Get();
+            var pelanggans= pelangganRepository.Get();
+            var pelangganView = (from p in pelanggans 
+                                 select new PelangganView 
+                                 { 
+                                    Id=p.Id,
+                                    NamaPelanggan=p.NamaPelanggan,
+                                    Alamat=p.Alamat,
+                                    NoTelepon=p.NoTelepon
+                                 }).ToList();
+
+            return pelangganView;
         }
 
         public Pelanggan Get(int id)
