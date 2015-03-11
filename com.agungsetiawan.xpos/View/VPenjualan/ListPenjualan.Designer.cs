@@ -34,6 +34,7 @@
             this.comboBoxCari = new System.Windows.Forms.ComboBox();
             this.textBoxCari = new System.Windows.Forms.TextBox();
             this.buttonCari = new System.Windows.Forms.Button();
+            this.dateTimePickerCari = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftarPenjualan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftarPenjualanDetail)).BeginInit();
             this.SuspendLayout();
@@ -85,6 +86,7 @@
             this.comboBoxCari.Name = "comboBoxCari";
             this.comboBoxCari.Size = new System.Drawing.Size(159, 21);
             this.comboBoxCari.TabIndex = 4;
+            this.comboBoxCari.SelectedValueChanged += new System.EventHandler(this.comboBoxCari_SelectedValueChanged);
             // 
             // textBoxCari
             // 
@@ -103,12 +105,21 @@
             this.buttonCari.UseVisualStyleBackColor = true;
             this.buttonCari.Click += new System.EventHandler(this.buttonCari_Click);
             // 
+            // dateTimePickerCari
+            // 
+            this.dateTimePickerCari.Location = new System.Drawing.Point(202, 51);
+            this.dateTimePickerCari.Name = "dateTimePickerCari";
+            this.dateTimePickerCari.Size = new System.Drawing.Size(166, 20);
+            this.dateTimePickerCari.TabIndex = 7;
+            this.dateTimePickerCari.Visible = false;
+            // 
             // ListPenjualan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(983, 555);
+            this.Controls.Add(this.dateTimePickerCari);
             this.Controls.Add(this.buttonCari);
             this.Controls.Add(this.textBoxCari);
             this.Controls.Add(this.comboBoxCari);
@@ -132,5 +143,6 @@
         private System.Windows.Forms.ComboBox comboBoxCari;
         private System.Windows.Forms.TextBox textBoxCari;
         private System.Windows.Forms.Button buttonCari;
+        private System.Windows.Forms.DateTimePicker dateTimePickerCari;
     }
 }

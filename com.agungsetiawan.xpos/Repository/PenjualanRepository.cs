@@ -27,5 +27,11 @@ namespace com.agungsetiawan.xpos.Repository
             var result = (from p in db.Penjualans where p.KodeTransaksi.Equals(kodeTransaksi) select p).ToList();
             return result;
         }
+
+        public List<Penjualan> FindByPelanggan(string namaPelanggan)
+        {
+            var result = (from p in db.Penjualans where p.Pelanggan.NamaPelanggan.ToLower().Contains(namaPelanggan.ToLower()) select p).ToList();
+            return result;
+        }
     }
 }

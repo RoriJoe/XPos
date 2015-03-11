@@ -31,6 +31,9 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             comboBoxCari.Items.Add("Tanggal");
 
             comboBoxCari.SelectedItem = "Kode Transaksi";
+
+            dateTimePickerCari.Format = DateTimePickerFormat.Custom;
+            dateTimePickerCari.CustomFormat = "dd MMMM yyyy";
         }
 
         public static ListPenjualan GetForm()
@@ -73,6 +76,32 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 var result=penjualanService.FindByKodeTransaksi(textBoxCari.Text);
 
                 dataGridViewDaftarPenjualan.DataSource = result;
+            } 
+            else if (value.Equals("Pelanggan"))
+            {
+                var result = penjualanService.FindByPelanggan(textBoxCari.Text);
+
+                dataGridViewDaftarPenjualan.DataSource = result;
+            }
+            else if(value.Equals("Tanggal"))
+            {
+                //textBoxCari.Visible = false;
+                //dateTimePickerCari.Visible = true;
+
+                //dateTimePickerCari.Location = new Point(textBoxCari.Location.X,textBoxCari.Location.Y);
+            }
+        }
+
+        private void comboBoxCari_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var value = comboBoxCari.SelectedItem.ToString();
+
+            if (value.Equals("Tanggal"))
+            {
+                textBoxCari.Visible = false;
+                dateTimePickerCari.Visible = true;
+
+                dateTimePickerCari.Location = new Point(textBoxCari.Location.X, textBoxCari.Location.Y);
             }
         }
     }
