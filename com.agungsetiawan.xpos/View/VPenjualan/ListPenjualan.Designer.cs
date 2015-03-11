@@ -43,10 +43,10 @@
             this.dataGridViewDaftarPenjualan.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewDaftarPenjualan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewDaftarPenjualan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDaftarPenjualan.Location = new System.Drawing.Point(-3, -3);
+            this.dataGridViewDaftarPenjualan.Location = new System.Drawing.Point(-3, 80);
             this.dataGridViewDaftarPenjualan.Name = "dataGridViewDaftarPenjualan";
             this.dataGridViewDaftarPenjualan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDaftarPenjualan.Size = new System.Drawing.Size(989, 225);
+            this.dataGridViewDaftarPenjualan.Size = new System.Drawing.Size(989, 240);
             this.dataGridViewDaftarPenjualan.TabIndex = 0;
             this.dataGridViewDaftarPenjualan.SelectionChanged += new System.EventHandler(this.dataGridViewDaftarPenjualan_SelectionChanged);
             // 
@@ -59,10 +59,10 @@
             this.dataGridViewDaftarPenjualanDetail.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewDaftarPenjualanDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewDaftarPenjualanDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDaftarPenjualanDetail.Location = new System.Drawing.Point(-3, 271);
+            this.dataGridViewDaftarPenjualanDetail.Location = new System.Drawing.Point(-3, 370);
             this.dataGridViewDaftarPenjualanDetail.Name = "dataGridViewDaftarPenjualanDetail";
             this.dataGridViewDaftarPenjualanDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDaftarPenjualanDetail.Size = new System.Drawing.Size(989, 236);
+            this.dataGridViewDaftarPenjualanDetail.Size = new System.Drawing.Size(989, 137);
             this.dataGridViewDaftarPenjualanDetail.TabIndex = 1;
             // 
             // panel1
@@ -70,7 +70,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.panel1.Location = new System.Drawing.Point(-3, 227);
+            this.panel1.Location = new System.Drawing.Point(-3, 326);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(989, 38);
             this.panel1.TabIndex = 3;
