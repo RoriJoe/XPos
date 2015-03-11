@@ -34,6 +34,11 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             textBoxKaryawan.Text = LoginContext.Pengguna.Nama;
 
+            var defaultPelanggan = pelangganService.FindDiskonNol();
+
+            textBoxKodePelanggan.Text = defaultPelanggan.Id.ToString();
+            textBoxPelanggan.Text = defaultPelanggan.NamaPelanggan;
+
             dataGridViewTransaksiPenjualan.Rows.Add("", "", "", "");
         }
 

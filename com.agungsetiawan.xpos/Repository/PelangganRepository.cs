@@ -14,5 +14,11 @@ namespace com.agungsetiawan.xpos.Repository
             var result = this.db.Pelanggans.Where(p => p.NamaPelanggan.ToLower().Contains(nama.ToLower())).ToList();
             return result;
         }
+
+        public Pelanggan FindDiskonNol()
+        {
+            var result = this.db.Pelanggans.Where(p => p.Member.Diskon == 0).SingleOrDefault();
+            return result;
+        }
     }
 }

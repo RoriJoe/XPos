@@ -41,5 +41,10 @@ namespace com.agungsetiawan.xpos.Service
         {
             return pelangganRepository.FindyByNama(nama);
         }
+
+        public Pelanggan FindDiskonNol()
+        {
+            return pelangganRepository.FindDiskonNol();
+        }
     }
 }
