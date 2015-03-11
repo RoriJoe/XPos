@@ -208,6 +208,12 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 }
 
                 int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
+
+                if(n==1)
+                {
+                    return;
+                }
+
                 dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value = n - 1;
 
                 n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
