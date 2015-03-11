@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,29 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
                 this.ParentForm.textBoxKodePelanggan.Text = id;
                 this.ParentForm.textBoxPelanggan.Text = pelanggan.NamaPelanggan;
+
+                DataGridView dgv=ParentForm.dataGridViewTransaksiPenjualan;
+                int rowCount=dgv.Rows.Count;
+
+                float diskon=pelanggan.Member.Diskon;
+                decimal price;
+                int n;
+                decimal total=0;
+
+                if(rowCount > 0)
+                {
+                    for(int i=0;i<rowCount-1;i++)
+                    {
+                        n = int.Parse(dgv.Rows[i].Cells[2].Value.ToString());
+                        price = decimal.Parse(dgv.Rows[i].Cells[3].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                        dgv.Rows[i].Cells[4].Value = diskon;
+                        dgv.Rows[i].Cells[5].Value = ((price - (price * (decimal)(diskon / 100))) * n).ToString("N2", CultureInfo.GetCultureInfo("de"));
+
+                        total += decimal.Parse(dgv.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                    }
+                }
+
+                this.ParentForm.labelTotal.Text = total.ToString();
 
                 this.Dispose();
             }
