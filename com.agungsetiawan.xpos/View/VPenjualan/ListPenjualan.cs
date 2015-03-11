@@ -25,6 +25,12 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             dataGridViewDaftarPenjualan.DataSource = penjualanService.FindWithPelangganDanPengguna();
             dataGridViewDaftarPenjualan.Columns[0].Visible = false;
+
+            comboBoxCari.Items.Add("Kode Transaksi");
+            comboBoxCari.Items.Add("Pelanggan");
+            comboBoxCari.Items.Add("Tanggal");
+
+            comboBoxCari.SelectedItem = "Kode Transaksi";
         }
 
         public static ListPenjualan GetForm()
@@ -37,9 +43,37 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
         private void dataGridViewDaftarPenjualan_SelectionChanged(object sender, EventArgs e)
         {
-            int id = int.Parse(dataGridViewDaftarPenjualan.SelectedRows[0].Cells[0].Value.ToString());
+            if (dataGridViewDaftarPenjualan.Rows.Count < 1)
+                return;
+
+            int id=0;
+            bool isValid;
+            try
+            {
+                isValid = int.TryParse(dataGridViewDaftarPenjualan.SelectedRows[0].Cells[0].Value.ToString(), out id);
+            }
+            catch(ArgumentOutOfRangeException exception)
+            {
+                isValid = false;
+            }
+            
+
+            if (!isValid || id==0)
+                return;
+
             dataGridViewDaftarPenjualanDetail.DataSource = penjualanDetailService.FindByPenjualanId(id);
             dataGridViewDaftarPenjualanDetail.Columns[0].Visible = false;
+        }
+
+        private void buttonCari_Click(object sender, EventArgs e)
+        {
+            var value = comboBoxCari.SelectedItem.ToString();
+            if(value.Equals("Kode Transaksi"))
+            {
+                var result=penjualanService.FindByKodeTransaksi(textBoxCari.Text);
+
+                dataGridViewDaftarPenjualan.DataSource = result;
+            }
         }
     }
 }
