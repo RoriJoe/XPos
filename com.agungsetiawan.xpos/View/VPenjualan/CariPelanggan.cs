@@ -72,7 +72,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                     }
                 }
 
-                this.ParentForm.labelTotal.Text = total.ToString();
+                this.ParentForm.labelTotal.Text = total.ToString("N2", CultureInfo.GetCultureInfo("de"));
 
                 this.Dispose();
             }
