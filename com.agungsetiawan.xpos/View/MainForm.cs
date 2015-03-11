@@ -78,5 +78,13 @@ namespace com.agungsetiawan.xpos.View
             form.Show();
             form.Activate();
         }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TransaksiPenjualan form = TransaksiPenjualan.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
     }
 }
