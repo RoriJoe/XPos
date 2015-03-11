@@ -13,5 +13,13 @@ namespace com.agungsetiawan.xpos.Repository
         {
             return this.db.Penjualans.OrderByDescending(x => x.Id).Select(p => p.KodeTransaksi).ToArray();
         }
+
+        public List<Penjualan> FindWithPelangganDanPengguna()
+        {
+            var result = (from p in this.db.Penjualans.Include("Pelanggan").Include("Pengguna")
+                          select p).ToList();
+            
+            return result;
+        }
     }
 }

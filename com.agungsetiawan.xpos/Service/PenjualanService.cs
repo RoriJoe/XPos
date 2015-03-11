@@ -1,7 +1,9 @@
 ﻿using com.agungsetiawan.xpos.Model;
+using com.agungsetiawan.xpos.ModelView;
 using com.agungsetiawan.xpos.Repository;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,6 +44,20 @@ namespace com.agungsetiawan.xpos.Service
             }
 
             penjualanRepository.Post(penjualan);
+        }
+
+        public List<PenjualanView> FindWithPelangganDanPengguna()
+        {
+            var result= penjualanRepository.FindWithPelangganDanPengguna();
+            var penjualans = (from p in result select new PenjualanView {
+                                Id=p.Id,
+                                KodeTransaksi=p.KodeTransaksi,
+                                Tanggal=p.Tanggal.ToString("dd MMMM yyyy HH:mm", CultureInfo.GetCultureInfo("id-ID")),
+                                TotalHargaJual=p.TotalHargaJual,
+                                Pengguna=p.Pengguna.Nama,
+                                Pelanggan=p.Pelanggan.NamaPelanggan
+                              }).ToList();
+            return penjualans;
         }
     }
 }

@@ -86,5 +86,13 @@ namespace com.agungsetiawan.xpos.View
             form.Show();
             form.Activate();
         }
+
+        private void navBarItem7_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            ListPenjualan form = ListPenjualan.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
     }
 }

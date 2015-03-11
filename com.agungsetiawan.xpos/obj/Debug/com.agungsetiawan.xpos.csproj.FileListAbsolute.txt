@@ -67,3 +67,4 @@ D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPenjua
 D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VMember.ListMember.resources
 D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.TambahMemberUbahPelanggan.resources
 D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.UbahNamaMemberJadiVarchar.resources
+D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPenjualan.ListPenjualan.resources

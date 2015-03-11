@@ -327,6 +327,7 @@
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Penjualan";
+            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPenjualan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem7),
@@ -345,6 +346,7 @@
             // 
             this.navBarItem7.Caption = "Daftar Penjualan";
             this.navBarItem7.Name = "navBarItem7";
+            this.navBarItem7.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem7_LinkClicked);
             // 
             // Pembelian
             // 
