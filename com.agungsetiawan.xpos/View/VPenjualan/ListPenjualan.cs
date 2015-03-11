@@ -85,10 +85,8 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             }
             else if(value.Equals("Tanggal"))
             {
-                //textBoxCari.Visible = false;
-                //dateTimePickerCari.Visible = true;
-
-                //dateTimePickerCari.Location = new Point(textBoxCari.Location.X,textBoxCari.Location.Y);
+                var date = dateTimePickerCari.Value;
+                dataGridViewDaftarPenjualan.DataSource = penjualanService.FindByTanggal(date);
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using com.agungsetiawan.xpos.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,14 @@ namespace com.agungsetiawan.xpos.Repository
         public List<Penjualan> FindByPelanggan(string namaPelanggan)
         {
             var result = (from p in db.Penjualans where p.Pelanggan.NamaPelanggan.ToLower().Contains(namaPelanggan.ToLower()) select p).ToList();
+            return result;
+        }
+
+        public List<Penjualan> FindByTanggal(DateTime tanggal)
+        {
+            var result = (from p in db.Penjualans where p.Tanggal.Year == tanggal.Year && 
+                               p.Tanggal.Month==tanggal.Month && 
+                               p.Tanggal.Day==tanggal.Day select p).ToList();
             return result;
         }
     }
