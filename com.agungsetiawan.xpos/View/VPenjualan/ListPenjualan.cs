@@ -101,6 +101,14 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
                 dateTimePickerCari.Location = new Point(textBoxCari.Location.X, textBoxCari.Location.Y);
             }
+
+            if ((value.Equals("Kode Transaksi") || value.Equals("Pelanggan")) && dateTimePickerCari.Visible)
+            {
+                textBoxCari.Visible = true;
+                dateTimePickerCari.Visible = false;
+
+                textBoxCari.Location = new Point(dateTimePickerCari.Location.X, dateTimePickerCari.Location.Y);
+            }
         }
     }
 }
