@@ -68,28 +68,6 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             dataGridViewDaftarPenjualanDetail.Columns[0].Visible = false;
         }
 
-        private void buttonCari_Click(object sender, EventArgs e)
-        {
-            var value = comboBoxCari.SelectedItem.ToString();
-            if(value.Equals("Kode Transaksi"))
-            {
-                var result=penjualanService.FindByKodeTransaksi(textBoxCari.Text);
-
-                dataGridViewDaftarPenjualan.DataSource = result;
-            } 
-            else if (value.Equals("Pelanggan"))
-            {
-                var result = penjualanService.FindByPelanggan(textBoxCari.Text);
-
-                dataGridViewDaftarPenjualan.DataSource = result;
-            }
-            else if(value.Equals("Tanggal"))
-            {
-                var date = dateTimePickerCari.Value;
-                dataGridViewDaftarPenjualan.DataSource = penjualanService.FindByTanggal(date);
-            }
-        }
-
         private void comboBoxCari_SelectedValueChanged(object sender, EventArgs e)
         {
             var value = comboBoxCari.SelectedItem.ToString();
@@ -109,6 +87,37 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
                 textBoxCari.Location = new Point(dateTimePickerCari.Location.X, dateTimePickerCari.Location.Y);
             }
+        }
+
+        private void buttonCari_Click(object sender, EventArgs e)
+        {
+            var value = comboBoxCari.SelectedItem.ToString();
+            if (value.Equals("Kode Transaksi"))
+            {
+                var result = penjualanService.FindByKodeTransaksi(textBoxCari.Text);
+
+                dataGridViewDaftarPenjualan.DataSource = result;
+
+                textBoxCari.Text = string.Empty;
+            }
+            else if (value.Equals("Pelanggan"))
+            {
+                var result = penjualanService.FindByPelanggan(textBoxCari.Text);
+
+                dataGridViewDaftarPenjualan.DataSource = result;
+
+                textBoxCari.Text = string.Empty;
+            }
+            else if (value.Equals("Tanggal"))
+            {
+                var date = dateTimePickerCari.Value;
+                dataGridViewDaftarPenjualan.DataSource = penjualanService.FindByTanggal(date);
+            }
+        }
+
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            dataGridViewDaftarPenjualan.DataSource = penjualanService.FindWithPelangganDanPengguna();
         }
     }
 }

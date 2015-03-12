@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListPenjualan));
             this.dataGridViewDaftarPenjualan = new System.Windows.Forms.DataGridView();
             this.dataGridViewDaftarPenjualanDetail = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBoxCari = new System.Windows.Forms.ComboBox();
             this.textBoxCari = new System.Windows.Forms.TextBox();
-            this.buttonCari = new System.Windows.Forms.Button();
             this.dateTimePickerCari = new System.Windows.Forms.DateTimePicker();
+            this.buttonCari = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonRefresh = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftarPenjualan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftarPenjualanDetail)).BeginInit();
             this.SuspendLayout();
@@ -47,10 +49,10 @@
             this.dataGridViewDaftarPenjualan.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewDaftarPenjualan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewDaftarPenjualan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDaftarPenjualan.Location = new System.Drawing.Point(-3, 80);
+            this.dataGridViewDaftarPenjualan.Location = new System.Drawing.Point(-3, 90);
             this.dataGridViewDaftarPenjualan.Name = "dataGridViewDaftarPenjualan";
             this.dataGridViewDaftarPenjualan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDaftarPenjualan.Size = new System.Drawing.Size(989, 240);
+            this.dataGridViewDaftarPenjualan.Size = new System.Drawing.Size(989, 230);
             this.dataGridViewDaftarPenjualan.TabIndex = 0;
             this.dataGridViewDaftarPenjualan.SelectionChanged += new System.EventHandler(this.dataGridViewDaftarPenjualan_SelectionChanged);
             // 
@@ -82,7 +84,7 @@
             // comboBoxCari
             // 
             this.comboBoxCari.FormattingEnabled = true;
-            this.comboBoxCari.Location = new System.Drawing.Point(13, 24);
+            this.comboBoxCari.Location = new System.Drawing.Point(47, 24);
             this.comboBoxCari.Name = "comboBoxCari";
             this.comboBoxCari.Size = new System.Drawing.Size(159, 21);
             this.comboBoxCari.TabIndex = 4;
@@ -90,28 +92,40 @@
             // 
             // textBoxCari
             // 
-            this.textBoxCari.Location = new System.Drawing.Point(202, 24);
+            this.textBoxCari.Location = new System.Drawing.Point(236, 24);
             this.textBoxCari.Name = "textBoxCari";
-            this.textBoxCari.Size = new System.Drawing.Size(166, 20);
+            this.textBoxCari.Size = new System.Drawing.Size(223, 20);
             this.textBoxCari.TabIndex = 5;
-            // 
-            // buttonCari
-            // 
-            this.buttonCari.Location = new System.Drawing.Point(384, 20);
-            this.buttonCari.Name = "buttonCari";
-            this.buttonCari.Size = new System.Drawing.Size(75, 23);
-            this.buttonCari.TabIndex = 6;
-            this.buttonCari.Text = "Cari";
-            this.buttonCari.UseVisualStyleBackColor = true;
-            this.buttonCari.Click += new System.EventHandler(this.buttonCari_Click);
             // 
             // dateTimePickerCari
             // 
-            this.dateTimePickerCari.Location = new System.Drawing.Point(202, 51);
+            this.dateTimePickerCari.Location = new System.Drawing.Point(484, 25);
             this.dateTimePickerCari.Name = "dateTimePickerCari";
-            this.dateTimePickerCari.Size = new System.Drawing.Size(166, 20);
+            this.dateTimePickerCari.Size = new System.Drawing.Size(223, 20);
             this.dateTimePickerCari.TabIndex = 7;
             this.dateTimePickerCari.Visible = false;
+            // 
+            // buttonCari
+            // 
+            this.buttonCari.Image = ((System.Drawing.Image)(resources.GetObject("buttonCari.Image")));
+            this.buttonCari.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.buttonCari.Location = new System.Drawing.Point(371, 52);
+            this.buttonCari.Name = "buttonCari";
+            this.buttonCari.Size = new System.Drawing.Size(88, 32);
+            this.buttonCari.TabIndex = 9;
+            this.buttonCari.Text = "Cari";
+            this.buttonCari.Click += new System.EventHandler(this.buttonCari_Click);
+            // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.Image = ((System.Drawing.Image)(resources.GetObject("buttonRefresh.Image")));
+            this.buttonRefresh.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.buttonRefresh.Location = new System.Drawing.Point(281, 52);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(84, 32);
+            this.buttonRefresh.TabIndex = 10;
+            this.buttonRefresh.Text = "Refresh";
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // ListPenjualan
             // 
@@ -119,8 +133,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(983, 555);
-            this.Controls.Add(this.dateTimePickerCari);
+            this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonCari);
+            this.Controls.Add(this.dateTimePickerCari);
             this.Controls.Add(this.textBoxCari);
             this.Controls.Add(this.comboBoxCari);
             this.Controls.Add(this.panel1);
@@ -142,7 +157,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBoxCari;
         private System.Windows.Forms.TextBox textBoxCari;
-        private System.Windows.Forms.Button buttonCari;
         private System.Windows.Forms.DateTimePicker dateTimePickerCari;
+        private DevExpress.XtraEditors.SimpleButton buttonCari;
+        private DevExpress.XtraEditors.SimpleButton buttonRefresh;
     }
 }
