@@ -1,4 +1,5 @@
 ﻿using com.agungsetiawan.xpos.Repository;
+using com.agungsetiawan.xpos.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,12 +15,12 @@ namespace com.agungsetiawan.xpos.View.VMember
     public partial class ListMember : Form
     {
         static ListMember form;
-        MemberRepository memberRepository;
+        MemberService memberService;
         private ListMember()
         {
             InitializeComponent();
-            memberRepository = new MemberRepository();
-            var members = memberRepository.Get();
+            memberService = new MemberService();
+            var members = memberService.Get();
             dataGridViewMember.DataSource = members;
         }
 
@@ -31,6 +32,13 @@ namespace com.agungsetiawan.xpos.View.VMember
             }
 
             return form;
+        }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            TambahMember form = new TambahMember();
+            form.ParentForm = this;
+            form.ShowDialog();
         }
     }
 }
