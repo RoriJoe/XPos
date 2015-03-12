@@ -37,8 +37,10 @@
             this.dateTimePickerCari = new System.Windows.Forms.DateTimePicker();
             this.buttonCari = new DevExpress.XtraEditors.SimpleButton();
             this.buttonRefresh = new DevExpress.XtraEditors.SimpleButton();
+            this.panelCari = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftarPenjualan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftarPenjualanDetail)).BeginInit();
+            this.panelCari.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewDaftarPenjualan
@@ -49,10 +51,10 @@
             this.dataGridViewDaftarPenjualan.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewDaftarPenjualan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewDaftarPenjualan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDaftarPenjualan.Location = new System.Drawing.Point(-3, 90);
+            this.dataGridViewDaftarPenjualan.Location = new System.Drawing.Point(-3, 108);
             this.dataGridViewDaftarPenjualan.Name = "dataGridViewDaftarPenjualan";
             this.dataGridViewDaftarPenjualan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDaftarPenjualan.Size = new System.Drawing.Size(989, 230);
+            this.dataGridViewDaftarPenjualan.Size = new System.Drawing.Size(989, 243);
             this.dataGridViewDaftarPenjualan.TabIndex = 0;
             this.dataGridViewDaftarPenjualan.SelectionChanged += new System.EventHandler(this.dataGridViewDaftarPenjualan_SelectionChanged);
             // 
@@ -65,10 +67,10 @@
             this.dataGridViewDaftarPenjualanDetail.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewDaftarPenjualanDetail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewDaftarPenjualanDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDaftarPenjualanDetail.Location = new System.Drawing.Point(-3, 370);
+            this.dataGridViewDaftarPenjualanDetail.Location = new System.Drawing.Point(-3, 401);
             this.dataGridViewDaftarPenjualanDetail.Name = "dataGridViewDaftarPenjualanDetail";
             this.dataGridViewDaftarPenjualanDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDaftarPenjualanDetail.Size = new System.Drawing.Size(989, 137);
+            this.dataGridViewDaftarPenjualanDetail.Size = new System.Drawing.Size(989, 106);
             this.dataGridViewDaftarPenjualanDetail.TabIndex = 1;
             // 
             // panel1
@@ -76,7 +78,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.panel1.Location = new System.Drawing.Point(-3, 326);
+            this.panel1.Location = new System.Drawing.Point(-3, 357);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(989, 38);
             this.panel1.TabIndex = 3;
@@ -92,16 +94,18 @@
             // 
             // textBoxCari
             // 
-            this.textBoxCari.Location = new System.Drawing.Point(236, 24);
+            this.textBoxCari.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCari.Location = new System.Drawing.Point(3, 6);
             this.textBoxCari.Name = "textBoxCari";
-            this.textBoxCari.Size = new System.Drawing.Size(223, 20);
+            this.textBoxCari.Size = new System.Drawing.Size(217, 13);
             this.textBoxCari.TabIndex = 5;
             // 
             // dateTimePickerCari
             // 
-            this.dateTimePickerCari.Location = new System.Drawing.Point(484, 25);
+            this.dateTimePickerCari.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.dateTimePickerCari.Location = new System.Drawing.Point(476, 25);
             this.dateTimePickerCari.Name = "dateTimePickerCari";
-            this.dateTimePickerCari.Size = new System.Drawing.Size(223, 20);
+            this.dateTimePickerCari.Size = new System.Drawing.Size(217, 20);
             this.dateTimePickerCari.TabIndex = 7;
             this.dateTimePickerCari.Visible = false;
             // 
@@ -109,7 +113,7 @@
             // 
             this.buttonCari.Image = ((System.Drawing.Image)(resources.GetObject("buttonCari.Image")));
             this.buttonCari.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.buttonCari.Location = new System.Drawing.Point(371, 52);
+            this.buttonCari.Location = new System.Drawing.Point(372, 59);
             this.buttonCari.Name = "buttonCari";
             this.buttonCari.Size = new System.Drawing.Size(88, 32);
             this.buttonCari.TabIndex = 9;
@@ -120,12 +124,21 @@
             // 
             this.buttonRefresh.Image = ((System.Drawing.Image)(resources.GetObject("buttonRefresh.Image")));
             this.buttonRefresh.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.buttonRefresh.Location = new System.Drawing.Point(281, 52);
+            this.buttonRefresh.Location = new System.Drawing.Point(282, 59);
             this.buttonRefresh.Name = "buttonRefresh";
             this.buttonRefresh.Size = new System.Drawing.Size(84, 32);
             this.buttonRefresh.TabIndex = 10;
             this.buttonRefresh.Text = "Refresh";
             this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
+            // 
+            // panelCari
+            // 
+            this.panelCari.BackColor = System.Drawing.SystemColors.Window;
+            this.panelCari.Controls.Add(this.textBoxCari);
+            this.panelCari.Location = new System.Drawing.Point(237, 24);
+            this.panelCari.Name = "panelCari";
+            this.panelCari.Size = new System.Drawing.Size(223, 23);
+            this.panelCari.TabIndex = 11;
             // 
             // ListPenjualan
             // 
@@ -133,20 +146,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(983, 555);
+            this.Controls.Add(this.panelCari);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonCari);
             this.Controls.Add(this.dateTimePickerCari);
-            this.Controls.Add(this.textBoxCari);
             this.Controls.Add(this.comboBoxCari);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridViewDaftarPenjualanDetail);
             this.Controls.Add(this.dataGridViewDaftarPenjualan);
             this.Name = "ListPenjualan";
             this.Text = "ListPenjualan";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.ListPenjualan_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftarPenjualan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftarPenjualanDetail)).EndInit();
+            this.panelCari.ResumeLayout(false);
+            this.panelCari.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -160,5 +175,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerCari;
         private DevExpress.XtraEditors.SimpleButton buttonCari;
         private DevExpress.XtraEditors.SimpleButton buttonRefresh;
+        private System.Windows.Forms.Panel panelCari;
     }
 }

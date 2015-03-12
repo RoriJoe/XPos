@@ -77,7 +77,8 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 textBoxCari.Visible = false;
                 dateTimePickerCari.Visible = true;
 
-                dateTimePickerCari.Location = new Point(textBoxCari.Location.X, textBoxCari.Location.Y);
+                panelCari.Controls.Add(dateTimePickerCari);
+                dateTimePickerCari.Location = new Point(textBoxCari.Location.X, textBoxCari.Location.Y-3);
             }
 
             if ((value.Equals("Kode Transaksi") || value.Equals("Pelanggan")) && dateTimePickerCari.Visible)
@@ -118,6 +119,15 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             dataGridViewDaftarPenjualan.DataSource = penjualanService.FindWithPelangganDanPengguna();
+        }
+
+        private void ListPenjualan_Paint(object sender, PaintEventArgs e)
+        {
+            System.Drawing.Rectangle rectCari = new Rectangle(panelCari.Location.X, panelCari.Location.Y,
+                                                          panelCari.ClientSize.Width, panelCari.ClientSize.Height);
+
+            rectCari.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectCari, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
         }
     }
 }
