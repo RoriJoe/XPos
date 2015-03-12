@@ -126,8 +126,14 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             System.Drawing.Rectangle rectCari = new Rectangle(panelCari.Location.X, panelCari.Location.Y,
                                                           panelCari.ClientSize.Width, panelCari.ClientSize.Height);
 
+            System.Drawing.Rectangle rectComboCari = new Rectangle(panelComboCari.Location.X, panelComboCari.Location.Y,
+                                                          panelComboCari.ClientSize.Width, panelComboCari.ClientSize.Height);
+
             rectCari.Inflate(1, 1); // border thickness
             System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectCari, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+
+            rectComboCari.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectComboCari, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
         }
     }
 }

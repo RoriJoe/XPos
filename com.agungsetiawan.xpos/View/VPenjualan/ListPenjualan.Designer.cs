@@ -38,9 +38,11 @@
             this.buttonCari = new DevExpress.XtraEditors.SimpleButton();
             this.buttonRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.panelCari = new System.Windows.Forms.Panel();
+            this.panelComboCari = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftarPenjualan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftarPenjualanDetail)).BeginInit();
             this.panelCari.SuspendLayout();
+            this.panelComboCari.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewDaftarPenjualan
@@ -85,10 +87,11 @@
             // 
             // comboBoxCari
             // 
+            this.comboBoxCari.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxCari.FormattingEnabled = true;
-            this.comboBoxCari.Location = new System.Drawing.Point(47, 24);
+            this.comboBoxCari.Location = new System.Drawing.Point(0, 1);
             this.comboBoxCari.Name = "comboBoxCari";
-            this.comboBoxCari.Size = new System.Drawing.Size(159, 21);
+            this.comboBoxCari.Size = new System.Drawing.Size(169, 21);
             this.comboBoxCari.TabIndex = 4;
             this.comboBoxCari.SelectedValueChanged += new System.EventHandler(this.comboBoxCari_SelectedValueChanged);
             // 
@@ -140,17 +143,25 @@
             this.panelCari.Size = new System.Drawing.Size(223, 23);
             this.panelCari.TabIndex = 11;
             // 
+            // panelComboCari
+            // 
+            this.panelComboCari.Controls.Add(this.comboBoxCari);
+            this.panelComboCari.Location = new System.Drawing.Point(40, 24);
+            this.panelComboCari.Name = "panelComboCari";
+            this.panelComboCari.Size = new System.Drawing.Size(169, 23);
+            this.panelComboCari.TabIndex = 12;
+            // 
             // ListPenjualan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(983, 555);
+            this.Controls.Add(this.panelComboCari);
             this.Controls.Add(this.panelCari);
             this.Controls.Add(this.buttonRefresh);
             this.Controls.Add(this.buttonCari);
             this.Controls.Add(this.dateTimePickerCari);
-            this.Controls.Add(this.comboBoxCari);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridViewDaftarPenjualanDetail);
             this.Controls.Add(this.dataGridViewDaftarPenjualan);
@@ -161,6 +172,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftarPenjualanDetail)).EndInit();
             this.panelCari.ResumeLayout(false);
             this.panelCari.PerformLayout();
+            this.panelComboCari.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -176,5 +188,6 @@
         private DevExpress.XtraEditors.SimpleButton buttonCari;
         private DevExpress.XtraEditors.SimpleButton buttonRefresh;
         private System.Windows.Forms.Panel panelCari;
+        private System.Windows.Forms.Panel panelComboCari;
     }
 }
