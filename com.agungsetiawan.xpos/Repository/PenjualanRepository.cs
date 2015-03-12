@@ -17,7 +17,7 @@ namespace com.agungsetiawan.xpos.Repository
 
         public List<Penjualan> FindWithPelangganDanPengguna()
         {
-            var result = (from p in this.db.Penjualans.Include("Pelanggan").Include("Pengguna")
+            var result = (from p in this.db.Penjualans.Include("Pelanggan").Include("Pengguna") orderby p.Tanggal descending
                           select p).ToList();
             
             return result;
@@ -31,7 +31,8 @@ namespace com.agungsetiawan.xpos.Repository
 
         public List<Penjualan> FindByPelanggan(string namaPelanggan)
         {
-            var result = (from p in db.Penjualans where p.Pelanggan.NamaPelanggan.ToLower().Contains(namaPelanggan.ToLower()) select p).ToList();
+            var result = (from p in db.Penjualans where p.Pelanggan.NamaPelanggan.ToLower().Contains(namaPelanggan.ToLower())
+                          orderby p.Tanggal descending select p).ToList();
             return result;
         }
 
@@ -39,7 +40,8 @@ namespace com.agungsetiawan.xpos.Repository
         {
             var result = (from p in db.Penjualans where p.Tanggal.Year == tanggal.Year && 
                                p.Tanggal.Month==tanggal.Month && 
-                               p.Tanggal.Day==tanggal.Day select p).ToList();
+                               p.Tanggal.Day==tanggal.Day 
+                          orderby p.Tanggal descending select p).ToList();
             return result;
         }
     }
