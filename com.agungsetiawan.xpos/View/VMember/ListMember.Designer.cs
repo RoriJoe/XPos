@@ -74,6 +74,7 @@
             this.btnHapus.Size = new System.Drawing.Size(89, 35);
             this.btnHapus.TabIndex = 11;
             this.btnHapus.Text = "Hapus";
+            this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
             // btnUbah
             // 
