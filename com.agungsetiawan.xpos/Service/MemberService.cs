@@ -26,5 +26,15 @@ namespace com.agungsetiawan.xpos.Service
         {
             memberRepository.Post(member);
         }
+
+        public Member Get(int id)
+        {
+            return memberRepository.Get(id);
+        }
+
+        public void Put(Member member)
+        {
+            memberRepository.Put(member);
+        }
     }
 }

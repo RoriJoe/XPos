@@ -69,3 +69,4 @@ D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.T
 D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.UbahNamaMemberJadiVarchar.resources
 D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPenjualan.ListPenjualan.resources
 D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VMember.TambahMember.resources
+D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VMember.UbahMember.resources

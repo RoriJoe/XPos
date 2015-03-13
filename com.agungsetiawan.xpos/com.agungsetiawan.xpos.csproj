@@ -214,6 +214,12 @@
     <Compile Include="View\VMember\TambahMember.Designer.cs">
       <DependentUpon>TambahMember.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VMember\UbahMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VMember\UbahMember.Designer.cs">
+      <DependentUpon>UbahMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VPenjualan\ApplyHarga.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VMember\TambahMember.resx">
       <DependentUpon>TambahMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VMember\UbahMember.resx">
+      <DependentUpon>UbahMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VPenjualan\ApplyHarga.resx">
       <DependentUpon>ApplyHarga.cs</DependentUpon>
