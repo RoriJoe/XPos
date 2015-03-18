@@ -327,7 +327,6 @@
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Penjualan";
-            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPenjualan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem7),
@@ -404,6 +403,7 @@
             // navBarGroup5
             // 
             this.navBarGroup5.Caption = "Pihak Kedua";
+            this.navBarGroup5.Expanded = true;
             this.navBarGroup5.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem15),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem16)});
@@ -414,6 +414,7 @@
             // 
             this.navBarItem15.Caption = "Pelanggan";
             this.navBarItem15.Name = "navBarItem15";
+            this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
             // 
             // navBarItem16
             // 
