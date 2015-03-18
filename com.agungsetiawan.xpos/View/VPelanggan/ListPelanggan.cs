@@ -31,5 +31,12 @@ namespace com.agungsetiawan.xpos.View.VPelanggan
 
             return form;
         }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            TambahPelanggan form = new TambahPelanggan();
+            form.ParentForm = this;
+            form.ShowDialog();
+        }
     }
 }

@@ -58,5 +58,10 @@ namespace com.agungsetiawan.xpos.Service
         {
             return pelangganRepository.FindDiskonNol();
         }
+
+        public void Post(Pelanggan pelanggan)
+        {
+            pelangganRepository.Post(pelanggan);
+        }
     }
 }

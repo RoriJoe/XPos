@@ -226,6 +226,12 @@
     <Compile Include="View\VPelanggan\ListPelanggan.Designer.cs">
       <DependentUpon>ListPelanggan.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VPelanggan\TambahPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VPelanggan\TambahPelanggan.Designer.cs">
+      <DependentUpon>TambahPelanggan.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VPenjualan\ApplyHarga.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -339,6 +345,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VPelanggan\ListPelanggan.resx">
       <DependentUpon>ListPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VPelanggan\TambahPelanggan.resx">
+      <DependentUpon>TambahPelanggan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VPenjualan\ApplyHarga.resx">
       <DependentUpon>ApplyHarga.cs</DependentUpon>
