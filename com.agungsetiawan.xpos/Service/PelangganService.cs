@@ -63,5 +63,10 @@ namespace com.agungsetiawan.xpos.Service
         {
             pelangganRepository.Post(pelanggan);
         }
+
+        public void Put(Pelanggan pelanggan)
+        {
+            pelangganRepository.Put(pelanggan);
+        }
     }
 }

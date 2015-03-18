@@ -38,5 +38,13 @@ namespace com.agungsetiawan.xpos.View.VPelanggan
             form.ParentForm = this;
             form.ShowDialog();
         }
+
+        private void btnUbah_Click(object sender, EventArgs e)
+        {
+            UbahPelanggan form = new UbahPelanggan();
+            form.ParentForm = this;
+            form.PopulateData();
+            form.ShowDialog();
+        }
     }
 }
