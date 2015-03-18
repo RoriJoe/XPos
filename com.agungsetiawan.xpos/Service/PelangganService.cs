@@ -26,7 +26,8 @@ namespace com.agungsetiawan.xpos.Service
                                     Id=p.Id,
                                     NamaPelanggan=p.NamaPelanggan,
                                     Alamat=p.Alamat,
-                                    NoTelepon=p.NoTelepon
+                                    NoTelepon=p.NoTelepon,
+                                    JenisMember=p.Member.NamaMember
                                  }).ToList();
 
             return pelangganView;
@@ -37,9 +38,20 @@ namespace com.agungsetiawan.xpos.Service
             return pelangganRepository.Get(id);
         }
 
-        public List<Pelanggan> FinyByNama(string nama)
+        public List<PelangganView> FinyByNama(string nama)
         {
-            return pelangganRepository.FindyByNama(nama);
+            var pelanggans= pelangganRepository.FindyByNama(nama);
+            var pelangganView = (from p in pelanggans 
+                                 select new PelangganView 
+                                 { 
+                                    Id=p.Id,
+                                    NamaPelanggan=p.NamaPelanggan,
+                                    Alamat=p.Alamat,
+                                    NoTelepon=p.NoTelepon,
+                                    JenisMember=p.Member.NamaMember
+                                 }).ToList();
+
+            return pelangganView;
         }
 
         public Pelanggan FindDiskonNol()

@@ -46,7 +46,7 @@
             this.dataGridViewCariPelanggan.Location = new System.Drawing.Point(2, 58);
             this.dataGridViewCariPelanggan.Name = "dataGridViewCariPelanggan";
             this.dataGridViewCariPelanggan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewCariPelanggan.Size = new System.Drawing.Size(355, 234);
+            this.dataGridViewCariPelanggan.Size = new System.Drawing.Size(459, 234);
             this.dataGridViewCariPelanggan.TabIndex = 0;
             this.dataGridViewCariPelanggan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridViewCariPelanggan_KeyDown);
             // 
@@ -84,7 +84,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(356, 290);
+            this.ClientSize = new System.Drawing.Size(460, 290);
             this.Controls.Add(this.panelPelanggan);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewCariPelanggan);

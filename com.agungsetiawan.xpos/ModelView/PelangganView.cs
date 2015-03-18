@@ -18,5 +18,8 @@ namespace com.agungsetiawan.xpos.ModelView
 
         [DisplayName("Nomor Telepon")]
         public string NoTelepon { get; set; }
+
+        [DisplayName("Jenis Member")]
+        public string JenisMember { get; set; }
     }
 }
