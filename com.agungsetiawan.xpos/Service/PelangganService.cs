@@ -19,7 +19,7 @@ namespace com.agungsetiawan.xpos.Service
         }
         public List<PelangganView> Get()
         {
-            var pelanggans= pelangganRepository.Get();
+            var pelanggans = pelangganRepository.GetWithMember();
             var pelangganView = (from p in pelanggans 
                                  select new PelangganView 
                                  { 
