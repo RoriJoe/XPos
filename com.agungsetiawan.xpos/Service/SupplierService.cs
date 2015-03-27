@@ -1,4 +1,5 @@
-﻿using com.agungsetiawan.xpos.Repository;
+﻿using com.agungsetiawan.xpos.Model;
+using com.agungsetiawan.xpos.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,11 @@ namespace com.agungsetiawan.xpos.Service
         public SupplierService()
         {
             supplierRepository = new SupplierRepository();
+        }
+
+        public List<Supplier> Get()
+        {
+            return supplierRepository.Get();
         }
     }
 }

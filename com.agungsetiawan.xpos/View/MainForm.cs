@@ -15,6 +15,7 @@ using com.agungsetiawan.xpos.Repository;
 using com.agungsetiawan.xpos.Common;
 using com.agungsetiawan.xpos.View.VMember;
 using com.agungsetiawan.xpos.View.VPelanggan;
+using com.agungsetiawan.xpos.View.VSupplier;
 
 namespace com.agungsetiawan.xpos.View
 {
@@ -103,6 +104,14 @@ namespace com.agungsetiawan.xpos.View
             form.Show();
             form.Activate();
       
+        }
+
+        private void navBarItem16_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            ListSupplier form = ListSupplier.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
         }
     }
 }

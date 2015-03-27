@@ -420,6 +420,7 @@
             // 
             this.navBarItem16.Caption = "Supplier";
             this.navBarItem16.Name = "navBarItem16";
+            this.navBarItem16.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem16_LinkClicked);
             // 
             // xtraTabbedMdiManager
             // 

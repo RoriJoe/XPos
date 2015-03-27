@@ -285,6 +285,12 @@
     <Compile Include="View\VPenjualan\TransaksiPenjualan.Designer.cs">
       <DependentUpon>TransaksiPenjualan.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VSupplier\ListSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VSupplier\ListSupplier.Designer.cs">
+      <DependentUpon>ListSupplier.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Migrations\201501250135115_InitBarangDanKategori.resx">
       <DependentUpon>201501250135115_InitBarangDanKategori.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,6 +398,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VPenjualan\TransaksiPenjualan.resx">
       <DependentUpon>TransaksiPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VSupplier\ListSupplier.resx">
+      <DependentUpon>ListSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
