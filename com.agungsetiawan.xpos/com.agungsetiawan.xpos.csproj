@@ -110,6 +110,10 @@
     <Compile Include="Migrations\201503271018143_createSupplierUpdateBarang.Designer.cs">
       <DependentUpon>201503271018143_createSupplierUpdateBarang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201503271034030_ubahVarcharDiSupplier.cs" />
+    <Compile Include="Migrations\201503271034030_ubahVarcharDiSupplier.Designer.cs">
+      <DependentUpon>201503271034030_ubahVarcharDiSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelView\BarangView.cs" />
     <Compile Include="ModelView\PelangganView.cs" />
@@ -304,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503271018143_createSupplierUpdateBarang.resx">
       <DependentUpon>201503271018143_createSupplierUpdateBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201503271034030_ubahVarcharDiSupplier.resx">
+      <DependentUpon>201503271034030_ubahVarcharDiSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\BarangReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
