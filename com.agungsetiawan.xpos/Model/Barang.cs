@@ -29,5 +29,8 @@ namespace com.agungsetiawan.xpos.Model
         public Kategori Kategori { get; set; }
 
         public int KategoriId { get; set; }
+
+        public Supplier Supplier { get; set; }
+        public int SupplierId { get; set; }
     }
 }
