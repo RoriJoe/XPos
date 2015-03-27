@@ -32,5 +32,12 @@ namespace com.agungsetiawan.xpos.View.VSupplier
 
             return form;
         }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            TambahSupplier form = new TambahSupplier();
+            form.ParentForm = this;
+            form.ShowDialog();
+        }
     }
 }

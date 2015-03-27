@@ -76,3 +76,4 @@ D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPelang
 D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.createSupplierUpdateBarang.resources
 D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.ubahVarcharDiSupplier.resources
 D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VSupplier.ListSupplier.resources
+D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VSupplier.TambahSupplier.resources
