@@ -19,6 +19,7 @@ namespace com.agungsetiawan.xpos.View.VSupplier
         public TambahSupplier()
         {
             InitializeComponent();
+            this.ActiveControl = this.textBoxNamaSupplier;
             supplierService = new SupplierService();
         }
 
@@ -61,6 +62,28 @@ namespace com.agungsetiawan.xpos.View.VSupplier
 
             this.ParentForm.dataGridViewSupplier.DataSource = supplierService.Get();
             this.Dispose();
+        }
+
+        private void TambahSupplier_Paint(object sender, PaintEventArgs e)
+        {
+            System.Drawing.Rectangle rectNamaSupplier = new Rectangle(panelNamaSupplier.Location.X, panelNamaSupplier.Location.Y,
+                                                          panelNamaSupplier.ClientSize.Width, panelNamaSupplier.ClientSize.Height);
+
+            System.Drawing.Rectangle rectAlamat = new Rectangle(panelAlamat.Location.X, panelAlamat.Location.Y,
+                                                          panelAlamat.ClientSize.Width, panelAlamat.ClientSize.Height);
+
+            System.Drawing.Rectangle rectNomorTelepon = new Rectangle(panelNomorTelepon.Location.X, panelNomorTelepon.Location.Y,
+                                                          panelNomorTelepon.ClientSize.Width, panelNomorTelepon.ClientSize.Height);
+
+
+            rectNamaSupplier.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectNamaSupplier, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+
+            rectAlamat.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectAlamat, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+
+            rectNomorTelepon.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectNomorTelepon, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
         }
     }
 }

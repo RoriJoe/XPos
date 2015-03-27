@@ -187,6 +187,7 @@
             this.Name = "TambahSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "TambahSupplier";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.TambahSupplier_Paint);
             this.panelNomorTelepon.ResumeLayout(false);
             this.panelNomorTelepon.PerformLayout();
             this.panelAlamat.ResumeLayout(false);
