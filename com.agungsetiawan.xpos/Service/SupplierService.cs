@@ -35,5 +35,10 @@ namespace com.agungsetiawan.xpos.Service
         {
             return supplierRepository.Get(id);
         }
+
+        public void Delete(Supplier supplier)
+        {
+            supplierRepository.Delete(supplier);
+        }
     }
 }

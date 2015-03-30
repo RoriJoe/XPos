@@ -47,5 +47,18 @@ namespace com.agungsetiawan.xpos.View.VSupplier
             form.PopulateData();
             form.ShowDialog();
         }
+
+        private void btnHapus_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(dataGridViewSupplier.SelectedRows[0].Cells[0].Value.ToString());
+            var supplier = supplierService.Get(id);
+
+            DialogResult result = MessageBox.Show("Hapus data " + supplier.NamaSupplier + " ?", "Hapus", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
+            {
+                supplierService.Delete(supplier);
+                dataGridViewSupplier.DataSource = supplierService.Get();
+            }
+        }
     }
 }
