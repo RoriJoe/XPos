@@ -25,5 +25,15 @@ namespace com.agungsetiawan.xpos.Service
         {
             supplierRepository.Post(supplier);
         }
+
+        public void Put(Supplier supplier)
+        {
+            supplierRepository.Put(supplier);
+        }
+
+        public Supplier Get(int id)
+        {
+            return supplierRepository.Get(id);
+        }
     }
 }

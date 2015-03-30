@@ -39,5 +39,13 @@ namespace com.agungsetiawan.xpos.View.VSupplier
             form.ParentForm = this;
             form.ShowDialog();
         }
+
+        private void btnUbah_Click(object sender, EventArgs e)
+        {
+            UbahSupplier form = new UbahSupplier();
+            form.ParentForm = this;
+            form.PopulateData();
+            form.ShowDialog();
+        }
     }
 }
