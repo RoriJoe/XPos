@@ -51,6 +51,8 @@
             this.panelHargaBeli = new System.Windows.Forms.Panel();
             this.panelStok = new System.Windows.Forms.Panel();
             this.panelKeterangan = new System.Windows.Forms.Panel();
+            this.comboBoxSupplier = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.panelNamaBarang.SuspendLayout();
             this.panelHargaJual.SuspendLayout();
             this.panelHargaBeli.SuspendLayout();
@@ -64,7 +66,7 @@
             this.btnBatal.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBatal.Image = ((System.Drawing.Image)(resources.GetObject("btnBatal.Image")));
             this.btnBatal.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnBatal.Location = new System.Drawing.Point(110, 372);
+            this.btnBatal.Location = new System.Drawing.Point(110, 320);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(89, 35);
             this.btnBatal.TabIndex = 29;
@@ -75,7 +77,7 @@
             this.btnSimpan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSimpan.Image = ((System.Drawing.Image)(resources.GetObject("btnSimpan.Image")));
             this.btnSimpan.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnSimpan.Location = new System.Drawing.Point(15, 372);
+            this.btnSimpan.Location = new System.Drawing.Point(15, 320);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(89, 35);
             this.btnSimpan.TabIndex = 28;
@@ -278,11 +280,33 @@
             this.panelKeterangan.Size = new System.Drawing.Size(240, 22);
             this.panelKeterangan.TabIndex = 36;
             // 
+            // comboBoxSupplier
+            // 
+            this.comboBoxSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSupplier.FormattingEnabled = true;
+            this.comboBoxSupplier.Location = new System.Drawing.Point(129, 275);
+            this.comboBoxSupplier.Name = "comboBoxSupplier";
+            this.comboBoxSupplier.Size = new System.Drawing.Size(240, 21);
+            this.comboBoxSupplier.TabIndex = 38;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(11, 274);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 15);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "Supplier";
+            // 
             // UbahBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 417);
+            this.ClientSize = new System.Drawing.Size(398, 365);
+            this.Controls.Add(this.comboBoxSupplier);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.panelKeterangan);
             this.Controls.Add(this.panelStok);
             this.Controls.Add(this.panelHargaBeli);
@@ -344,5 +368,7 @@
         private System.Windows.Forms.Panel panelHargaBeli;
         private System.Windows.Forms.Panel panelStok;
         private System.Windows.Forms.Panel panelKeterangan;
+        private System.Windows.Forms.ComboBox comboBoxSupplier;
+        private System.Windows.Forms.Label label9;
     }
 }

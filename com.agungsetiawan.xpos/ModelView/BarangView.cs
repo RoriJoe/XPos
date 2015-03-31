@@ -25,5 +25,6 @@ namespace com.agungsetiawan.xpos.ModelView
         public string Keterangan { get; set; }
 
         public string Kategori { get; set; }
+        public string Supplier { get; set; }
     }
 }

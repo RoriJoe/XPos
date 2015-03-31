@@ -20,7 +20,7 @@ namespace com.agungsetiawan.xpos.Service
 
         public List<BarangView> Get()
         {
-            var barangs = barangRepository.GetWithKategori();
+            var barangs = barangRepository.GetWithKategoriAndSupplier();
             var barangViews = (from b in barangs
                               select new BarangView
                                   {
@@ -30,7 +30,8 @@ namespace com.agungsetiawan.xpos.Service
                                       HargaBeli = b.HargaBeli,
                                       Stok = b.Stok,
                                       Keterangan = b.Keterangan,
-                                      Kategori = b.Kategori.NamaKategori
+                                      Kategori = b.Kategori.NamaKategori,
+                                      Supplier = b.Supplier.NamaSupplier
                                   }).ToList();
 
             return barangViews;
