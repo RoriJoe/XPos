@@ -21,6 +21,7 @@ namespace com.agungsetiawan.xpos.View.VRole
 
             roleService = new RoleService();
             dataGridViewRole.DataSource = roleService.Get();
+            dataGridViewRole.Columns[0].Visible = false;
         }
 
         public static ListRole GetForm()
@@ -44,6 +45,19 @@ namespace com.agungsetiawan.xpos.View.VRole
             form.ParentForm = this;
             form.PopulateData();
             form.ShowDialog();
+        }
+
+        private void btnHapus_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(dataGridViewRole.SelectedRows[0].Cells[0].Value.ToString());
+            var role = roleService.Get(id);
+
+            DialogResult result = MessageBox.Show("Hapus data " + role.NamaRole + " ?", "Hapus", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
+            {
+                roleService.Delete(role);
+                dataGridViewRole.DataSource = roleService.Get();
+            }
         }
     }
 }

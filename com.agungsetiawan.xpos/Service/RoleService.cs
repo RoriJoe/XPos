@@ -36,5 +36,10 @@ namespace com.agungsetiawan.xpos.Service
         {
             roleRepository.Put(role);
         }
+
+        public void Delete(Role role)
+        {
+            roleRepository.Delete(role);
+        }
     }
 }
