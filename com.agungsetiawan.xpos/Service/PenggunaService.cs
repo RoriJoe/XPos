@@ -31,5 +31,10 @@ namespace com.agungsetiawan.xpos.Service
 
             return result;
         }
+
+        public void Post(Model.Pengguna pengguna)
+        {
+            penggunaRepository.Post(pengguna);
+        }
     }
 }

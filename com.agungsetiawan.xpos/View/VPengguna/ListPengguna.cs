@@ -30,5 +30,12 @@ namespace com.agungsetiawan.xpos.View.VPengguna
                 form = new ListPengguna();
             return form;
         }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            TambahPengguna form = new TambahPengguna();
+            form.ParentForm = this;
+            form.ShowDialog();
+        }
     }
 }
