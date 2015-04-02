@@ -118,6 +118,10 @@
     <Compile Include="Migrations\201504020317049_createRole.Designer.cs">
       <DependentUpon>201504020317049_createRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504020359514_tambahRelasiRoleKePengguna.cs" />
+    <Compile Include="Migrations\201504020359514_tambahRelasiRoleKePengguna.Designer.cs">
+      <DependentUpon>201504020359514_tambahRelasiRoleKePengguna.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelView\BarangView.cs" />
     <Compile Include="ModelView\PelangganView.cs" />
@@ -352,6 +356,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504020317049_createRole.resx">
       <DependentUpon>201504020317049_createRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504020359514_tambahRelasiRoleKePengguna.resx">
+      <DependentUpon>201504020359514_tambahRelasiRoleKePengguna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\BarangReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

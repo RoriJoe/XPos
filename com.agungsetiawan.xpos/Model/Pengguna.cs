@@ -22,5 +22,7 @@ namespace com.agungsetiawan.xpos.Model
         [Column(TypeName = "varchar")]
         [StringLength(50)]
         public string Password { get; set; }
+        public Role Role { get; set; }
+        public int RoleId { get; set; }
     }
 }
