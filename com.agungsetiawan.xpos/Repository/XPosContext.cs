@@ -26,5 +26,6 @@ namespace com.agungsetiawan.xpos.Repository
         public DbSet<Pelanggan> Pelanggans { get; set; }
         public DbSet<Member> Members { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
+        public DbSet<Role> Roles { get; set; }
     }
 }

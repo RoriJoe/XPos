@@ -114,6 +114,10 @@
     <Compile Include="Migrations\201503271034030_ubahVarcharDiSupplier.Designer.cs">
       <DependentUpon>201503271034030_ubahVarcharDiSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504020317049_createRole.cs" />
+    <Compile Include="Migrations\201504020317049_createRole.Designer.cs">
+      <DependentUpon>201504020317049_createRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelView\BarangView.cs" />
     <Compile Include="ModelView\PelangganView.cs" />
@@ -124,6 +128,8 @@
     <Compile Include="Model\Pengguna.cs" />
     <Compile Include="Model\Penjualan.cs" />
     <Compile Include="Model\PenjualanDetail.cs" />
+    <Compile Include="Model\Permission.cs" />
+    <Compile Include="Model\Role.cs" />
     <Compile Include="Model\Supplier.cs" />
     <Compile Include="Report\BarangReport.cs">
       <AutoGen>True</AutoGen>
@@ -146,6 +152,7 @@
     <Compile Include="Repository\PenggunaRepository.cs" />
     <Compile Include="Repository\PenjualanDetailRepository.cs" />
     <Compile Include="Repository\PenjualanRepository.cs" />
+    <Compile Include="Repository\RoleRepository.cs" />
     <Compile Include="Repository\SupplierRepository.cs" />
     <Compile Include="Repository\XPosContext.cs" />
     <Compile Include="Service\BarangService.cs" />
@@ -154,6 +161,7 @@
     <Compile Include="Service\PelangganService.cs" />
     <Compile Include="Service\PenjualanDetailService.cs" />
     <Compile Include="Service\PenjualanService.cs" />
+    <Compile Include="Service\RoleService.cs" />
     <Compile Include="Service\SupplierService.cs" />
     <Compile Include="View\VBarang\BarangReportViewer.cs">
       <SubType>Form</SubType>
@@ -285,6 +293,18 @@
     <Compile Include="View\VPenjualan\TransaksiPenjualan.Designer.cs">
       <DependentUpon>TransaksiPenjualan.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VRole\ListRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VRole\ListRole.Designer.cs">
+      <DependentUpon>ListRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VRole\TambahRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VRole\TambahRole.Designer.cs">
+      <DependentUpon>TambahRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VSupplier\ListSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,6 +349,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503271034030_ubahVarcharDiSupplier.resx">
       <DependentUpon>201503271034030_ubahVarcharDiSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504020317049_createRole.resx">
+      <DependentUpon>201504020317049_createRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\BarangReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -410,6 +433,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VPenjualan\TransaksiPenjualan.resx">
       <DependentUpon>TransaksiPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VRole\ListRole.resx">
+      <DependentUpon>ListRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VRole\TambahRole.resx">
+      <DependentUpon>TambahRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VSupplier\ListSupplier.resx">
       <DependentUpon>ListSupplier.cs</DependentUpon>
