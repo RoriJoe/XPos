@@ -93,7 +93,7 @@ namespace com.agungsetiawan.xpos.View.VRole
 
             if(checkBoxPembelian.Checked)
             {
-                sbPermissions.Append("pembelian,");
+                sbPermissions.Append("kasir pembelian,");
             }
 
             if(checkBoxPengguna.Checked)
@@ -103,7 +103,7 @@ namespace com.agungsetiawan.xpos.View.VRole
 
             if(checkBoxPenjualan.Checked)
             {
-                sbPermissions.Append("penjualan,");
+                sbPermissions.Append("kasir penjualan,");
             }
 
             if(checkBoxRole.Checked)

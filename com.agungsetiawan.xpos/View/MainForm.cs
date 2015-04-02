@@ -29,8 +29,73 @@ namespace com.agungsetiawan.xpos.View
 
             //dummy
             PenggunaRepository penggunaRepository=new PenggunaRepository();
-            var pengguna = penggunaRepository.Get(1);
+            var pengguna = penggunaRepository.FindWithRole(1);
             LoginContext.Pengguna = pengguna;
+
+            var permissions = pengguna.Role.Permissions;
+            
+            if(!permissions.Contains("barang"))
+            {
+                barBtnDataBarang.Enabled = false;
+                navBarDataBarang.Enabled = false;
+            }
+
+            if (!permissions.Contains("kategori"))
+            {
+                barBtnDataKategori.Enabled = false;
+                navBarDataKategori.Enabled = false;
+            }
+
+            if (!permissions.Contains("role"))
+            {
+                barBtnRole.Enabled = false;
+                navBarRole.Enabled = false;
+            }
+
+            if (!permissions.Contains("pengguna"))
+            {
+                barBtnPengguna.Enabled = false;
+                navBarPengguna.Enabled = false;
+            }
+
+            if (!permissions.Contains("member"))
+            {
+                navBarMember.Enabled = false;
+            }
+
+            if (!permissions.Contains("pelanggan"))
+            {
+                barBtnPelanggan.Enabled = false;
+                navBarPelanggan.Enabled = false;
+            }
+
+            if (!permissions.Contains("supplier"))
+            {
+                barBtnSupplier.Enabled = false;
+                navBarSupplier.Enabled = false;
+            }
+
+            if (!permissions.Contains("kasir penjualan"))
+            {
+                barBtnPenjualan.Enabled = false;
+                navBarPenjualan.Enabled = false;
+            }
+
+            if (!permissions.Contains("daftar penjualan"))
+            {
+                navBarDaftarPenjualan.Enabled = false;
+            }
+
+            if (!permissions.Contains("kasir pembelian"))
+            {
+                barBtnPembelian.Enabled = false;
+                navBarPembelian.Enabled = false;
+            }
+
+            if (!permissions.Contains("daftar pembelian"))
+            {
+                navBarDaftarPembelian.Enabled = false;
+            }
             //dummy
         }
 

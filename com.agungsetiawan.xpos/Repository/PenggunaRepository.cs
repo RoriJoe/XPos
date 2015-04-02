@@ -9,6 +9,10 @@ namespace com.agungsetiawan.xpos.Repository
 {
     public class PenggunaRepository : GenericRepository<Pengguna>
     {
-
+        public Pengguna FindWithRole(int id)
+        {
+            var result = this.db.Penggunas.Include("Role").Where(p => p.Id.Equals(id)).SingleOrDefault();
+            return result;
+        }
     }
 }

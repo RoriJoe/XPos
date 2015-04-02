@@ -33,15 +33,15 @@
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barBtnDataBarang = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnDataKategori = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnPengguna = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnRole = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnPenjualan = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnPembelian = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnPelanggan = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnSupplier = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -53,14 +53,14 @@
             this.navBarDataBarang = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarDataKategori = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem3 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem4 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem5 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarRole = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarPengguna = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarMember = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarPenjualan = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem7 = new DevExpress.XtraNavBar.NavBarItem();
-            this.Pembelian = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem8 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarDaftarPenjualan = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarPembelian = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarDaftarPembelian = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
@@ -69,8 +69,8 @@
             this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup5 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem15 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem16 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarPelanggan = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarSupplier = new DevExpress.XtraNavBar.NavBarItem();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
@@ -85,15 +85,15 @@
             this.ribbonControl1.ExpandCollapseItem,
             this.barBtnDataBarang,
             this.barBtnDataKategori,
-            this.barButtonItem3,
-            this.barButtonItem4,
-            this.barButtonItem5,
-            this.barButtonItem6,
+            this.barBtnPengguna,
+            this.barBtnRole,
+            this.barBtnPenjualan,
+            this.barBtnPembelian,
             this.barButtonItem7,
             this.barButtonItem8,
             this.barButtonItem9,
-            this.barButtonItem10,
-            this.barButtonItem11});
+            this.barBtnPelanggan,
+            this.barBtnSupplier});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.MaxItemId = 12;
             this.ribbonControl1.Name = "ribbonControl1";
@@ -119,39 +119,39 @@
             this.barBtnDataKategori.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barBtnDataKategori.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnDataKategori_ItemClick);
             // 
-            // barButtonItem3
+            // barBtnPengguna
             // 
-            this.barButtonItem3.Caption = "Pengguna";
-            this.barButtonItem3.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.Glyph")));
-            this.barButtonItem3.Id = 3;
-            this.barButtonItem3.Name = "barButtonItem3";
-            this.barButtonItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnPengguna.Caption = "Pengguna";
+            this.barBtnPengguna.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnPengguna.Glyph")));
+            this.barBtnPengguna.Id = 3;
+            this.barBtnPengguna.Name = "barBtnPengguna";
+            this.barBtnPengguna.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // barButtonItem4
+            // barBtnRole
             // 
-            this.barButtonItem4.Caption = "Role";
-            this.barButtonItem4.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.Glyph")));
-            this.barButtonItem4.Id = 4;
-            this.barButtonItem4.Name = "barButtonItem4";
-            this.barButtonItem4.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
+            this.barBtnRole.Caption = "Role";
+            this.barBtnRole.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnRole.Glyph")));
+            this.barBtnRole.Id = 4;
+            this.barBtnRole.Name = "barBtnRole";
+            this.barBtnRole.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnRole.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
-            // barButtonItem5
+            // barBtnPenjualan
             // 
-            this.barButtonItem5.Caption = "Penjualan";
-            this.barButtonItem5.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.Glyph")));
-            this.barButtonItem5.Id = 5;
-            this.barButtonItem5.Name = "barButtonItem5";
-            this.barButtonItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barButtonItem5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
+            this.barBtnPenjualan.Caption = "Penjualan";
+            this.barBtnPenjualan.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnPenjualan.Glyph")));
+            this.barBtnPenjualan.Id = 5;
+            this.barBtnPenjualan.Name = "barBtnPenjualan";
+            this.barBtnPenjualan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnPenjualan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem5_ItemClick);
             // 
-            // barButtonItem6
+            // barBtnPembelian
             // 
-            this.barButtonItem6.Caption = "Pembelian";
-            this.barButtonItem6.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.Glyph")));
-            this.barButtonItem6.Id = 6;
-            this.barButtonItem6.Name = "barButtonItem6";
-            this.barButtonItem6.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnPembelian.Caption = "Pembelian";
+            this.barBtnPembelian.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnPembelian.Glyph")));
+            this.barBtnPembelian.Id = 6;
+            this.barBtnPembelian.Name = "barBtnPembelian";
+            this.barBtnPembelian.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // barButtonItem7
             // 
@@ -177,21 +177,21 @@
             this.barButtonItem9.Name = "barButtonItem9";
             this.barButtonItem9.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // barButtonItem10
+            // barBtnPelanggan
             // 
-            this.barButtonItem10.Caption = "Pelanggan";
-            this.barButtonItem10.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.Glyph")));
-            this.barButtonItem10.Id = 10;
-            this.barButtonItem10.Name = "barButtonItem10";
-            this.barButtonItem10.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnPelanggan.Caption = "Pelanggan";
+            this.barBtnPelanggan.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnPelanggan.Glyph")));
+            this.barBtnPelanggan.Id = 10;
+            this.barBtnPelanggan.Name = "barBtnPelanggan";
+            this.barBtnPelanggan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // barButtonItem11
+            // barBtnSupplier
             // 
-            this.barButtonItem11.Caption = "Supplier";
-            this.barButtonItem11.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.Glyph")));
-            this.barButtonItem11.Id = 11;
-            this.barButtonItem11.Name = "barButtonItem11";
-            this.barButtonItem11.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnSupplier.Caption = "Supplier";
+            this.barBtnSupplier.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnSupplier.Glyph")));
+            this.barBtnSupplier.Id = 11;
+            this.barBtnSupplier.Name = "barBtnSupplier";
+            this.barBtnSupplier.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
             // ribbonPage1
             // 
@@ -213,15 +213,15 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem4);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barBtnPengguna);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barBtnRole);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Administrator";
             // 
             // ribbonPageGroup3
             // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem5);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barBtnPenjualan);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barBtnPembelian);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Transaksi";
             // 
@@ -235,8 +235,8 @@
             // 
             // ribbonPageGroup5
             // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem10);
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem11);
+            this.ribbonPageGroup5.ItemLinks.Add(this.barBtnPelanggan);
+            this.ribbonPageGroup5.ItemLinks.Add(this.barBtnSupplier);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Pihak Kedua";
             // 
@@ -254,21 +254,21 @@
             this.navBarControl1.Items.AddRange(new DevExpress.XtraNavBar.NavBarItem[] {
             this.navBarDataBarang,
             this.navBarDataKategori,
-            this.navBarItem3,
-            this.navBarItem4,
-            this.navBarItem5,
+            this.navBarRole,
+            this.navBarPengguna,
+            this.navBarMember,
             this.navBarPenjualan,
-            this.navBarItem7,
-            this.Pembelian,
-            this.navBarItem8,
+            this.navBarDaftarPenjualan,
+            this.navBarPembelian,
+            this.navBarDaftarPembelian,
             this.navBarItem9,
             this.navBarItem10,
             this.navBarItem11,
             this.navBarItem12,
             this.navBarItem13,
             this.navBarItem14,
-            this.navBarItem15,
-            this.navBarItem16});
+            this.navBarPelanggan,
+            this.navBarSupplier});
             this.navBarControl1.Location = new System.Drawing.Point(0, 142);
             this.navBarControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.navBarControl1.Name = "navBarControl1";
@@ -303,36 +303,37 @@
             // 
             this.navBarGroup2.Caption = "Administrator";
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem3),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem4),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem5)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarRole),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPengguna),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarMember)});
             this.navBarGroup2.Name = "navBarGroup2";
             this.navBarGroup2.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup2.SmallImage")));
             // 
-            // navBarItem3
+            // navBarRole
             // 
-            this.navBarItem3.Caption = "Role";
-            this.navBarItem3.Name = "navBarItem3";
+            this.navBarRole.Caption = "Role";
+            this.navBarRole.Name = "navBarRole";
             // 
-            // navBarItem4
+            // navBarPengguna
             // 
-            this.navBarItem4.Caption = "Pengguna";
-            this.navBarItem4.Name = "navBarItem4";
+            this.navBarPengguna.Caption = "Pengguna";
+            this.navBarPengguna.Name = "navBarPengguna";
             // 
-            // navBarItem5
+            // navBarMember
             // 
-            this.navBarItem5.Caption = "Member";
-            this.navBarItem5.Name = "navBarItem5";
-            this.navBarItem5.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem5_LinkClicked);
+            this.navBarMember.Caption = "Member";
+            this.navBarMember.Name = "navBarMember";
+            this.navBarMember.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem5_LinkClicked);
             // 
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Penjualan";
+            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPenjualan),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem7),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.Pembelian),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem8)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDaftarPenjualan),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPembelian),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDaftarPembelian)});
             this.navBarGroup3.Name = "navBarGroup3";
             this.navBarGroup3.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup3.SmallImage")));
             // 
@@ -342,21 +343,21 @@
             this.navBarPenjualan.Name = "navBarPenjualan";
             this.navBarPenjualan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarPenjualan_LinkClicked);
             // 
-            // navBarItem7
+            // navBarDaftarPenjualan
             // 
-            this.navBarItem7.Caption = "Daftar Penjualan";
-            this.navBarItem7.Name = "navBarItem7";
-            this.navBarItem7.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem7_LinkClicked);
+            this.navBarDaftarPenjualan.Caption = "Daftar Penjualan";
+            this.navBarDaftarPenjualan.Name = "navBarDaftarPenjualan";
+            this.navBarDaftarPenjualan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem7_LinkClicked);
             // 
-            // Pembelian
+            // navBarPembelian
             // 
-            this.Pembelian.Caption = "Pembelian";
-            this.Pembelian.Name = "Pembelian";
+            this.navBarPembelian.Caption = "Pembelian";
+            this.navBarPembelian.Name = "navBarPembelian";
             // 
-            // navBarItem8
+            // navBarDaftarPembelian
             // 
-            this.navBarItem8.Caption = "Daftar Pembelian";
-            this.navBarItem8.Name = "navBarItem8";
+            this.navBarDaftarPembelian.Caption = "Daftar Pembelian";
+            this.navBarDaftarPembelian.Name = "navBarDaftarPembelian";
             // 
             // navBarGroup4
             // 
@@ -405,22 +406,22 @@
             // 
             this.navBarGroup5.Caption = "Pihak Kedua";
             this.navBarGroup5.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem15),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem16)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPelanggan),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSupplier)});
             this.navBarGroup5.Name = "navBarGroup5";
             this.navBarGroup5.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup5.SmallImage")));
             // 
-            // navBarItem15
+            // navBarPelanggan
             // 
-            this.navBarItem15.Caption = "Pelanggan";
-            this.navBarItem15.Name = "navBarItem15";
-            this.navBarItem15.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
+            this.navBarPelanggan.Caption = "Pelanggan";
+            this.navBarPelanggan.Name = "navBarPelanggan";
+            this.navBarPelanggan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
             // 
-            // navBarItem16
+            // navBarSupplier
             // 
-            this.navBarItem16.Caption = "Supplier";
-            this.navBarItem16.Name = "navBarItem16";
-            this.navBarItem16.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem16_LinkClicked);
+            this.navBarSupplier.Caption = "Supplier";
+            this.navBarSupplier.Name = "navBarSupplier";
+            this.navBarSupplier.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem16_LinkClicked);
             // 
             // xtraTabbedMdiManager
             // 
@@ -453,15 +454,15 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem barBtnDataBarang;
         private DevExpress.XtraBars.BarButtonItem barBtnDataKategori;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barBtnPengguna;
+        private DevExpress.XtraBars.BarButtonItem barBtnRole;
+        private DevExpress.XtraBars.BarButtonItem barBtnPenjualan;
+        private DevExpress.XtraBars.BarButtonItem barBtnPembelian;
         private DevExpress.XtraBars.BarButtonItem barButtonItem7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private DevExpress.XtraBars.BarButtonItem barBtnPelanggan;
+        private DevExpress.XtraBars.BarButtonItem barBtnSupplier;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
@@ -471,14 +472,14 @@
         private DevExpress.XtraNavBar.NavBarItem navBarDataBarang;
         private DevExpress.XtraNavBar.NavBarItem navBarDataKategori;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup2;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem3;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem4;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem5;
+        private DevExpress.XtraNavBar.NavBarItem navBarRole;
+        private DevExpress.XtraNavBar.NavBarItem navBarPengguna;
+        private DevExpress.XtraNavBar.NavBarItem navBarMember;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup3;
         private DevExpress.XtraNavBar.NavBarItem navBarPenjualan;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem7;
-        private DevExpress.XtraNavBar.NavBarItem Pembelian;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem8;
+        private DevExpress.XtraNavBar.NavBarItem navBarDaftarPenjualan;
+        private DevExpress.XtraNavBar.NavBarItem navBarPembelian;
+        private DevExpress.XtraNavBar.NavBarItem navBarDaftarPembelian;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup4;
         private DevExpress.XtraNavBar.NavBarItem navBarItem9;
         private DevExpress.XtraNavBar.NavBarItem navBarItem10;
@@ -487,8 +488,8 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem13;
         private DevExpress.XtraNavBar.NavBarItem navBarItem14;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup5;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem15;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem16;
+        private DevExpress.XtraNavBar.NavBarItem navBarPelanggan;
+        private DevExpress.XtraNavBar.NavBarItem navBarSupplier;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager;
     }
 }

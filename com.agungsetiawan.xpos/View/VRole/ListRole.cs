@@ -37,5 +37,10 @@ namespace com.agungsetiawan.xpos.View.VRole
             form.ParentForm = this;
             form.ShowDialog();
         }
+
+        private void btnUbah_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
