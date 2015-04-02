@@ -17,6 +17,7 @@ using com.agungsetiawan.xpos.View.VMember;
 using com.agungsetiawan.xpos.View.VPelanggan;
 using com.agungsetiawan.xpos.View.VSupplier;
 using com.agungsetiawan.xpos.View.VRole;
+using com.agungsetiawan.xpos.View.VPengguna;
 
 namespace com.agungsetiawan.xpos.View
 {
@@ -183,6 +184,14 @@ namespace com.agungsetiawan.xpos.View
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ListRole form = ListRole.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
+
+        private void barBtnPengguna_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ListPengguna form = ListPengguna.GetForm();
             form.MdiParent = this;
             form.Show();
             form.Activate();

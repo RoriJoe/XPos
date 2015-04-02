@@ -14,5 +14,11 @@ namespace com.agungsetiawan.xpos.Repository
             var result = this.db.Penggunas.Include("Role").Where(p => p.Id.Equals(id)).SingleOrDefault();
             return result;
         }
+
+        public List<Pengguna> FindWithRole()
+        {
+            var result = this.db.Penggunas.Include("Role").ToList();
+            return result;
+        }
     }
 }

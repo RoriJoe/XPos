@@ -126,6 +126,7 @@
             this.barBtnPengguna.Id = 3;
             this.barBtnPengguna.Name = "barBtnPengguna";
             this.barBtnPengguna.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnPengguna.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPengguna_ItemClick);
             // 
             // barBtnRole
             // 
