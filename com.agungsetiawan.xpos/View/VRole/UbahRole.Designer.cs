@@ -51,6 +51,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelHiddenId = new System.Windows.Forms.Label();
             this.panelKeterangan.SuspendLayout();
             this.panelNamaRole.SuspendLayout();
             this.SuspendLayout();
@@ -235,6 +236,7 @@
             this.btnSimpan.Size = new System.Drawing.Size(89, 35);
             this.btnSimpan.TabIndex = 55;
             this.btnSimpan.Text = "Simpan";
+            this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
             // label7
             // 
@@ -278,11 +280,22 @@
             this.label1.TabIndex = 51;
             this.label1.Text = "Ubah Data Role";
             // 
+            // labelHiddenId
+            // 
+            this.labelHiddenId.AutoSize = true;
+            this.labelHiddenId.Location = new System.Drawing.Point(36, 143);
+            this.labelHiddenId.Name = "labelHiddenId";
+            this.labelHiddenId.Size = new System.Drawing.Size(35, 13);
+            this.labelHiddenId.TabIndex = 71;
+            this.labelHiddenId.Text = "label4";
+            this.labelHiddenId.Visible = false;
+            // 
             // UbahRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 322);
+            this.Controls.Add(this.labelHiddenId);
             this.Controls.Add(this.checkBoxDaftarPembelian);
             this.Controls.Add(this.checkBoxPembelian);
             this.Controls.Add(this.checkBoxDaftarPenjualan);
@@ -304,7 +317,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "UbahRole";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "UbahRole";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.UbahRole_Paint);
             this.panelKeterangan.ResumeLayout(false);
             this.panelKeterangan.PerformLayout();
             this.panelNamaRole.ResumeLayout(false);
@@ -338,5 +353,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelHiddenId;
     }
 }

@@ -26,5 +26,15 @@ namespace com.agungsetiawan.xpos.Service
         {
             roleRepository.Post(role);
         }
+
+        public Role Get(int id)
+        {
+            return roleRepository.Get(id);
+        }
+
+        public void Put(Role role)
+        {
+            roleRepository.Put(role);
+        }
     }
 }

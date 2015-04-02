@@ -309,6 +309,12 @@
     <Compile Include="View\VRole\TambahRole.Designer.cs">
       <DependentUpon>TambahRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VRole\UbahRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VRole\UbahRole.Designer.cs">
+      <DependentUpon>UbahRole.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VSupplier\ListSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -446,6 +452,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VRole\TambahRole.resx">
       <DependentUpon>TambahRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VRole\UbahRole.resx">
+      <DependentUpon>UbahRole.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VSupplier\ListSupplier.resx">
       <DependentUpon>ListSupplier.cs</DependentUpon>

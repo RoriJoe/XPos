@@ -40,7 +40,10 @@ namespace com.agungsetiawan.xpos.View.VRole
 
         private void btnUbah_Click(object sender, EventArgs e)
         {
-
+            UbahRole form = new UbahRole();
+            form.ParentForm = this;
+            form.PopulateData();
+            form.ShowDialog();
         }
     }
 }
