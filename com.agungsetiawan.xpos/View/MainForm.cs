@@ -268,9 +268,19 @@ namespace com.agungsetiawan.xpos.View
             navBarDaftarPembelian.Enabled = false;
 
             barBtnLogout.Enabled = false;
-  
 
             //laporan belum
+
+            int pagesCount = xtraTabbedMdiManager.Pages.Count;
+            for(int i=0;i<pagesCount;i++)
+            {
+                xtraTabbedMdiManager.Pages[0].MdiChild.Close();
+            }
+  
+            LoginAndWelcome loginWelcome = new LoginAndWelcome();
+            loginWelcome.MdiParent = this;
+            loginWelcome.ParentForm = this;
+            loginWelcome.Show();
         }
     }
 }
