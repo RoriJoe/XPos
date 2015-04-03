@@ -47,5 +47,10 @@ namespace com.agungsetiawan.xpos.Service
         {
             penggunaRepository.Put(pengguna);
         }
+
+        public void Delete(Pengguna pengguna)
+        {
+            penggunaRepository.Delete(pengguna);
+        }
     }
 }

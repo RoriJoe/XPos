@@ -45,5 +45,18 @@ namespace com.agungsetiawan.xpos.View.VPengguna
             form.PopulateData();
             form.ShowDialog();
         }
+
+        private void btnHapus_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(dataGridViewPengguna.SelectedRows[0].Cells[0].Value.ToString());
+            var pengguna = penggunaService.Get(id);
+
+            DialogResult result = MessageBox.Show("Hapus data " + pengguna.Nama + " ?", "Hapus", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
+            {
+                penggunaService.Delete(pengguna);
+                dataGridViewPengguna.DataSource = penggunaService.FindWithRole();
+            }
+        }
     }
 }
