@@ -111,6 +111,8 @@ namespace com.agungsetiawan.xpos.View
             }
 
             //laporan belum
+
+            barBtnLogout.Enabled = true;
         }
 
         private void navBarDataBarang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -229,6 +231,46 @@ namespace com.agungsetiawan.xpos.View
         private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
+        }
+
+        private void barBtnLogout_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LoginContext.Pengguna = null;
+
+            barBtnDataBarang.Enabled = false;
+            navBarDataBarang.Enabled = false;
+
+            barBtnDataKategori.Enabled = false;
+            navBarDataKategori.Enabled = false;
+
+            barBtnRole.Enabled = false;
+            navBarRole.Enabled = false;
+
+            barBtnPengguna.Enabled = false;
+            navBarPengguna.Enabled = false;
+
+            navBarMember.Enabled = false;
+
+            barBtnPelanggan.Enabled = false;
+            navBarPelanggan.Enabled = false;
+
+            barBtnSupplier.Enabled = false;
+            navBarSupplier.Enabled = false;
+
+            barBtnPenjualan.Enabled = false;
+            navBarPenjualan.Enabled = false;
+
+            navBarDaftarPenjualan.Enabled = false;
+
+            barBtnPembelian.Enabled = false;
+            navBarPembelian.Enabled = false;
+
+            navBarDaftarPembelian.Enabled = false;
+
+            barBtnLogout.Enabled = false;
+  
+
+            //laporan belum
         }
     }
 }

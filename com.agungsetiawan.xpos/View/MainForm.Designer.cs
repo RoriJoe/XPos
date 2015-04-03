@@ -72,6 +72,8 @@
             this.navBarPelanggan = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarSupplier = new DevExpress.XtraNavBar.NavBarItem();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barBtnLogout = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
@@ -93,13 +95,14 @@
             this.barButtonItem8,
             this.barButtonItem9,
             this.barBtnPelanggan,
-            this.barBtnSupplier});
+            this.barBtnSupplier,
+            this.barBtnLogout});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 12;
+            this.ribbonControl1.MaxItemId = 13;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1});
-            this.ribbonControl1.Size = new System.Drawing.Size(709, 142);
+            this.ribbonControl1.Size = new System.Drawing.Size(796, 142);
             // 
             // barBtnDataBarang
             // 
@@ -213,7 +216,8 @@
             this.ribbonPageGroup2,
             this.ribbonPageGroup3,
             this.ribbonPageGroup4,
-            this.ribbonPageGroup5});
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup6});
             this.ribbonPage1.Name = "ribbonPage1";
             this.ribbonPage1.Text = "Menu";
             // 
@@ -426,7 +430,6 @@
             // navBarGroup5
             // 
             this.navBarGroup5.Caption = "Pihak Kedua";
-            this.navBarGroup5.Expanded = true;
             this.navBarGroup5.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPelanggan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSupplier)});
@@ -452,11 +455,29 @@
             this.xtraTabbedMdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager.MdiParent = this;
             // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.AllowTextClipping = false;
+            this.ribbonPageGroup6.ItemLinks.Add(this.barBtnLogout);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "Sistem";
+            // 
+            // barBtnLogout
+            // 
+            this.barBtnLogout.AllowRightClickInMenu = false;
+            this.barBtnLogout.Caption = "Logout";
+            this.barBtnLogout.Enabled = false;
+            this.barBtnLogout.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnLogout.Glyph")));
+            this.barBtnLogout.Id = 12;
+            this.barBtnLogout.Name = "barBtnLogout";
+            this.barBtnLogout.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnLogout_ItemClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 405);
+            this.ClientSize = new System.Drawing.Size(796, 405);
             this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.ribbonControl1);
             this.IsMdiContainer = true;
@@ -515,5 +536,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBarPelanggan;
         private DevExpress.XtraNavBar.NavBarItem navBarSupplier;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager;
+        private DevExpress.XtraBars.BarButtonItem barBtnLogout;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
     }
 }
