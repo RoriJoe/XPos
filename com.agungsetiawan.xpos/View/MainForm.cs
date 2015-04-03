@@ -35,9 +35,9 @@ namespace com.agungsetiawan.xpos.View
             loginWelcome.Show();
 
             //dummy
-            PenggunaRepository penggunaRepository = new PenggunaRepository();
-            var pengguna = penggunaRepository.FindWithRole(4);
-            LoginContext.Pengguna = pengguna;
+            //PenggunaRepository penggunaRepository = new PenggunaRepository();
+            //var pengguna = penggunaRepository.FindWithRole(4);
+            //LoginContext.Pengguna = pengguna;
             //dummy
         }
 

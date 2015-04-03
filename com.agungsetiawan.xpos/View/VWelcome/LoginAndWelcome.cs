@@ -1,4 +1,5 @@
 ﻿using com.agungsetiawan.xpos.Common;
+using com.agungsetiawan.xpos.Service;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,11 @@ namespace com.agungsetiawan.xpos.View.VWelcome
     public partial class LoginAndWelcome : Form
     {
         public MainForm ParentForm { get; set; }
+        private PenggunaService penggunaService;
         public LoginAndWelcome()
         {
             InitializeComponent();
+            penggunaService = new PenggunaService();
             this.ActiveControl = this.textBoxUsername;
         }
 
@@ -38,6 +41,16 @@ namespace com.agungsetiawan.xpos.View.VWelcome
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+
+            var penggunaLogin = penggunaService.FindByUsernamePassword(textBoxUsername.Text, textBoxPassword.Text);
+            if(penggunaLogin==null)
+            {
+                labelWarning.Visible = true;
+                return;
+            }
+
+            LoginContext.Pengguna = penggunaLogin;
+
             panelWelcome.Visible = true;
             var pengguna = LoginContext.Pengguna;
             labelPengguna.Text = pengguna.Nama;

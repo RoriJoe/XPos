@@ -20,5 +20,11 @@ namespace com.agungsetiawan.xpos.Repository
             var result = this.db.Penggunas.Include("Role").ToList();
             return result;
         }
+
+        public Pengguna FindByUsernamePassword(string username, string password)
+        {
+            var result = this.db.Penggunas.Include("Role").Where(p => p.Username.Equals(username) && p.Password.Equals(password)).SingleOrDefault();
+            return result;
+        }
     }
 }

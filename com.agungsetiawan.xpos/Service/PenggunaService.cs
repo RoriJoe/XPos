@@ -52,5 +52,10 @@ namespace com.agungsetiawan.xpos.Service
         {
             penggunaRepository.Delete(pengguna);
         }
+
+        public Pengguna FindByUsernamePassword(string username, string password)
+        {
+            return penggunaRepository.FindByUsernamePassword(username, password);
+        }
     }
 }
