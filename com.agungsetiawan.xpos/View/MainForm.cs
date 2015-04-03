@@ -18,6 +18,7 @@ using com.agungsetiawan.xpos.View.VPelanggan;
 using com.agungsetiawan.xpos.View.VSupplier;
 using com.agungsetiawan.xpos.View.VRole;
 using com.agungsetiawan.xpos.View.VPengguna;
+using com.agungsetiawan.xpos.View.VWelcome;
 
 namespace com.agungsetiawan.xpos.View
 {
@@ -27,6 +28,10 @@ namespace com.agungsetiawan.xpos.View
         {
             InitializeComponent();
             xtraTabbedMdiManager.MdiParent = this;
+
+            LoginAndWelcome loginWelcome = new LoginAndWelcome();
+            loginWelcome.MdiParent = this;
+            loginWelcome.Show();
 
             //dummy
             PenggunaRepository penggunaRepository=new PenggunaRepository();

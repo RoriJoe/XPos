@@ -357,6 +357,12 @@
     <Compile Include="View\VSupplier\UbahSupplier.Designer.cs">
       <DependentUpon>UbahSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VWelcome\LoginAndWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VWelcome\LoginAndWelcome.Designer.cs">
+      <DependentUpon>LoginAndWelcome.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Migrations\201501250135115_InitBarangDanKategori.resx">
       <DependentUpon>201501250135115_InitBarangDanKategori.cs</DependentUpon>
     </EmbeddedResource>
@@ -500,6 +506,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VSupplier\UbahSupplier.resx">
       <DependentUpon>UbahSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VWelcome\LoginAndWelcome.resx">
+      <DependentUpon>LoginAndWelcome.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
