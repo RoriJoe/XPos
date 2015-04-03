@@ -275,6 +275,12 @@
     <Compile Include="View\VPengguna\TambahPengguna.Designer.cs">
       <DependentUpon>TambahPengguna.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VPengguna\UbahPengguna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VPengguna\UbahPengguna.Designer.cs">
+      <DependentUpon>UbahPengguna.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VPenjualan\ApplyHarga.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -448,6 +454,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VPengguna\TambahPengguna.resx">
       <DependentUpon>TambahPengguna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VPengguna\UbahPengguna.resx">
+      <DependentUpon>UbahPengguna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VPenjualan\ApplyHarga.resx">
       <DependentUpon>ApplyHarga.cs</DependentUpon>

@@ -1,4 +1,5 @@
-﻿using com.agungsetiawan.xpos.ModelView;
+﻿using com.agungsetiawan.xpos.Model;
+using com.agungsetiawan.xpos.ModelView;
 using com.agungsetiawan.xpos.Repository;
 using System;
 using System.Collections.Generic;
@@ -32,9 +33,19 @@ namespace com.agungsetiawan.xpos.Service
             return result;
         }
 
-        public void Post(Model.Pengguna pengguna)
+        public Pengguna Get(int id)
+        {
+            return penggunaRepository.Get(id);
+        }
+
+        public void Post(Pengguna pengguna)
         {
             penggunaRepository.Post(pengguna);
+        }
+
+        public void Put(Pengguna pengguna)
+        {
+            penggunaRepository.Put(pengguna);
         }
     }
 }

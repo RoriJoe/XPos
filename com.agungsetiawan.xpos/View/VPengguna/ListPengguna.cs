@@ -37,5 +37,13 @@ namespace com.agungsetiawan.xpos.View.VPengguna
             form.ParentForm = this;
             form.ShowDialog();
         }
+
+        private void btnUbah_Click(object sender, EventArgs e)
+        {
+            UbahPengguna form = new UbahPengguna();
+            form.ParentForm = this;
+            form.PopulateData();
+            form.ShowDialog();
+        }
     }
 }
