@@ -34,12 +34,20 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             textBoxKaryawan.Text = LoginContext.Pengguna.Nama;
 
+            dataGridViewTransaksiPenjualan.Rows.Add("", "", "", "");
+        }
+
+        public bool PopulateData()
+        {
+            bool IsTrue = true;
             var defaultPelanggan = pelangganService.FindDiskonNol();
+
+            if (defaultPelanggan == null)
+                return false;
 
             textBoxKodePelanggan.Text = defaultPelanggan.Id.ToString();
             textBoxPelanggan.Text = defaultPelanggan.NamaPelanggan;
-
-            dataGridViewTransaksiPenjualan.Rows.Add("", "", "", "");
+            return IsTrue;
         }
 
         public static TransaksiPenjualan GetForm()

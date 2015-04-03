@@ -73,7 +73,7 @@ namespace com.agungsetiawan.xpos.View.VRole
 
             if(checkBoxKategori.Checked)
             {
-                sb.Append("kategori,");
+                sbPermissions.Append("kategori,");
             }
 
             if(checkBoxLaporan.Checked)

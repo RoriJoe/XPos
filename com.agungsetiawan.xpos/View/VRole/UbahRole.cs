@@ -85,7 +85,12 @@ namespace com.agungsetiawan.xpos.View.VRole
 
             if (permissions.Contains("daftar pembelian"))
             {
-                checkBoxPembelian.Checked = true;
+                checkBoxDaftarPembelian.Checked = true;
+            }
+
+            if (permissions.Contains("laporan"))
+            {
+                checkBoxLaporan.Checked = true;
             }
         }
 
@@ -123,7 +128,7 @@ namespace com.agungsetiawan.xpos.View.VRole
 
             if (checkBoxKategori.Checked)
             {
-                sb.Append("kategori,");
+                sbPermissions.Append("kategori,");
             }
 
             if (checkBoxLaporan.Checked)

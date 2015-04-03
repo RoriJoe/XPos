@@ -30,7 +30,7 @@ namespace com.agungsetiawan.xpos.View
 
             //dummy
             PenggunaRepository penggunaRepository=new PenggunaRepository();
-            var pengguna = penggunaRepository.FindWithRole(1);
+            var pengguna = penggunaRepository.FindWithRole(4);
             LoginContext.Pengguna = pengguna;
 
             var permissions = pengguna.Role.Permissions;
@@ -136,6 +136,14 @@ namespace com.agungsetiawan.xpos.View
         {
             TransaksiPenjualan form = TransaksiPenjualan.GetForm();
             form.MdiParent = this;
+
+            var IsSuccess = form.PopulateData();
+            if(!IsSuccess)
+            {
+                MessageBox.Show("Buat terlebih dahulu Pelanggan dengan member berdiskon 0 (nol)", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
+
             form.Show();
             form.Activate();
         }
@@ -152,6 +160,14 @@ namespace com.agungsetiawan.xpos.View
         {
             TransaksiPenjualan form = TransaksiPenjualan.GetForm();
             form.MdiParent = this;
+
+            var IsSuccess = form.PopulateData();
+            if (!IsSuccess)
+            {
+                MessageBox.Show("Buat terlebih dahulu Pelanggan dengan member berdiskon 0 (nol)", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
+
             form.Show();
             form.Activate();
         }

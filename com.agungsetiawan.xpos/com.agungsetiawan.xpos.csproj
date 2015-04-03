@@ -122,6 +122,10 @@
     <Compile Include="Migrations\201504020359514_tambahRelasiRoleKePengguna.Designer.cs">
       <DependentUpon>201504020359514_tambahRelasiRoleKePengguna.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504030236263_ubahPanjangPermissionJadi300.cs" />
+    <Compile Include="Migrations\201504030236263_ubahPanjangPermissionJadi300.Designer.cs">
+      <DependentUpon>201504030236263_ubahPanjangPermissionJadi300.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelView\BarangView.cs" />
     <Compile Include="ModelView\PelangganView.cs" />
@@ -385,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504020359514_tambahRelasiRoleKePengguna.resx">
       <DependentUpon>201504020359514_tambahRelasiRoleKePengguna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504030236263_ubahPanjangPermissionJadi300.resx">
+      <DependentUpon>201504030236263_ubahPanjangPermissionJadi300.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\BarangReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

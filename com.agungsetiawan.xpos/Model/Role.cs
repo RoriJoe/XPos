@@ -18,7 +18,7 @@ namespace com.agungsetiawan.xpos.Model
         [StringLength(50)]
         public String Keterangan { get; set; }
         [Column(TypeName = "varchar")]
-        [StringLength(50)]
+        [StringLength(300)]
         public String Permissions { get; set; }
     }
 }
