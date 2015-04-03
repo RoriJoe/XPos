@@ -104,6 +104,7 @@
             // barBtnDataBarang
             // 
             this.barBtnDataBarang.Caption = "Data Barang";
+            this.barBtnDataBarang.Enabled = false;
             this.barBtnDataBarang.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnDataBarang.Glyph")));
             this.barBtnDataBarang.Id = 1;
             this.barBtnDataBarang.Name = "barBtnDataBarang";
@@ -113,6 +114,7 @@
             // barBtnDataKategori
             // 
             this.barBtnDataKategori.Caption = "Data Kategori";
+            this.barBtnDataKategori.Enabled = false;
             this.barBtnDataKategori.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnDataKategori.Glyph")));
             this.barBtnDataKategori.Id = 2;
             this.barBtnDataKategori.Name = "barBtnDataKategori";
@@ -122,6 +124,7 @@
             // barBtnPengguna
             // 
             this.barBtnPengguna.Caption = "Pengguna";
+            this.barBtnPengguna.Enabled = false;
             this.barBtnPengguna.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnPengguna.Glyph")));
             this.barBtnPengguna.Id = 3;
             this.barBtnPengguna.Name = "barBtnPengguna";
@@ -131,6 +134,7 @@
             // barBtnRole
             // 
             this.barBtnRole.Caption = "Role";
+            this.barBtnRole.Enabled = false;
             this.barBtnRole.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnRole.Glyph")));
             this.barBtnRole.Id = 4;
             this.barBtnRole.Name = "barBtnRole";
@@ -140,6 +144,7 @@
             // barBtnPenjualan
             // 
             this.barBtnPenjualan.Caption = "Penjualan";
+            this.barBtnPenjualan.Enabled = false;
             this.barBtnPenjualan.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnPenjualan.Glyph")));
             this.barBtnPenjualan.Id = 5;
             this.barBtnPenjualan.Name = "barBtnPenjualan";
@@ -149,6 +154,7 @@
             // barBtnPembelian
             // 
             this.barBtnPembelian.Caption = "Pembelian";
+            this.barBtnPembelian.Enabled = false;
             this.barBtnPembelian.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnPembelian.Glyph")));
             this.barBtnPembelian.Id = 6;
             this.barBtnPembelian.Name = "barBtnPembelian";
@@ -157,6 +163,7 @@
             // barButtonItem7
             // 
             this.barButtonItem7.Caption = "Gamis";
+            this.barButtonItem7.Enabled = false;
             this.barButtonItem7.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.Glyph")));
             this.barButtonItem7.Id = 7;
             this.barButtonItem7.Name = "barButtonItem7";
@@ -165,6 +172,7 @@
             // barButtonItem8
             // 
             this.barButtonItem8.Caption = "Jilbab";
+            this.barButtonItem8.Enabled = false;
             this.barButtonItem8.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.Glyph")));
             this.barButtonItem8.Id = 8;
             this.barButtonItem8.Name = "barButtonItem8";
@@ -173,14 +181,17 @@
             // barButtonItem9
             // 
             this.barButtonItem9.Caption = "Total";
+            this.barButtonItem9.Enabled = false;
             this.barButtonItem9.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.Glyph")));
             this.barButtonItem9.Id = 9;
             this.barButtonItem9.Name = "barButtonItem9";
             this.barButtonItem9.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barButtonItem9.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem9_ItemClick);
             // 
             // barBtnPelanggan
             // 
             this.barBtnPelanggan.Caption = "Pelanggan";
+            this.barBtnPelanggan.Enabled = false;
             this.barBtnPelanggan.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnPelanggan.Glyph")));
             this.barBtnPelanggan.Id = 10;
             this.barBtnPelanggan.Name = "barBtnPelanggan";
@@ -189,6 +200,7 @@
             // barBtnSupplier
             // 
             this.barBtnSupplier.Caption = "Supplier";
+            this.barBtnSupplier.Enabled = false;
             this.barBtnSupplier.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnSupplier.Glyph")));
             this.barBtnSupplier.Id = 11;
             this.barBtnSupplier.Name = "barBtnSupplier";
@@ -291,12 +303,14 @@
             // navBarDataBarang
             // 
             this.navBarDataBarang.Caption = "Data Barang";
+            this.navBarDataBarang.Enabled = false;
             this.navBarDataBarang.Name = "navBarDataBarang";
             this.navBarDataBarang.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarDataBarang_LinkClicked);
             // 
             // navBarDataKategori
             // 
             this.navBarDataKategori.Caption = "Data Kategori";
+            this.navBarDataKategori.Enabled = false;
             this.navBarDataKategori.Name = "navBarDataKategori";
             this.navBarDataKategori.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarDataKategori_LinkClicked);
             // 
@@ -313,23 +327,25 @@
             // navBarRole
             // 
             this.navBarRole.Caption = "Role";
+            this.navBarRole.Enabled = false;
             this.navBarRole.Name = "navBarRole";
             // 
             // navBarPengguna
             // 
             this.navBarPengguna.Caption = "Pengguna";
+            this.navBarPengguna.Enabled = false;
             this.navBarPengguna.Name = "navBarPengguna";
             // 
             // navBarMember
             // 
             this.navBarMember.Caption = "Member";
+            this.navBarMember.Enabled = false;
             this.navBarMember.Name = "navBarMember";
             this.navBarMember.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem5_LinkClicked);
             // 
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Penjualan";
-            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPenjualan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDaftarPenjualan),
@@ -341,23 +357,27 @@
             // navBarPenjualan
             // 
             this.navBarPenjualan.Caption = "Penjualan";
+            this.navBarPenjualan.Enabled = false;
             this.navBarPenjualan.Name = "navBarPenjualan";
             this.navBarPenjualan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarPenjualan_LinkClicked);
             // 
             // navBarDaftarPenjualan
             // 
             this.navBarDaftarPenjualan.Caption = "Daftar Penjualan";
+            this.navBarDaftarPenjualan.Enabled = false;
             this.navBarDaftarPenjualan.Name = "navBarDaftarPenjualan";
             this.navBarDaftarPenjualan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem7_LinkClicked);
             // 
             // navBarPembelian
             // 
             this.navBarPembelian.Caption = "Pembelian";
+            this.navBarPembelian.Enabled = false;
             this.navBarPembelian.Name = "navBarPembelian";
             // 
             // navBarDaftarPembelian
             // 
             this.navBarDaftarPembelian.Caption = "Daftar Pembelian";
+            this.navBarDaftarPembelian.Enabled = false;
             this.navBarDaftarPembelian.Name = "navBarDaftarPembelian";
             // 
             // navBarGroup4
@@ -406,6 +426,7 @@
             // navBarGroup5
             // 
             this.navBarGroup5.Caption = "Pihak Kedua";
+            this.navBarGroup5.Expanded = true;
             this.navBarGroup5.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPelanggan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSupplier)});
@@ -415,12 +436,14 @@
             // navBarPelanggan
             // 
             this.navBarPelanggan.Caption = "Pelanggan";
+            this.navBarPelanggan.Enabled = false;
             this.navBarPelanggan.Name = "navBarPelanggan";
             this.navBarPelanggan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem15_LinkClicked);
             // 
             // navBarSupplier
             // 
             this.navBarSupplier.Caption = "Supplier";
+            this.navBarSupplier.Enabled = false;
             this.navBarSupplier.Name = "navBarSupplier";
             this.navBarSupplier.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem16_LinkClicked);
             // 

@@ -31,78 +31,86 @@ namespace com.agungsetiawan.xpos.View
 
             LoginAndWelcome loginWelcome = new LoginAndWelcome();
             loginWelcome.MdiParent = this;
+            loginWelcome.ParentForm = this;
             loginWelcome.Show();
 
             //dummy
-            PenggunaRepository penggunaRepository=new PenggunaRepository();
+            PenggunaRepository penggunaRepository = new PenggunaRepository();
             var pengguna = penggunaRepository.FindWithRole(4);
             LoginContext.Pengguna = pengguna;
-
-            var permissions = pengguna.Role.Permissions;
-            
-            if(!permissions.Contains("barang"))
-            {
-                barBtnDataBarang.Enabled = false;
-                navBarDataBarang.Enabled = false;
-            }
-
-            if (!permissions.Contains("kategori"))
-            {
-                barBtnDataKategori.Enabled = false;
-                navBarDataKategori.Enabled = false;
-            }
-
-            if (!permissions.Contains("role"))
-            {
-                barBtnRole.Enabled = false;
-                navBarRole.Enabled = false;
-            }
-
-            if (!permissions.Contains("pengguna"))
-            {
-                barBtnPengguna.Enabled = false;
-                navBarPengguna.Enabled = false;
-            }
-
-            if (!permissions.Contains("member"))
-            {
-                navBarMember.Enabled = false;
-            }
-
-            if (!permissions.Contains("pelanggan"))
-            {
-                barBtnPelanggan.Enabled = false;
-                navBarPelanggan.Enabled = false;
-            }
-
-            if (!permissions.Contains("supplier"))
-            {
-                barBtnSupplier.Enabled = false;
-                navBarSupplier.Enabled = false;
-            }
-
-            if (!permissions.Contains("kasir penjualan"))
-            {
-                barBtnPenjualan.Enabled = false;
-                navBarPenjualan.Enabled = false;
-            }
-
-            if (!permissions.Contains("daftar penjualan"))
-            {
-                navBarDaftarPenjualan.Enabled = false;
-            }
-
-            if (!permissions.Contains("kasir pembelian"))
-            {
-                barBtnPembelian.Enabled = false;
-                navBarPembelian.Enabled = false;
-            }
-
-            if (!permissions.Contains("daftar pembelian"))
-            {
-                navBarDaftarPembelian.Enabled = false;
-            }
             //dummy
+        }
+
+        public void GetRights()
+        {
+
+            var pengguna = LoginContext.Pengguna;
+            var permissions = pengguna.Role.Permissions;
+
+            if (permissions.Contains("barang"))
+            {
+                barBtnDataBarang.Enabled = true;
+                navBarDataBarang.Enabled = true;
+            }
+
+            if (permissions.Contains("kategori"))
+            {
+                barBtnDataKategori.Enabled = true;
+                navBarDataKategori.Enabled = true;
+            }
+
+            if (permissions.Contains("role"))
+            {
+                barBtnRole.Enabled = true;
+                navBarRole.Enabled = true;
+            }
+
+            if (permissions.Contains("pengguna"))
+            {
+                barBtnPengguna.Enabled = true;
+                navBarPengguna.Enabled = true;
+            }
+
+            if (permissions.Contains("member"))
+            {
+                navBarMember.Enabled = true;
+            }
+
+            if (permissions.Contains("pelanggan"))
+            {
+                barBtnPelanggan.Enabled = true;
+                navBarPelanggan.Enabled = true;
+            }
+
+            if (permissions.Contains("supplier"))
+            {
+                barBtnSupplier.Enabled = true;
+                navBarSupplier.Enabled = true;
+            }
+
+            if (permissions.Contains("kasir penjualan"))
+            {
+                barBtnPenjualan.Enabled = true;
+                navBarPenjualan.Enabled = true;
+            }
+
+            if (permissions.Contains("daftar penjualan"))
+            {
+                navBarDaftarPenjualan.Enabled = true;
+            }
+
+            if (permissions.Contains("kasir pembelian"))
+            {
+                barBtnPembelian.Enabled = true;
+                navBarPembelian.Enabled = true;
+            }
+
+            if (permissions.Contains("daftar pembelian"))
+            {
+                navBarDaftarPembelian.Enabled = true;
+            }
+
+            //laporan belum
         }
 
         private void navBarDataBarang_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
@@ -216,6 +224,11 @@ namespace com.agungsetiawan.xpos.View
             form.MdiParent = this;
             form.Show();
             form.Activate();
+        }
+
+        private void barButtonItem9_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
         }
     }
 }

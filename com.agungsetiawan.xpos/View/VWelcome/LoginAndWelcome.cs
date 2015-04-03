@@ -1,4 +1,5 @@
-﻿using System;
+﻿using com.agungsetiawan.xpos.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace com.agungsetiawan.xpos.View.VWelcome
 {
     public partial class LoginAndWelcome : Form
     {
+        public MainForm ParentForm { get; set; }
         public LoginAndWelcome()
         {
             InitializeComponent();
@@ -32,6 +34,16 @@ namespace com.agungsetiawan.xpos.View.VWelcome
             rectPassword.Inflate(1, 1); // border thickness
             System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectPassword, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
 
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            panelWelcome.Visible = true;
+            var pengguna = LoginContext.Pengguna;
+            labelPengguna.Text = pengguna.Nama;
+            labelRole.Text = pengguna.Role.NamaRole;
+
+            this.ParentForm.GetRights();
         }
     }
 }
