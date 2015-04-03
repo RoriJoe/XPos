@@ -115,6 +115,7 @@
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxPassword.Location = new System.Drawing.Point(6, 5);
             this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(176, 13);
             this.textBoxPassword.TabIndex = 7;
             // 
@@ -187,9 +188,9 @@
             this.labelWarning.ForeColor = System.Drawing.Color.Red;
             this.labelWarning.Location = new System.Drawing.Point(280, 271);
             this.labelWarning.Name = "labelWarning";
-            this.labelWarning.Size = new System.Drawing.Size(236, 17);
+            this.labelWarning.Size = new System.Drawing.Size(245, 17);
             this.labelWarning.TabIndex = 23;
-            this.labelWarning.Text = "Username dan atau Password salah";
+            this.labelWarning.Text = "* Username dan atau Password salah";
             this.labelWarning.Visible = false;
             // 
             // LoginAndWelcome
