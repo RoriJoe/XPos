@@ -37,17 +37,19 @@
             this.barBtnRole = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnPenjualan = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnPembelian = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnLaporan = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnPelanggan = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnSupplier = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnLogout = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.navBarControl1 = new DevExpress.XtraNavBar.NavBarControl();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarDataBarang = new DevExpress.XtraNavBar.NavBarItem();
@@ -72,8 +74,6 @@
             this.navBarPelanggan = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarSupplier = new DevExpress.XtraNavBar.NavBarItem();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barBtnLogout = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
@@ -91,7 +91,7 @@
             this.barBtnRole,
             this.barBtnPenjualan,
             this.barBtnPembelian,
-            this.barButtonItem7,
+            this.barBtnLaporan,
             this.barButtonItem8,
             this.barButtonItem9,
             this.barBtnPelanggan,
@@ -163,14 +163,14 @@
             this.barBtnPembelian.Name = "barBtnPembelian";
             this.barBtnPembelian.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
-            // barButtonItem7
+            // barBtnLaporan
             // 
-            this.barButtonItem7.Caption = "Gamis";
-            this.barButtonItem7.Enabled = false;
-            this.barButtonItem7.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.Glyph")));
-            this.barButtonItem7.Id = 7;
-            this.barButtonItem7.Name = "barButtonItem7";
-            this.barButtonItem7.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnLaporan.Caption = "Gamis";
+            this.barBtnLaporan.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnLaporan.Glyph")));
+            this.barBtnLaporan.Id = 7;
+            this.barBtnLaporan.Name = "barBtnLaporan";
+            this.barBtnLaporan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnLaporan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnLaporan_ItemClick);
             // 
             // barButtonItem8
             // 
@@ -209,6 +209,17 @@
             this.barBtnSupplier.Name = "barBtnSupplier";
             this.barBtnSupplier.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
+            // barBtnLogout
+            // 
+            this.barBtnLogout.AllowRightClickInMenu = false;
+            this.barBtnLogout.Caption = "Logout";
+            this.barBtnLogout.Enabled = false;
+            this.barBtnLogout.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnLogout.Glyph")));
+            this.barBtnLogout.Id = 12;
+            this.barBtnLogout.Name = "barBtnLogout";
+            this.barBtnLogout.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnLogout_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -244,7 +255,7 @@
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem7);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barBtnLaporan);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem9);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
@@ -256,6 +267,13 @@
             this.ribbonPageGroup5.ItemLinks.Add(this.barBtnSupplier);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Pihak Kedua";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.AllowTextClipping = false;
+            this.ribbonPageGroup6.ItemLinks.Add(this.barBtnLogout);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "Sistem";
             // 
             // navBarControl1
             // 
@@ -455,24 +473,6 @@
             this.xtraTabbedMdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager.MdiParent = this;
             // 
-            // ribbonPageGroup6
-            // 
-            this.ribbonPageGroup6.AllowTextClipping = false;
-            this.ribbonPageGroup6.ItemLinks.Add(this.barBtnLogout);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "Sistem";
-            // 
-            // barBtnLogout
-            // 
-            this.barBtnLogout.AllowRightClickInMenu = false;
-            this.barBtnLogout.Caption = "Logout";
-            this.barBtnLogout.Enabled = false;
-            this.barBtnLogout.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnLogout.Glyph")));
-            this.barBtnLogout.Id = 12;
-            this.barBtnLogout.Name = "barBtnLogout";
-            this.barBtnLogout.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            this.barBtnLogout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnLogout_ItemClick);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -503,7 +503,7 @@
         private DevExpress.XtraBars.BarButtonItem barBtnRole;
         private DevExpress.XtraBars.BarButtonItem barBtnPenjualan;
         private DevExpress.XtraBars.BarButtonItem barBtnPembelian;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem7;
+        private DevExpress.XtraBars.BarButtonItem barBtnLaporan;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barBtnPelanggan;

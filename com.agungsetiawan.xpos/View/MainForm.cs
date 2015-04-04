@@ -19,6 +19,7 @@ using com.agungsetiawan.xpos.View.VSupplier;
 using com.agungsetiawan.xpos.View.VRole;
 using com.agungsetiawan.xpos.View.VPengguna;
 using com.agungsetiawan.xpos.View.VWelcome;
+using com.agungsetiawan.xpos.View.VLaporan;
 
 namespace com.agungsetiawan.xpos.View
 {
@@ -281,6 +282,14 @@ namespace com.agungsetiawan.xpos.View
             loginWelcome.MdiParent = this;
             loginWelcome.ParentForm = this;
             loginWelcome.Show();
+        }
+
+        private void barBtnLaporan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            LaporanPenjualan form = LaporanPenjualan.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
         }
     }
 }

@@ -130,7 +130,7 @@ namespace com.agungsetiawan.xpos.View.VBarang
             }
 
             var kategori = kategoriService.Get(int.Parse(comboBoxKategori.SelectedValue.ToString()));
-            var supplier = supplierService.Get(int.Parse(comboBoxKategori.SelectedValue.ToString()));
+            var supplier = supplierService.Get(int.Parse(comboBoxSupplier.SelectedValue.ToString()));
 
             var barang = new Barang()
             {
