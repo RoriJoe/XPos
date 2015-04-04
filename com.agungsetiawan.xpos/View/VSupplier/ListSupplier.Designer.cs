@@ -87,6 +87,7 @@
             this.dataGridViewSupplier.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSupplier.Size = new System.Drawing.Size(729, 319);
             this.dataGridViewSupplier.TabIndex = 4;
+            this.dataGridViewSupplier.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewSupplier_RowPostPaint);
             // 
             // ListSupplier
             // 

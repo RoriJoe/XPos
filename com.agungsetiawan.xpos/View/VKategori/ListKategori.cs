@@ -25,6 +25,7 @@ namespace com.agungsetiawan.xpos.View.VKategori
 
             var Kategoris = kategoriService.Get();
             dataGridViewKategori.DataSource = Kategoris;
+            dataGridViewKategori.Columns[0].Visible = false;
         }
 
         public static ListKategori GetForm()

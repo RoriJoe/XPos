@@ -99,6 +99,7 @@
             this.dataGridViewPelanggan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPelanggan.Size = new System.Drawing.Size(716, 345);
             this.dataGridViewPelanggan.TabIndex = 5;
+            this.dataGridViewPelanggan.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewPelanggan_RowPostPaint);
             // 
             // ListPelanggan
             // 

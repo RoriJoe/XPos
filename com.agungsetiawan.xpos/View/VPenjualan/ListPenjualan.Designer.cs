@@ -58,6 +58,7 @@
             this.dataGridViewDaftarPenjualan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDaftarPenjualan.Size = new System.Drawing.Size(989, 243);
             this.dataGridViewDaftarPenjualan.TabIndex = 0;
+            this.dataGridViewDaftarPenjualan.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewDaftarPenjualan_RowPostPaint);
             this.dataGridViewDaftarPenjualan.SelectionChanged += new System.EventHandler(this.dataGridViewDaftarPenjualan_SelectionChanged);
             // 
             // dataGridViewDaftarPenjualanDetail
@@ -74,6 +75,7 @@
             this.dataGridViewDaftarPenjualanDetail.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDaftarPenjualanDetail.Size = new System.Drawing.Size(989, 106);
             this.dataGridViewDaftarPenjualanDetail.TabIndex = 1;
+            this.dataGridViewDaftarPenjualanDetail.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewDaftarPenjualanDetail_RowPostPaint);
             // 
             // panel1
             // 

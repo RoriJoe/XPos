@@ -87,6 +87,7 @@
             this.dataGridViewRole.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewRole.Size = new System.Drawing.Size(698, 319);
             this.dataGridViewRole.TabIndex = 4;
+            this.dataGridViewRole.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewRole_RowPostPaint);
             // 
             // ListRole
             // 

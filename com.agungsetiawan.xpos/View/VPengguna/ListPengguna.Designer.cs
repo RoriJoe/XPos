@@ -87,6 +87,7 @@
             this.dataGridViewPengguna.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPengguna.Size = new System.Drawing.Size(710, 309);
             this.dataGridViewPengguna.TabIndex = 4;
+            this.dataGridViewPengguna.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewPengguna_RowPostPaint);
             // 
             // ListPengguna
             // 

@@ -60,5 +60,24 @@ namespace com.agungsetiawan.xpos.View.VSupplier
                 dataGridViewSupplier.DataSource = supplierService.Get();
             }
         }
+
+        private void dataGridViewSupplier_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            byte x = 0;
+            DataGridView dgv = sender as DataGridView;
+            String index = (e.RowIndex + 1).ToString();
+            System.Drawing.Font font = new Font("Tahoma", 8.0f, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, x);
+
+            StringFormat centerFormat = new StringFormat();
+            centerFormat.Alignment = StringAlignment.Center;
+            centerFormat.LineAlignment = StringAlignment.Center;
+
+            Rectangle headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top,
+                dgv.RowHeadersWidth, e.RowBounds.Height);
+
+            e.Graphics.DrawString(index, font, SystemBrushes.ControlText,
+                headerBounds, centerFormat);
+        }
     }
 }

@@ -52,6 +52,7 @@
             this.dataGridViewMember.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewMember.Size = new System.Drawing.Size(572, 312);
             this.dataGridViewMember.TabIndex = 5;
+            this.dataGridViewMember.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewMember_RowPostPaint);
             // 
             // btnCetak
             // 
