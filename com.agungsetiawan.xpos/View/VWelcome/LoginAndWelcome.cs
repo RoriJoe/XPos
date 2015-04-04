@@ -57,12 +57,6 @@ namespace com.agungsetiawan.xpos.View.VWelcome
         private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             var penggunaLogin = penggunaService.FindByUsernamePassword(textBoxUsername.Text, textBoxPassword.Text);
-            if (penggunaLogin == null)
-            {
-                labelWarning.Visible = true;
-                return;
-            }
-
             LoginContext.Pengguna = penggunaLogin;
            
         }
@@ -70,10 +64,17 @@ namespace com.agungsetiawan.xpos.View.VWelcome
         private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             progressBar.Visible = false;
-            panelWelcome.Visible = true;
             var pengguna = LoginContext.Pengguna;
+
+            if (pengguna == null)
+            {
+                labelWarning.Visible = true;
+                return;
+            }
+
             labelPengguna.Text = pengguna.Nama;
             labelRole.Text = pengguna.Role.NamaRole;
+            panelWelcome.Visible = true;
 
             this.ParentForm.GetRights();
             progressBar.Style = ProgressBarStyle.Continuous;
