@@ -45,6 +45,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.panelUsername.SuspendLayout();
             this.panelPassword.SuspendLayout();
             this.panelWelcome.SuspendLayout();
@@ -230,12 +232,26 @@
             this.linkLabel1.Text = "http://agung-setiawan.com";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // backgroundWorker
+            // 
+            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
+            this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(282, 52);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(188, 23);
+            this.progressBar.TabIndex = 27;
+            this.progressBar.Visible = false;
+            // 
             // LoginAndWelcome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(998, 384);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -280,5 +296,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
+        private System.Windows.Forms.ProgressBar progressBar;
     }
 }

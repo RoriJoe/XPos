@@ -22,6 +22,9 @@ namespace com.agungsetiawan.xpos.View.VWelcome
             InitializeComponent();
             penggunaService = new PenggunaService();
             this.ActiveControl = this.textBoxUsername;
+
+            progressBar.Style = ProgressBarStyle.Marquee;
+            progressBar.MarqueeAnimationSpeed = 50;
         }
 
         private void LoginAndWelcome_Paint(object sender, PaintEventArgs e)
@@ -42,27 +45,39 @@ namespace com.agungsetiawan.xpos.View.VWelcome
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            progressBar.Visible = true;
+            backgroundWorker.RunWorkerAsync();
+        }
 
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("http://agung-setiawan.com");
+        }
+
+        private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
             var penggunaLogin = penggunaService.FindByUsernamePassword(textBoxUsername.Text, textBoxPassword.Text);
-            if(penggunaLogin==null)
+            if (penggunaLogin == null)
             {
                 labelWarning.Visible = true;
                 return;
             }
 
             LoginContext.Pengguna = penggunaLogin;
+           
+        }
 
+        private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            progressBar.Visible = false;
             panelWelcome.Visible = true;
             var pengguna = LoginContext.Pengguna;
             labelPengguna.Text = pengguna.Nama;
             labelRole.Text = pengguna.Role.NamaRole;
 
             this.ParentForm.GetRights();
-        }
-
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("http://agung-setiawan.com");
+            progressBar.Style = ProgressBarStyle.Continuous;
+            progressBar.MarqueeAnimationSpeed = 0;
         }
     }
 }
