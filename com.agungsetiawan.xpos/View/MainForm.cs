@@ -111,6 +111,10 @@ namespace com.agungsetiawan.xpos.View
                 navBarDaftarPembelian.Enabled = true;
             }
 
+            if(permissions.Contains("laporan"))
+            {
+                barBtnLaporanJumlahTransaksi.Enabled = true;
+            }
             //laporan belum
 
             barBtnLogout.Enabled = true;
@@ -270,6 +274,7 @@ namespace com.agungsetiawan.xpos.View
 
             barBtnLogout.Enabled = false;
 
+            barBtnLaporanJumlahTransaksi.Enabled = false;
             //laporan belum
 
             int pagesCount = xtraTabbedMdiManager.Pages.Count;

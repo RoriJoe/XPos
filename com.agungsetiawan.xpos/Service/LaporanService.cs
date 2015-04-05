@@ -21,5 +21,10 @@ namespace com.agungsetiawan.xpos.Service
         {
             return laporanRepository.GetLaporan();
         }
+
+        public List<Laporan> GetLaporanKategori(int idKategori)
+        {
+            return laporanRepository.GetLaporanKategori(idKategori);
+        }
     }
 }

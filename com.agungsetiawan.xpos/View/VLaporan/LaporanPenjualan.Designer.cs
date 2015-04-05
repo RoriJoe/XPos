@@ -36,6 +36,8 @@
             this.labelKatOrBarang = new System.Windows.Forms.Label();
             this.comboBoxKatOrBarang = new System.Windows.Forms.ComboBox();
             this.chartPenjualan = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnTampil = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSummary = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.chartPenjualan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +62,7 @@
             // labelKatOrBarang
             // 
             this.labelKatOrBarang.AutoSize = true;
-            this.labelKatOrBarang.Location = new System.Drawing.Point(25, 47);
+            this.labelKatOrBarang.Location = new System.Drawing.Point(22, 47);
             this.labelKatOrBarang.Name = "labelKatOrBarang";
             this.labelKatOrBarang.Size = new System.Drawing.Size(46, 13);
             this.labelKatOrBarang.TabIndex = 2;
@@ -93,11 +95,31 @@
             this.chartPenjualan.TabIndex = 4;
             this.chartPenjualan.Text = "chart1";
             // 
+            // btnTampil
+            // 
+            this.btnTampil.Location = new System.Drawing.Point(304, 10);
+            this.btnTampil.Name = "btnTampil";
+            this.btnTampil.Size = new System.Drawing.Size(75, 23);
+            this.btnTampil.TabIndex = 5;
+            this.btnTampil.Text = "Tampil";
+            this.btnTampil.Click += new System.EventHandler(this.btnTampil_Click);
+            // 
+            // btnSummary
+            // 
+            this.btnSummary.Location = new System.Drawing.Point(304, 42);
+            this.btnSummary.Name = "btnSummary";
+            this.btnSummary.Size = new System.Drawing.Size(75, 23);
+            this.btnSummary.TabIndex = 6;
+            this.btnSummary.Text = "Summary";
+            this.btnSummary.Click += new System.EventHandler(this.btnSummary_Click);
+            // 
             // LaporanPenjualan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 388);
+            this.Controls.Add(this.btnSummary);
+            this.Controls.Add(this.btnTampil);
             this.Controls.Add(this.chartPenjualan);
             this.Controls.Add(this.comboBoxKatOrBarang);
             this.Controls.Add(this.labelKatOrBarang);
@@ -118,5 +140,7 @@
         private System.Windows.Forms.Label labelKatOrBarang;
         private System.Windows.Forms.ComboBox comboBoxKatOrBarang;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartPenjualan;
+        private DevExpress.XtraEditors.SimpleButton btnTampil;
+        private DevExpress.XtraEditors.SimpleButton btnSummary;
     }
 }

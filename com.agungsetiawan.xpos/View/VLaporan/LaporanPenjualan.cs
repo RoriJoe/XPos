@@ -36,6 +36,17 @@ namespace com.agungsetiawan.xpos.View.VLaporan
 
             chartPenjualan.ChartAreas[0].AxisY.Interval = 1;
             chartPenjualan.ChartAreas[0].AxisX.Interval = 1;
+
+            //chartPenjualan.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
+            //chartPenjualan.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
+
+            LaporanSummary();
+        }
+
+        private void LaporanSummary()
+        {
+
+            chartPenjualan.Series.Clear();
             List<Laporan> data = laporanService.GetLaporan();
 
             Series series = new Series("Jumlah Transaksi Penjualan");
@@ -44,10 +55,6 @@ namespace com.agungsetiawan.xpos.View.VLaporan
             {
                 series.Points.AddXY(d.Tanggal, d.Jumlah);
             }
-
-            //series.Points.AddXY(1, 2);
-            //series.Points.AddXY(2, 3);
-            //series.Points.AddXY(3, 4);
 
             chartPenjualan.Series.Add(series);
         }
@@ -79,6 +86,40 @@ namespace com.agungsetiawan.xpos.View.VLaporan
                 comboBoxKatOrBarang.DisplayMember = "NamaKategori";
                 comboBoxKatOrBarang.ValueMember = "Id";
             }
+        }
+
+        private void btnTampil_Click(object sender, EventArgs e)
+        {
+            var value = comboBoxJenis.SelectedItem.ToString();
+
+            if (value.Equals("Barang"))
+            {
+                
+            }
+            else if (value.Equals("Kategori"))
+            {
+                
+                var idKategori = int.Parse(comboBoxKatOrBarang.SelectedValue.ToString());
+                var kategori=kategoriService.Get(idKategori);
+                List<Laporan> data = laporanService.GetLaporanKategori(idKategori);
+
+                chartPenjualan.Series.Clear();
+                var namaChart=string.Format("Jumlah Barang Kategori {0} Terjual",kategori.NamaKategori);
+                Series series = new Series(namaChart);
+
+                foreach (var d in data)
+                {
+                    series.Points.AddXY(d.Tanggal, d.Jumlah);
+                }
+
+                chartPenjualan.Series.Add(series);
+                chartPenjualan.Series[namaChart]["PixelPointWidth"] = "5";
+            }
+        }
+
+        private void btnSummary_Click(object sender, EventArgs e)
+        {
+            LaporanSummary();
         }
     }
 }
