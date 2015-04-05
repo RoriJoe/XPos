@@ -37,9 +37,6 @@ namespace com.agungsetiawan.xpos.View.VLaporan
             chartPenjualan.ChartAreas[0].AxisY.Interval = 1;
             chartPenjualan.ChartAreas[0].AxisX.Interval = 1;
 
-            //chartPenjualan.ChartAreas[0].AxisX.MajorGrid.Enabled = false;
-            //chartPenjualan.ChartAreas[0].AxisY.MajorGrid.Enabled = false;
-
             LaporanSummary();
         }
 
@@ -53,7 +50,7 @@ namespace com.agungsetiawan.xpos.View.VLaporan
 
             foreach (var d in data)
             {
-                series.Points.AddXY(d.Tanggal, d.Jumlah);
+                series.Points.AddXY(d.Tanggal.ToString("dd MM yyyy"), d.Jumlah);
             }
 
             chartPenjualan.Series.Add(series);
@@ -109,11 +106,10 @@ namespace com.agungsetiawan.xpos.View.VLaporan
 
                 foreach (var d in data)
                 {
-                    series.Points.AddXY(d.Tanggal, d.Jumlah);
+                    series.Points.AddXY(d.Tanggal.ToString("dd MM yyyy"), d.Jumlah);
                 }
 
                 chartPenjualan.Series.Add(series);
-                chartPenjualan.Series[namaChart]["PixelPointWidth"] = "5";
             }
         }
 
