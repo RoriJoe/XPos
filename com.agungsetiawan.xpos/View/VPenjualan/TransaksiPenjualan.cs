@@ -165,15 +165,16 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                     diskon = 0;
 
                 int row = dataGridViewTransaksiPenjualan.Rows.Count;
+                int currentRowIndex = dataGridViewTransaksiPenjualan.CurrentCell.RowIndex;
 
-                if(row<2)
+                if (row < 2 || currentRowIndex==row-1)
                 {
                     return;
                 }
 
-                int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
-                
-                int id=int.Parse(dataGridViewTransaksiPenjualan[0, row - 2].Value.ToString());
+                int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[2].Value.ToString());
+
+                int id = int.Parse(dataGridViewTransaksiPenjualan[0, currentRowIndex].Value.ToString());
                 var barang = service.Get(id);
 
                 if((n+1)>barang.Stok)
@@ -182,11 +183,11 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                     return;
                 }
 
-                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value = n+1;
+                dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[2].Value = n + 1;
 
-                n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
-                decimal price = decimal.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[3].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
-                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value =((price-(price*(decimal) (diskon/100))) * n).ToString("N2", CultureInfo.GetCultureInfo("de"));
+                n = int.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[2].Value.ToString());
+                decimal price = decimal.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[3].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[5].Value = ((price - (price * (decimal)(diskon / 100))) * n).ToString("N2", CultureInfo.GetCultureInfo("de"));
 
                 decimal total = 0;
                 for (int i = 0; i < row-1; i++)
@@ -214,24 +215,25 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                     diskon = 0;
 
                 int row = dataGridViewTransaksiPenjualan.Rows.Count;
+                int currentRowIndex = dataGridViewTransaksiPenjualan.CurrentCell.RowIndex;
 
-                if (row < 2)
+                if (row < 2 || currentRowIndex==row-1)
                 {
                     return;
                 }
 
-                int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
+                int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[2].Value.ToString());
 
                 if(n==1)
                 {
                     return;
                 }
 
-                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value = n - 1;
+                dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[2].Value = n - 1;
 
-                n = int.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[2].Value.ToString());
-                decimal price = decimal.Parse(dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[3].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
-                dataGridViewTransaksiPenjualan.Rows[row - 2].Cells[5].Value = ((price - (price * (decimal)(diskon / 100))) * n).ToString("N2", CultureInfo.GetCultureInfo("de"));
+                n = int.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[2].Value.ToString());
+                decimal price = decimal.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[3].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[5].Value = ((price - (price * (decimal)(diskon / 100))) * n).ToString("N2", CultureInfo.GetCultureInfo("de"));
 
                 decimal total = 0;
                 for (int i = 0; i < row-1 ; i++)
