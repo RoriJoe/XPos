@@ -104,7 +104,14 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                     {
                         if (id == int.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[0].Value.ToString()))
                         {
-                            dataGridViewTransaksiPenjualan.Rows[i].Cells[2].Value = (int.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[2].Value.ToString())) + 1;
+                            int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[2].Value.ToString());
+                            if ((n + 1) > barang.Stok)
+                            {
+                                MessageBox.Show("Stok barang tidak memadahi", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                return;
+                            }
+
+                            dataGridViewTransaksiPenjualan.Rows[i].Cells[2].Value = n + 1;
                             dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value = ((decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"))) + barang.HargaJual - (barang.HargaJual * (decimal)(diskon / 100)))
                                                                                     .ToString("N2", CultureInfo.GetCultureInfo("de"));
                             IsNew = false;
