@@ -91,7 +91,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CariBarang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "CariBarang";
+            this.Text = "Cari Barang";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.CariBarang_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCariBarang)).EndInit();
             this.panelBarang.ResumeLayout(false);

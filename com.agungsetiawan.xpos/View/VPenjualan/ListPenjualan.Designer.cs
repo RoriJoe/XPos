@@ -168,7 +168,7 @@
             this.Controls.Add(this.dataGridViewDaftarPenjualanDetail);
             this.Controls.Add(this.dataGridViewDaftarPenjualan);
             this.Name = "ListPenjualan";
-            this.Text = "ListPenjualan";
+            this.Text = "Daftar Penjualan";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.ListPenjualan_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftarPenjualan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftarPenjualanDetail)).EndInit();

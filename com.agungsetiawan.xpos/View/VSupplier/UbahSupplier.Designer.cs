@@ -198,7 +198,6 @@
             this.Controls.Add(this.label1);
             this.Name = "UbahSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "UbahSupplier";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.UbahSupplier_Paint);
             this.panelNomorTelepon.ResumeLayout(false);
             this.panelNomorTelepon.PerformLayout();

@@ -126,7 +126,7 @@
             this.Controls.Add(this.comboBoxJenis);
             this.Controls.Add(this.label1);
             this.Name = "LaporanPenjualan";
-            this.Text = "LaporanPenjualan";
+            this.Text = "Laporan Penjualan";
             ((System.ComponentModel.ISupportInitialize)(this.chartPenjualan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

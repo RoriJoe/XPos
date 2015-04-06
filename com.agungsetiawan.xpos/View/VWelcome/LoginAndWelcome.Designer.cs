@@ -228,6 +228,7 @@
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(136, 13);
             this.linkLabel1.TabIndex = 1;
+            this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "http://agung-setiawan.com";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
@@ -263,7 +264,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "LoginAndWelcome";
-            this.Text = "0";
+            this.Text = "Login";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.LoginAndWelcome_Paint);
             this.panelUsername.ResumeLayout(false);
             this.panelUsername.PerformLayout();

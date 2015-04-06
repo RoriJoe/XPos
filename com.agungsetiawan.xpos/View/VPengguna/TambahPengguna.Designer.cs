@@ -210,7 +210,6 @@
             this.Controls.Add(this.label1);
             this.Name = "TambahPengguna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "TambahPengguna";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TambahPengguna_Paint);
             this.panelPassword.ResumeLayout(false);
             this.panelPassword.PerformLayout();

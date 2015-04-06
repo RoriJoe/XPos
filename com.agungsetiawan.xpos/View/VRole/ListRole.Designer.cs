@@ -99,7 +99,7 @@
             this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.dataGridViewRole);
             this.Name = "ListRole";
-            this.Text = "ListRole";
+            this.Text = "Daftar Role";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRole)).EndInit();
             this.ResumeLayout(false);
 

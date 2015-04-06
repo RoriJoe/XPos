@@ -318,7 +318,6 @@
             this.Controls.Add(this.label1);
             this.Name = "UbahRole";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "UbahRole";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.UbahRole_Paint);
             this.panelKeterangan.ResumeLayout(false);
             this.panelKeterangan.PerformLayout();

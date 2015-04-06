@@ -47,7 +47,6 @@
             this.Controls.Add(this.textBoxHarga);
             this.Name = "ApplyHarga";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ApplyHarga";
             this.ResumeLayout(false);
             this.PerformLayout();
 

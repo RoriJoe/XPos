@@ -113,7 +113,7 @@
             this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.dataGridViewMember);
             this.Name = "ListMember";
-            this.Text = "ListMember";
+            this.Text = "Daftar Member";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMember)).EndInit();
             this.ResumeLayout(false);
 

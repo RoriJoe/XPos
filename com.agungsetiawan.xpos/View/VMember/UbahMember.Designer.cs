@@ -162,7 +162,6 @@
             this.Controls.Add(this.label1);
             this.Name = "UbahMember";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "UbahMember";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.UbahMember_Paint);
             this.panelDiskon.ResumeLayout(false);
             this.panelDiskon.PerformLayout();

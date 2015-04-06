@@ -99,7 +99,7 @@
             this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.dataGridViewSupplier);
             this.Name = "ListSupplier";
-            this.Text = "ListSupplier";
+            this.Text = "Daftar Supplier";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSupplier)).EndInit();
             this.ResumeLayout(false);
 

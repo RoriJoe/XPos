@@ -152,7 +152,6 @@
             this.MinimizeBox = false;
             this.Name = "TambahMember";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "TambahMember";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TambahMember_Paint);
             this.panelDiskon.ResumeLayout(false);
             this.panelDiskon.PerformLayout();

@@ -90,7 +90,7 @@
             this.Controls.Add(this.dataGridViewCariPelanggan);
             this.Name = "CariPelanggan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "CariPelanggan";
+            this.Text = "Cari Pelanggan";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.CariPelanggan_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCariPelanggan)).EndInit();
             this.panelPelanggan.ResumeLayout(false);

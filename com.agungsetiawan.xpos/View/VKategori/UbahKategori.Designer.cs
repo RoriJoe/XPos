@@ -174,7 +174,6 @@
             this.Controls.Add(this.label1);
             this.Name = "UbahKategori";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "UbahKategori";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.UbahKategori_Paint);
             this.panelNamaKategori.ResumeLayout(false);
             this.panelNamaKategori.PerformLayout();

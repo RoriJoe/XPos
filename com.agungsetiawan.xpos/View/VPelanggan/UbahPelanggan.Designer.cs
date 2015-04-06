@@ -222,7 +222,6 @@
             this.Controls.Add(this.label1);
             this.Name = "UbahPelanggan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "UbahPelanggan";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.UbahPelanggan_Paint);
             this.panelNomorTelepon.ResumeLayout(false);
             this.panelNomorTelepon.PerformLayout();

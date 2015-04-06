@@ -112,7 +112,7 @@
             this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.dataGridViewPelanggan);
             this.Name = "ListPelanggan";
-            this.Text = "ListPelanggan";
+            this.Text = "Daftar Pelanggan";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPelanggan)).EndInit();
             this.ResumeLayout(false);
 

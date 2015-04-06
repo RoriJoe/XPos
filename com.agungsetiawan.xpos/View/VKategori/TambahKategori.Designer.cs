@@ -153,7 +153,6 @@
             this.MinimizeBox = false;
             this.Name = "TambahKategori";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "TambahKategori";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TambahKategori_Paint);
             this.panelNamaKategori.ResumeLayout(false);
             this.panelNamaKategori.PerformLayout();

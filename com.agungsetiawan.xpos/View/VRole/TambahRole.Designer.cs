@@ -306,7 +306,6 @@
             this.Controls.Add(this.label1);
             this.Name = "TambahRole";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "TambahRole";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TambahRole_Paint);
             this.panelKeterangan.ResumeLayout(false);
             this.panelKeterangan.PerformLayout();

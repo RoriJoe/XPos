@@ -234,7 +234,6 @@
             this.Controls.Add(this.label1);
             this.Name = "UbahPengguna";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "UbahPengguna";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.UbahPengguna_Paint);
             this.panelPassword.ResumeLayout(false);
             this.panelPassword.PerformLayout();

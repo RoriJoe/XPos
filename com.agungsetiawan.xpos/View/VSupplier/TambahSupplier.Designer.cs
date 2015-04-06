@@ -186,7 +186,6 @@
             this.Controls.Add(this.label1);
             this.Name = "TambahSupplier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "TambahSupplier";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TambahSupplier_Paint);
             this.panelNomorTelepon.ResumeLayout(false);
             this.panelNomorTelepon.PerformLayout();

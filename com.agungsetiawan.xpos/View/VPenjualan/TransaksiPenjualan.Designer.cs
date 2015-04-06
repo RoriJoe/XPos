@@ -344,7 +344,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridViewTransaksiPenjualan);
             this.Name = "TransaksiPenjualan";
-            this.Text = "TransaksiPenjualan";
+            this.Text = "Transaksi Penjualan";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.TransaksiPenjualan_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransaksiPenjualan)).EndInit();
             this.panel1.ResumeLayout(false);

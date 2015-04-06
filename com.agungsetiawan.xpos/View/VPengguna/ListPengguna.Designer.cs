@@ -99,7 +99,7 @@
             this.Controls.Add(this.btnTambah);
             this.Controls.Add(this.dataGridViewPengguna);
             this.Name = "ListPengguna";
-            this.Text = "ListPengguna";
+            this.Text = "Daftar Pengguna";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPengguna)).EndInit();
             this.ResumeLayout(false);
 
