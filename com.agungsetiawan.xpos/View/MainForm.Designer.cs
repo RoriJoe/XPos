@@ -200,6 +200,7 @@
             this.barBtnPelanggan.Id = 10;
             this.barBtnPelanggan.Name = "barBtnPelanggan";
             this.barBtnPelanggan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnPelanggan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPelanggan_ItemClick);
             // 
             // barBtnSupplier
             // 
@@ -209,6 +210,7 @@
             this.barBtnSupplier.Id = 11;
             this.barBtnSupplier.Name = "barBtnSupplier";
             this.barBtnSupplier.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnSupplier.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnSupplier_ItemClick);
             // 
             // barBtnLogout
             // 

@@ -19,7 +19,7 @@ namespace com.agungsetiawan.xpos.View.VKategori
         public TambahKategori()
         {
             InitializeComponent();
-
+            this.ActiveControl = this.textBoxNamaKategori;
             kategoriService = new KategoriService();
         }
 

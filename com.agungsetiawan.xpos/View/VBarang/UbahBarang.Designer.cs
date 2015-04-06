@@ -69,7 +69,7 @@
             this.btnBatal.Location = new System.Drawing.Point(110, 320);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(89, 35);
-            this.btnBatal.TabIndex = 29;
+            this.btnBatal.TabIndex = 30;
             this.btnBatal.Text = "Batal";
             // 
             // btnSimpan
@@ -80,7 +80,7 @@
             this.btnSimpan.Location = new System.Drawing.Point(15, 320);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(89, 35);
-            this.btnSimpan.TabIndex = 28;
+            this.btnSimpan.TabIndex = 29;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
@@ -155,9 +155,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(12, 207);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(64, 15);
+            this.label6.Size = new System.Drawing.Size(71, 15);
             this.label6.TabIndex = 20;
-            this.label6.Text = "Ketrangan";
+            this.label6.Text = "Keterangan";
             // 
             // label5
             // 
@@ -288,7 +288,7 @@
             this.comboBoxSupplier.Location = new System.Drawing.Point(129, 275);
             this.comboBoxSupplier.Name = "comboBoxSupplier";
             this.comboBoxSupplier.Size = new System.Drawing.Size(240, 21);
-            this.comboBoxSupplier.TabIndex = 38;
+            this.comboBoxSupplier.TabIndex = 28;
             // 
             // label9
             // 

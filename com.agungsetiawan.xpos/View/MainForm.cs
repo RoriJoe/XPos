@@ -296,5 +296,22 @@ namespace com.agungsetiawan.xpos.View
             form.Show();
             form.Activate();
         }
+
+        private void barBtnPelanggan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ListPelanggan form = ListPelanggan.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
+
+        private void barBtnSupplier_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            ListSupplier form = ListSupplier.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+
+        }
     }
 }
