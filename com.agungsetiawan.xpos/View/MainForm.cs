@@ -313,5 +313,21 @@ namespace com.agungsetiawan.xpos.View
             form.Activate();
 
         }
+
+        private void navBarRole_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            ListRole form = ListRole.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
+
+        private void navBarPengguna_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            ListPengguna form = ListPengguna.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
     }
 }

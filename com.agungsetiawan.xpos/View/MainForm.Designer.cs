@@ -342,6 +342,7 @@
             // navBarGroup2
             // 
             this.navBarGroup2.Caption = "Administrator";
+            this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarRole),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPengguna),
@@ -354,12 +355,14 @@
             this.navBarRole.Caption = "Role";
             this.navBarRole.Enabled = false;
             this.navBarRole.Name = "navBarRole";
+            this.navBarRole.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarRole_LinkClicked);
             // 
             // navBarPengguna
             // 
             this.navBarPengguna.Caption = "Pengguna";
             this.navBarPengguna.Enabled = false;
             this.navBarPengguna.Name = "navBarPengguna";
+            this.navBarPengguna.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarPengguna_LinkClicked);
             // 
             // navBarMember
             // 
