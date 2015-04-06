@@ -71,7 +71,7 @@
             this.label1.Location = new System.Drawing.Point(277, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 31);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 4;
             this.label1.Text = "Username";
             // 
             // label2
@@ -82,7 +82,7 @@
             this.label2.Location = new System.Drawing.Point(277, 157);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 31);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 1;
             this.label2.Text = "Password";
             // 
             // btnLogin
@@ -91,7 +91,7 @@
             this.btnLogin.Location = new System.Drawing.Point(386, 227);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(84, 28);
-            this.btnLogin.TabIndex = 5;
+            this.btnLogin.TabIndex = 0;
             this.btnLogin.Text = "Login";
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -102,7 +102,7 @@
             this.textBoxUsername.Location = new System.Drawing.Point(6, 5);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(176, 13);
-            this.textBoxUsername.TabIndex = 7;
+            this.textBoxUsername.TabIndex = 0;
             // 
             // panelUsername
             // 
@@ -122,7 +122,7 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(176, 13);
-            this.textBoxPassword.TabIndex = 7;
+            this.textBoxPassword.TabIndex = 0;
             // 
             // panelPassword
             // 
@@ -140,7 +140,7 @@
             this.label3.Font = new System.Drawing.Font("Ebrima", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(14, 14);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(227, 28);
+            this.label3.Size = new System.Drawing.Size(230, 32);
             this.label3.TabIndex = 18;
             this.label3.Text = "Selamat Datang di XPOS";
             // 
@@ -160,7 +160,7 @@
             this.label5.Font = new System.Drawing.Font("Ebrima", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(14, 113);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(180, 28);
+            this.label5.Size = new System.Drawing.Size(183, 32);
             this.label5.TabIndex = 20;
             this.label5.Text = "Anda login sebagai";
             // 
@@ -205,7 +205,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label4.Location = new System.Drawing.Point(24, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 19);
+            this.label4.Size = new System.Drawing.Size(75, 22);
             this.label4.TabIndex = 24;
             this.label4.Text = "XPos v0.5";
             // 
@@ -216,7 +216,7 @@
             this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.label6.Location = new System.Drawing.Point(24, 75);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(117, 19);
+            this.label6.Size = new System.Drawing.Size(118, 22);
             this.label6.TabIndex = 25;
             this.label6.Text = "Agung Setiawan";
             // 
@@ -227,8 +227,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(25, 101);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(136, 13);
-            this.linkLabel1.TabIndex = 26;
-            this.linkLabel1.TabStop = true;
+            this.linkLabel1.TabIndex = 0;
             this.linkLabel1.Text = "http://agung-setiawan.com";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
@@ -264,7 +263,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "LoginAndWelcome";
-            this.Text = "LoginAndWelcome";
+            this.Text = "0";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.LoginAndWelcome_Paint);
             this.panelUsername.ResumeLayout(false);
             this.panelUsername.PerformLayout();

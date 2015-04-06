@@ -43,7 +43,7 @@ namespace com.agungsetiawan.xpos.View.VLaporan
         private void LaporanSummary()
         {
 
-            chartPenjualan.Series.Clear();
+            ClearChart();
             List<Laporan> data = laporanService.GetLaporan();
 
             Series series = new Series("Jumlah Transaksi Penjualan");
@@ -54,6 +54,15 @@ namespace com.agungsetiawan.xpos.View.VLaporan
             }
 
             chartPenjualan.Series.Add(series);
+        }
+
+        private void ClearChart()
+        {
+            foreach (var s in chartPenjualan.Series)
+            {
+                s.Points.Clear();
+            }
+            chartPenjualan.Series.Clear();
         }
 
         public static LaporanPenjualan GetForm()
@@ -100,7 +109,8 @@ namespace com.agungsetiawan.xpos.View.VLaporan
                 var kategori=kategoriService.Get(idKategori);
                 List<Laporan> data = laporanService.GetLaporanKategori(idKategori);
 
-                chartPenjualan.Series.Clear();
+                ClearChart();
+
                 var namaChart=string.Format("Jumlah Barang Kategori {0} Terjual",kategori.NamaKategori);
                 Series series = new Series(namaChart);
 
