@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransaksiPenjualan));
             this.dataGridViewTransaksiPenjualan = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +56,17 @@
             this.buttonPelanggan = new System.Windows.Forms.Button();
             this.panelPelanggan = new System.Windows.Forms.Panel();
             this.textBoxPelanggan = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxSisa = new System.Windows.Forms.TextBox();
+            this.textBoxJumlahBayar = new System.Windows.Forms.TextBox();
+            this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.labelTerbilang = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.btnBatal = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSimpan = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTransaksiPenjualan)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -63,6 +75,10 @@
             this.panelKaryawan.SuspendLayout();
             this.panelKodePelanggan.SuspendLayout();
             this.panelPelanggan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
+            this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
+            this.panelControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewTransaksiPenjualan
@@ -92,7 +108,7 @@
             this.dataGridViewTransaksiPenjualan.EnableHeadersVisualStyles = false;
             this.dataGridViewTransaksiPenjualan.Location = new System.Drawing.Point(0, 220);
             this.dataGridViewTransaksiPenjualan.Name = "dataGridViewTransaksiPenjualan";
-            this.dataGridViewTransaksiPenjualan.Size = new System.Drawing.Size(1039, 419);
+            this.dataGridViewTransaksiPenjualan.Size = new System.Drawing.Size(1039, 268);
             this.dataGridViewTransaksiPenjualan.TabIndex = 1;
             this.dataGridViewTransaksiPenjualan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
@@ -161,7 +177,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(0, 688);
+            this.panel2.Location = new System.Drawing.Point(0, 773);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1039, 43);
             this.panel2.TabIndex = 3;
@@ -324,12 +340,146 @@
             this.textBoxPelanggan.Size = new System.Drawing.Size(158, 13);
             this.textBoxPelanggan.TabIndex = 7;
             // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(101)))), ((int)(((byte)(150)))));
+            this.label6.Location = new System.Drawing.Point(683, 642);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "Kembali";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(101)))), ((int)(((byte)(150)))));
+            this.label7.Location = new System.Drawing.Point(683, 612);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(70, 13);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "Jumlah Bayar";
+            // 
+            // textBoxSisa
+            // 
+            this.textBoxSisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxSisa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSisa.Location = new System.Drawing.Point(769, 639);
+            this.textBoxSisa.Name = "textBoxSisa";
+            this.textBoxSisa.Size = new System.Drawing.Size(240, 20);
+            this.textBoxSisa.TabIndex = 25;
+            this.textBoxSisa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxJumlahBayar
+            // 
+            this.textBoxJumlahBayar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxJumlahBayar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxJumlahBayar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.textBoxJumlahBayar.Location = new System.Drawing.Point(769, 611);
+            this.textBoxJumlahBayar.Name = "textBoxJumlahBayar";
+            this.textBoxJumlahBayar.Size = new System.Drawing.Size(240, 20);
+            this.textBoxJumlahBayar.TabIndex = 24;
+            this.textBoxJumlahBayar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // panelControl2
+            // 
+            this.panelControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl2.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(156)))), ((int)(((byte)(227)))));
+            this.panelControl2.Appearance.Options.UseBackColor = true;
+            this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl2.Controls.Add(this.labelTerbilang);
+            this.panelControl2.Controls.Add(this.label8);
+            this.panelControl2.Controls.Add(this.label9);
+            this.panelControl2.Location = new System.Drawing.Point(334, 494);
+            this.panelControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
+            this.panelControl2.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.panelControl2.Name = "panelControl2";
+            this.panelControl2.Size = new System.Drawing.Size(674, 100);
+            this.panelControl2.TabIndex = 23;
+            // 
+            // labelTerbilang
+            // 
+            this.labelTerbilang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelTerbilang.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Italic);
+            this.labelTerbilang.ForeColor = System.Drawing.Color.White;
+            this.labelTerbilang.Location = new System.Drawing.Point(270, 51);
+            this.labelTerbilang.Name = "labelTerbilang";
+            this.labelTerbilang.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.labelTerbilang.Size = new System.Drawing.Size(384, 35);
+            this.labelTerbilang.TabIndex = 2;
+            this.labelTerbilang.Text = "Seratus Dua Puluh Ribu Rupiah";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label8.Font = new System.Drawing.Font("Tahoma", 25F);
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(282, 3);
+            this.label8.Name = "label8";
+            this.label8.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label8.Size = new System.Drawing.Size(384, 35);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "120.000,00";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Italic);
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(4, 4);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 24);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Total";
+            // 
+            // panelControl1
+            // 
+            this.panelControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelControl1.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(239)))), ((int)(((byte)(243)))));
+            this.panelControl1.Appearance.Options.UseBackColor = true;
+            this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.panelControl1.Controls.Add(this.btnBatal);
+            this.panelControl1.Controls.Add(this.btnSimpan);
+            this.panelControl1.Location = new System.Drawing.Point(334, 674);
+            this.panelControl1.Name = "panelControl1";
+            this.panelControl1.Size = new System.Drawing.Size(675, 58);
+            this.panelControl1.TabIndex = 28;
+            // 
+            // btnBatal
+            // 
+            this.btnBatal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBatal.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnBatal.Image = ((System.Drawing.Image)(resources.GetObject("btnBatal.Image")));
+            this.btnBatal.Location = new System.Drawing.Point(541, 9);
+            this.btnBatal.Name = "btnBatal";
+            this.btnBatal.Size = new System.Drawing.Size(92, 34);
+            this.btnBatal.TabIndex = 1;
+            this.btnBatal.Text = "Batal";
+            // 
+            // btnSimpan
+            // 
+            this.btnSimpan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSimpan.Image = ((System.Drawing.Image)(resources.GetObject("btnSimpan.Image")));
+            this.btnSimpan.Location = new System.Drawing.Point(432, 9);
+            this.btnSimpan.Name = "btnSimpan";
+            this.btnSimpan.Size = new System.Drawing.Size(92, 34);
+            this.btnSimpan.TabIndex = 0;
+            this.btnSimpan.Text = "Simpan";
+            // 
             // TransaksiPenjualan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1038, 733);
+            this.ClientSize = new System.Drawing.Size(1038, 818);
+            this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBoxSisa);
+            this.Controls.Add(this.textBoxJumlahBayar);
+            this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelPelanggan);
             this.Controls.Add(this.buttonPelanggan);
             this.Controls.Add(this.panelKodePelanggan);
@@ -360,6 +510,11 @@
             this.panelKodePelanggan.PerformLayout();
             this.panelPelanggan.ResumeLayout(false);
             this.panelPelanggan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
+            this.panelControl2.ResumeLayout(false);
+            this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
+            this.panelControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -393,5 +548,16 @@
         private System.Windows.Forms.Button buttonPelanggan;
         private System.Windows.Forms.Panel panelPelanggan;
         public System.Windows.Forms.TextBox textBoxPelanggan;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxSisa;
+        private System.Windows.Forms.TextBox textBoxJumlahBayar;
+        private DevExpress.XtraEditors.PanelControl panelControl2;
+        private System.Windows.Forms.Label labelTerbilang;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.SimpleButton btnBatal;
+        private DevExpress.XtraEditors.SimpleButton btnSimpan;
     }
 }
