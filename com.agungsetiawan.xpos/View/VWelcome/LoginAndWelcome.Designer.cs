@@ -227,7 +227,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(25, 101);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(136, 13);
-            this.linkLabel1.TabIndex = 0;
+            this.linkLabel1.TabIndex = 1;
             this.linkLabel1.Text = "http://agung-setiawan.com";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 

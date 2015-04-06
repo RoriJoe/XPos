@@ -342,8 +342,14 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
         public void Clear()
         {
             textBoxKodeTransaksi.Text = KodeTransaksiHelper.Get(penjualanService.GetKodeTransaksiTerakhir());
-            textBoxKodePelanggan.Text = string.Empty;
-            textBoxPelanggan.Text = string.Empty;
+
+            var IsSuccess = this.PopulateData();
+            if (!IsSuccess)
+            {
+                MessageBox.Show("Buat terlebih dahulu Pelanggan dengan member berdiskon 0 (nol)", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                return;
+            }
+
             labelTotal.Text = "0.00";
             this.ActiveControl = this.dataGridViewTransaksiPenjualan;
             dataGridViewTransaksiPenjualan.Rows.Clear();
