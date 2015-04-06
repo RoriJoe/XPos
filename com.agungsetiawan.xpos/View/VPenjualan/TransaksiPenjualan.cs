@@ -246,12 +246,18 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             if(e.KeyCode==Keys.Delete)
             {
+                //MessageBox.Show(dataGridViewTransaksiPenjualan.CurrentCell.RowIndex.ToString());
+                //return;
+
                 int row = dataGridViewTransaksiPenjualan.Rows.Count;
-                if(row>1)
+                int currentRowIndex = dataGridViewTransaksiPenjualan.CurrentCell.RowIndex;
+
+                if (row > 1 && currentRowIndex != row - 1)
                 {
-                    dataGridViewTransaksiPenjualan.Rows.RemoveAt(row - 1);
-                    dataGridViewTransaksiPenjualan.Rows.RemoveAt(row - 2);
-                    dataGridViewTransaksiPenjualan.Rows.Add();
+                    
+                    dataGridViewTransaksiPenjualan.Rows.RemoveAt(currentRowIndex);
+                    //dataGridViewTransaksiPenjualan.Rows.RemoveAt(row - 2);
+                    //dataGridViewTransaksiPenjualan.Rows.Add();
                 }
 
                 decimal total = 0;
