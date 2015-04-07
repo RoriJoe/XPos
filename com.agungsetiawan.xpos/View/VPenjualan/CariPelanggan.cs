@@ -1,4 +1,5 @@
-﻿using com.agungsetiawan.xpos.Model;
+﻿using com.agungsetiawan.xpos.Common;
+using com.agungsetiawan.xpos.Model;
 using com.agungsetiawan.xpos.Service;
 using System;
 using System.Collections.Generic;
@@ -73,6 +74,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 }
 
                 this.ParentForm.labelTotal.Text = total.ToString("N2", CultureInfo.GetCultureInfo("de"));
+                this.ParentForm.labelTerbilang.Text = Terbilang.Bilang(total) + " Rupiah";
 
                 this.Dispose();
             }

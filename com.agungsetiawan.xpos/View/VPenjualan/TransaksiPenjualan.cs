@@ -152,6 +152,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 }
 
                 labelTotal.Text = total.ToString("N2", CultureInfo.GetCultureInfo("de"));
+                labelTerbilang.Text = Terbilang.Bilang(total) + " Rupiah";
 
                 dataGridViewTransaksiPenjualan.Refresh();
 
@@ -203,6 +204,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 }
 
                 labelTotal.Text = total.ToString("N2", CultureInfo.GetCultureInfo("de"));
+                labelTerbilang.Text = Terbilang.Bilang(total) + " Rupiah";
 
                 dataGridViewTransaksiPenjualan.Refresh();
             }
@@ -249,6 +251,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 }
 
                 labelTotal.Text = total.ToString("N2", CultureInfo.GetCultureInfo("de"));
+                labelTerbilang.Text = Terbilang.Bilang(total) + " Rupiah";
 
                 dataGridViewTransaksiPenjualan.Refresh();
             }
@@ -280,6 +283,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 }
 
                 labelTotal.Text = total.ToString("N2", CultureInfo.GetCultureInfo("de"));
+                labelTerbilang.Text = Terbilang.Bilang(total) + " Rupiah";
 
                 dataGridViewTransaksiPenjualan.Refresh();
             }
