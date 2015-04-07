@@ -290,6 +290,15 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             if(e.KeyCode==Keys.F8)
             {
+                int row = dataGridViewTransaksiPenjualan.Rows.Count;
+                int currentRowIndex = dataGridViewTransaksiPenjualan.CurrentCell.RowIndex;
+
+                if (row < 2 || currentRowIndex == row - 1)
+                {
+                    MessageBox.Show("Tidak ada barang yang dipilih", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
                 ApplyHarga form = new ApplyHarga();
                 form.ParentForm = this;
                 form.ShowDialog();
