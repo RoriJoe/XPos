@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransaksiPenjualan));
             this.dataGridViewTransaksiPenjualan = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,15 +87,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewTransaksiPenjualan.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewTransaksiPenjualan.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(113)))), ((int)(((byte)(214)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(8);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTransaksiPenjualan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(113)))), ((int)(((byte)(214)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(8);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTransaksiPenjualan.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTransaksiPenjualan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewTransaksiPenjualan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -176,7 +176,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(0, 773);
+            this.panel2.Location = new System.Drawing.Point(0, 696);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1039, 43);
             this.panel2.TabIndex = 3;
@@ -344,7 +344,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(101)))), ((int)(((byte)(150)))));
-            this.label6.Location = new System.Drawing.Point(683, 639);
+            this.label6.Location = new System.Drawing.Point(683, 562);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 27;
@@ -355,7 +355,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(101)))), ((int)(((byte)(150)))));
-            this.label7.Location = new System.Drawing.Point(683, 595);
+            this.label7.Location = new System.Drawing.Point(683, 518);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 13);
             this.label7.TabIndex = 26;
@@ -366,7 +366,7 @@
             this.textBoxSisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSisa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxSisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBoxSisa.Location = new System.Drawing.Point(766, 639);
+            this.textBoxSisa.Location = new System.Drawing.Point(766, 562);
             this.textBoxSisa.Name = "textBoxSisa";
             this.textBoxSisa.Size = new System.Drawing.Size(240, 38);
             this.textBoxSisa.TabIndex = 25;
@@ -377,11 +377,12 @@
             this.textBoxJumlahBayar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxJumlahBayar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxJumlahBayar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBoxJumlahBayar.Location = new System.Drawing.Point(766, 595);
+            this.textBoxJumlahBayar.Location = new System.Drawing.Point(766, 518);
             this.textBoxJumlahBayar.Name = "textBoxJumlahBayar";
             this.textBoxJumlahBayar.Size = new System.Drawing.Size(240, 38);
             this.textBoxJumlahBayar.TabIndex = 24;
             this.textBoxJumlahBayar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxJumlahBayar.Leave += new System.EventHandler(this.textBoxJumlahBayar_Leave);
             // 
             // panelControl2
             // 
@@ -391,22 +392,22 @@
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.panelControl2.Controls.Add(this.labelTerbilang);
             this.panelControl2.Controls.Add(this.label9);
-            this.panelControl2.Location = new System.Drawing.Point(334, 504);
+            this.panelControl2.Location = new System.Drawing.Point(568, 421);
             this.panelControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.panelControl2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(674, 78);
+            this.panelControl2.Size = new System.Drawing.Size(440, 84);
             this.panelControl2.TabIndex = 23;
             // 
             // labelTerbilang
             // 
             this.labelTerbilang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelTerbilang.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Italic);
+            this.labelTerbilang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Italic);
             this.labelTerbilang.ForeColor = System.Drawing.Color.White;
-            this.labelTerbilang.Location = new System.Drawing.Point(64, 37);
+            this.labelTerbilang.Location = new System.Drawing.Point(23, 28);
             this.labelTerbilang.Name = "labelTerbilang";
             this.labelTerbilang.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.labelTerbilang.Size = new System.Drawing.Size(590, 35);
+            this.labelTerbilang.Size = new System.Drawing.Size(414, 39);
             this.labelTerbilang.TabIndex = 2;
             this.labelTerbilang.Text = "Nol Rupiah";
             // 
@@ -429,9 +430,9 @@
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.panelControl1.Controls.Add(this.btnBatal);
             this.panelControl1.Controls.Add(this.btnSimpan);
-            this.panelControl1.Location = new System.Drawing.Point(334, 694);
+            this.panelControl1.Location = new System.Drawing.Point(568, 617);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(675, 58);
+            this.panelControl1.Size = new System.Drawing.Size(441, 58);
             this.panelControl1.TabIndex = 28;
             // 
             // btnBatal
@@ -439,28 +440,30 @@
             this.btnBatal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBatal.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBatal.Image = ((System.Drawing.Image)(resources.GetObject("btnBatal.Image")));
-            this.btnBatal.Location = new System.Drawing.Point(541, 9);
+            this.btnBatal.Location = new System.Drawing.Point(307, 9);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(92, 34);
             this.btnBatal.TabIndex = 1;
             this.btnBatal.Text = "Batal";
+            this.btnBatal.Click += new System.EventHandler(this.btnBatal_Click);
             // 
             // btnSimpan
             // 
             this.btnSimpan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSimpan.Image = ((System.Drawing.Image)(resources.GetObject("btnSimpan.Image")));
-            this.btnSimpan.Location = new System.Drawing.Point(432, 9);
+            this.btnSimpan.Location = new System.Drawing.Point(198, 9);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(92, 34);
             this.btnSimpan.TabIndex = 0;
             this.btnSimpan.Text = "Simpan";
+            this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
             // TransaksiPenjualan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1038, 818);
+            this.ClientSize = new System.Drawing.Size(1038, 741);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);

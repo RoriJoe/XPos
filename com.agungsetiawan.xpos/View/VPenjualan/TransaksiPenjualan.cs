@@ -379,11 +379,75 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             }
 
             labelTotal.Text = "0.00";
+            textBoxJumlahBayar.Text = string.Empty;
+            textBoxSisa.Text = string.Empty;
+            labelTerbilang.Text = "Nol Rupiah";
             this.ActiveControl = this.dataGridViewTransaksiPenjualan;
             dataGridViewTransaksiPenjualan.Rows.Clear();
             dataGridViewTransaksiPenjualan.Rows.Add();
             dataGridViewTransaksiPenjualan.CurrentCell = dataGridViewTransaksiPenjualan.Rows[0].Cells[0];
             
+        }
+
+        private void textBoxJumlahBayar_Leave(object sender, EventArgs e)
+        {
+            decimal total = decimal.Parse(labelTotal.Text, NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+            decimal bayar = decimal.Parse(textBoxJumlahBayar.Text);
+            decimal kembali = bayar - total;
+
+            textBoxJumlahBayar.Text = bayar.ToString("N2", CultureInfo.GetCultureInfo("de"));
+            textBoxSisa.Text = kembali.ToString("N2", CultureInfo.GetCultureInfo("de"));
+        }
+
+        private void btnSimpan_Click(object sender, EventArgs e)
+        {
+            DataGridView data = dataGridViewTransaksiPenjualan;
+
+            int row = data.Rows.Count;
+
+            Penjualan penjualan = new Penjualan();
+            PenjualanDetail pDetail;
+
+            for (int i = 0; i < row - 1; i++)
+            {
+                var kodeBarang = int.Parse(data.Rows[i].Cells[0].Value.ToString());
+                var namaBarang = data.Rows[i].Cells[1].Value.ToString();
+                var jumlahJual = int.Parse(data.Rows[i].Cells[2].Value.ToString());
+                var hargaJual = decimal.Parse(data.Rows[i].Cells[3].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                var diskon = float.Parse(data.Rows[i].Cells[4].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                var subtotal = decimal.Parse(data.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+
+                pDetail = new PenjualanDetail()
+                {
+                    Penjualan = penjualan,
+                    BarangId = kodeBarang,
+                    Harga = hargaJual,
+                    Jumlah = jumlahJual,
+                    SubTotal = subtotal,
+                    Diskon = diskon
+                };
+
+                penjualan.PenjualanDetails.Add(pDetail);
+            }
+
+            penjualan.KodeTransaksi = textBoxKodeTransaksi.Text;
+            penjualan.Tanggal = DateTime.Now;
+            penjualan.TotalHargaJual = decimal.Parse(labelTotal.Text, NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+
+            var pengguna = LoginContext.Pengguna;
+            var pelanggan = pelangganService.Get(int.Parse(textBoxKodePelanggan.Text));
+
+            penjualan.PenggunaId = pengguna.Id;
+            penjualan.PelangganId = pelanggan.Id;
+
+            penjualanService.Post(penjualan);
+
+            this.Clear();
+        }
+
+        private void btnBatal_Click(object sender, EventArgs e)
+        {
+            this.Clear();
         }
     }
 }
