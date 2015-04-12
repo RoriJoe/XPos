@@ -14,6 +14,9 @@ namespace com.agungsetiawan.xpos.ModelView
         [DisplayName("Nama Pelanggan")]
         public string NamaPelanggan { get; set; }
 
+        [DisplayName("Nomor KTP")]
+        public String NomorKtp { get; set; }
+
         public string Alamat { get; set; }
 
         [DisplayName("Nomor Telepon")]

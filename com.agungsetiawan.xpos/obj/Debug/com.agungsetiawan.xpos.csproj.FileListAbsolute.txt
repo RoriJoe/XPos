@@ -116,3 +116,4 @@ D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.exe
 D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.pdb
 D:\Dev\XPos\com.agungsetiawan.xpos\bin\Debug\com.agungsetiawan.xpos.pdb
 D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.csprojResolveAssemblyReference.cache
+D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.TambahNomorKtpDiPelanggan.resources

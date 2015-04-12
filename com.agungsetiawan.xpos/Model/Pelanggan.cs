@@ -16,6 +16,10 @@ namespace com.agungsetiawan.xpos.Model
         public string NamaPelanggan { get; set; }
 
         [Column(TypeName = "varchar")]
+        [StringLength(50)]
+        public String NomorKtp { get; set; }
+
+        [Column(TypeName = "varchar")]
         [StringLength(100)]
         public string Alamat { get; set; }
 

@@ -25,6 +25,7 @@ namespace com.agungsetiawan.xpos.Service
                                  { 
                                     Id=p.Id,
                                     NamaPelanggan=p.NamaPelanggan,
+                                    NomorKtp=p.NomorKtp,
                                     Alamat=p.Alamat,
                                     NoTelepon=p.NoTelepon,
                                     JenisMember=p.Member.NamaMember

@@ -44,9 +44,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelIdHidden = new System.Windows.Forms.Label();
+            this.panelNomorKtp = new System.Windows.Forms.Panel();
+            this.textBoxNomorKtp = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panelNomorTelepon.SuspendLayout();
             this.panelAlamat.SuspendLayout();
             this.panelNamaPelanggan.SuspendLayout();
+            this.panelNomorKtp.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxMember
@@ -54,7 +58,7 @@
             this.comboBoxMember.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMember.FormattingEnabled = true;
-            this.comboBoxMember.Location = new System.Drawing.Point(129, 220);
+            this.comboBoxMember.Location = new System.Drawing.Point(129, 245);
             this.comboBoxMember.Name = "comboBoxMember";
             this.comboBoxMember.Size = new System.Drawing.Size(240, 21);
             this.comboBoxMember.TabIndex = 38;
@@ -63,7 +67,7 @@
             // 
             this.panelNomorTelepon.BackColor = System.Drawing.SystemColors.Window;
             this.panelNomorTelepon.Controls.Add(this.textBoxNomorTelepon);
-            this.panelNomorTelepon.Location = new System.Drawing.Point(129, 187);
+            this.panelNomorTelepon.Location = new System.Drawing.Point(129, 212);
             this.panelNomorTelepon.Name = "panelNomorTelepon";
             this.panelNomorTelepon.Padding = new System.Windows.Forms.Padding(3);
             this.panelNomorTelepon.Size = new System.Drawing.Size(240, 22);
@@ -82,7 +86,7 @@
             // 
             this.panelAlamat.BackColor = System.Drawing.SystemColors.Window;
             this.panelAlamat.Controls.Add(this.textBoxAlamat);
-            this.panelAlamat.Location = new System.Drawing.Point(129, 92);
+            this.panelAlamat.Location = new System.Drawing.Point(129, 117);
             this.panelAlamat.Name = "panelAlamat";
             this.panelAlamat.Padding = new System.Windows.Forms.Padding(3);
             this.panelAlamat.Size = new System.Drawing.Size(240, 88);
@@ -123,7 +127,7 @@
             this.btnBatal.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBatal.Image = ((System.Drawing.Image)(resources.GetObject("btnBatal.Image")));
             this.btnBatal.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnBatal.Location = new System.Drawing.Point(109, 256);
+            this.btnBatal.Location = new System.Drawing.Point(109, 284);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(89, 35);
             this.btnBatal.TabIndex = 40;
@@ -134,7 +138,7 @@
             this.btnSimpan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSimpan.Image = ((System.Drawing.Image)(resources.GetObject("btnSimpan.Image")));
             this.btnSimpan.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnSimpan.Location = new System.Drawing.Point(14, 256);
+            this.btnSimpan.Location = new System.Drawing.Point(14, 284);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(89, 35);
             this.btnSimpan.TabIndex = 39;
@@ -145,7 +149,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(11, 219);
+            this.label7.Location = new System.Drawing.Point(11, 244);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(86, 15);
             this.label7.TabIndex = 37;
@@ -155,7 +159,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(11, 187);
+            this.label4.Location = new System.Drawing.Point(11, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(93, 15);
             this.label4.TabIndex = 36;
@@ -165,7 +169,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 92);
+            this.label3.Location = new System.Drawing.Point(11, 117);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 15);
             this.label3.TabIndex = 35;
@@ -203,11 +207,42 @@
             this.labelIdHidden.Text = "label5";
             this.labelIdHidden.Visible = false;
             // 
+            // panelNomorKtp
+            // 
+            this.panelNomorKtp.BackColor = System.Drawing.SystemColors.Window;
+            this.panelNomorKtp.Controls.Add(this.textBoxNomorKtp);
+            this.panelNomorKtp.Location = new System.Drawing.Point(129, 89);
+            this.panelNomorKtp.Name = "panelNomorKtp";
+            this.panelNomorKtp.Padding = new System.Windows.Forms.Padding(3);
+            this.panelNomorKtp.Size = new System.Drawing.Size(240, 22);
+            this.panelNomorKtp.TabIndex = 46;
+            // 
+            // textBoxNomorKtp
+            // 
+            this.textBoxNomorKtp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxNomorKtp.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNomorKtp.Location = new System.Drawing.Point(6, 5);
+            this.textBoxNomorKtp.Name = "textBoxNomorKtp";
+            this.textBoxNomorKtp.Size = new System.Drawing.Size(228, 13);
+            this.textBoxNomorKtp.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(11, 89);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(71, 15);
+            this.label5.TabIndex = 45;
+            this.label5.Text = "Nomor KTP";
+            // 
             // UbahPelanggan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 302);
+            this.ClientSize = new System.Drawing.Size(389, 330);
+            this.Controls.Add(this.panelNomorKtp);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.labelIdHidden);
             this.Controls.Add(this.comboBoxMember);
             this.Controls.Add(this.panelNomorTelepon);
@@ -229,6 +264,8 @@
             this.panelAlamat.PerformLayout();
             this.panelNamaPelanggan.ResumeLayout(false);
             this.panelNamaPelanggan.PerformLayout();
+            this.panelNomorKtp.ResumeLayout(false);
+            this.panelNomorKtp.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,5 +288,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelIdHidden;
+        private System.Windows.Forms.Panel panelNomorKtp;
+        private System.Windows.Forms.TextBox textBoxNomorKtp;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -46,6 +46,10 @@ namespace com.agungsetiawan.xpos.View.VPelanggan
             System.Drawing.Rectangle rectMember = new Rectangle(comboBoxMember.Location.X, comboBoxMember.Location.Y,
                                                         comboBoxMember.ClientSize.Width, comboBoxMember.ClientSize.Height);
 
+            System.Drawing.Rectangle rectNomotKtp = new Rectangle(panelNomorKtp.Location.X, panelNomorKtp.Location.Y,
+                                                        panelNomorKtp.ClientSize.Width, panelNomorKtp.ClientSize.Height);
+
+            
             rectNamaPelanggan.Inflate(1, 1); // border thickness
             System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectNamaPelanggan, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
 
@@ -57,6 +61,10 @@ namespace com.agungsetiawan.xpos.View.VPelanggan
 
             rectMember.Inflate(1, 1); // border thickness
             System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectMember, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+
+            rectNomotKtp.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectNomotKtp, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+      
         }
 
         private void btnSimpan_Click(object sender, EventArgs e)
@@ -67,6 +75,12 @@ namespace com.agungsetiawan.xpos.View.VPelanggan
             {
                 IsPass = false;
                 sb.Append("- Nama Pelanggan harus diisi \n");
+            }
+
+            if (string.IsNullOrEmpty(textBoxNomorKtp.Text))
+            {
+                IsPass = false;
+                sb.Append("- Nomor KTP harus diisi \n");
             }
 
             if (string.IsNullOrEmpty(textBoxAlamat.Text))
@@ -98,6 +112,7 @@ namespace com.agungsetiawan.xpos.View.VPelanggan
             var pelanggan = new Pelanggan()
             {
                 NamaPelanggan=textBoxNamaPelanggan.Text,
+                NomorKtp=textBoxNomorKtp.Text,
                 Alamat=textBoxAlamat.Text,
                 NoTelepon=textBoxNomorTelepon.Text,
                 MemberId=member.Id
