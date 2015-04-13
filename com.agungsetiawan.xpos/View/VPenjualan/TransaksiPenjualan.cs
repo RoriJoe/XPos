@@ -392,6 +392,12 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
         private void textBoxJumlahBayar_Leave(object sender, EventArgs e)
         {
             decimal total = decimal.Parse(labelTotal.Text, NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+
+            if(string.IsNullOrEmpty(textBoxJumlahBayar.Text))
+            {
+                return;
+            }
+
             decimal bayar = decimal.Parse(textBoxJumlahBayar.Text);
             decimal kembali = bayar - total;
 
@@ -448,6 +454,11 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
         private void btnBatal_Click(object sender, EventArgs e)
         {
             this.Clear();
+        }
+
+        private void textBoxJumlahBayar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != (char)8;
         }
     }
 }

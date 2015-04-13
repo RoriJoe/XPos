@@ -382,6 +382,7 @@
             this.textBoxJumlahBayar.Size = new System.Drawing.Size(240, 38);
             this.textBoxJumlahBayar.TabIndex = 24;
             this.textBoxJumlahBayar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxJumlahBayar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxJumlahBayar_KeyPress);
             this.textBoxJumlahBayar.Leave += new System.EventHandler(this.textBoxJumlahBayar_Leave);
             // 
             // panelControl2
