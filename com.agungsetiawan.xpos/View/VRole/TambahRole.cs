@@ -116,6 +116,11 @@ namespace com.agungsetiawan.xpos.View.VRole
                 sbPermissions.Append("supplier,");
             }
 
+            if (checkBoxMerek.Checked)
+            {
+                sbPermissions.Append("merek,");
+            }
+
             if(string.IsNullOrEmpty(sbPermissions.ToString()))
             {
                 IsPass = false;

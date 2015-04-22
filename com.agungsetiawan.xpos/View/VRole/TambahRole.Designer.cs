@@ -51,6 +51,7 @@
             this.checkBoxDaftarPenjualan = new System.Windows.Forms.CheckBox();
             this.checkBoxPembelian = new System.Windows.Forms.CheckBox();
             this.checkBoxDaftarPembelian = new System.Windows.Forms.CheckBox();
+            this.checkBoxMerek = new System.Windows.Forms.CheckBox();
             this.panelKeterangan.SuspendLayout();
             this.panelNamaRole.SuspendLayout();
             this.SuspendLayout();
@@ -99,7 +100,7 @@
             this.btnBatal.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBatal.Image = ((System.Drawing.Image)(resources.GetObject("btnBatal.Image")));
             this.btnBatal.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnBatal.Location = new System.Drawing.Point(114, 284);
+            this.btnBatal.Location = new System.Drawing.Point(114, 308);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(89, 35);
             this.btnBatal.TabIndex = 31;
@@ -110,7 +111,7 @@
             this.btnSimpan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSimpan.Image = ((System.Drawing.Image)(resources.GetObject("btnSimpan.Image")));
             this.btnSimpan.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnSimpan.Location = new System.Drawing.Point(19, 284);
+            this.btnSimpan.Location = new System.Drawing.Point(19, 308);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(89, 35);
             this.btnSimpan.TabIndex = 30;
@@ -279,11 +280,22 @@
             this.checkBoxDaftarPembelian.Text = "Daftar Pembelian";
             this.checkBoxDaftarPembelian.UseVisualStyleBackColor = true;
             // 
+            // checkBoxMerek
+            // 
+            this.checkBoxMerek.AutoSize = true;
+            this.checkBoxMerek.Location = new System.Drawing.Point(133, 263);
+            this.checkBoxMerek.Name = "checkBoxMerek";
+            this.checkBoxMerek.Size = new System.Drawing.Size(56, 17);
+            this.checkBoxMerek.TabIndex = 51;
+            this.checkBoxMerek.Text = "Merek";
+            this.checkBoxMerek.UseVisualStyleBackColor = true;
+            // 
             // TambahRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 335);
+            this.ClientSize = new System.Drawing.Size(394, 359);
+            this.Controls.Add(this.checkBoxMerek);
             this.Controls.Add(this.checkBoxDaftarPembelian);
             this.Controls.Add(this.checkBoxPembelian);
             this.Controls.Add(this.checkBoxDaftarPenjualan);
@@ -340,5 +352,6 @@
         private System.Windows.Forms.CheckBox checkBoxDaftarPenjualan;
         private System.Windows.Forms.CheckBox checkBoxPembelian;
         private System.Windows.Forms.CheckBox checkBoxDaftarPembelian;
+        private System.Windows.Forms.CheckBox checkBoxMerek;
     }
 }

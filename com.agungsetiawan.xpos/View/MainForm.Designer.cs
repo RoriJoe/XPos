@@ -73,8 +73,8 @@
             this.navBarGroup5 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarPelanggan = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarSupplier = new DevExpress.XtraNavBar.NavBarItem();
-            this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.navBarMerek = new DevExpress.XtraNavBar.NavBarItem();
+            this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
@@ -477,16 +477,17 @@
             this.navBarSupplier.Name = "navBarSupplier";
             this.navBarSupplier.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarItem16_LinkClicked);
             // 
+            // navBarMerek
+            // 
+            this.navBarMerek.Caption = "Merek";
+            this.navBarMerek.Enabled = false;
+            this.navBarMerek.Name = "navBarMerek";
+            this.navBarMerek.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarMerek_LinkClicked);
+            // 
             // xtraTabbedMdiManager
             // 
             this.xtraTabbedMdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager.MdiParent = this;
-            // 
-            // navBarMerek
-            // 
-            this.navBarMerek.Caption = "Merek";
-            this.navBarMerek.Name = "navBarMerek";
-            this.navBarMerek.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarMerek_LinkClicked);
             // 
             // MainForm
             // 

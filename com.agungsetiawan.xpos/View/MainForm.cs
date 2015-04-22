@@ -116,6 +116,11 @@ namespace com.agungsetiawan.xpos.View
             {
                 barBtnLaporanJumlahTransaksi.Enabled = true;
             }
+
+            if (permissions.Contains("merek"))
+            {
+                navBarMerek.Enabled = true;
+            }
             //laporan belum
 
             barBtnLogout.Enabled = true;
@@ -276,6 +281,8 @@ namespace com.agungsetiawan.xpos.View
             barBtnLogout.Enabled = false;
 
             barBtnLaporanJumlahTransaksi.Enabled = false;
+
+            navBarMerek.Enabled = false;
             //laporan belum
 
             int pagesCount = xtraTabbedMdiManager.Pages.Count;

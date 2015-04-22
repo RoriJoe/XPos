@@ -92,6 +92,11 @@ namespace com.agungsetiawan.xpos.View.VRole
             {
                 checkBoxLaporan.Checked = true;
             }
+
+            if (permissions.Contains("merek"))
+            {
+                checkBoxMerek.Checked = true;
+            }
         }
 
         private void btnSimpan_Click(object sender, EventArgs e)
@@ -169,6 +174,11 @@ namespace com.agungsetiawan.xpos.View.VRole
             if (checkBoxSupplier.Checked)
             {
                 sbPermissions.Append("supplier,");
+            }
+
+            if (checkBoxMerek.Checked)
+            {
+                sbPermissions.Append("merek,");
             }
 
             if (string.IsNullOrEmpty(sbPermissions.ToString()))

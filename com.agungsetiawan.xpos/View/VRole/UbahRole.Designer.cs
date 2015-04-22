@@ -52,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.labelHiddenId = new System.Windows.Forms.Label();
+            this.checkBoxMerek = new System.Windows.Forms.CheckBox();
             this.panelKeterangan.SuspendLayout();
             this.panelNamaRole.SuspendLayout();
             this.SuspendLayout();
@@ -220,7 +221,7 @@
             this.btnBatal.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBatal.Image = ((System.Drawing.Image)(resources.GetObject("btnBatal.Image")));
             this.btnBatal.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnBatal.Location = new System.Drawing.Point(114, 280);
+            this.btnBatal.Location = new System.Drawing.Point(114, 295);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(89, 35);
             this.btnBatal.TabIndex = 56;
@@ -231,7 +232,7 @@
             this.btnSimpan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSimpan.Image = ((System.Drawing.Image)(resources.GetObject("btnSimpan.Image")));
             this.btnSimpan.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnSimpan.Location = new System.Drawing.Point(19, 280);
+            this.btnSimpan.Location = new System.Drawing.Point(19, 295);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(89, 35);
             this.btnSimpan.TabIndex = 55;
@@ -290,11 +291,22 @@
             this.labelHiddenId.Text = "label4";
             this.labelHiddenId.Visible = false;
             // 
+            // checkBoxMerek
+            // 
+            this.checkBoxMerek.AutoSize = true;
+            this.checkBoxMerek.Location = new System.Drawing.Point(133, 259);
+            this.checkBoxMerek.Name = "checkBoxMerek";
+            this.checkBoxMerek.Size = new System.Drawing.Size(56, 17);
+            this.checkBoxMerek.TabIndex = 72;
+            this.checkBoxMerek.Text = "Merek";
+            this.checkBoxMerek.UseVisualStyleBackColor = true;
+            // 
             // UbahRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 322);
+            this.ClientSize = new System.Drawing.Size(390, 337);
+            this.Controls.Add(this.checkBoxMerek);
             this.Controls.Add(this.labelHiddenId);
             this.Controls.Add(this.checkBoxDaftarPembelian);
             this.Controls.Add(this.checkBoxPembelian);
@@ -353,5 +365,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelHiddenId;
+        private System.Windows.Forms.CheckBox checkBoxMerek;
     }
 }
