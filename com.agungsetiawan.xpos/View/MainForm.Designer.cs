@@ -74,6 +74,7 @@
             this.navBarPelanggan = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarSupplier = new DevExpress.XtraNavBar.NavBarItem();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.navBarMerek = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
@@ -306,7 +307,8 @@
             this.navBarItem13,
             this.navBarItem14,
             this.navBarPelanggan,
-            this.navBarSupplier});
+            this.navBarSupplier,
+            this.navBarMerek});
             this.navBarControl1.Location = new System.Drawing.Point(0, 142);
             this.navBarControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.navBarControl1.Name = "navBarControl1";
@@ -342,7 +344,6 @@
             // navBarGroup2
             // 
             this.navBarGroup2.Caption = "Administrator";
-            this.navBarGroup2.Expanded = true;
             this.navBarGroup2.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarRole),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPengguna),
@@ -454,9 +455,11 @@
             // navBarGroup5
             // 
             this.navBarGroup5.Caption = "Pihak Kedua";
+            this.navBarGroup5.Expanded = true;
             this.navBarGroup5.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPelanggan),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSupplier)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSupplier),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarMerek)});
             this.navBarGroup5.Name = "navBarGroup5";
             this.navBarGroup5.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup5.SmallImage")));
             // 
@@ -478,6 +481,12 @@
             // 
             this.xtraTabbedMdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager.MdiParent = this;
+            // 
+            // navBarMerek
+            // 
+            this.navBarMerek.Caption = "Merek";
+            this.navBarMerek.Name = "navBarMerek";
+            this.navBarMerek.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarMerek_LinkClicked);
             // 
             // MainForm
             // 
@@ -544,5 +553,6 @@
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager;
         private DevExpress.XtraBars.BarButtonItem barBtnLogout;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraNavBar.NavBarItem navBarMerek;
     }
 }

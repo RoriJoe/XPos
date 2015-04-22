@@ -119,3 +119,6 @@ D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.csprojResolv
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.TambahNomorKtpDiPelanggan.resources
 D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.TambahNomorKtpDiPelanggan.resources
 D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.BuatTabelMerekDanReferensiKeBarang.resources
+D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VMerek.ListMerek.resources
+D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VMerek.TambahMerek.resources
+D:\Dev\XPos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VMerek.UbahMerek.resources

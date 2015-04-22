@@ -20,6 +20,7 @@ using com.agungsetiawan.xpos.View.VRole;
 using com.agungsetiawan.xpos.View.VPengguna;
 using com.agungsetiawan.xpos.View.VWelcome;
 using com.agungsetiawan.xpos.View.VLaporan;
+using com.agungsetiawan.xpos.View.VMerek;
 
 namespace com.agungsetiawan.xpos.View
 {
@@ -325,6 +326,14 @@ namespace com.agungsetiawan.xpos.View
         private void navBarPengguna_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             ListPengguna form = ListPengguna.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
+
+        private void navBarMerek_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            ListMerek form = ListMerek.GetForm();
             form.MdiParent = this;
             form.Show();
             form.Activate();
