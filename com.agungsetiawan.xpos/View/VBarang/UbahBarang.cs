@@ -19,6 +19,7 @@ namespace com.agungsetiawan.xpos.View.VBarang
         KategoriService kategoriService;
         BarangService barangService;
         SupplierService supplierService;
+        MerekService merekService;
 
         public UbahBarang()
         {
@@ -28,6 +29,7 @@ namespace com.agungsetiawan.xpos.View.VBarang
             kategoriService = new KategoriService();
             barangService = new BarangService();
             supplierService = new SupplierService();
+            merekService = new MerekService();
 
             var kategoris = kategoriService.Get();
             comboBoxKategori.DataSource = kategoris;
@@ -38,7 +40,11 @@ namespace com.agungsetiawan.xpos.View.VBarang
             comboBoxSupplier.DataSource = suppliers;
             comboBoxSupplier.ValueMember = "Id";
             comboBoxSupplier.DisplayMember = "NamaSupplier";
-            comboBoxSupplier.SelectedValue = -1;
+
+            var mereks = merekService.Get();
+            comboBoxMerek.DataSource = mereks;
+            comboBoxMerek.DisplayMember = "NamaMerek";
+            comboBoxMerek.ValueMember = "Id";
         }
 
         public void PopulateData()
@@ -54,6 +60,7 @@ namespace com.agungsetiawan.xpos.View.VBarang
             textBoxKeterangan.Text = barang.Keterangan;
             comboBoxKategori.SelectedValue = barang.KategoriId;
             comboBoxSupplier.SelectedValue = barang.SupplierId;
+            comboBoxMerek.SelectedValue = barang.MerekId;
         }
 
         private void btnSimpan_Click(object sender, EventArgs e)
@@ -135,6 +142,12 @@ namespace com.agungsetiawan.xpos.View.VBarang
                 sb.Append("- Supplier harus diisi \n");
             }
 
+            if (comboBoxMerek.SelectedValue == null)
+            {
+                IsPass = false;
+                sb.Append("- Merek harus diisi \n");
+            }
+
             if (!IsPass)
             {
                 MessageBox.Show(sb.ToString(), "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -143,6 +156,7 @@ namespace com.agungsetiawan.xpos.View.VBarang
 
             var kategori = kategoriService.Get(int.Parse(comboBoxKategori.SelectedValue.ToString()));
             var supplier = supplierService.Get(int.Parse(comboBoxSupplier.SelectedValue.ToString()));
+            var merek = merekService.Get(int.Parse(comboBoxMerek.SelectedValue.ToString()));
             var barang = barangService.Get(int.Parse(textBoxId.Text));
             
             barang.NamaBarang = textBoxNamaBarang.Text;
@@ -152,6 +166,7 @@ namespace com.agungsetiawan.xpos.View.VBarang
             barang.Keterangan = textBoxKeterangan.Text;
             barang.KategoriId = kategori.Id;
             barang.SupplierId = supplier.Id;
+            barang.MerekId = merek.Id;
 
             barangService.Put(barang);
 
@@ -182,6 +197,9 @@ namespace com.agungsetiawan.xpos.View.VBarang
             System.Drawing.Rectangle rectSupplier = new Rectangle(comboBoxSupplier.Location.X, comboBoxSupplier.Location.Y,
                                                         comboBoxSupplier.ClientSize.Width, comboBoxSupplier.ClientSize.Height);
 
+            System.Drawing.Rectangle rectMerek = new Rectangle(comboBoxMerek.Location.X, comboBoxMerek.Location.Y,
+                                                         comboBoxMerek.ClientSize.Width, comboBoxMerek.ClientSize.Height);
+
             rectNamaBarang.Inflate(1, 1); // border thickness
             System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectNamaBarang, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
 
@@ -202,6 +220,9 @@ namespace com.agungsetiawan.xpos.View.VBarang
 
             rectSupplier.Inflate(1, 1); // border thickness
             System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectSupplier, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+
+            rectMerek.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectMerek, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
         }
     }
 }
