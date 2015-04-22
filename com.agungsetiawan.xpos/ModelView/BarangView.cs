@@ -14,6 +14,10 @@ namespace com.agungsetiawan.xpos.ModelView
         [DisplayName("Nama Barang")]
         public string NamaBarang { get; set; }
 
+        public string Merek { get; set; }
+
+        public string Kategori { get; set; }
+
         [DisplayName("Harga Jual")]
         public decimal HargaJual { get; set; }
 
@@ -24,7 +28,8 @@ namespace com.agungsetiawan.xpos.ModelView
 
         public string Keterangan { get; set; }
 
-        public string Kategori { get; set; }
+        
         public string Supplier { get; set; }
+        
     }
 }

@@ -9,9 +9,9 @@ namespace com.agungsetiawan.xpos.Repository
 {
     public class BarangRepository : GenericRepository<Barang>
     {
-        public List<Barang> GetWithKategoriAndSupplier()
+        public List<Barang> GetWithKategoriAndSupplierAndMerek()
         {
-            return db.Barangs.Include("Kategori").Include("Supplier").ToList();
+            return db.Barangs.Include("Kategori").Include("Supplier").Include("Merek").ToList();
         }
 
         public List<Barang> FindByNama(String nama)
