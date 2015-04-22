@@ -58,6 +58,7 @@ namespace com.agungsetiawan.xpos.View.VBarang
             textBoxHargaBeli.Text = barang.HargaBeli.ToString();
             textBoxStok.Text = barang.Stok.ToString();
             textBoxKeterangan.Text = barang.Keterangan;
+            textBoxKodeBarang.Text = barang.KodeBarang;
             comboBoxKategori.SelectedValue = barang.KategoriId;
             comboBoxSupplier.SelectedValue = barang.SupplierId;
             comboBoxMerek.SelectedValue = barang.MerekId;
@@ -130,6 +131,12 @@ namespace com.agungsetiawan.xpos.View.VBarang
                 sb.Append("- Keterangan harus diisi \n");
             }
 
+            if (string.IsNullOrEmpty(textBoxKodeBarang.Text))
+            {
+                IsPass = false;
+                sb.Append("- Kode Barang harus diisi \n");
+            }
+
             if (comboBoxKategori.SelectedValue == null)
             {
                 IsPass = false;
@@ -164,6 +171,7 @@ namespace com.agungsetiawan.xpos.View.VBarang
             barang.HargaBeli = decimal.Parse(textBoxHargaBeli.Text);
             barang.Stok = int.Parse(textBoxStok.Text);
             barang.Keterangan = textBoxKeterangan.Text;
+            barang.KodeBarang = textBoxKodeBarang.Text;
             barang.KategoriId = kategori.Id;
             barang.SupplierId = supplier.Id;
             barang.MerekId = merek.Id;
@@ -190,6 +198,9 @@ namespace com.agungsetiawan.xpos.View.VBarang
 
             System.Drawing.Rectangle rectKeterangan = new Rectangle(panelKeterangan.Location.X, panelKeterangan.Location.Y,
                                                           panelKeterangan.ClientSize.Width, panelKeterangan.ClientSize.Height);
+
+            System.Drawing.Rectangle rectKodeBarang = new Rectangle(panelKodeBarang.Location.X, panelKodeBarang.Location.Y,
+                                                          panelKodeBarang.ClientSize.Width, panelKodeBarang.ClientSize.Height);
 
             System.Drawing.Rectangle rectKategori = new Rectangle(comboBoxKategori.Location.X, comboBoxKategori.Location.Y,
                                                           comboBoxKategori.ClientSize.Width, comboBoxKategori.ClientSize.Height);
@@ -223,6 +234,23 @@ namespace com.agungsetiawan.xpos.View.VBarang
 
             rectMerek.Inflate(1, 1); // border thickness
             System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectMerek, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+
+            rectKodeBarang.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectKodeBarang, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+        }
+
+        private void textBoxKodeBarang_Leave(object sender, EventArgs e)
+        {
+            var barang = barangService.Get(int.Parse(textBoxId.Text));
+            if(!textBoxKodeBarang.Text.Equals(barang.KodeBarang))
+            {
+                var barangKodeFound = barangService.FindByKodeBarang(textBoxKodeBarang.Text);
+                if (barangKodeFound != null)
+                {
+                    MessageBox.Show("Kode Barang sudah dipakai");
+                    this.ActiveControl = this.textBoxKodeBarang;
+                }
+            }
         }
     }
 }

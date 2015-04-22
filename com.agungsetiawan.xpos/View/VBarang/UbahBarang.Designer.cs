@@ -55,11 +55,15 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBoxMerek = new System.Windows.Forms.ComboBox();
+            this.panelKodeBarang = new System.Windows.Forms.Panel();
+            this.textBoxKodeBarang = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.panelNamaBarang.SuspendLayout();
             this.panelHargaJual.SuspendLayout();
             this.panelHargaBeli.SuspendLayout();
             this.panelStok.SuspendLayout();
             this.panelKeterangan.SuspendLayout();
+            this.panelKodeBarang.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnBatal
@@ -68,7 +72,7 @@
             this.btnBatal.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBatal.Image = ((System.Drawing.Image)(resources.GetObject("btnBatal.Image")));
             this.btnBatal.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnBatal.Location = new System.Drawing.Point(110, 363);
+            this.btnBatal.Location = new System.Drawing.Point(110, 410);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(89, 35);
             this.btnBatal.TabIndex = 30;
@@ -79,7 +83,7 @@
             this.btnSimpan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSimpan.Image = ((System.Drawing.Image)(resources.GetObject("btnSimpan.Image")));
             this.btnSimpan.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnSimpan.Location = new System.Drawing.Point(15, 363);
+            this.btnSimpan.Location = new System.Drawing.Point(15, 410);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(89, 35);
             this.btnSimpan.TabIndex = 29;
@@ -91,7 +95,7 @@
             this.comboBoxKategori.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxKategori.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxKategori.FormattingEnabled = true;
-            this.comboBoxKategori.Location = new System.Drawing.Point(130, 275);
+            this.comboBoxKategori.Location = new System.Drawing.Point(130, 311);
             this.comboBoxKategori.Name = "comboBoxKategori";
             this.comboBoxKategori.Size = new System.Drawing.Size(240, 21);
             this.comboBoxKategori.TabIndex = 27;
@@ -145,7 +149,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 274);
+            this.label7.Location = new System.Drawing.Point(12, 310);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 15);
             this.label7.TabIndex = 21;
@@ -155,7 +159,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 207);
+            this.label6.Location = new System.Drawing.Point(12, 243);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 15);
             this.label6.TabIndex = 20;
@@ -165,7 +169,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 176);
+            this.label5.Location = new System.Drawing.Point(12, 212);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 15);
             this.label5.TabIndex = 19;
@@ -175,7 +179,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 146);
+            this.label4.Location = new System.Drawing.Point(12, 182);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 15);
             this.label4.TabIndex = 18;
@@ -185,7 +189,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 116);
+            this.label3.Location = new System.Drawing.Point(12, 152);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 15);
             this.label3.TabIndex = 17;
@@ -246,7 +250,7 @@
             // 
             this.panelHargaJual.BackColor = System.Drawing.SystemColors.Window;
             this.panelHargaJual.Controls.Add(this.textBoxHargaJual);
-            this.panelHargaJual.Location = new System.Drawing.Point(130, 116);
+            this.panelHargaJual.Location = new System.Drawing.Point(130, 152);
             this.panelHargaJual.Name = "panelHargaJual";
             this.panelHargaJual.Padding = new System.Windows.Forms.Padding(3);
             this.panelHargaJual.Size = new System.Drawing.Size(240, 22);
@@ -256,7 +260,7 @@
             // 
             this.panelHargaBeli.BackColor = System.Drawing.SystemColors.Window;
             this.panelHargaBeli.Controls.Add(this.textBoxHargaBeli);
-            this.panelHargaBeli.Location = new System.Drawing.Point(130, 146);
+            this.panelHargaBeli.Location = new System.Drawing.Point(130, 182);
             this.panelHargaBeli.Name = "panelHargaBeli";
             this.panelHargaBeli.Padding = new System.Windows.Forms.Padding(3);
             this.panelHargaBeli.Size = new System.Drawing.Size(240, 22);
@@ -266,7 +270,7 @@
             // 
             this.panelStok.BackColor = System.Drawing.SystemColors.Window;
             this.panelStok.Controls.Add(this.textBoxStok);
-            this.panelStok.Location = new System.Drawing.Point(130, 178);
+            this.panelStok.Location = new System.Drawing.Point(130, 214);
             this.panelStok.Name = "panelStok";
             this.panelStok.Padding = new System.Windows.Forms.Padding(3);
             this.panelStok.Size = new System.Drawing.Size(240, 22);
@@ -276,7 +280,7 @@
             // 
             this.panelKeterangan.BackColor = System.Drawing.SystemColors.Window;
             this.panelKeterangan.Controls.Add(this.textBoxKeterangan);
-            this.panelKeterangan.Location = new System.Drawing.Point(130, 210);
+            this.panelKeterangan.Location = new System.Drawing.Point(130, 246);
             this.panelKeterangan.Name = "panelKeterangan";
             this.panelKeterangan.Padding = new System.Windows.Forms.Padding(3);
             this.panelKeterangan.Size = new System.Drawing.Size(240, 22);
@@ -287,7 +291,7 @@
             this.comboBoxSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSupplier.FormattingEnabled = true;
-            this.comboBoxSupplier.Location = new System.Drawing.Point(129, 310);
+            this.comboBoxSupplier.Location = new System.Drawing.Point(129, 346);
             this.comboBoxSupplier.Name = "comboBoxSupplier";
             this.comboBoxSupplier.Size = new System.Drawing.Size(240, 21);
             this.comboBoxSupplier.TabIndex = 28;
@@ -296,7 +300,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(11, 309);
+            this.label9.Location = new System.Drawing.Point(11, 345);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(53, 15);
             this.label9.TabIndex = 37;
@@ -306,7 +310,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(11, 244);
+            this.label10.Location = new System.Drawing.Point(11, 280);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 15);
             this.label10.TabIndex = 39;
@@ -317,16 +321,48 @@
             this.comboBoxMerek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxMerek.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMerek.FormattingEnabled = true;
-            this.comboBoxMerek.Location = new System.Drawing.Point(129, 244);
+            this.comboBoxMerek.Location = new System.Drawing.Point(129, 280);
             this.comboBoxMerek.Name = "comboBoxMerek";
             this.comboBoxMerek.Size = new System.Drawing.Size(240, 21);
             this.comboBoxMerek.TabIndex = 38;
+            // 
+            // panelKodeBarang
+            // 
+            this.panelKodeBarang.BackColor = System.Drawing.SystemColors.Window;
+            this.panelKodeBarang.Controls.Add(this.textBoxKodeBarang);
+            this.panelKodeBarang.Location = new System.Drawing.Point(130, 120);
+            this.panelKodeBarang.Name = "panelKodeBarang";
+            this.panelKodeBarang.Padding = new System.Windows.Forms.Padding(3);
+            this.panelKodeBarang.Size = new System.Drawing.Size(240, 22);
+            this.panelKodeBarang.TabIndex = 41;
+            // 
+            // textBoxKodeBarang
+            // 
+            this.textBoxKodeBarang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxKodeBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxKodeBarang.Location = new System.Drawing.Point(6, 4);
+            this.textBoxKodeBarang.Name = "textBoxKodeBarang";
+            this.textBoxKodeBarang.Size = new System.Drawing.Size(228, 13);
+            this.textBoxKodeBarang.TabIndex = 2;
+            this.textBoxKodeBarang.Leave += new System.EventHandler(this.textBoxKodeBarang_Leave);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(12, 120);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(79, 15);
+            this.label11.TabIndex = 40;
+            this.label11.Text = "Kode Barang";
             // 
             // UbahBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(398, 408);
+            this.ClientSize = new System.Drawing.Size(398, 455);
+            this.Controls.Add(this.panelKodeBarang);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.comboBoxMerek);
             this.Controls.Add(this.comboBoxSupplier);
@@ -363,6 +399,8 @@
             this.panelStok.PerformLayout();
             this.panelKeterangan.ResumeLayout(false);
             this.panelKeterangan.PerformLayout();
+            this.panelKodeBarang.ResumeLayout(false);
+            this.panelKodeBarang.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -396,5 +434,8 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBoxMerek;
+        private System.Windows.Forms.Panel panelKodeBarang;
+        private System.Windows.Forms.TextBox textBoxKodeBarang;
+        private System.Windows.Forms.Label label11;
     }
 }

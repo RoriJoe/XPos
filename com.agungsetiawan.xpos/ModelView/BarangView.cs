@@ -11,6 +11,9 @@ namespace com.agungsetiawan.xpos.ModelView
     {
         public int Id { get; set; }
 
+        [DisplayName("Kode Barang")]
+        public string KodeBarang { get; set; }
+
         [DisplayName("Nama Barang")]
         public string NamaBarang { get; set; }
 
@@ -27,7 +30,6 @@ namespace com.agungsetiawan.xpos.ModelView
         public int Stok { get; set; }
 
         public string Keterangan { get; set; }
-
         
         public string Supplier { get; set; }
         

@@ -32,7 +32,8 @@ namespace com.agungsetiawan.xpos.Service
                                       HargaBeli = b.HargaBeli,
                                       Stok = b.Stok,
                                       Keterangan = b.Keterangan,
-                                      Supplier = b.Supplier.NamaSupplier
+                                      Supplier = b.Supplier.NamaSupplier,
+                                      KodeBarang=b.KodeBarang
                                   }).ToList();
 
             return barangViews;
@@ -74,6 +75,11 @@ namespace com.agungsetiawan.xpos.Service
                                }).ToList();
 
             return barangViews;
+        }
+
+        public Barang FindByKodeBarang(string kodeBarang)
+        {
+            return barangRepository.FindByKodeBarang(kodeBarang);
         }
     }
 }

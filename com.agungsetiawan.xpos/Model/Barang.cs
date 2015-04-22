@@ -12,6 +12,10 @@ namespace com.agungsetiawan.xpos.Model
     {
         public int Id { get; set; }
 
+        [Column(TypeName = "varchar")]
+        [StringLength(10)]
+        public string KodeBarang { get; set; }
+
         [Column(TypeName="varchar")]
         [StringLength(50)]
         public string NamaBarang { get; set; }

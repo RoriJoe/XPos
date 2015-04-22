@@ -18,5 +18,10 @@ namespace com.agungsetiawan.xpos.Repository
         {
             return db.Barangs.Where(b => b.NamaBarang.ToLower().Contains(nama.ToLower())).ToList();
         }
+
+        public Barang FindByKodeBarang(string kodeBarang)
+        {
+            return this.db.Barangs.Where(b => b.KodeBarang.Equals(kodeBarang)).SingleOrDefault();
+        }
     }
 }

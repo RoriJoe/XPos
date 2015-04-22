@@ -135,6 +135,10 @@
     <Compile Include="Migrations\201504220531039_BuatTabelMerekDanReferensiKeBarang.Designer.cs">
       <DependentUpon>201504220531039_BuatTabelMerekDanReferensiKeBarang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504221229544_TambahKolomKodeBarangDiBarang.cs" />
+    <Compile Include="Migrations\201504221229544_TambahKolomKodeBarangDiBarang.Designer.cs">
+      <DependentUpon>201504221229544_TambahKolomKodeBarangDiBarang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelView\BarangView.cs" />
     <Compile Include="ModelView\PelangganView.cs" />
@@ -443,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504220531039_BuatTabelMerekDanReferensiKeBarang.resx">
       <DependentUpon>201504220531039_BuatTabelMerekDanReferensiKeBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504221229544_TambahKolomKodeBarangDiBarang.resx">
+      <DependentUpon>201504221229544_TambahKolomKodeBarangDiBarang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\BarangReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
