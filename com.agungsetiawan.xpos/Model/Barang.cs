@@ -32,5 +32,8 @@ namespace com.agungsetiawan.xpos.Model
 
         public Supplier Supplier { get; set; }
         public int SupplierId { get; set; }
+
+        public Merek Merek { get; set; }
+        public int MerekId { get; set; }
     }
 }

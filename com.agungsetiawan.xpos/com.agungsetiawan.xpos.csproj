@@ -131,6 +131,10 @@
     <Compile Include="Migrations\201504120602583_TambahNomorKtpDiPelanggan.Designer.cs">
       <DependentUpon>201504120602583_TambahNomorKtpDiPelanggan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201504220531039_BuatTabelMerekDanReferensiKeBarang.cs" />
+    <Compile Include="Migrations\201504220531039_BuatTabelMerekDanReferensiKeBarang.Designer.cs">
+      <DependentUpon>201504220531039_BuatTabelMerekDanReferensiKeBarang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelView\BarangView.cs" />
     <Compile Include="ModelView\PelangganView.cs" />
@@ -139,6 +143,7 @@
     <Compile Include="ModelView\PenjualanView.cs" />
     <Compile Include="Model\Laporan.cs" />
     <Compile Include="Model\Member.cs" />
+    <Compile Include="Model\Merek.cs" />
     <Compile Include="Model\Pelanggan.cs" />
     <Compile Include="Model\Pengguna.cs" />
     <Compile Include="Model\Penjualan.cs" />
@@ -415,6 +420,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504120602583_TambahNomorKtpDiPelanggan.resx">
       <DependentUpon>201504120602583_TambahNomorKtpDiPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201504220531039_BuatTabelMerekDanReferensiKeBarang.resx">
+      <DependentUpon>201504220531039_BuatTabelMerekDanReferensiKeBarang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\BarangReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
