@@ -79,13 +79,11 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                     diskon = 0;
 
                 int row = dataGridViewTransaksiPenjualan.Rows.Count;
-                int id;
+                string id=dataGridViewTransaksiPenjualan[0, row - 1].Value.ToString();
 
-                bool isValidId=int.TryParse(dataGridViewTransaksiPenjualan[0, row - 1].Value.ToString(),out id);
+                var barang = service.FindByKodeBarang(id);
 
-                var barang = service.Get(id);
-
-                if (barang == null || !isValidId)
+                if (barang == null)
                 {
                     MessageBox.Show("Tidak ada barang dengan ID tersebut","Pesan",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     return;
@@ -102,7 +100,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 {
                     for (int i = 0; i < row - 1; i++)
                     {
-                        if (id == int.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[0].Value.ToString()))
+                        if (id == dataGridViewTransaksiPenjualan.Rows[i].Cells[0].Value.ToString())
                         {
                             int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[2].Value.ToString());
                             if ((n + 1) > barang.Stok)
@@ -127,7 +125,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
                 if(IsNew)
                 {
-                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[0].Value = barang.Id;
+                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[0].Value = barang.KodeBarang;
                     dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[1].Value = barang.NamaBarang;
                     dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[2].Value = 1;
                     dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[3].Value = barang.HargaJual.ToString("N2", CultureInfo.GetCultureInfo("de"));
@@ -182,8 +180,9 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
                 int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[2].Value.ToString());
 
-                int id = int.Parse(dataGridViewTransaksiPenjualan[0, currentRowIndex].Value.ToString());
-                var barang = service.Get(id);
+                string id = dataGridViewTransaksiPenjualan[0, currentRowIndex].Value.ToString();
+
+                var barang = service.FindByKodeBarang(id);
 
                 if((n+1)>barang.Stok)
                 {
