@@ -415,21 +415,23 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             for (int i = 0; i < row - 1; i++)
             {
-                var kodeBarang = int.Parse(data.Rows[i].Cells[0].Value.ToString());
+                var kodeBarang = data.Rows[i].Cells[0].Value.ToString();
                 var namaBarang = data.Rows[i].Cells[1].Value.ToString();
                 var jumlahJual = int.Parse(data.Rows[i].Cells[2].Value.ToString());
                 var hargaJual = decimal.Parse(data.Rows[i].Cells[3].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
                 var diskon = float.Parse(data.Rows[i].Cells[4].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
                 var subtotal = decimal.Parse(data.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
 
+                var barang = service.FindByKodeBarang(kodeBarang);
+
                 pDetail = new PenjualanDetail()
                 {
                     Penjualan = penjualan,
-                    BarangId = kodeBarang,
+                    BarangId = barang.Id,
                     Harga = hargaJual,
                     Jumlah = jumlahJual,
                     SubTotal = subtotal,
-                    Diskon = diskon
+                    Diskon = diskon,
                 };
 
                 penjualan.PenjualanDetails.Add(pDetail);
