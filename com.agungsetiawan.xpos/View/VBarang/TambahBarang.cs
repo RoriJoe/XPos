@@ -241,5 +241,17 @@ namespace com.agungsetiawan.xpos.View.VBarang
             }
         }
 
+        private void BtnGenerateKodeBarang_Click(object sender, EventArgs e)
+        {
+            string namaBarang = textBoxNamaBarang.Text;
+            string merek = comboBoxMerek.Text;
+
+            if (string.IsNullOrEmpty(namaBarang) || string.IsNullOrEmpty(merek))
+                return;
+
+            string kodeBarang = barangService.GenerateKodeBarang(namaBarang, merek);
+            textBoxKodeBarang.Text = kodeBarang;
+        }
+
     }
 }

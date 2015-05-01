@@ -81,5 +81,23 @@ namespace com.agungsetiawan.xpos.Service
         {
             return barangRepository.FindByKodeBarang(kodeBarang);
         }
+
+        public string GenerateKodeBarang(string namaBarang, string merek)
+        {
+            string FirstPart = namaBarang.Trim().Substring(0, 3);
+            string SecondPart = merek.Trim().Substring(0, 3);
+
+            Barang barangAda = barangRepository.FindTopLikeKodeBarang(FirstPart + SecondPart);
+
+            if(barangAda==null)
+            {
+                return FirstPart.ToUpper() + SecondPart.ToUpper() + "001";
+            }
+
+            int currentNumber = int.Parse(barangAda.KodeBarang.Substring(6, 3));
+            int nextNumber = currentNumber + 1;
+
+            return FirstPart.ToUpper()+SecondPart.ToUpper()+nextNumber.ToString().PadLeft(3,'0');
+        }
     }
 }

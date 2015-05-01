@@ -56,6 +56,7 @@
             this.panelKodeBarang = new System.Windows.Forms.Panel();
             this.textBoxKodeBarang = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.BtnGenerateKodeBarang = new DevExpress.XtraEditors.SimpleButton();
             this.panelNamaBarang.SuspendLayout();
             this.panelHargaJual.SuspendLayout();
             this.panelHargaBeli.SuspendLayout();
@@ -88,7 +89,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 123);
+            this.label3.Location = new System.Drawing.Point(12, 208);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 15);
             this.label3.TabIndex = 2;
@@ -98,7 +99,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 153);
+            this.label4.Location = new System.Drawing.Point(12, 238);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 15);
             this.label4.TabIndex = 3;
@@ -108,7 +109,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 183);
+            this.label5.Location = new System.Drawing.Point(12, 268);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 15);
             this.label5.TabIndex = 4;
@@ -118,7 +119,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 214);
+            this.label6.Location = new System.Drawing.Point(12, 299);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 15);
             this.label6.TabIndex = 5;
@@ -128,7 +129,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 278);
+            this.label7.Location = new System.Drawing.Point(12, 176);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 15);
             this.label7.TabIndex = 6;
@@ -184,7 +185,7 @@
             this.comboBoxKategori.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxKategori.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxKategori.FormattingEnabled = true;
-            this.comboBoxKategori.Location = new System.Drawing.Point(130, 278);
+            this.comboBoxKategori.Location = new System.Drawing.Point(130, 176);
             this.comboBoxKategori.Name = "comboBoxKategori";
             this.comboBoxKategori.Size = new System.Drawing.Size(240, 21);
             this.comboBoxKategori.TabIndex = 8;
@@ -195,7 +196,7 @@
             this.btnBatal.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBatal.Image = ((System.Drawing.Image)(resources.GetObject("btnBatal.Image")));
             this.btnBatal.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnBatal.Location = new System.Drawing.Point(110, 354);
+            this.btnBatal.Location = new System.Drawing.Point(110, 378);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(89, 35);
             this.btnBatal.TabIndex = 11;
@@ -206,7 +207,7 @@
             this.btnSimpan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSimpan.Image = ((System.Drawing.Image)(resources.GetObject("btnSimpan.Image")));
             this.btnSimpan.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnSimpan.Location = new System.Drawing.Point(15, 354);
+            this.btnSimpan.Location = new System.Drawing.Point(15, 378);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(89, 35);
             this.btnSimpan.TabIndex = 10;
@@ -227,7 +228,7 @@
             // 
             this.panelHargaJual.BackColor = System.Drawing.SystemColors.Window;
             this.panelHargaJual.Controls.Add(this.textBoxHargaJual);
-            this.panelHargaJual.Location = new System.Drawing.Point(130, 123);
+            this.panelHargaJual.Location = new System.Drawing.Point(130, 208);
             this.panelHargaJual.Name = "panelHargaJual";
             this.panelHargaJual.Padding = new System.Windows.Forms.Padding(3);
             this.panelHargaJual.Size = new System.Drawing.Size(240, 22);
@@ -237,7 +238,7 @@
             // 
             this.panelHargaBeli.BackColor = System.Drawing.SystemColors.Window;
             this.panelHargaBeli.Controls.Add(this.textBoxHargaBeli);
-            this.panelHargaBeli.Location = new System.Drawing.Point(130, 153);
+            this.panelHargaBeli.Location = new System.Drawing.Point(130, 238);
             this.panelHargaBeli.Name = "panelHargaBeli";
             this.panelHargaBeli.Padding = new System.Windows.Forms.Padding(3);
             this.panelHargaBeli.Size = new System.Drawing.Size(240, 22);
@@ -247,7 +248,7 @@
             // 
             this.panelStok.BackColor = System.Drawing.SystemColors.Window;
             this.panelStok.Controls.Add(this.textBoxStok);
-            this.panelStok.Location = new System.Drawing.Point(130, 185);
+            this.panelStok.Location = new System.Drawing.Point(130, 270);
             this.panelStok.Name = "panelStok";
             this.panelStok.Padding = new System.Windows.Forms.Padding(3);
             this.panelStok.Size = new System.Drawing.Size(240, 22);
@@ -257,7 +258,7 @@
             // 
             this.panelKeterangan.BackColor = System.Drawing.SystemColors.Window;
             this.panelKeterangan.Controls.Add(this.textBoxKeterangan);
-            this.panelKeterangan.Location = new System.Drawing.Point(130, 218);
+            this.panelKeterangan.Location = new System.Drawing.Point(130, 303);
             this.panelKeterangan.Name = "panelKeterangan";
             this.panelKeterangan.Padding = new System.Windows.Forms.Padding(3);
             this.panelKeterangan.Size = new System.Drawing.Size(240, 22);
@@ -268,7 +269,7 @@
             this.comboBoxSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxSupplier.FormattingEnabled = true;
-            this.comboBoxSupplier.Location = new System.Drawing.Point(129, 309);
+            this.comboBoxSupplier.Location = new System.Drawing.Point(129, 336);
             this.comboBoxSupplier.Name = "comboBoxSupplier";
             this.comboBoxSupplier.Size = new System.Drawing.Size(240, 21);
             this.comboBoxSupplier.TabIndex = 9;
@@ -277,7 +278,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(12, 309);
+            this.label8.Location = new System.Drawing.Point(12, 336);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 15);
             this.label8.TabIndex = 20;
@@ -288,7 +289,7 @@
             this.comboBoxMerek.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBoxMerek.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxMerek.FormattingEnabled = true;
-            this.comboBoxMerek.Location = new System.Drawing.Point(130, 247);
+            this.comboBoxMerek.Location = new System.Drawing.Point(130, 89);
             this.comboBoxMerek.Name = "comboBoxMerek";
             this.comboBoxMerek.Size = new System.Drawing.Size(240, 21);
             this.comboBoxMerek.TabIndex = 7;
@@ -297,7 +298,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(12, 247);
+            this.label9.Location = new System.Drawing.Point(12, 89);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 15);
             this.label9.TabIndex = 22;
@@ -307,7 +308,7 @@
             // 
             this.panelKodeBarang.BackColor = System.Drawing.SystemColors.Window;
             this.panelKodeBarang.Controls.Add(this.textBoxKodeBarang);
-            this.panelKodeBarang.Location = new System.Drawing.Point(130, 91);
+            this.panelKodeBarang.Location = new System.Drawing.Point(130, 119);
             this.panelKodeBarang.Name = "panelKodeBarang";
             this.panelKodeBarang.Padding = new System.Windows.Forms.Padding(3);
             this.panelKodeBarang.Size = new System.Drawing.Size(240, 22);
@@ -327,18 +328,29 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(12, 91);
+            this.label10.Location = new System.Drawing.Point(12, 119);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(79, 15);
             this.label10.TabIndex = 23;
             this.label10.Text = "Kode Barang";
+            // 
+            // BtnGenerateKodeBarang
+            // 
+            this.BtnGenerateKodeBarang.Image = ((System.Drawing.Image)(resources.GetObject("BtnGenerateKodeBarang.Image")));
+            this.BtnGenerateKodeBarang.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.BtnGenerateKodeBarang.Location = new System.Drawing.Point(323, 143);
+            this.BtnGenerateKodeBarang.Name = "BtnGenerateKodeBarang";
+            this.BtnGenerateKodeBarang.Size = new System.Drawing.Size(47, 23);
+            this.BtnGenerateKodeBarang.TabIndex = 25;
+            this.BtnGenerateKodeBarang.Click += new System.EventHandler(this.BtnGenerateKodeBarang_Click);
             // 
             // TambahBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnBatal;
-            this.ClientSize = new System.Drawing.Size(387, 401);
+            this.ClientSize = new System.Drawing.Size(387, 425);
+            this.Controls.Add(this.BtnGenerateKodeBarang);
             this.Controls.Add(this.panelKodeBarang);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -414,5 +426,6 @@
         private System.Windows.Forms.Panel panelKodeBarang;
         private System.Windows.Forms.TextBox textBoxKodeBarang;
         private System.Windows.Forms.Label label10;
+        private DevExpress.XtraEditors.SimpleButton BtnGenerateKodeBarang;
     }
 }

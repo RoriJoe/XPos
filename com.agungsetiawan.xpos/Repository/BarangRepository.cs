@@ -23,5 +23,11 @@ namespace com.agungsetiawan.xpos.Repository
         {
             return this.db.Barangs.Where(b => b.KodeBarang.Equals(kodeBarang)).SingleOrDefault();
         }
+
+        public Barang FindTopLikeKodeBarang(string kodeBarang)
+        {
+            return this.db.Barangs.Where(b => b.KodeBarang.ToLower().Contains(kodeBarang.ToLower()))
+                                  .OrderByDescending(b=>b.KodeBarang).Take(1).SingleOrDefault();
+        }
     }
 }
