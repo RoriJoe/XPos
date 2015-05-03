@@ -142,7 +142,7 @@
             this.textBoxNamaBarang.Location = new System.Drawing.Point(6, 5);
             this.textBoxNamaBarang.Name = "textBoxNamaBarang";
             this.textBoxNamaBarang.Size = new System.Drawing.Size(228, 13);
-            this.textBoxNamaBarang.TabIndex = 1;
+            this.textBoxNamaBarang.TabIndex = 0;
             // 
             // textBoxHargaJual
             // 
@@ -151,7 +151,7 @@
             this.textBoxHargaJual.Location = new System.Drawing.Point(6, 4);
             this.textBoxHargaJual.Name = "textBoxHargaJual";
             this.textBoxHargaJual.Size = new System.Drawing.Size(228, 13);
-            this.textBoxHargaJual.TabIndex = 3;
+            this.textBoxHargaJual.TabIndex = 0;
             // 
             // textBoxHargaBeli
             // 
@@ -160,7 +160,7 @@
             this.textBoxHargaBeli.Location = new System.Drawing.Point(6, 5);
             this.textBoxHargaBeli.Name = "textBoxHargaBeli";
             this.textBoxHargaBeli.Size = new System.Drawing.Size(228, 13);
-            this.textBoxHargaBeli.TabIndex = 4;
+            this.textBoxHargaBeli.TabIndex = 6;
             // 
             // textBoxStok
             // 
@@ -169,7 +169,7 @@
             this.textBoxStok.Location = new System.Drawing.Point(6, 5);
             this.textBoxStok.Name = "textBoxStok";
             this.textBoxStok.Size = new System.Drawing.Size(228, 13);
-            this.textBoxStok.TabIndex = 5;
+            this.textBoxStok.TabIndex = 7;
             // 
             // textBoxKeterangan
             // 
@@ -178,7 +178,7 @@
             this.textBoxKeterangan.Location = new System.Drawing.Point(6, 3);
             this.textBoxKeterangan.Name = "textBoxKeterangan";
             this.textBoxKeterangan.Size = new System.Drawing.Size(228, 13);
-            this.textBoxKeterangan.TabIndex = 6;
+            this.textBoxKeterangan.TabIndex = 0;
             // 
             // comboBoxKategori
             // 
@@ -188,7 +188,7 @@
             this.comboBoxKategori.Location = new System.Drawing.Point(130, 176);
             this.comboBoxKategori.Name = "comboBoxKategori";
             this.comboBoxKategori.Size = new System.Drawing.Size(240, 21);
-            this.comboBoxKategori.TabIndex = 8;
+            this.comboBoxKategori.TabIndex = 4;
             // 
             // btnBatal
             // 
@@ -222,7 +222,7 @@
             this.panelNamaBarang.Name = "panelNamaBarang";
             this.panelNamaBarang.Padding = new System.Windows.Forms.Padding(3);
             this.panelNamaBarang.Size = new System.Drawing.Size(240, 22);
-            this.panelNamaBarang.TabIndex = 15;
+            this.panelNamaBarang.TabIndex = 1;
             // 
             // panelHargaJual
             // 
@@ -232,7 +232,7 @@
             this.panelHargaJual.Name = "panelHargaJual";
             this.panelHargaJual.Padding = new System.Windows.Forms.Padding(3);
             this.panelHargaJual.Size = new System.Drawing.Size(240, 22);
-            this.panelHargaJual.TabIndex = 16;
+            this.panelHargaJual.TabIndex = 5;
             // 
             // panelHargaBeli
             // 
@@ -242,7 +242,7 @@
             this.panelHargaBeli.Name = "panelHargaBeli";
             this.panelHargaBeli.Padding = new System.Windows.Forms.Padding(3);
             this.panelHargaBeli.Size = new System.Drawing.Size(240, 22);
-            this.panelHargaBeli.TabIndex = 17;
+            this.panelHargaBeli.TabIndex = 6;
             // 
             // panelStok
             // 
@@ -252,7 +252,7 @@
             this.panelStok.Name = "panelStok";
             this.panelStok.Padding = new System.Windows.Forms.Padding(3);
             this.panelStok.Size = new System.Drawing.Size(240, 22);
-            this.panelStok.TabIndex = 18;
+            this.panelStok.TabIndex = 7;
             // 
             // panelKeterangan
             // 
@@ -262,7 +262,7 @@
             this.panelKeterangan.Name = "panelKeterangan";
             this.panelKeterangan.Padding = new System.Windows.Forms.Padding(3);
             this.panelKeterangan.Size = new System.Drawing.Size(240, 22);
-            this.panelKeterangan.TabIndex = 19;
+            this.panelKeterangan.TabIndex = 8;
             // 
             // comboBoxSupplier
             // 
@@ -292,7 +292,7 @@
             this.comboBoxMerek.Location = new System.Drawing.Point(130, 89);
             this.comboBoxMerek.Name = "comboBoxMerek";
             this.comboBoxMerek.Size = new System.Drawing.Size(240, 21);
-            this.comboBoxMerek.TabIndex = 7;
+            this.comboBoxMerek.TabIndex = 2;
             // 
             // label9
             // 
@@ -312,7 +312,7 @@
             this.panelKodeBarang.Name = "panelKodeBarang";
             this.panelKodeBarang.Padding = new System.Windows.Forms.Padding(3);
             this.panelKodeBarang.Size = new System.Drawing.Size(240, 22);
-            this.panelKodeBarang.TabIndex = 24;
+            this.panelKodeBarang.TabIndex = 3;
             // 
             // textBoxKodeBarang
             // 
@@ -321,7 +321,7 @@
             this.textBoxKodeBarang.Location = new System.Drawing.Point(6, 4);
             this.textBoxKodeBarang.Name = "textBoxKodeBarang";
             this.textBoxKodeBarang.Size = new System.Drawing.Size(228, 13);
-            this.textBoxKodeBarang.TabIndex = 2;
+            this.textBoxKodeBarang.TabIndex = 0;
             this.textBoxKodeBarang.Leave += new System.EventHandler(this.textBoxKodeBarang_Leave);
             // 
             // label10
@@ -341,7 +341,7 @@
             this.BtnGenerateKodeBarang.Location = new System.Drawing.Point(323, 143);
             this.BtnGenerateKodeBarang.Name = "BtnGenerateKodeBarang";
             this.BtnGenerateKodeBarang.Size = new System.Drawing.Size(47, 23);
-            this.BtnGenerateKodeBarang.TabIndex = 25;
+            this.BtnGenerateKodeBarang.TabIndex = 12;
             this.BtnGenerateKodeBarang.Click += new System.EventHandler(this.BtnGenerateKodeBarang_Click);
             // 
             // TambahBarang

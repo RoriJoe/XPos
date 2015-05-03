@@ -52,7 +52,7 @@ namespace com.agungsetiawan.xpos.View.VBarang
             int id = int.Parse(this.ParentForm.dataGridViewBarang.SelectedRows[0].Cells[0].Value.ToString());
             var barang = barangService.Get(id);
 
-            textBoxId.Text = barang.Id.ToString();
+            labelIdHidden.Text = barang.Id.ToString();
             textBoxNamaBarang.Text = barang.NamaBarang;
             textBoxHargaJual.Text = barang.HargaJual.ToString();
             textBoxHargaBeli.Text = barang.HargaBeli.ToString();
@@ -164,7 +164,7 @@ namespace com.agungsetiawan.xpos.View.VBarang
             var kategori = kategoriService.Get(int.Parse(comboBoxKategori.SelectedValue.ToString()));
             var supplier = supplierService.Get(int.Parse(comboBoxSupplier.SelectedValue.ToString()));
             var merek = merekService.Get(int.Parse(comboBoxMerek.SelectedValue.ToString()));
-            var barang = barangService.Get(int.Parse(textBoxId.Text));
+            var barang = barangService.Get(int.Parse(labelIdHidden.Text));
             
             barang.NamaBarang = textBoxNamaBarang.Text;
             barang.HargaJual = decimal.Parse(textBoxHargaJual.Text);
@@ -241,7 +241,7 @@ namespace com.agungsetiawan.xpos.View.VBarang
 
         private void textBoxKodeBarang_Leave(object sender, EventArgs e)
         {
-            var barang = barangService.Get(int.Parse(textBoxId.Text));
+            var barang = barangService.Get(int.Parse(labelIdHidden.Text));
             if(!textBoxKodeBarang.Text.Equals(barang.KodeBarang))
             {
                 var barangKodeFound = barangService.FindByKodeBarang(textBoxKodeBarang.Text);
