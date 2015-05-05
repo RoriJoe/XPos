@@ -15,14 +15,17 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
     {
         public TransaksiPenjualan ParentForm { get; set; }
         BarangService barangService;
+        StokHargaUkuranService shuService;
         public CariBarang()
         {
             InitializeComponent();
 
             this.ActiveControl = this.textBoxBarang;
             barangService = new BarangService();
+            shuService = new StokHargaUkuranService();
             var barangs = barangService.Get();
             dataGridViewCariBarang.DataSource = barangs;
+            dataGridViewCariBarang.Columns[0].Visible = false;
         }
 
         private void CariBarang_Paint(object sender, PaintEventArgs e)
@@ -43,17 +46,29 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string id = dataGridViewCariBarang.SelectedRows[0].Cells[0].Value.ToString();
-                var barang = barangService.Get(int.Parse(id));
+                string id = dataGridViewCariBarang.SelectedRows[0].Cells[1].Value.ToString();
+                var barang = barangService.FindByKodeBarang(id);
 
-                if(barang.Stok<1)
+                var stockBarang = shuService.FindByBarangId(barang.Id);
+
+                bool IsHabis = true;
+                foreach (var d in stockBarang)
                 {
-                    MessageBox.Show("Stok barang tidak memadahi", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (d.Stock > 0)
+                    {
+                        IsHabis = false;
+                        break;
+                    }
+                }
+
+                if (IsHabis)
+                {
+                    MessageBox.Show("Stok barang habis", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
                 int row = this.ParentForm.dataGridViewTransaksiPenjualan.Rows.Count;
-                this.ParentForm.dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[0].Value = barang.Id;
+                this.ParentForm.dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[0].Value = id;
 
                 this.Dispose();
             }

@@ -33,6 +33,7 @@
             this.dataGridViewTransaksiPenjualan = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ukuran = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,6 +101,7 @@
             this.dataGridViewTransaksiPenjualan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
+            this.Ukuran,
             this.Column3,
             this.Column4,
             this.Column5,
@@ -109,6 +111,7 @@
             this.dataGridViewTransaksiPenjualan.Name = "dataGridViewTransaksiPenjualan";
             this.dataGridViewTransaksiPenjualan.Size = new System.Drawing.Size(1039, 268);
             this.dataGridViewTransaksiPenjualan.TabIndex = 1;
+            this.dataGridViewTransaksiPenjualan.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridViewTransaksiPenjualan_EditingControlShowing);
             this.dataGridViewTransaksiPenjualan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
             // Column1
@@ -121,6 +124,12 @@
             this.Column2.HeaderText = "Nama Barang";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
+            // 
+            // Ukuran
+            // 
+            this.Ukuran.HeaderText = "Ukuran";
+            this.Ukuran.Name = "Ukuran";
+            this.Ukuran.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // Column3
             // 
@@ -176,7 +185,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(0, 696);
+            this.panel2.Location = new System.Drawing.Point(0, 688);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1039, 43);
             this.panel2.TabIndex = 3;
@@ -344,7 +353,7 @@
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(101)))), ((int)(((byte)(150)))));
-            this.label6.Location = new System.Drawing.Point(683, 562);
+            this.label6.Location = new System.Drawing.Point(683, 554);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 13);
             this.label6.TabIndex = 27;
@@ -355,7 +364,7 @@
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(101)))), ((int)(((byte)(150)))));
-            this.label7.Location = new System.Drawing.Point(683, 518);
+            this.label7.Location = new System.Drawing.Point(683, 510);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 13);
             this.label7.TabIndex = 26;
@@ -366,7 +375,7 @@
             this.textBoxSisa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSisa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxSisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBoxSisa.Location = new System.Drawing.Point(766, 562);
+            this.textBoxSisa.Location = new System.Drawing.Point(766, 554);
             this.textBoxSisa.Name = "textBoxSisa";
             this.textBoxSisa.Size = new System.Drawing.Size(240, 38);
             this.textBoxSisa.TabIndex = 25;
@@ -377,7 +386,7 @@
             this.textBoxJumlahBayar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxJumlahBayar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxJumlahBayar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.textBoxJumlahBayar.Location = new System.Drawing.Point(766, 518);
+            this.textBoxJumlahBayar.Location = new System.Drawing.Point(766, 510);
             this.textBoxJumlahBayar.Name = "textBoxJumlahBayar";
             this.textBoxJumlahBayar.Size = new System.Drawing.Size(240, 38);
             this.textBoxJumlahBayar.TabIndex = 24;
@@ -393,7 +402,7 @@
             this.panelControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.panelControl2.Controls.Add(this.labelTerbilang);
             this.panelControl2.Controls.Add(this.label9);
-            this.panelControl2.Location = new System.Drawing.Point(568, 421);
+            this.panelControl2.Location = new System.Drawing.Point(568, 413);
             this.panelControl2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.UltraFlat;
             this.panelControl2.LookAndFeel.UseDefaultLookAndFeel = false;
             this.panelControl2.Name = "panelControl2";
@@ -431,7 +440,7 @@
             this.panelControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.panelControl1.Controls.Add(this.btnBatal);
             this.panelControl1.Controls.Add(this.btnSimpan);
-            this.panelControl1.Location = new System.Drawing.Point(568, 617);
+            this.panelControl1.Location = new System.Drawing.Point(568, 609);
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(441, 58);
             this.panelControl1.TabIndex = 28;
@@ -464,7 +473,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1038, 741);
+            this.ClientSize = new System.Drawing.Size(1038, 733);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
@@ -518,12 +527,6 @@
         public System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Panel panelKodeTransaksi;
         public System.Windows.Forms.TextBox textBoxKodeTransaksi;
         private System.Windows.Forms.TextBox textBoxTanggal;
@@ -549,5 +552,12 @@
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.SimpleButton btnBatal;
         private DevExpress.XtraEditors.SimpleButton btnSimpan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ukuran;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }

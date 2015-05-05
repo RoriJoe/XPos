@@ -20,6 +20,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
         PenjualanService penjualanService;
         PelangganService pelangganService;
         BarangService service;
+        StokHargaUkuranService shuService;
         private TransaksiPenjualan()
         {
             InitializeComponent();
@@ -27,6 +28,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             penjualanService = new PenjualanService();
             pelangganService = new PelangganService();
             service = new BarangService();
+            shuService = new StokHargaUkuranService();
 
             textBoxKodeTransaksi.Text=KodeTransaksiHelper.Get(penjualanService.GetKodeTransaksiTerakhir());
 
@@ -89,70 +91,42 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                     return;
                 }
 
-                if(barang.Stok==0)
+                var stockBarang=shuService.FindByBarangId(barang.Id);
+
+                bool IsHabis=true;
+                foreach(var d in stockBarang)
+                {
+                    if(d.Stock>0)
+                    {
+                        IsHabis = false;
+                        break;
+                    }
+                }
+
+                if(IsHabis)
                 {
                     MessageBox.Show("Stok barang habis", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
-                bool IsNew = true;
-                if(row!=1)
-                {
-                    for (int i = 0; i < row - 1; i++)
-                    {
-                        if (id == dataGridViewTransaksiPenjualan.Rows[i].Cells[0].Value.ToString())
-                        {
-                            int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[2].Value.ToString());
-                            if ((n + 1) > barang.Stok)
-                            {
-                                MessageBox.Show("Stok barang tidak memadahi", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                return;
-                            }
+ 
+                dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[0].Value = barang.KodeBarang;
+                dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[1].Value = barang.NamaBarang;
 
-                            dataGridViewTransaksiPenjualan.Rows[i].Cells[2].Value = n + 1;
-                            dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value = ((decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"))) + barang.HargaJual - (barang.HargaJual * (decimal)(diskon / 100)))
-                                                                                    .ToString("N2", CultureInfo.GetCultureInfo("de"));
-                            IsNew = false;
-                            dataGridViewTransaksiPenjualan.Rows.RemoveAt(row-1);
-                            break;
-                        }
-                        else
-                        {
-                            IsNew = true;
-                        }
-                    }
-                }
+                List<StokHargaUkuran> shus = shuService.FindByBarangId(barang.Id);
+                DataGridViewComboBoxCell cell = new DataGridViewComboBoxCell();
+                cell.DataSource = shus;
+                cell.DisplayMember = "Ukuran";
+                cell.ValueMember = "Ukuran";
 
-                if(IsNew)
-                {
-                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[0].Value = barang.KodeBarang;
-                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[1].Value = barang.NamaBarang;
-                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[2].Value = 1;
-                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[3].Value = barang.HargaJual.ToString("N2", CultureInfo.GetCultureInfo("de"));
-                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[4].Value = diskon;
-                    dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[5].Value = (barang.HargaJual - (barang.HargaJual * (decimal) (diskon/100) )).ToString("N2", CultureInfo.GetCultureInfo("de"));
+                dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[2] = cell;
+                dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[3].Value = 1;
+                    
+                //dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[3].Value = barang.HargaJual.ToString("N2", CultureInfo.GetCultureInfo("de"));
+                dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[5].Value = diskon;
+                //dataGridViewTransaksiPenjualan.Rows[row - 1].Cells[5].Value = (barang.HargaJual - (barang.HargaJual * (decimal) (diskon/100) )).ToString("N2", CultureInfo.GetCultureInfo("de"));
 
-                    dataGridViewTransaksiPenjualan.Rows.Add("", "", "", "");
-                }
-                
-                decimal total=0;
-                //recalculate row after deletion is id is the same
-
-                if (!IsNew)
-                {
-                    row = dataGridViewTransaksiPenjualan.Rows.Count;
-                    dataGridViewTransaksiPenjualan.Rows.Add("", "", "", "");
-                }
-
-                for (int i = 0; i < row; i++)
-                {
-                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
-                }
-
-                labelTotal.Text = total.ToString("N2", CultureInfo.GetCultureInfo("de"));
-                labelTerbilang.Text = Terbilang.Bilang(total) + " Rupiah";
-
-                dataGridViewTransaksiPenjualan.Refresh();
+                dataGridViewTransaksiPenjualan.Rows.Add("", "", "", "");
 
             }
 
@@ -178,28 +152,30 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                     return;
                 }
 
-                int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[2].Value.ToString());
+                int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[3].Value.ToString());
 
                 string id = dataGridViewTransaksiPenjualan[0, currentRowIndex].Value.ToString();
 
                 var barang = service.FindByKodeBarang(id);
+                string ukuran = (dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[2] as DataGridViewComboBoxCell).FormattedValue.ToString();
+                var shu = shuService.FindByBarangIdAndUkuran(barang.Id, ukuran);
 
-                if((n+1)>barang.Stok)
+                if ((n + 1) > shu.Stock)
                 {
                     MessageBox.Show("Stok barang tidak memadahi", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
-                dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[2].Value = n + 1;
+                dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[3].Value = n + 1;
 
-                n = int.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[2].Value.ToString());
-                decimal price = decimal.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[3].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
-                dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[5].Value = ((price - (price * (decimal)(diskon / 100))) * n).ToString("N2", CultureInfo.GetCultureInfo("de"));
+                n = int.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[3].Value.ToString());
+                decimal price = decimal.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[4].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[6].Value = ((price - (price * (decimal)(diskon / 100))) * n).ToString("N2", CultureInfo.GetCultureInfo("de"));
 
                 decimal total = 0;
                 for (int i = 0; i < row-1; i++)
                 {
-                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[6].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
                 }
 
                 labelTotal.Text = total.ToString("N2", CultureInfo.GetCultureInfo("de"));
@@ -230,23 +206,23 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                     return;
                 }
 
-                int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[2].Value.ToString());
+                int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[3].Value.ToString());
 
                 if(n==1)
                 {
                     return;
                 }
 
-                dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[2].Value = n - 1;
+                dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[3].Value = n - 1;
 
-                n = int.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[2].Value.ToString());
-                decimal price = decimal.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[3].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
-                dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[5].Value = ((price - (price * (decimal)(diskon / 100))) * n).ToString("N2", CultureInfo.GetCultureInfo("de"));
+                n = int.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[3].Value.ToString());
+                decimal price = decimal.Parse(dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[4].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                dataGridViewTransaksiPenjualan.Rows[currentRowIndex].Cells[6].Value = ((price - (price * (decimal)(diskon / 100))) * n).ToString("N2", CultureInfo.GetCultureInfo("de"));
 
                 decimal total = 0;
                 for (int i = 0; i < row-1 ; i++)
                 {
-                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[6].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
                 }
 
                 labelTotal.Text = total.ToString("N2", CultureInfo.GetCultureInfo("de"));
@@ -257,6 +233,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             if(e.KeyCode==Keys.Delete)
             {
+                //EMANG KOMEN
                 //MessageBox.Show(dataGridViewTransaksiPenjualan.CurrentCell.RowIndex.ToString());
                 //return;
 
@@ -267,6 +244,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 {
                     
                     dataGridViewTransaksiPenjualan.Rows.RemoveAt(currentRowIndex);
+                    //EMANG KOMEN
                     //dataGridViewTransaksiPenjualan.Rows.RemoveAt(row - 2);
                     //dataGridViewTransaksiPenjualan.Rows.Add();
                 }
@@ -278,7 +256,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 
                 for (int i = 0; i < row - 1; i++)
                 {
-                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                    total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[6].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
                 }
 
                 labelTotal.Text = total.ToString("N2", CultureInfo.GetCultureInfo("de"));
@@ -303,13 +281,14 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 form.ShowDialog();
             }
 
-            if (e.KeyCode == Keys.F5)
-            {
-                Pembayaran form = new Pembayaran();
-                form.ParentForm = this;
-                form.PopulateData();
-                form.ShowDialog();
-            }
+            //NO LONGER
+            //if (e.KeyCode == Keys.F5)
+            //{
+            //    Pembayaran form = new Pembayaran();
+            //    form.ParentForm = this;
+            //    form.PopulateData();
+            //    form.ShowDialog();
+            //}
 
             if (e.KeyCode == Keys.F6)
             {
@@ -417,10 +396,11 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             {
                 var kodeBarang = data.Rows[i].Cells[0].Value.ToString();
                 var namaBarang = data.Rows[i].Cells[1].Value.ToString();
-                var jumlahJual = int.Parse(data.Rows[i].Cells[2].Value.ToString());
-                var hargaJual = decimal.Parse(data.Rows[i].Cells[3].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
-                var diskon = float.Parse(data.Rows[i].Cells[4].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
-                var subtotal = decimal.Parse(data.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                string ukuran = (dataGridViewTransaksiPenjualan.Rows[i].Cells[2] as DataGridViewComboBoxCell).FormattedValue.ToString();
+                var jumlahJual = int.Parse(data.Rows[i].Cells[3].Value.ToString());
+                var hargaJual = decimal.Parse(data.Rows[i].Cells[4].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                var diskon = float.Parse(data.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                var subtotal = decimal.Parse(data.Rows[i].Cells[6].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
 
                 var barang = service.FindByKodeBarang(kodeBarang);
 
@@ -428,6 +408,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 {
                     Penjualan = penjualan,
                     BarangId = barang.Id,
+                    Ukuran=ukuran,
                     Harga = hargaJual,
                     Jumlah = jumlahJual,
                     SubTotal = subtotal,
@@ -460,6 +441,108 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
         private void textBoxJumlahBayar_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && e.KeyChar != (char)8;
+        }
+
+        private void dataGridViewTransaksiPenjualan_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (dataGridViewTransaksiPenjualan.CurrentCell.ColumnIndex == 2 && e.Control is ComboBox)
+            {
+                ComboBox comboBox = e.Control as ComboBox;
+                comboBox.SelectedValueChanged += LastColumnComboSelectionChanged;
+            }
+        }
+
+        private void LastColumnComboSelectionChanged(object sender, EventArgs e)
+        {
+            int row = dataGridViewTransaksiPenjualan.Rows.Count;
+
+            var rowIndex = dataGridViewTransaksiPenjualan.CurrentCell.RowIndex;
+            var sendingCB = sender as DataGridViewComboBoxEditingControl;
+            DataGridViewTextBoxCell cel = (DataGridViewTextBoxCell)dataGridViewTransaksiPenjualan.Rows[rowIndex].Cells[4];
+            var ukuran = sendingCB.EditingControlFormattedValue.ToString();
+
+            if (string.IsNullOrEmpty(ukuran))
+                return;
+
+            var kodeBarang = dataGridViewTransaksiPenjualan.Rows[rowIndex].Cells[0].Value.ToString();
+            if (string.IsNullOrEmpty(kodeBarang))
+                return;
+            var barang=service.FindByKodeBarang(kodeBarang);
+
+            var shu = shuService.FindByBarangIdAndUkuran(barang.Id, ukuran);
+            if(shu==null)
+            {
+                return;
+            }
+            if ( shu.Stock < 1)
+            {
+                MessageBox.Show("Stok barang tidak memadahi", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dataGridViewTransaksiPenjualan.Rows.RemoveAt(row - 1);
+                dataGridViewTransaksiPenjualan.Rows.RemoveAt(row - 2);
+                dataGridViewTransaksiPenjualan.Rows.Add("");
+                return;
+            }
+
+
+            decimal harga = shuService.FindHargaByBrangIdAndUkuran(barang.Id, ukuran);
+            cel.Value = harga.ToString("N2", CultureInfo.GetCultureInfo("de")); ;
+
+            decimal hargaIndecimal=decimal.Parse(cel.Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+            float diskon = float.Parse(dataGridViewTransaksiPenjualan.Rows[rowIndex].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+            dataGridViewTransaksiPenjualan.Rows[rowIndex].Cells[6].Value = (hargaIndecimal - (hargaIndecimal * (decimal)(diskon / 100))).ToString("N2", CultureInfo.GetCultureInfo("de"));
+
+           
+
+            #region "Cek Kalau ada Kode dan Ukuran yang sama"
+            //string id = dataGridViewTransaksiPenjualan[0, rowIndex].Value.ToString();
+            //if (row != 1)
+            //{
+            //    for (int i = 0; i < row - 1; i++)
+            //    {
+            //        if (id == dataGridViewTransaksiPenjualan.Rows[i].Cells[0].Value.ToString()
+            //            && ukuran.Equals((dataGridViewTransaksiPenjualan.Rows[i].Cells[2] as DataGridViewComboBoxCell).FormattedValue.ToString()))
+            //        {
+            //            if(id==dataGridViewTransaksiPenjualan[0, rowIndex].Value.ToString())
+            //            {
+            //                return;
+            //            }
+
+            //            int n = int.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[3].Value.ToString());
+            //            StokHargaUkuran stokHargaUkuran = shuService.FindByBarangIdAndUkuran(barang.Id, dataGridViewTransaksiPenjualan.Rows[i].Cells[2].Value.ToString());
+
+            //            if ((n + 1) > stokHargaUkuran.Stock)
+            //            {
+            //                MessageBox.Show("Stok barang tidak memadahi", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //                dataGridViewTransaksiPenjualan.Rows.RemoveAt(row - 1);
+            //                dataGridViewTransaksiPenjualan.Rows.RemoveAt(row - 2);
+            //                dataGridViewTransaksiPenjualan.Rows.Add("");
+            //                return;
+            //            }
+
+            //            //dataGridViewTransaksiPenjualan.Rows[i].Cells[3].Value = n + 1;
+            //            //dataGridViewTransaksiPenjualan.Rows[i].Cells[6].Value = ((decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[6].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"))) + stokHargaUkuran.HargaJual - (stokHargaUkuran.HargaJual * (decimal)(diskon / 100)))
+            //            //                                                        .ToString("N2", CultureInfo.GetCultureInfo("de"));
+
+            //            //dataGridViewTransaksiPenjualan.Rows.RemoveAt(row - 1);
+            //            //dataGridViewTransaksiPenjualan.Rows.RemoveAt(row - 2);
+            //            //dataGridViewTransaksiPenjualan.Rows.Add("");
+            //            break;
+            //        }
+            //    }
+            //}
+            #endregion
+
+            #region "Hitung Total dan Munculin di label dan terbilang"
+            decimal total = 0;
+
+            for (int i = 0; i < row - 1; i++)
+            {
+                total += decimal.Parse(dataGridViewTransaksiPenjualan.Rows[i].Cells[6].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+            }
+
+            labelTotal.Text = total.ToString("N2", CultureInfo.GetCultureInfo("de"));
+            labelTerbilang.Text = Terbilang.Bilang(total) + " Rupiah";
+            #endregion
         }
     }
 }

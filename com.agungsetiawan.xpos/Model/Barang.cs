@@ -20,12 +20,6 @@ namespace com.agungsetiawan.xpos.Model
         [StringLength(50)]
         public string NamaBarang { get; set; }
 
-        public decimal HargaJual { get; set; }
-
-        public decimal HargaBeli { get; set; }
-
-        public int Stok { get; set; }
-
         [Column(TypeName = "varchar")]
         [StringLength(50)]
         public string Keterangan { get; set; }
@@ -39,5 +33,12 @@ namespace com.agungsetiawan.xpos.Model
 
         public Merek Merek { get; set; }
         public int MerekId { get; set; }
+
+        public List<StokHargaUkuran> StockHargaUkurans { get; set; }
+
+        public Barang()
+        {
+            StockHargaUkurans = new List<StokHargaUkuran>();
+        }
     }
 }

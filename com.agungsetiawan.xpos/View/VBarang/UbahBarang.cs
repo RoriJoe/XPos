@@ -20,6 +20,7 @@ namespace com.agungsetiawan.xpos.View.VBarang
         BarangService barangService;
         SupplierService supplierService;
         MerekService merekService;
+        private StokHargaUkuranService shuService;
 
         public UbahBarang()
         {
@@ -30,6 +31,7 @@ namespace com.agungsetiawan.xpos.View.VBarang
             barangService = new BarangService();
             supplierService = new SupplierService();
             merekService = new MerekService();
+            shuService = new StokHargaUkuranService();
 
             var kategoris = kategoriService.Get();
             comboBoxKategori.DataSource = kategoris;
@@ -54,14 +56,17 @@ namespace com.agungsetiawan.xpos.View.VBarang
 
             labelIdHidden.Text = barang.Id.ToString();
             textBoxNamaBarang.Text = barang.NamaBarang;
-            textBoxHargaJual.Text = barang.HargaJual.ToString();
-            textBoxHargaBeli.Text = barang.HargaBeli.ToString();
-            textBoxStok.Text = barang.Stok.ToString();
             textBoxKeterangan.Text = barang.Keterangan;
             textBoxKodeBarang.Text = barang.KodeBarang;
             comboBoxKategori.SelectedValue = barang.KategoriId;
             comboBoxSupplier.SelectedValue = barang.SupplierId;
             comboBoxMerek.SelectedValue = barang.MerekId;
+
+            var datas = shuService.FindByBarangId(id);
+            foreach(var d in datas)
+            {
+                dataGridViewSHU.Rows.Add(d.Ukuran, d.HargaBeli, d.HargaJual, d.Stock);
+            }
         }
 
         private void btnSimpan_Click(object sender, EventArgs e)
@@ -72,57 +77,6 @@ namespace com.agungsetiawan.xpos.View.VBarang
             {
                 IsPass = false;
                 sb.Append("- Nama Barang harus diisi \n");
-            }
-
-            if (string.IsNullOrEmpty(textBoxHargaJual.Text))
-            {
-                IsPass = false;
-                sb.Append("- Harga Jual harus diisi \n");
-            }
-
-            if (!string.IsNullOrEmpty(textBoxHargaJual.Text))
-            {
-                decimal result;
-                bool IsHargaJualPass = decimal.TryParse(textBoxHargaJual.Text, out result);
-                if (!IsHargaJualPass)
-                {
-                    IsPass = false;
-                    sb.Append("- Harga Jual harus angka \n");
-                }
-            }
-
-            if (string.IsNullOrEmpty(textBoxHargaBeli.Text))
-            {
-                IsPass = false;
-                sb.Append("- Harga Beli harus diisi \n");
-            }
-
-            if (!string.IsNullOrEmpty(textBoxHargaBeli.Text))
-            {
-                decimal result;
-                bool IsHargaBeliPass = decimal.TryParse(textBoxHargaBeli.Text, out result);
-                if (!IsHargaBeliPass)
-                {
-                    IsPass = false;
-                    sb.Append("- Harga Beli harus angka \n");
-                }
-            }
-
-            if (string.IsNullOrEmpty(textBoxStok.Text))
-            {
-                IsPass = false;
-                sb.Append("- Stok harus diisi \n");
-            }
-
-            if (!string.IsNullOrEmpty(textBoxStok.Text))
-            {
-                int result;
-                bool IsStokPass = int.TryParse(textBoxStok.Text, out result);
-                if (!IsStokPass)
-                {
-                    IsPass = false;
-                    sb.Append("- Stok harus angka \n");
-                }
             }
 
             if (string.IsNullOrEmpty(textBoxKeterangan.Text))
@@ -167,14 +121,23 @@ namespace com.agungsetiawan.xpos.View.VBarang
             var barang = barangService.Get(int.Parse(labelIdHidden.Text));
             
             barang.NamaBarang = textBoxNamaBarang.Text;
-            barang.HargaJual = decimal.Parse(textBoxHargaJual.Text);
-            barang.HargaBeli = decimal.Parse(textBoxHargaBeli.Text);
-            barang.Stok = int.Parse(textBoxStok.Text);
             barang.Keterangan = textBoxKeterangan.Text;
             barang.KodeBarang = textBoxKodeBarang.Text;
             barang.KategoriId = kategori.Id;
             barang.SupplierId = supplier.Id;
             barang.MerekId = merek.Id;
+
+            StokHargaUkuran stokHargaUkuran;
+            for (int i = 0; i < dataGridViewSHU.Rows.Count - 1; i++)
+            {
+                stokHargaUkuran = new StokHargaUkuran();
+                stokHargaUkuran.Ukuran = dataGridViewSHU.Rows[i].Cells[0].Value.ToString();
+                stokHargaUkuran.HargaBeli = decimal.Parse(dataGridViewSHU.Rows[i].Cells[1].Value.ToString());
+                stokHargaUkuran.HargaJual = decimal.Parse(dataGridViewSHU.Rows[i].Cells[2].Value.ToString());
+                stokHargaUkuran.Stock = int.Parse(dataGridViewSHU.Rows[i].Cells[3].Value.ToString());
+
+                barang.StockHargaUkurans.Add(stokHargaUkuran);
+            }
 
             barangService.Put(barang);
 
@@ -251,6 +214,86 @@ namespace com.agungsetiawan.xpos.View.VBarang
                     this.ActiveControl = this.textBoxKodeBarang;
                 }
             }
+        }
+
+        private void BtnTambah_Click(object sender, EventArgs e)
+        {
+            StringBuilder sb = new StringBuilder();
+            bool IsPass = true;
+
+            if (string.IsNullOrEmpty(textBoxUkuran.Text))
+            {
+                IsPass = false;
+                sb.Append("- Ukuran harus diisi \n");
+            }
+
+            if (string.IsNullOrEmpty(textBoxHargaJual.Text))
+            {
+                IsPass = false;
+                sb.Append("- Harga Jual harus diisi \n");
+            }
+
+            if (!string.IsNullOrEmpty(textBoxHargaJual.Text))
+            {
+                decimal result;
+                bool IsHargaJualPass = decimal.TryParse(textBoxHargaJual.Text, out result);
+                if (!IsHargaJualPass)
+                {
+                    IsPass = false;
+                    sb.Append("- Harga Jual harus angka \n");
+                }
+            }
+
+            if (string.IsNullOrEmpty(textBoxHargaBeli.Text))
+            {
+                IsPass = false;
+                sb.Append("- Harga Beli harus diisi \n");
+            }
+
+            if (!string.IsNullOrEmpty(textBoxHargaBeli.Text))
+            {
+                decimal result;
+                bool IsHargaBeliPass = decimal.TryParse(textBoxHargaBeli.Text, out result);
+                if (!IsHargaBeliPass)
+                {
+                    IsPass = false;
+                    sb.Append("- Harga Beli harus angka \n");
+                }
+            }
+
+            if (string.IsNullOrEmpty(textBoxStok.Text))
+            {
+                IsPass = false;
+                sb.Append("- Stok harus diisi \n");
+            }
+
+            if (!string.IsNullOrEmpty(textBoxStok.Text))
+            {
+                int result;
+                bool IsStokPass = int.TryParse(textBoxStok.Text, out result);
+                if (!IsStokPass)
+                {
+                    IsPass = false;
+                    sb.Append("- Stok harus angka \n");
+                }
+            }
+
+            if (!IsPass)
+            {
+                MessageBox.Show(sb.ToString(), "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            dataGridViewSHU.Rows.Add(textBoxUkuran.Text, textBoxHargaBeli.Text, textBoxHargaJual.Text, textBoxStok.Text);
+        }
+
+        private void btnHapus_Click(object sender, EventArgs e)
+        {
+            if (dataGridViewSHU.Rows.Count <= 1 || dataGridViewSHU.Rows.Count-1==dataGridViewSHU.CurrentCell.RowIndex)
+                return;
+
+            int currentRowIndex = dataGridViewSHU.CurrentCell.RowIndex;
+            dataGridViewSHU.Rows.RemoveAt(currentRowIndex);
         }
     }
 }

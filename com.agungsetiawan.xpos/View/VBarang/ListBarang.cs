@@ -19,11 +19,13 @@ namespace com.agungsetiawan.xpos.View.VBarang
     {
         BarangService barangService;
         static ListBarang form;
+        private StokHargaUkuranService shuService;
 
         private ListBarang()
         {
             InitializeComponent();
             barangService = new BarangService();
+            shuService = new StokHargaUkuranService();
 
             var Barangs = barangService.Get();
             dataGridViewBarang.DataSource = Barangs;
@@ -97,6 +99,32 @@ namespace com.agungsetiawan.xpos.View.VBarang
             BarangReportViewer barangReportViewer = new BarangReportViewer();
             barangReportViewer.setDataReport(barangReport);
             barangReportViewer.ShowDialog();
+        }
+
+        private void dataGridViewBarang_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridViewBarang.Rows.Count < 1)
+                return;
+
+            int id = 0;
+            bool isValid;
+            try
+            {
+                isValid = int.TryParse(dataGridViewBarang.SelectedRows[0].Cells[0].Value.ToString(), out id);
+            }
+            catch (ArgumentOutOfRangeException exception)
+            {
+                isValid = false;
+            }
+
+
+            if (!isValid || id == 0)
+                return;
+
+            dataGridViewStokUkuran.DataSource = shuService.FindByBarangId(id);
+            dataGridViewStokUkuran.Columns[0].Visible = false;
+            dataGridViewStokUkuran.Columns[5].Visible = false;
+            dataGridViewStokUkuran.Columns[6].Visible = false;
         }
     }
 }

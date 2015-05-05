@@ -10,6 +10,7 @@ namespace com.agungsetiawan.xpos.ModelView
     {
         public int Id { get; set; }
         public string Barang { get; set; }
+        public string Ukuran { get; set; }
         public decimal Harga { get; set; }
         public int Jumlah { get; set; }
         public float Diskon { get; set; }

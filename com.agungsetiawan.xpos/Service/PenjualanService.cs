@@ -14,10 +14,12 @@ namespace com.agungsetiawan.xpos.Service
     {
         PenjualanRepository penjualanRepository;
         BarangRepository barangRepository;
+        private StokHargaUkuranRepository shuRepository;
         public PenjualanService()
         {
             penjualanRepository = new PenjualanRepository();
             barangRepository = new BarangRepository();
+            shuRepository = new StokHargaUkuranRepository();
         }
 
         public String GetKodeTransaksiTerakhir()
@@ -38,9 +40,9 @@ namespace com.agungsetiawan.xpos.Service
 
             foreach(var detail in penjualanDetails)
             {
-                var barang = barangRepository.Get(detail.BarangId);
-                barang.Stok = barang.Stok - detail.Jumlah;
-                barangRepository.Put(barang);
+                var shu = shuRepository.FindByBarangIdAndUkuran(detail.BarangId, detail.Ukuran);
+                shu.Stock = shu.Stock - detail.Jumlah;
+                shuRepository.Put(shu);
             }
 
             penjualanRepository.Post(penjualan);

@@ -64,12 +64,12 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
                 {
                     for(int i=0;i<rowCount-1;i++)
                     {
-                        n = int.Parse(dgv.Rows[i].Cells[2].Value.ToString());
-                        price = decimal.Parse(dgv.Rows[i].Cells[3].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
-                        dgv.Rows[i].Cells[4].Value = diskon;
-                        dgv.Rows[i].Cells[5].Value = ((price - (price * (decimal)(diskon / 100))) * n).ToString("N2", CultureInfo.GetCultureInfo("de"));
+                        n = int.Parse(dgv.Rows[i].Cells[3].Value.ToString());
+                        price = decimal.Parse(dgv.Rows[i].Cells[4].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                        dgv.Rows[i].Cells[5].Value = diskon;
+                        dgv.Rows[i].Cells[6].Value = ((price - (price * (decimal)(diskon / 100))) * n).ToString("N2", CultureInfo.GetCultureInfo("de"));
 
-                        total += decimal.Parse(dgv.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+                        total += decimal.Parse(dgv.Rows[i].Cells[6].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
                     }
                 }
 

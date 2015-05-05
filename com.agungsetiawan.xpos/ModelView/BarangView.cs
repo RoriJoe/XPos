@@ -21,14 +21,6 @@ namespace com.agungsetiawan.xpos.ModelView
 
         public string Kategori { get; set; }
 
-        [DisplayName("Harga Jual")]
-        public decimal HargaJual { get; set; }
-
-        [DisplayName("Harga Beli")]
-        public decimal HargaBeli { get; set; }
-
-        public int Stok { get; set; }
-
         public string Keterangan { get; set; }
         
         public string Supplier { get; set; }

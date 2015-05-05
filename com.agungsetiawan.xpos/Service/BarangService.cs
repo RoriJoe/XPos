@@ -12,10 +12,12 @@ namespace com.agungsetiawan.xpos.Service
     public class BarangService
     {
         BarangRepository barangRepository;
+        StokHargaUkuranRepository shuRepository;
 
         public BarangService()
         {
             barangRepository = new BarangRepository();
+            shuRepository = new StokHargaUkuranRepository();
         }
 
         public List<BarangView> Get()
@@ -28,9 +30,6 @@ namespace com.agungsetiawan.xpos.Service
                                       NamaBarang = b.NamaBarang,
                                       Merek=b.Merek.NamaMerek,
                                       Kategori = b.Kategori.NamaKategori,
-                                      HargaJual = b.HargaJual,
-                                      HargaBeli = b.HargaBeli,
-                                      Stok = b.Stok,
                                       Keterangan = b.Keterangan,
                                       Supplier = b.Supplier.NamaSupplier,
                                       KodeBarang=b.KodeBarang
@@ -51,6 +50,7 @@ namespace com.agungsetiawan.xpos.Service
 
         public void Put(Barang barang)
         {
+            shuRepository.DeleteByBarangId(barang.Id);
             barangRepository.Put(barang);
         }
 
@@ -67,11 +67,11 @@ namespace com.agungsetiawan.xpos.Service
                                {
                                    Id = b.Id,
                                    NamaBarang = b.NamaBarang,
-                                   HargaJual = b.HargaJual,
-                                   HargaBeli = b.HargaBeli,
-                                   Stok = b.Stok,
+                                   Merek = b.Merek.NamaMerek,
                                    Keterangan = b.Keterangan,
-                                   Kategori = b.Kategori.NamaKategori
+                                   Kategori = b.Kategori.NamaKategori,
+                                   Supplier = b.Supplier.NamaSupplier,
+                                   KodeBarang = b.KodeBarang
                                }).ToList();
 
             return barangViews;

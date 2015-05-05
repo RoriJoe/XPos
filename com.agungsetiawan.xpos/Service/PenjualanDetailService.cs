@@ -25,6 +25,7 @@ namespace com.agungsetiawan.xpos.Service
                                     {
                                         Id=pd.Id,
                                         Barang=pd.Barang.NamaBarang,
+                                        Ukuran=pd.Ukuran,
                                         Harga=pd.Harga,
                                         Jumlah=pd.Jumlah,
                                         Diskon=pd.Diskon,

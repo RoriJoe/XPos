@@ -139,6 +139,18 @@
     <Compile Include="Migrations\201504221229544_TambahKolomKodeBarangDiBarang.Designer.cs">
       <DependentUpon>201504221229544_TambahKolomKodeBarangDiBarang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505030508502_BuatTabelStokHargaUkurans.cs" />
+    <Compile Include="Migrations\201505030508502_BuatTabelStokHargaUkurans.Designer.cs">
+      <DependentUpon>201505030508502_BuatTabelStokHargaUkurans.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505050301052_TambahUkuranDiPenjualanDetail.cs" />
+    <Compile Include="Migrations\201505050301052_TambahUkuranDiPenjualanDetail.Designer.cs">
+      <DependentUpon>201505050301052_TambahUkuranDiPenjualanDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505050302539_UbahUkuranJadiVarcharDanLimit10.cs" />
+    <Compile Include="Migrations\201505050302539_UbahUkuranJadiVarcharDanLimit10.Designer.cs">
+      <DependentUpon>201505050302539_UbahUkuranJadiVarcharDanLimit10.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelView\BarangView.cs" />
     <Compile Include="ModelView\PelangganView.cs" />
@@ -154,6 +166,7 @@
     <Compile Include="Model\PenjualanDetail.cs" />
     <Compile Include="Model\Permission.cs" />
     <Compile Include="Model\Role.cs" />
+    <Compile Include="Model\StokHargaUkuran.cs" />
     <Compile Include="Model\Supplier.cs" />
     <Compile Include="Report\BarangReport.cs">
       <AutoGen>True</AutoGen>
@@ -179,6 +192,7 @@
     <Compile Include="Repository\PenjualanDetailRepository.cs" />
     <Compile Include="Repository\PenjualanRepository.cs" />
     <Compile Include="Repository\RoleRepository.cs" />
+    <Compile Include="Repository\StokHargaUkuranRepository.cs" />
     <Compile Include="Repository\SupplierRepository.cs" />
     <Compile Include="Repository\XPosContext.cs" />
     <Compile Include="Service\BarangService.cs" />
@@ -191,6 +205,7 @@
     <Compile Include="Service\PenjualanDetailService.cs" />
     <Compile Include="Service\PenjualanService.cs" />
     <Compile Include="Service\RoleService.cs" />
+    <Compile Include="Service\StokHargaUkuranService.cs" />
     <Compile Include="Service\SupplierService.cs" />
     <Compile Include="View\VBarang\BarangReportViewer.cs">
       <SubType>Form</SubType>
@@ -450,6 +465,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201504221229544_TambahKolomKodeBarangDiBarang.resx">
       <DependentUpon>201504221229544_TambahKolomKodeBarangDiBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505030508502_BuatTabelStokHargaUkurans.resx">
+      <DependentUpon>201505030508502_BuatTabelStokHargaUkurans.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505050301052_TambahUkuranDiPenjualanDetail.resx">
+      <DependentUpon>201505050301052_TambahUkuranDiPenjualanDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505050302539_UbahUkuranJadiVarcharDanLimit10.resx">
+      <DependentUpon>201505050302539_UbahUkuranJadiVarcharDanLimit10.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\BarangReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
