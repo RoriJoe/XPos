@@ -174,6 +174,9 @@ namespace com.agungsetiawan.xpos.View.VBarang
             System.Drawing.Rectangle rectMerek = new Rectangle(comboBoxMerek.Location.X, comboBoxMerek.Location.Y,
                                                          comboBoxMerek.ClientSize.Width, comboBoxMerek.ClientSize.Height);
 
+            System.Drawing.Rectangle rectUkuran = new Rectangle(panelUkuran.Location.X, panelUkuran.Location.Y,
+                                                         panelUkuran.ClientSize.Width, panelUkuran.ClientSize.Height);
+
             rectNamaBarang.Inflate(1, 1); // border thickness
             System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectNamaBarang, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
 
@@ -200,6 +203,10 @@ namespace com.agungsetiawan.xpos.View.VBarang
 
             rectKodeBarang.Inflate(1, 1); // border thickness
             System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectKodeBarang, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+
+            rectUkuran.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectUkuran, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+        
         }
 
         private void textBoxKodeBarang_Leave(object sender, EventArgs e)
