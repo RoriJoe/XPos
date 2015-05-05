@@ -75,6 +75,7 @@
             this.navBarSupplier = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarMerek = new DevExpress.XtraNavBar.NavBarItem();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.navBarTransaksiInternal = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
@@ -308,7 +309,8 @@
             this.navBarItem14,
             this.navBarPelanggan,
             this.navBarSupplier,
-            this.navBarMerek});
+            this.navBarMerek,
+            this.navBarTransaksiInternal});
             this.navBarControl1.Location = new System.Drawing.Point(0, 142);
             this.navBarControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.navBarControl1.Name = "navBarControl1";
@@ -375,11 +377,13 @@
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Penjualan";
+            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPenjualan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDaftarPenjualan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPembelian),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDaftarPembelian)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDaftarPembelian),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarTransaksiInternal)});
             this.navBarGroup3.Name = "navBarGroup3";
             this.navBarGroup3.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup3.SmallImage")));
             // 
@@ -455,7 +459,6 @@
             // navBarGroup5
             // 
             this.navBarGroup5.Caption = "Pihak Kedua";
-            this.navBarGroup5.Expanded = true;
             this.navBarGroup5.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPelanggan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarSupplier),
@@ -488,6 +491,12 @@
             // 
             this.xtraTabbedMdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager.MdiParent = this;
+            // 
+            // navBarTransaksiInternal
+            // 
+            this.navBarTransaksiInternal.Caption = "Transaksi Internal";
+            this.navBarTransaksiInternal.Name = "navBarTransaksiInternal";
+            this.navBarTransaksiInternal.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarTransaksiInternal_LinkClicked);
             // 
             // MainForm
             // 
@@ -555,5 +564,6 @@
         private DevExpress.XtraBars.BarButtonItem barBtnLogout;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraNavBar.NavBarItem navBarMerek;
+        private DevExpress.XtraNavBar.NavBarItem navBarTransaksiInternal;
     }
 }

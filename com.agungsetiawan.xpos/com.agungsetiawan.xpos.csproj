@@ -151,12 +151,17 @@
     <Compile Include="Migrations\201505050302539_UbahUkuranJadiVarcharDanLimit10.Designer.cs">
       <DependentUpon>201505050302539_UbahUkuranJadiVarcharDanLimit10.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505050753327_BuatTabelTransaksiInternals.cs" />
+    <Compile Include="Migrations\201505050753327_BuatTabelTransaksiInternals.Designer.cs">
+      <DependentUpon>201505050753327_BuatTabelTransaksiInternals.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelView\BarangView.cs" />
     <Compile Include="ModelView\PelangganView.cs" />
     <Compile Include="ModelView\PenggunaView.cs" />
     <Compile Include="ModelView\PenjualanDetailView.cs" />
     <Compile Include="ModelView\PenjualanView.cs" />
+    <Compile Include="ModelView\TransaksiInternalView.cs" />
     <Compile Include="Model\Laporan.cs" />
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\Merek.cs" />
@@ -168,6 +173,7 @@
     <Compile Include="Model\Role.cs" />
     <Compile Include="Model\StokHargaUkuran.cs" />
     <Compile Include="Model\Supplier.cs" />
+    <Compile Include="Model\TransaksiInternal.cs" />
     <Compile Include="Report\BarangReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -194,6 +200,7 @@
     <Compile Include="Repository\RoleRepository.cs" />
     <Compile Include="Repository\StokHargaUkuranRepository.cs" />
     <Compile Include="Repository\SupplierRepository.cs" />
+    <Compile Include="Repository\TransaksiInternalRepository.cs" />
     <Compile Include="Repository\XPosContext.cs" />
     <Compile Include="Service\BarangService.cs" />
     <Compile Include="Service\KategoriService.cs" />
@@ -207,6 +214,7 @@
     <Compile Include="Service\RoleService.cs" />
     <Compile Include="Service\StokHargaUkuranService.cs" />
     <Compile Include="Service\SupplierService.cs" />
+    <Compile Include="Service\TransaksiInternalService.cs" />
     <Compile Include="View\VBarang\BarangReportViewer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -415,6 +423,12 @@
     <Compile Include="View\VSupplier\UbahSupplier.Designer.cs">
       <DependentUpon>UbahSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VTransaksiInternal\ListTransaksiInternal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VTransaksiInternal\ListTransaksiInternal.Designer.cs">
+      <DependentUpon>ListTransaksiInternal.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VWelcome\LoginAndWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -474,6 +488,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505050302539_UbahUkuranJadiVarcharDanLimit10.resx">
       <DependentUpon>201505050302539_UbahUkuranJadiVarcharDanLimit10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505050753327_BuatTabelTransaksiInternals.resx">
+      <DependentUpon>201505050753327_BuatTabelTransaksiInternals.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\BarangReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -594,6 +611,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VSupplier\UbahSupplier.resx">
       <DependentUpon>UbahSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VTransaksiInternal\ListTransaksiInternal.resx">
+      <DependentUpon>ListTransaksiInternal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VWelcome\LoginAndWelcome.resx">
       <DependentUpon>LoginAndWelcome.cs</DependentUpon>
