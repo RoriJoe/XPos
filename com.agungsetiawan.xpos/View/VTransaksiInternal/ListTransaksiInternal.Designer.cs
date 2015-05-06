@@ -84,6 +84,7 @@
             this.btnTambah.Size = new System.Drawing.Size(89, 35);
             this.btnTambah.TabIndex = 8;
             this.btnTambah.Text = "Tambah";
+            this.btnTambah.Click += new System.EventHandler(this.btnTambah_Click);
             // 
             // ListTransaksiInternal
             // 

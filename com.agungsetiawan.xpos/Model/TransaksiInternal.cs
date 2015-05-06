@@ -23,6 +23,5 @@ namespace com.agungsetiawan.xpos.Model
         [Column(TypeName = "varchar")]
         [StringLength(50)]
         public string Jenis { get; set; }
-        public decimal Total { get; set; }
     }
 }

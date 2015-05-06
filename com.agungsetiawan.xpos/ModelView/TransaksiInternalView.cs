@@ -17,6 +17,5 @@ namespace com.agungsetiawan.xpos.ModelView
         public string Jumlah { get; set; }
 
         public string Jenis { get; set; }
-        public string Total { get; set; }
     }
 }

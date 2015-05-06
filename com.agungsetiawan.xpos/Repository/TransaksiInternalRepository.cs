@@ -9,5 +9,10 @@ namespace com.agungsetiawan.xpos.Repository
 {
     public class TransaksiInternalRepository : GenericRepository<TransaksiInternal>
     {
+        //public decimal GetLastTotal()
+        //{
+        //    return this.db.TransaksiInternals.OrderByDescending(t => t.Id).Select(t => t.Total)
+        //               .Take(1).SingleOrDefault();
+        //}
     }
 }

@@ -27,11 +27,20 @@ namespace com.agungsetiawan.xpos.Service
                             Jenis=t.Jenis,
                             Jumlah=t.Jumlah.ToString("N2", CultureInfo.GetCultureInfo("de")),
                             Keterangan=t.Keterangan,
-                            Tanggal=t.Tanggal.ToString("dd MM yyyy"),
-                            Total=t.Total.ToString("N2", CultureInfo.GetCultureInfo("de"))
+                            Tanggal=t.Tanggal.ToString("dd MMMM yyyy",CultureInfo.GetCultureInfo("id-ID"))
                        }).ToList();
 
             return result;
         }
+
+        public void Post(TransaksiInternal transaksiInternal)
+        {
+            transaksiInternalRepository.Post(transaksiInternal);
+        }
+
+        //public decimal GetLastTotal()
+        //{
+        //    return transaksiInternalRepository.GetLastTotal();
+        //}
     }
 }

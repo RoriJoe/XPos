@@ -21,6 +21,7 @@ namespace com.agungsetiawan.xpos.View.VTransaksiInternal
             transaksiInternalService = new TransaksiInternalService();
 
             dataGridViewTransaksiInternal.DataSource = transaksiInternalService.Get();
+            dataGridViewTransaksiInternal.Columns[0].Visible = false;
         }
 
         public static ListTransaksiInternal GetForm()
@@ -31,6 +32,13 @@ namespace com.agungsetiawan.xpos.View.VTransaksiInternal
             }
 
             return form;
+        }
+
+        private void btnTambah_Click(object sender, EventArgs e)
+        {
+            TambahTransaksiInternal form = new TambahTransaksiInternal();
+            form.ParentForm = this;
+            form.ShowDialog();
         }
     }
 }
