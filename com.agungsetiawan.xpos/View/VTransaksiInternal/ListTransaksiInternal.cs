@@ -48,5 +48,18 @@ namespace com.agungsetiawan.xpos.View.VTransaksiInternal
             form.PopulateData();
             form.ShowDialog();
         }
+
+        private void btnHapus_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(dataGridViewTransaksiInternal.SelectedRows[0].Cells[0].Value.ToString());
+            var transaksiInternal = transaksiInternalService.Get(id);
+
+            DialogResult result = MessageBox.Show("Hapus data " + transaksiInternal.Keterangan + " ?", "Hapus", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
+            {
+                transaksiInternalService.Delete(transaksiInternal);
+                dataGridViewTransaksiInternal.DataSource = transaksiInternalService.Get();
+            }
+        }
     }
 }

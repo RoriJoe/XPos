@@ -52,5 +52,10 @@ namespace com.agungsetiawan.xpos.Service
         {
             transaksiInternalRepository.Put(transaksiInternal);
         }
+
+        public void Delete(TransaksiInternal transaksiInternal)
+        {
+            transaksiInternalRepository.Delete(transaksiInternal);
+        }
     }
 }
