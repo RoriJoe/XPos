@@ -40,5 +40,13 @@ namespace com.agungsetiawan.xpos.View.VTransaksiInternal
             form.ParentForm = this;
             form.ShowDialog();
         }
+
+        private void btnUbah_Click(object sender, EventArgs e)
+        {
+            UbahTransaksiInternal form = new UbahTransaksiInternal();
+            form.ParentForm = this;
+            form.PopulateData();
+            form.ShowDialog();
+        }
     }
 }

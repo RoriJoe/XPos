@@ -439,6 +439,12 @@
     <Compile Include="View\VTransaksiInternal\TambahTransaksiInternal.Designer.cs">
       <DependentUpon>TambahTransaksiInternal.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\VTransaksiInternal\UbahTransaksiInternal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VTransaksiInternal\UbahTransaksiInternal.Designer.cs">
+      <DependentUpon>UbahTransaksiInternal.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\VWelcome\LoginAndWelcome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -630,6 +636,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VTransaksiInternal\TambahTransaksiInternal.resx">
       <DependentUpon>TambahTransaksiInternal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VTransaksiInternal\UbahTransaksiInternal.resx">
+      <DependentUpon>UbahTransaksiInternal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VWelcome\LoginAndWelcome.resx">
       <DependentUpon>LoginAndWelcome.cs</DependentUpon>

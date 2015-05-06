@@ -38,9 +38,19 @@ namespace com.agungsetiawan.xpos.Service
             transaksiInternalRepository.Post(transaksiInternal);
         }
 
+        public TransaksiInternal Get(int id)
+        {
+            return transaksiInternalRepository.Get(id);
+        }
+
         //public decimal GetLastTotal()
         //{
         //    return transaksiInternalRepository.GetLastTotal();
         //}
+
+        public void Put(TransaksiInternal transaksiInternal)
+        {
+            transaksiInternalRepository.Put(transaksiInternal);
+        }
     }
 }
