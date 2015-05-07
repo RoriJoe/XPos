@@ -159,6 +159,10 @@
     <Compile Include="Migrations\201505060824045_HapusKolomTotalDiTransaksiInternal.Designer.cs">
       <DependentUpon>201505060824045_HapusKolomTotalDiTransaksiInternal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505061526378_BuatTabelBukuBesars.cs" />
+    <Compile Include="Migrations\201505061526378_BuatTabelBukuBesars.Designer.cs">
+      <DependentUpon>201505061526378_BuatTabelBukuBesars.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelView\BarangView.cs" />
     <Compile Include="ModelView\PelangganView.cs" />
@@ -166,6 +170,7 @@
     <Compile Include="ModelView\PenjualanDetailView.cs" />
     <Compile Include="ModelView\PenjualanView.cs" />
     <Compile Include="ModelView\TransaksiInternalView.cs" />
+    <Compile Include="Model\BukuBesar.cs" />
     <Compile Include="Model\Laporan.cs" />
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\Merek.cs" />
@@ -184,6 +189,12 @@
       <DependentUpon>BarangReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\BukuBesarReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BukuBesarReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Report\KategoriReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -191,6 +202,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Repository\BarangRepository.cs" />
+    <Compile Include="Repository\BukuBesarRepository.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IGenericRepository.cs" />
     <Compile Include="Repository\KategoriRepository.cs" />
@@ -207,6 +219,7 @@
     <Compile Include="Repository\TransaksiInternalRepository.cs" />
     <Compile Include="Repository\XPosContext.cs" />
     <Compile Include="Service\BarangService.cs" />
+    <Compile Include="Service\BukuBesarService.cs" />
     <Compile Include="Service\KategoriService.cs" />
     <Compile Include="Service\LaporanService.cs" />
     <Compile Include="Service\MemberService.cs" />
@@ -276,6 +289,12 @@
     </Compile>
     <Compile Include="View\VKategori\UbahKategori.Designer.cs">
       <DependentUpon>UbahKategori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VLaporan\LaporanBukuBesar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VLaporan\LaporanBukuBesar.Designer.cs">
+      <DependentUpon>LaporanBukuBesar.cs</DependentUpon>
     </Compile>
     <Compile Include="View\VLaporan\LaporanPenjualan.cs">
       <SubType>Form</SubType>
@@ -511,9 +530,16 @@
     <EmbeddedResource Include="Migrations\201505060824045_HapusKolomTotalDiTransaksiInternal.resx">
       <DependentUpon>201505060824045_HapusKolomTotalDiTransaksiInternal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505061526378_BuatTabelBukuBesars.resx">
+      <DependentUpon>201505061526378_BuatTabelBukuBesars.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\BarangReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BarangReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\BukuBesarReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BukuBesarReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\KategoriReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -555,6 +581,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VKategori\UbahKategori.resx">
       <DependentUpon>UbahKategori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VLaporan\LaporanBukuBesar.resx">
+      <DependentUpon>LaporanBukuBesar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VLaporan\LaporanPenjualan.resx">
       <DependentUpon>LaporanPenjualan.cs</DependentUpon>
