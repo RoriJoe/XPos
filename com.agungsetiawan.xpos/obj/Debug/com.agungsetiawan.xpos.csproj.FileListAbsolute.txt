@@ -92,6 +92,8 @@ D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungs
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.UbahUkuranJadiVarcharDanLimit10.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.BuatTabelTransaksiInternals.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.HapusKolomTotalDiTransaksiInternal.resources
+D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.BuatTabelBukuBesars.resources
+D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.TambahTabelPembeliansDanPembelianDetails.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VBarang.BarangReportViewer.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VBarang.ListBarang.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.MainForm.resources
@@ -102,6 +104,7 @@ D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungs
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VKategori.ListKategori.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VKategori.TambahKategori.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VKategori.UbahKategori.resources
+D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VLaporan.LaporanBukuBesar.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VLaporan.LaporanPenjualan.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VMember.ListMember.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VMember.TambahMember.resources
@@ -112,6 +115,10 @@ D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungs
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPelanggan.ListPelanggan.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPelanggan.TambahPelanggan.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPelanggan.UbahPelanggan.resources
+D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPembelian.ApplyHarga.resources
+D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPembelian.CariBarang.resources
+D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPembelian.CariSupplier.resources
+D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPembelian.TransaksiPembelian.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPengguna.ListPengguna.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPengguna.TambahPengguna.resources
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPengguna.UbahPengguna.resources
@@ -135,11 +142,3 @@ D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungs
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.exe.licenses
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.exe
 D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.pdb
-D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VLaporan.LaporanBukuBesar.resources
-D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.BuatTabelBukuBesars.resources
-D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPembelian.TransaksiPembelian.resources
-D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.Migrations.TambahTabelPembeliansDanPembelianDetails.resources
-D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.csprojResolveAssemblyReference.cache
-D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPembelian.ApplyHarga.resources
-D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPembelian.CariBarang.resources
-D:\Dev\VS2013\com.agungsetiawan.xpos\com.agungsetiawan.xpos\obj\Debug\com.agungsetiawan.xpos.View.VPembelian.CariSupplier.resources
