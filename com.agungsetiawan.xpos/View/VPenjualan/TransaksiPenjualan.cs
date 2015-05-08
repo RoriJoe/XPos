@@ -30,7 +30,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
             service = new BarangService();
             shuService = new StokHargaUkuranService();
 
-            textBoxKodeTransaksi.Text=KodeTransaksiHelper.Get(penjualanService.GetKodeTransaksiTerakhir());
+            textBoxKodeTransaksi.Text=KodeTransaksiHelper.Get(penjualanService.GetKodeTransaksiTerakhir(),"J");
 
             textBoxTanggal.Text = DateTime.Today.ToString("dd MMMM yyyy", CultureInfo.GetCultureInfo("id-ID"));
 
@@ -347,7 +347,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
         public void Clear()
         {
-            textBoxKodeTransaksi.Text = KodeTransaksiHelper.Get(penjualanService.GetKodeTransaksiTerakhir());
+            textBoxKodeTransaksi.Text = KodeTransaksiHelper.Get(penjualanService.GetKodeTransaksiTerakhir(),"J");
 
             var IsSuccess = this.PopulateData();
             if (!IsSuccess)

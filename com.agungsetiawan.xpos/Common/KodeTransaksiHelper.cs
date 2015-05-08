@@ -7,7 +7,7 @@ namespace com.agungsetiawan.xpos.Common
 
         static string today = DateTime.Now.ToString("ddMMyyyy");
 
-        public static String Get(string lastCode)
+        public static String Get(string lastCode, string tipeTransaksi)
         {
             string last = lastCode;
 
@@ -24,22 +24,22 @@ namespace com.agungsetiawan.xpos.Common
             {
                 currentNumber = int.Parse(last.Substring(10, 3));
                 nextNumber = currentNumber + 1;
-                return GenerateNextCode(nextNumber);
+                return GenerateNextCode(nextNumber, tipeTransaksi);
             }
             else if (!date.Equals(today) || string.IsNullOrEmpty(last))
             {
                 nextNumber = 1;
-                return GenerateNextCode(nextNumber);
+                return GenerateNextCode(nextNumber, tipeTransaksi);
             }
 
             return null;
 
         }
 
-        private static String GenerateNextCode(int nextNumber)
+        private static String GenerateNextCode(int nextNumber, string tipeTransaksi)
         {
             string nextNumberString = nextNumber.ToString().PadLeft(3, '0');
-            string nextCode = "TS" + today + nextNumberString;
+            string nextCode = "TS"+ tipeTransaksi + today + nextNumberString;
             return nextCode;
         }
     }

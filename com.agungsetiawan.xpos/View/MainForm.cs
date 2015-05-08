@@ -22,6 +22,7 @@ using com.agungsetiawan.xpos.View.VWelcome;
 using com.agungsetiawan.xpos.View.VLaporan;
 using com.agungsetiawan.xpos.View.VMerek;
 using com.agungsetiawan.xpos.View.VTransaksiInternal;
+using com.agungsetiawan.xpos.View.VPembelian;
 
 namespace com.agungsetiawan.xpos.View
 {
@@ -350,6 +351,14 @@ namespace com.agungsetiawan.xpos.View
         private void navBarTransaksiInternal_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             ListTransaksiInternal form = ListTransaksiInternal.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
+
+        private void barBtnPembelian_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            TransaksiPembelian form = TransaksiPembelian.GetForm();
             form.MdiParent = this;
             form.Show();
             form.Activate();

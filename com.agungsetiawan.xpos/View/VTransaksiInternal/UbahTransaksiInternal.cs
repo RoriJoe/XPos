@@ -25,7 +25,7 @@ namespace com.agungsetiawan.xpos.View.VTransaksiInternal
             dateTimePicker.CustomFormat = "dd MMMM yyyy";
 
             comboBoxJenis.Items.Add("Kredit");
-            comboBoxJenis.Items.Add("Debit");
+            comboBoxJenis.Items.Add("Debet");
         }
 
         public void PopulateData()

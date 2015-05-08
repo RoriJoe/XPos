@@ -163,6 +163,10 @@
     <Compile Include="Migrations\201505061526378_BuatTabelBukuBesars.Designer.cs">
       <DependentUpon>201505061526378_BuatTabelBukuBesars.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505070825377_TambahTabelPembeliansDanPembelianDetails.cs" />
+    <Compile Include="Migrations\201505070825377_TambahTabelPembeliansDanPembelianDetails.Designer.cs">
+      <DependentUpon>201505070825377_TambahTabelPembeliansDanPembelianDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelView\BarangView.cs" />
     <Compile Include="ModelView\PelangganView.cs" />
@@ -175,6 +179,8 @@
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\Merek.cs" />
     <Compile Include="Model\Pelanggan.cs" />
+    <Compile Include="Model\Pembelian.cs" />
+    <Compile Include="Model\PembelianDetail.cs" />
     <Compile Include="Model\Pengguna.cs" />
     <Compile Include="Model\Penjualan.cs" />
     <Compile Include="Model\PenjualanDetail.cs" />
@@ -210,6 +216,7 @@
     <Compile Include="Repository\MemberRepository.cs" />
     <Compile Include="Repository\MerekRepository.cs" />
     <Compile Include="Repository\PelangganRepository.cs" />
+    <Compile Include="Repository\PembelianRepository.cs" />
     <Compile Include="Repository\PenggunaRepository.cs" />
     <Compile Include="Repository\PenjualanDetailRepository.cs" />
     <Compile Include="Repository\PenjualanRepository.cs" />
@@ -225,6 +232,7 @@
     <Compile Include="Service\MemberService.cs" />
     <Compile Include="Service\MerekService.cs" />
     <Compile Include="Service\PelangganService.cs" />
+    <Compile Include="Service\PembelianService.cs" />
     <Compile Include="Service\PenggunaService.cs" />
     <Compile Include="Service\PenjualanDetailService.cs" />
     <Compile Include="Service\PenjualanService.cs" />
@@ -355,6 +363,30 @@
     </Compile>
     <Compile Include="View\VPelanggan\UbahPelanggan.Designer.cs">
       <DependentUpon>UbahPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VPembelian\ApplyHarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VPembelian\ApplyHarga.Designer.cs">
+      <DependentUpon>ApplyHarga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VPembelian\CariBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VPembelian\CariBarang.Designer.cs">
+      <DependentUpon>CariBarang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VPembelian\CariSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VPembelian\CariSupplier.Designer.cs">
+      <DependentUpon>CariSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VPembelian\TransaksiPembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VPembelian\TransaksiPembelian.Designer.cs">
+      <DependentUpon>TransaksiPembelian.cs</DependentUpon>
     </Compile>
     <Compile Include="View\VPengguna\ListPengguna.cs">
       <SubType>Form</SubType>
@@ -533,6 +565,9 @@
     <EmbeddedResource Include="Migrations\201505061526378_BuatTabelBukuBesars.resx">
       <DependentUpon>201505061526378_BuatTabelBukuBesars.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505070825377_TambahTabelPembeliansDanPembelianDetails.resx">
+      <DependentUpon>201505070825377_TambahTabelPembeliansDanPembelianDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\BarangReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BarangReport.cs</LastGenOutput>
@@ -614,6 +649,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VPelanggan\UbahPelanggan.resx">
       <DependentUpon>UbahPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VPembelian\ApplyHarga.resx">
+      <DependentUpon>ApplyHarga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VPembelian\CariBarang.resx">
+      <DependentUpon>CariBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VPembelian\CariSupplier.resx">
+      <DependentUpon>CariSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VPembelian\TransaksiPembelian.resx">
+      <DependentUpon>TransaksiPembelian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VPengguna\ListPengguna.resx">
       <DependentUpon>ListPengguna.cs</DependentUpon>

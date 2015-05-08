@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace com.agungsetiawan.xpos.Model
+{
+    public class PembelianDetail
+    {
+        public int Id { get; set; }
+        public Pembelian Pembelian { get; set; }
+        public int PembelianId { get; set; }
+        public Barang Barang { get; set; }
+        public int BarangId { get; set; }
+
+        [Column(TypeName = "varchar")]
+        [StringLength(10)]
+        public string Ukuran { get; set; }
+        public decimal Harga { get; set; }
+        public int Jumlah { get; set; }
+        public decimal SubTotal { get; set; }
+        public float Diskon { get; set; }
+    }
+}

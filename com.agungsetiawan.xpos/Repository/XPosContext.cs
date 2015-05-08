@@ -31,5 +31,6 @@ namespace com.agungsetiawan.xpos.Repository
         public DbSet<StokHargaUkuran> StockHargaUkurans { get; set; }
         public DbSet<TransaksiInternal> TransaksiInternals { get; set; }
         public DbSet<BukuBesar> BukuBesars { get; set; }
+        public DbSet<Pembelian> Pembelians { get; set; }
     }
 }

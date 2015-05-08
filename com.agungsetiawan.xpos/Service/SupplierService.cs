@@ -40,5 +40,10 @@ namespace com.agungsetiawan.xpos.Service
         {
             supplierRepository.Delete(supplier);
         }
+
+        public List<Supplier> FindByNama(string nama)
+        {
+            return supplierRepository.FindByNama(nama);
+        }
     }
 }

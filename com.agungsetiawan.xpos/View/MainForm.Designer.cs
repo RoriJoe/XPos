@@ -63,6 +63,7 @@
             this.navBarDaftarPenjualan = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarPembelian = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarDaftarPembelian = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarTransaksiInternal = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
@@ -75,7 +76,6 @@
             this.navBarSupplier = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarMerek = new DevExpress.XtraNavBar.NavBarItem();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.navBarTransaksiInternal = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
@@ -164,6 +164,7 @@
             this.barBtnPembelian.Id = 6;
             this.barBtnPembelian.Name = "barBtnPembelian";
             this.barBtnPembelian.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnPembelian.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnPembelian_ItemClick);
             // 
             // barBtnLaporanJumlahTransaksi
             // 
@@ -413,6 +414,12 @@
             this.navBarDaftarPembelian.Enabled = false;
             this.navBarDaftarPembelian.Name = "navBarDaftarPembelian";
             // 
+            // navBarTransaksiInternal
+            // 
+            this.navBarTransaksiInternal.Caption = "Transaksi Internal";
+            this.navBarTransaksiInternal.Name = "navBarTransaksiInternal";
+            this.navBarTransaksiInternal.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarTransaksiInternal_LinkClicked);
+            // 
             // navBarGroup4
             // 
             this.navBarGroup4.Caption = "Laporan";
@@ -491,12 +498,6 @@
             // 
             this.xtraTabbedMdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager.MdiParent = this;
-            // 
-            // navBarTransaksiInternal
-            // 
-            this.navBarTransaksiInternal.Caption = "Transaksi Internal";
-            this.navBarTransaksiInternal.Name = "navBarTransaksiInternal";
-            this.navBarTransaksiInternal.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarTransaksiInternal_LinkClicked);
             // 
             // MainForm
             // 

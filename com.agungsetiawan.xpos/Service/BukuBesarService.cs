@@ -12,12 +12,14 @@ namespace com.agungsetiawan.xpos.Service
     {
         private BukuBesarRepository bukuBesarRepository;
         private PenjualanRepository penjualanRepository;
+        private PembelianRepository pembelianRepository;
         private TransaksiInternalRepository transaksiInternalRepository;
 
         public BukuBesarService()
         {
             bukuBesarRepository=new BukuBesarRepository();
             penjualanRepository = new PenjualanRepository();
+            pembelianRepository = new PembelianRepository();
             transaksiInternalRepository = new TransaksiInternalRepository();
         }
 
@@ -31,6 +33,18 @@ namespace com.agungsetiawan.xpos.Service
                                  Debet=p.TotalHargaJual,
                                  Kredit=0
                             }).ToList();
+
+            var pembelians=pembelianRepository.FindByTanggal(tanggal);
+            var bukuBesarPembelian = (from p in pembelians
+                                      select new BukuBesar
+                                      {
+                                          Tanggal = p.Tanggal,
+                                          Keterangan = "Pembelian Pakaian",
+                                          Debet = 0,
+                                          Kredit = p.TotalHargaBeli
+                                      }).ToList();
+
+            bukuBesars.AddRange(bukuBesarPembelian);
 
             var transaksiInternals = transaksiInternalRepository.FindByTanggal(tanggal);
 
