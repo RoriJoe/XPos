@@ -42,6 +42,7 @@
             this.crystalReportViewer.Name = "crystalReportViewer";
             this.crystalReportViewer.Size = new System.Drawing.Size(721, 383);
             this.crystalReportViewer.TabIndex = 0;
+            this.crystalReportViewer.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // LaporanBukuBesar
             // 
@@ -51,6 +52,7 @@
             this.Controls.Add(this.crystalReportViewer);
             this.Name = "LaporanBukuBesar";
             this.Text = "LaporanBukuBesar";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
         }

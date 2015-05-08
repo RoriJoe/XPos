@@ -13,6 +13,8 @@ using com.agungsetiawan.xpos.Service;
 using com.agungsetiawan.xpos.ModelView;
 using com.agungsetiawan.xpos.Report;
 using com.agungsetiawan.xpos.View.VLaporan;
+using CrystalDecisions.CrystalReports.Engine;
+using System.Globalization;
 
 namespace com.agungsetiawan.xpos.View.VBarang
 {
@@ -106,6 +108,10 @@ namespace com.agungsetiawan.xpos.View.VBarang
 
             var data = service.GetByTanggal(DateTime.Today);
             report.SetDataSource(data);
+
+            
+            decimal val=10000000;
+            report.DataDefinition.FormulaFields["SaldoAwal"].Text = val.ToString();
 
             LaporanBukuBesar laporan = new LaporanBukuBesar();
             laporan.setDataReport(report);
