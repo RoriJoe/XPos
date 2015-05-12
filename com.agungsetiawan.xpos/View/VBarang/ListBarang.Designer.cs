@@ -35,8 +35,13 @@
             this.btnHapus = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewStokUkuran = new System.Windows.Forms.DataGridView();
+            this.panelBarang = new System.Windows.Forms.Panel();
+            this.textBoxBarang = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnReset = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBarang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStokUkuran)).BeginInit();
+            this.panelBarang.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridViewBarang
@@ -48,11 +53,11 @@
             this.dataGridViewBarang.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewBarang.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBarang.Location = new System.Drawing.Point(-2, 0);
+            this.dataGridViewBarang.Location = new System.Drawing.Point(-2, 56);
             this.dataGridViewBarang.MultiSelect = false;
             this.dataGridViewBarang.Name = "dataGridViewBarang";
             this.dataGridViewBarang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewBarang.Size = new System.Drawing.Size(994, 201);
+            this.dataGridViewBarang.Size = new System.Drawing.Size(994, 169);
             this.dataGridViewBarang.TabIndex = 0;
             this.dataGridViewBarang.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridViewBarang_RowPostPaint);
             this.dataGridViewBarang.SelectionChanged += new System.EventHandler(this.dataGridViewBarang_SelectionChanged);
@@ -98,7 +103,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.panel1.Location = new System.Drawing.Point(3, 207);
+            this.panel1.Location = new System.Drawing.Point(3, 231);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(989, 38);
             this.panel1.TabIndex = 5;
@@ -112,18 +117,61 @@
             this.dataGridViewStokUkuran.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridViewStokUkuran.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewStokUkuran.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewStokUkuran.Location = new System.Drawing.Point(3, 251);
+            this.dataGridViewStokUkuran.Location = new System.Drawing.Point(3, 275);
             this.dataGridViewStokUkuran.MultiSelect = false;
             this.dataGridViewStokUkuran.Name = "dataGridViewStokUkuran";
             this.dataGridViewStokUkuran.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewStokUkuran.Size = new System.Drawing.Size(994, 179);
+            this.dataGridViewStokUkuran.Size = new System.Drawing.Size(994, 155);
             this.dataGridViewStokUkuran.TabIndex = 6;
+            // 
+            // panelBarang
+            // 
+            this.panelBarang.BackColor = System.Drawing.SystemColors.Window;
+            this.panelBarang.Controls.Add(this.textBoxBarang);
+            this.panelBarang.Location = new System.Drawing.Point(99, 16);
+            this.panelBarang.Name = "panelBarang";
+            this.panelBarang.Padding = new System.Windows.Forms.Padding(3);
+            this.panelBarang.Size = new System.Drawing.Size(170, 22);
+            this.panelBarang.TabIndex = 21;
+            // 
+            // textBoxBarang
+            // 
+            this.textBoxBarang.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxBarang.Location = new System.Drawing.Point(6, 5);
+            this.textBoxBarang.Name = "textBoxBarang";
+            this.textBoxBarang.Size = new System.Drawing.Size(158, 13);
+            this.textBoxBarang.TabIndex = 7;
+            this.textBoxBarang.TextChanged += new System.EventHandler(this.textBoxBarang_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Nama Barang";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
+            this.btnReset.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnReset.Location = new System.Drawing.Point(287, 15);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(64, 23);
+            this.btnReset.TabIndex = 22;
+            this.btnReset.Text = "Reset";
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // ListBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 483);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.panelBarang);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewStokUkuran);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnHapus);
@@ -132,9 +180,13 @@
             this.Controls.Add(this.dataGridViewBarang);
             this.Name = "ListBarang";
             this.Text = "Daftar Barang";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.ListBarang_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBarang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStokUkuran)).EndInit();
+            this.panelBarang.ResumeLayout(false);
+            this.panelBarang.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -146,5 +198,9 @@
         private DevExpress.XtraEditors.SimpleButton btnHapus;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.DataGridView dataGridViewStokUkuran;
+        private System.Windows.Forms.Panel panelBarang;
+        private System.Windows.Forms.TextBox textBoxBarang;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SimpleButton btnReset;
     }
 }

@@ -117,5 +117,28 @@ namespace com.agungsetiawan.xpos.View.VBarang
             dataGridViewStokUkuran.Columns[5].Visible = false;
             dataGridViewStokUkuran.Columns[6].Visible = false;
         }
+
+        private void ListBarang_Paint(object sender, PaintEventArgs e)
+        {
+            System.Drawing.Rectangle rectBarang = new Rectangle(panelBarang.Location.X, panelBarang.Location.Y,
+                                                        panelBarang.ClientSize.Width, panelBarang.ClientSize.Height);
+
+            rectBarang.Inflate(1, 1); // border thickness
+            System.Windows.Forms.ControlPaint.DrawBorder(e.Graphics, rectBarang, Color.FromArgb(146, 202, 249), ButtonBorderStyle.Solid);
+        }
+
+        private void textBoxBarang_TextChanged(object sender, EventArgs e)
+        {
+            dataGridViewBarang.DataSource = barangService.FindByNama(textBoxBarang.Text);
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            var Barangs = barangService.Get();
+            dataGridViewBarang.DataSource = Barangs;
+            dataGridViewBarang.Columns[0].Visible = false;
+
+            textBoxBarang.Text = string.Empty;
+        }
     }
 }
