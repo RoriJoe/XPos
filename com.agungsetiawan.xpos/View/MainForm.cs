@@ -117,6 +117,10 @@ namespace com.agungsetiawan.xpos.View
             if(permissions.Contains("laporan"))
             {
                 barBtnLaporanJumlahTransaksi.Enabled = true;
+                barBtnLaporanKeuangan.Enabled = true;
+
+                navBarLaporanJumlahTransaksi.Enabled = true;
+                navBarLaporanKeuangan.Enabled = true;
             }
 
             if (permissions.Contains("merek"))
@@ -283,6 +287,9 @@ namespace com.agungsetiawan.xpos.View
             barBtnLogout.Enabled = false;
 
             barBtnLaporanJumlahTransaksi.Enabled = false;
+            barBtnLaporanKeuangan.Enabled = false;
+            navBarLaporanJumlahTransaksi.Enabled = false;
+            navBarLaporanKeuangan.Enabled = false;
 
             navBarMerek.Enabled = false;
             //laporan belum
@@ -365,6 +372,22 @@ namespace com.agungsetiawan.xpos.View
         }
 
         private void navBarLaporanKeuangan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            LaporanKeuangan form = LaporanKeuangan.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
+
+        private void navBarLaporanJumlahTransaksi_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            LaporanPenjualan form = LaporanPenjualan.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
+
+        private void barBtnLaporanKeuangan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             LaporanKeuangan form = LaporanKeuangan.GetForm();
             form.MdiParent = this;

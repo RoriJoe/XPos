@@ -38,7 +38,7 @@
             this.barBtnPenjualan = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnPembelian = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnLaporanJumlahTransaksi = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnLaporanKeuangan = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnPelanggan = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnSupplier = new DevExpress.XtraBars.BarButtonItem();
@@ -70,13 +70,13 @@
             this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem14 = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarLaporanJumlahTransaksi = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarLaporanKeuangan = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup5 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarPelanggan = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarSupplier = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarMerek = new DevExpress.XtraNavBar.NavBarItem();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.navBarLaporanKeuangan = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
@@ -95,7 +95,7 @@
             this.barBtnPenjualan,
             this.barBtnPembelian,
             this.barBtnLaporanJumlahTransaksi,
-            this.barButtonItem8,
+            this.barBtnLaporanKeuangan,
             this.barButtonItem9,
             this.barBtnPelanggan,
             this.barBtnSupplier,
@@ -177,14 +177,15 @@
             this.barBtnLaporanJumlahTransaksi.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             this.barBtnLaporanJumlahTransaksi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnLaporan_ItemClick);
             // 
-            // barButtonItem8
+            // barBtnLaporanKeuangan
             // 
-            this.barButtonItem8.Caption = "Jilbab";
-            this.barButtonItem8.Enabled = false;
-            this.barButtonItem8.Glyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.Glyph")));
-            this.barButtonItem8.Id = 8;
-            this.barButtonItem8.Name = "barButtonItem8";
-            this.barButtonItem8.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnLaporanKeuangan.Caption = "Laporan Keuangan";
+            this.barBtnLaporanKeuangan.Enabled = false;
+            this.barBtnLaporanKeuangan.Glyph = ((System.Drawing.Image)(resources.GetObject("barBtnLaporanKeuangan.Glyph")));
+            this.barBtnLaporanKeuangan.Id = 8;
+            this.barBtnLaporanKeuangan.Name = "barBtnLaporanKeuangan";
+            this.barBtnLaporanKeuangan.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.barBtnLaporanKeuangan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnLaporanKeuangan_ItemClick);
             // 
             // barButtonItem9
             // 
@@ -263,7 +264,7 @@
             // ribbonPageGroup4
             // 
             this.ribbonPageGroup4.ItemLinks.Add(this.barBtnLaporanJumlahTransaksi);
-            this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem8);
+            this.ribbonPageGroup4.ItemLinks.Add(this.barBtnLaporanKeuangan);
             this.ribbonPageGroup4.ItemLinks.Add(this.barButtonItem9);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Laporan";
@@ -308,7 +309,7 @@
             this.navBarItem11,
             this.navBarItem12,
             this.navBarItem13,
-            this.navBarItem14,
+            this.navBarLaporanJumlahTransaksi,
             this.navBarPelanggan,
             this.navBarSupplier,
             this.navBarMerek,
@@ -431,7 +432,7 @@
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem11),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem12),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem13),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem14),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarLaporanJumlahTransaksi),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarLaporanKeuangan)});
             this.navBarGroup4.Name = "navBarGroup4";
             this.navBarGroup4.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup4.SmallImage")));
@@ -461,10 +462,19 @@
             this.navBarItem13.Caption = "Gamis & Jilbab (1 bulan)";
             this.navBarItem13.Name = "navBarItem13";
             // 
-            // navBarItem14
+            // navBarLaporanJumlahTransaksi
             // 
-            this.navBarItem14.Caption = "Total";
-            this.navBarItem14.Name = "navBarItem14";
+            this.navBarLaporanJumlahTransaksi.Caption = "Jumlah Transaksi";
+            this.navBarLaporanJumlahTransaksi.Enabled = false;
+            this.navBarLaporanJumlahTransaksi.Name = "navBarLaporanJumlahTransaksi";
+            this.navBarLaporanJumlahTransaksi.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarLaporanJumlahTransaksi_LinkClicked);
+            // 
+            // navBarLaporanKeuangan
+            // 
+            this.navBarLaporanKeuangan.Caption = "Laporan Keuangan";
+            this.navBarLaporanKeuangan.Enabled = false;
+            this.navBarLaporanKeuangan.Name = "navBarLaporanKeuangan";
+            this.navBarLaporanKeuangan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarLaporanKeuangan_LinkClicked);
             // 
             // navBarGroup5
             // 
@@ -502,12 +512,6 @@
             this.xtraTabbedMdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager.MdiParent = this;
             // 
-            // navBarLaporanKeuangan
-            // 
-            this.navBarLaporanKeuangan.Caption = "Laporan Keuangan";
-            this.navBarLaporanKeuangan.Name = "navBarLaporanKeuangan";
-            this.navBarLaporanKeuangan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarLaporanKeuangan_LinkClicked);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -539,7 +543,7 @@
         private DevExpress.XtraBars.BarButtonItem barBtnPenjualan;
         private DevExpress.XtraBars.BarButtonItem barBtnPembelian;
         private DevExpress.XtraBars.BarButtonItem barBtnLaporanJumlahTransaksi;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem8;
+        private DevExpress.XtraBars.BarButtonItem barBtnLaporanKeuangan;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem barBtnPelanggan;
         private DevExpress.XtraBars.BarButtonItem barBtnSupplier;
@@ -566,7 +570,7 @@
         private DevExpress.XtraNavBar.NavBarItem navBarItem11;
         private DevExpress.XtraNavBar.NavBarItem navBarItem12;
         private DevExpress.XtraNavBar.NavBarItem navBarItem13;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem14;
+        private DevExpress.XtraNavBar.NavBarItem navBarLaporanJumlahTransaksi;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup5;
         private DevExpress.XtraNavBar.NavBarItem navBarPelanggan;
         private DevExpress.XtraNavBar.NavBarItem navBarSupplier;
