@@ -151,6 +151,12 @@ namespace com.agungsetiawan.xpos.View.VPembelian
                     return;
                 }
 
+                if (dataGridViewTransaksiPembelian.Rows[currentRowIndex].Cells[4].Value == null)
+                {
+                    MessageBox.Show("Silahkan pilih ukuran", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
                 int n = int.Parse(dataGridViewTransaksiPembelian.Rows[currentRowIndex].Cells[3].Value.ToString());
 
                 string id = dataGridViewTransaksiPembelian[0, currentRowIndex].Value.ToString();
@@ -379,9 +385,32 @@ namespace com.agungsetiawan.xpos.View.VPembelian
 
         private void btnSimpan_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(textBoxJumlahBayar.Text))
+            {
+                MessageBox.Show("Jumlah bayar belum diisi", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.ActiveControl = this.textBoxJumlahBayar;
+                return;
+            }
+
+            decimal total = decimal.Parse(labelTotal.Text, NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+            decimal bayar = decimal.Parse(textBoxJumlahBayar.Text, NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+
+            if (bayar < total)
+            {
+                MessageBox.Show("Jumlah bayar kurang", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.ActiveControl = this.textBoxJumlahBayar;
+                return;
+            }
+
             DataGridView data = dataGridViewTransaksiPembelian;
 
             int row = data.Rows.Count;
+
+            if (row <= 1)
+            {
+                MessageBox.Show("Belum ada barang yang dimasukkan", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             Pembelian pembelian = new Pembelian();
             PembelianDetail pDetail;
@@ -392,7 +421,14 @@ namespace com.agungsetiawan.xpos.View.VPembelian
                 var namaBarang = data.Rows[i].Cells[1].Value.ToString();
                 string ukuran = (data.Rows[i].Cells[2] as DataGridViewComboBoxCell).FormattedValue.ToString();
                 var jumlahJual = int.Parse(data.Rows[i].Cells[3].Value.ToString());
-                var hargaJual = decimal.Parse(data.Rows[i].Cells[4].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+
+                if (data.Rows[i].Cells[4].Value == null)
+                {
+                    MessageBox.Show("Silahkan pilih ukuran", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                var hargaBeli = decimal.Parse(data.Rows[i].Cells[4].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
+
                 var diskon = float.Parse(data.Rows[i].Cells[5].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
                 var subtotal = decimal.Parse(data.Rows[i].Cells[6].Value.ToString(), NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
 
@@ -403,7 +439,7 @@ namespace com.agungsetiawan.xpos.View.VPembelian
                     Pembelian = pembelian,
                     BarangId = barang.Id,
                     Ukuran = ukuran,
-                    Harga = hargaJual,
+                    Harga = hargaBeli,
                     Jumlah = jumlahJual,
                     SubTotal = subtotal,
                     Diskon = diskon,
