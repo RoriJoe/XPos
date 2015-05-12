@@ -74,5 +74,59 @@ namespace com.agungsetiawan.xpos.Service
 
             return result.ToList();
         }
+
+        public List<BukuBesar> GetByTanggal(DateTime tanggalAwal, DateTime tanggalAkhir)
+        {
+            var penjualans = penjualanRepository.FindByTanggal(tanggalAwal, tanggalAkhir);
+
+            var bukuBesars = (from p in penjualans
+                              select new BukuBesar
+                              {
+                                  Tanggal = p.Tanggal,
+                                  Keterangan = "Penjualan Pakaian",
+                                  Debet = p.TotalHargaJual,
+                                  Kredit = 0
+                              }).ToList();
+
+            var pembelians = pembelianRepository.FindByTanggal(tanggalAwal, tanggalAkhir);
+            var bukuBesarPembelian = (from p in pembelians
+                                      select new BukuBesar
+                                      {
+                                          Tanggal = p.Tanggal,
+                                          Keterangan = "Pembelian Pakaian",
+                                          Debet = 0,
+                                          Kredit = p.TotalHargaBeli
+                                      }).ToList();
+
+            bukuBesars.AddRange(bukuBesarPembelian);
+
+            var transaksiInternals = transaksiInternalRepository.FindByTanggal(tanggalAwal, tanggalAkhir);
+
+            BukuBesar bukuBesar;
+            foreach (var t in transaksiInternals)
+            {
+                bukuBesar = new BukuBesar();
+
+                bukuBesar.Tanggal = t.Tanggal;
+                bukuBesar.Keterangan = t.Keterangan;
+
+                if (t.Jenis.Equals("Debet"))
+                {
+                    bukuBesar.Debet = t.Jumlah;
+                    bukuBesar.Kredit = 0;
+                }
+                else if (t.Jenis.Equals("Kredit"))
+                {
+                    bukuBesar.Debet = 0;
+                    bukuBesar.Kredit = t.Jumlah;
+                }
+
+                bukuBesars.Add(bukuBesar);
+            }
+
+            var result = from b in bukuBesars orderby b.Tanggal select b;
+
+            return result.ToList();
+        }
     }
 }

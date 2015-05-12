@@ -38,6 +38,8 @@
             this.dateTimePickerBukuBesar = new System.Windows.Forms.DateTimePicker();
             this.checkBoxTanggalSampai = new System.Windows.Forms.CheckBox();
             this.dateTimePickerTransaksiPenjualanSampai = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerBukuBesarSampai = new System.Windows.Forms.DateTimePicker();
+            this.checkBoxTanggalSampaiBukuBesar = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -90,6 +92,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dateTimePickerBukuBesarSampai);
+            this.tabPage2.Controls.Add(this.checkBoxTanggalSampaiBukuBesar);
             this.tabPage2.Controls.Add(this.btnCetakBukuBesar);
             this.tabPage2.Controls.Add(this.dateTimePickerBukuBesar);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -105,7 +109,7 @@
             this.btnCetakBukuBesar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCetakBukuBesar.Image = ((System.Drawing.Image)(resources.GetObject("btnCetakBukuBesar.Image")));
             this.btnCetakBukuBesar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnCetakBukuBesar.Location = new System.Drawing.Point(83, 32);
+            this.btnCetakBukuBesar.Location = new System.Drawing.Point(83, 84);
             this.btnCetakBukuBesar.Name = "btnCetakBukuBesar";
             this.btnCetakBukuBesar.Size = new System.Drawing.Size(89, 35);
             this.btnCetakBukuBesar.TabIndex = 7;
@@ -138,6 +142,25 @@
             this.dateTimePickerTransaksiPenjualanSampai.TabIndex = 7;
             this.dateTimePickerTransaksiPenjualanSampai.Visible = false;
             // 
+            // dateTimePickerBukuBesarSampai
+            // 
+            this.dateTimePickerBukuBesarSampai.Location = new System.Drawing.Point(195, 6);
+            this.dateTimePickerBukuBesarSampai.Name = "dateTimePickerBukuBesarSampai";
+            this.dateTimePickerBukuBesarSampai.Size = new System.Drawing.Size(166, 20);
+            this.dateTimePickerBukuBesarSampai.TabIndex = 9;
+            this.dateTimePickerBukuBesarSampai.Visible = false;
+            // 
+            // checkBoxTanggalSampaiBukuBesar
+            // 
+            this.checkBoxTanggalSampaiBukuBesar.AutoSize = true;
+            this.checkBoxTanggalSampaiBukuBesar.Location = new System.Drawing.Point(83, 43);
+            this.checkBoxTanggalSampaiBukuBesar.Name = "checkBoxTanggalSampaiBukuBesar";
+            this.checkBoxTanggalSampaiBukuBesar.Size = new System.Drawing.Size(97, 17);
+            this.checkBoxTanggalSampaiBukuBesar.TabIndex = 8;
+            this.checkBoxTanggalSampaiBukuBesar.Text = "Pakai Rentang";
+            this.checkBoxTanggalSampaiBukuBesar.UseVisualStyleBackColor = true;
+            this.checkBoxTanggalSampaiBukuBesar.CheckedChanged += new System.EventHandler(this.checkBoxTanggalSampaiBukuBesar_CheckedChanged);
+            // 
             // LaporanKeuangan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,6 +174,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -166,5 +190,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerBukuBesar;
         private System.Windows.Forms.CheckBox checkBoxTanggalSampai;
         private System.Windows.Forms.DateTimePicker dateTimePickerTransaksiPenjualanSampai;
+        private System.Windows.Forms.DateTimePicker dateTimePickerBukuBesarSampai;
+        private System.Windows.Forms.CheckBox checkBoxTanggalSampaiBukuBesar;
     }
 }

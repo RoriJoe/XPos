@@ -48,5 +48,16 @@ namespace com.agungsetiawan.xpos.Repository
                           select p).ToList();
             return result;
         }
+
+        public List<Pembelian> FindByTanggal(DateTime tanggalAwal, DateTime tanggalAkhir)
+        {
+            var result = (from p in db.Pembelians
+                          where (p.Tanggal.Year >= tanggalAwal.Year && p.Tanggal.Year <= tanggalAkhir.Year) &&
+                              (p.Tanggal.Month >= tanggalAwal.Month && p.Tanggal.Month <= tanggalAkhir.Month) &&
+                              (p.Tanggal.Day >= tanggalAwal.Day && p.Tanggal.Day <= tanggalAkhir.Day)
+                          orderby p.Tanggal descending
+                          select p).ToList();
+            return result;
+        }
     }
 }

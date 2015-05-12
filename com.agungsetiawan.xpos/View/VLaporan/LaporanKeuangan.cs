@@ -1,4 +1,5 @@
-﻿using com.agungsetiawan.xpos.ModelView;
+﻿using com.agungsetiawan.xpos.Model;
+using com.agungsetiawan.xpos.ModelView;
 using com.agungsetiawan.xpos.Report;
 using com.agungsetiawan.xpos.Service;
 using System;
@@ -35,6 +36,9 @@ namespace com.agungsetiawan.xpos.View.VLaporan
 
             dateTimePickerBukuBesar.Format = DateTimePickerFormat.Custom;
             dateTimePickerBukuBesar.CustomFormat = "dd MMMM yyyy";
+
+            dateTimePickerBukuBesarSampai.Format = DateTimePickerFormat.Custom;
+            dateTimePickerBukuBesarSampai.CustomFormat = "dd MMMM yyyy";
         }
 
         public static LaporanKeuangan GetForm()
@@ -80,8 +84,18 @@ namespace com.agungsetiawan.xpos.View.VLaporan
         private void btnCetakBukuBesar_Click(object sender, EventArgs e)
         {
             BukuBesarReport report = new BukuBesarReport();
+            List<BukuBesar> data;
 
-            var data = bukuBesarService.GetByTanggal(dateTimePickerBukuBesar.Value);
+            if(checkBoxTanggalSampaiBukuBesar.Checked)
+            {
+                data = bukuBesarService.GetByTanggal(dateTimePickerBukuBesar.Value, dateTimePickerBukuBesarSampai.Value);
+            }
+            else
+            {
+                data = bukuBesarService.GetByTanggal(dateTimePickerBukuBesar.Value);
+            }
+
+            
             report.SetDataSource(data);
 
             if (data.Count < 1)
@@ -107,6 +121,18 @@ namespace com.agungsetiawan.xpos.View.VLaporan
             else
             {
                 dateTimePickerTransaksiPenjualanSampai.Visible = false;
+            }
+        }
+
+        private void checkBoxTanggalSampaiBukuBesar_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxTanggalSampaiBukuBesar.Checked)
+            {
+                dateTimePickerBukuBesarSampai.Visible = true;
+            }
+            else
+            {
+                dateTimePickerBukuBesarSampai.Visible = false;
             }
         }
     }
