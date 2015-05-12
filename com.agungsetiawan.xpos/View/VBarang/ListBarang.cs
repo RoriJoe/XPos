@@ -92,32 +92,6 @@ namespace com.agungsetiawan.xpos.View.VBarang
             }
         }
 
-        private void btnCetak_Click(object sender, EventArgs e)
-        {
-            //BarangReport barangReport = new BarangReport();
-
-            //var barangs = barangService.Get();
-            //barangReport.SetDataSource(barangs);
-
-            //BarangReportViewer barangReportViewer = new BarangReportViewer();
-            //barangReportViewer.setDataReport(barangReport);
-            //barangReportViewer.ShowDialog();
-
-            BukuBesarReport report = new BukuBesarReport();
-            BukuBesarService service=new BukuBesarService();
-
-            var data = service.GetByTanggal(DateTime.Today);
-            report.SetDataSource(data);
-
-            
-            decimal val=10000000;
-            report.DataDefinition.FormulaFields["SaldoAwal"].Text = val.ToString();
-
-            LaporanBukuBesar laporan = new LaporanBukuBesar();
-            laporan.setDataReport(report);
-            laporan.ShowDialog();
-        }
-
         private void dataGridViewBarang_SelectionChanged(object sender, EventArgs e)
         {
             if (dataGridViewBarang.Rows.Count < 1)

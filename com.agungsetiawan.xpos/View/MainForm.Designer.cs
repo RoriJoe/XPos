@@ -76,6 +76,7 @@
             this.navBarSupplier = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarMerek = new DevExpress.XtraNavBar.NavBarItem();
             this.xtraTabbedMdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.navBarLaporanKeuangan = new DevExpress.XtraNavBar.NavBarItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager)).BeginInit();
@@ -311,7 +312,8 @@
             this.navBarPelanggan,
             this.navBarSupplier,
             this.navBarMerek,
-            this.navBarTransaksiInternal});
+            this.navBarTransaksiInternal,
+            this.navBarLaporanKeuangan});
             this.navBarControl1.Location = new System.Drawing.Point(0, 142);
             this.navBarControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.navBarControl1.Name = "navBarControl1";
@@ -378,7 +380,6 @@
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Penjualan";
-            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPenjualan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDaftarPenjualan),
@@ -423,13 +424,15 @@
             // navBarGroup4
             // 
             this.navBarGroup4.Caption = "Laporan";
+            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem10),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem11),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem12),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem13),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem14)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem14),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarLaporanKeuangan)});
             this.navBarGroup4.Name = "navBarGroup4";
             this.navBarGroup4.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup4.SmallImage")));
             // 
@@ -499,6 +502,12 @@
             this.xtraTabbedMdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InAllTabPageHeaders;
             this.xtraTabbedMdiManager.MdiParent = this;
             // 
+            // navBarLaporanKeuangan
+            // 
+            this.navBarLaporanKeuangan.Caption = "Laporan Keuangan";
+            this.navBarLaporanKeuangan.Name = "navBarLaporanKeuangan";
+            this.navBarLaporanKeuangan.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarLaporanKeuangan_LinkClicked);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,5 +575,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraNavBar.NavBarItem navBarMerek;
         private DevExpress.XtraNavBar.NavBarItem navBarTransaksiInternal;
+        private DevExpress.XtraNavBar.NavBarItem navBarLaporanKeuangan;
     }
 }

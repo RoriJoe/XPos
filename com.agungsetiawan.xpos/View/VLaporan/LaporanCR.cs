@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace com.agungsetiawan.xpos.View.VLaporan
 {
-    public partial class LaporanBukuBesar : Form
+    public partial class LaporanCR : Form
     {
-        public LaporanBukuBesar()
+        public LaporanCR()
         {
             InitializeComponent();
         }
 
-        public void setDataReport(Report.BukuBesarReport bukuBesarReport)
+        public void setDataReportBukuBesar(Report.BukuBesarReport bukuBesarReport)
+        {
+            crystalReportViewer.ReportSource = bukuBesarReport;
+        }
+
+        public void setDataReportTransaksiPenjualan(Report.TransaksiPenjualanReport bukuBesarReport)
         {
             crystalReportViewer.ReportSource = bukuBesarReport;
         }

@@ -66,6 +66,7 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
             dataGridViewDaftarPenjualanDetail.DataSource = penjualanDetailService.FindByPenjualanId(id);
             dataGridViewDaftarPenjualanDetail.Columns[0].Visible = false;
+            dataGridViewDaftarPenjualanDetail.Columns[7].Visible = false;
         }
 
         private void comboBoxCari_SelectedValueChanged(object sender, EventArgs e)

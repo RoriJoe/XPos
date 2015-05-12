@@ -33,7 +33,6 @@
             this.btnTambah = new DevExpress.XtraEditors.SimpleButton();
             this.btnUbah = new DevExpress.XtraEditors.SimpleButton();
             this.btnHapus = new DevExpress.XtraEditors.SimpleButton();
-            this.btnCetak = new DevExpress.XtraEditors.SimpleButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewStokUkuran = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBarang)).BeginInit();
@@ -94,18 +93,6 @@
             this.btnHapus.Text = "Hapus";
             this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
             // 
-            // btnCetak
-            // 
-            this.btnCetak.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCetak.Image = ((System.Drawing.Image)(resources.GetObject("btnCetak.Image")));
-            this.btnCetak.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnCetak.Location = new System.Drawing.Point(325, 436);
-            this.btnCetak.Name = "btnCetak";
-            this.btnCetak.Size = new System.Drawing.Size(89, 35);
-            this.btnCetak.TabIndex = 4;
-            this.btnCetak.Text = "Cetak";
-            this.btnCetak.Click += new System.EventHandler(this.btnCetak_Click);
-            // 
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -139,7 +126,6 @@
             this.ClientSize = new System.Drawing.Size(992, 483);
             this.Controls.Add(this.dataGridViewStokUkuran);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnCetak);
             this.Controls.Add(this.btnHapus);
             this.Controls.Add(this.btnUbah);
             this.Controls.Add(this.btnTambah);
@@ -158,7 +144,6 @@
         private DevExpress.XtraEditors.SimpleButton btnTambah;
         private DevExpress.XtraEditors.SimpleButton btnUbah;
         private DevExpress.XtraEditors.SimpleButton btnHapus;
-        private DevExpress.XtraEditors.SimpleButton btnCetak;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.DataGridView dataGridViewStokUkuran;
     }

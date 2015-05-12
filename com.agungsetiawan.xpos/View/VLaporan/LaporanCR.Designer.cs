@@ -1,6 +1,6 @@
 ﻿namespace com.agungsetiawan.xpos.View.VLaporan
 {
-    partial class LaporanBukuBesar
+    partial class LaporanCR
     {
         /// <summary>
         /// Required designer variable.

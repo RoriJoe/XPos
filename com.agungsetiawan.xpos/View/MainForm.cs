@@ -363,5 +363,13 @@ namespace com.agungsetiawan.xpos.View
             form.Show();
             form.Activate();
         }
+
+        private void navBarLaporanKeuangan_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            LaporanKeuangan form = LaporanKeuangan.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
     }
 }

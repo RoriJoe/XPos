@@ -38,7 +38,7 @@ namespace com.agungsetiawan.xpos.Repository
 
         public List<Penjualan> FindByTanggal(DateTime tanggal)
         {
-            var result = (from p in db.Penjualans where p.Tanggal.Year == tanggal.Year && 
+            var result = (from p in db.Penjualans.Include("Pelanggan").Include("Pengguna") where p.Tanggal.Year == tanggal.Year && 
                                p.Tanggal.Month==tanggal.Month && 
                                p.Tanggal.Day==tanggal.Day 
                           orderby p.Tanggal descending select p).ToList();

@@ -15,6 +15,7 @@ namespace com.agungsetiawan.xpos.ModelView
         public int Jumlah { get; set; }
         public float Diskon { get; set; }
         public decimal SubTotal { get; set; }
+        public int PenjualanId { get; set; }
         
     }
 }
