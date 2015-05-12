@@ -114,5 +114,23 @@ namespace com.agungsetiawan.xpos.Service
 
             return result;
         }
+
+        public List<PenjualanView> FindByTanggal(DateTime tanggalAwal, DateTime tanggalAkhir)
+        {
+            var penjualans = penjualanRepository.FindByTanggal(tanggalAwal, tanggalAkhir);
+
+            var result = (from p in penjualans
+                          select new PenjualanView()
+                          {
+                              Id = p.Id,
+                              KodeTransaksi = p.KodeTransaksi,
+                              Tanggal = p.Tanggal.ToString("dd MMMM yyyy HH:mm", CultureInfo.GetCultureInfo("id-ID")),
+                              TotalHargaJual = p.TotalHargaJual,
+                              Pengguna = p.Pengguna.Nama,
+                              Pelanggan = p.Pelanggan.NamaPelanggan
+                          }).ToList();
+
+            return result;
+        }
     }
 }

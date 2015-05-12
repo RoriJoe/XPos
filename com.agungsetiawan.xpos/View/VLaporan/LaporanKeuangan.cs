@@ -1,4 +1,5 @@
-﻿using com.agungsetiawan.xpos.Report;
+﻿using com.agungsetiawan.xpos.ModelView;
+using com.agungsetiawan.xpos.Report;
 using com.agungsetiawan.xpos.Service;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,9 @@ namespace com.agungsetiawan.xpos.View.VLaporan
             dateTimePickerTransaksiPenjualan.Format = DateTimePickerFormat.Custom;
             dateTimePickerTransaksiPenjualan.CustomFormat = "dd MMMM yyyy";
 
+            dateTimePickerTransaksiPenjualanSampai.Format = DateTimePickerFormat.Custom;
+            dateTimePickerTransaksiPenjualanSampai.CustomFormat = "dd MMMM yyyy";
+
             dateTimePickerBukuBesar.Format = DateTimePickerFormat.Custom;
             dateTimePickerBukuBesar.CustomFormat = "dd MMMM yyyy";
         }
@@ -47,7 +51,16 @@ namespace com.agungsetiawan.xpos.View.VLaporan
         {
             TransaksiPenjualanReport report = new TransaksiPenjualanReport();
 
-            var data = penjualanService.FindByTanggal(dateTimePickerTransaksiPenjualan.Value);
+            List<PenjualanView> data;
+            if(checkBoxTanggalSampai.Checked)
+            {
+                data = penjualanService.FindByTanggal(dateTimePickerTransaksiPenjualan.Value, dateTimePickerTransaksiPenjualanSampai.Value);
+            }
+            else
+            {
+                data = penjualanService.FindByTanggal(dateTimePickerTransaksiPenjualan.Value);
+            }
+
             report.SetDataSource(data);
 
             if(data.Count<1)
@@ -83,6 +96,18 @@ namespace com.agungsetiawan.xpos.View.VLaporan
             LaporanCR laporan = new LaporanCR();
             laporan.setDataReportBukuBesar(report);
             laporan.ShowDialog();
+        }
+
+        private void checkBoxTanggalSampai_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBoxTanggalSampai.Checked)
+            {
+                dateTimePickerTransaksiPenjualanSampai.Visible = true;
+            }
+            else
+            {
+                dateTimePickerTransaksiPenjualanSampai.Visible = false;
+            }
         }
     }
 }

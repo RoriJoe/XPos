@@ -44,5 +44,16 @@ namespace com.agungsetiawan.xpos.Repository
                           orderby p.Tanggal descending select p).ToList();
             return result;
         }
+
+        public List<Penjualan> FindByTanggal(DateTime tanggalAwal, DateTime tanggalAkhir)
+        {
+            var result = (from p in db.Penjualans.Include("Pelanggan").Include("Pengguna")
+                          where (p.Tanggal.Year >= tanggalAwal.Year && p.Tanggal.Year <= tanggalAkhir.Year) &&
+                              (p.Tanggal.Month >= tanggalAwal.Month && p.Tanggal.Month <= tanggalAkhir.Month) &&
+                              (p.Tanggal.Day >= tanggalAwal.Day && p.Tanggal.Day <= tanggalAkhir.Day)
+                          orderby p.Tanggal descending
+                          select p).ToList();
+            return result;
+        }
     }
 }
