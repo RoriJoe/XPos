@@ -34,5 +34,14 @@ namespace com.agungsetiawan.xpos.Service
 
             return penjualanDetails;
         }
+
+        public List<PembelianDetailView> GetWithBarang(List<PembelianView> Pembelians)
+        {
+            var ids = (from p in Pembelians select p.Id).ToArray();
+
+            var data = pembelianDetailRepository.GetWithBarang(ids);
+            var result = from d in data select new PembelianDetailView { Barang = d.Barang.NamaBarang, Diskon = d.Diskon, Harga = d.Harga, Id = d.Id, Jumlah = d.Jumlah, SubTotal = d.SubTotal, Ukuran = d.Ukuran, PembelianId = d.PembelianId };
+            return result.ToList();
+        }
     }
 }

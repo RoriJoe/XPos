@@ -14,5 +14,11 @@ namespace com.agungsetiawan.xpos.Repository
             var result = (from pd in this.db.PembelianDetails.Include("Barang") where pd.PembelianId == id select pd).ToList();
             return result;
         }
+
+        public List<PembelianDetail> GetWithBarang(int[] ids)
+        {
+            var result = this.db.PembelianDetails.Include("Barang").Where(pd => ids.Contains(pd.PembelianId)).ToList(); ;
+            return result;
+        }
     }
 }

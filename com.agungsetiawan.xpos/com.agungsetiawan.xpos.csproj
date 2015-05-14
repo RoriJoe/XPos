@@ -191,12 +191,6 @@
     <Compile Include="Model\StokHargaUkuran.cs" />
     <Compile Include="Model\Supplier.cs" />
     <Compile Include="Model\TransaksiInternal.cs" />
-    <Compile Include="Report\BarangReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BarangReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Report\BukuBesarReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -209,11 +203,23 @@
       <DependentUpon>KategoriReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\TransaksiPembelianDetailReport.cs">
+      <DependentUpon>TransaksiPembelianDetailReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Report\TransaksiPenjualanDetailReport.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>TransaksiPenjualanDetailReport.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\TransaksiPembelianReport.cs">
+      <DependentUpon>TransaksiPembelianReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Report\TransaksiPenjualanReport.cs">
       <AutoGen>True</AutoGen>
@@ -256,12 +262,6 @@
     <Compile Include="Service\StokHargaUkuranService.cs" />
     <Compile Include="Service\SupplierService.cs" />
     <Compile Include="Service\TransaksiInternalService.cs" />
-    <Compile Include="View\VBarang\BarangReportViewer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\VBarang\BarangReportViewer.Designer.cs">
-      <DependentUpon>BarangReportViewer.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\VBarang\ListBarang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -596,10 +596,6 @@
     <EmbeddedResource Include="Migrations\201505070825377_TambahTabelPembeliansDanPembelianDetails.resx">
       <DependentUpon>201505070825377_TambahTabelPembeliansDanPembelianDetails.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\BarangReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>BarangReport.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="Report\BukuBesarReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BukuBesarReport.cs</LastGenOutput>
@@ -608,16 +604,21 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>KategoriReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\TransaksiPembelianDetailReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TransaksiPembelianDetailReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\TransaksiPenjualanDetailReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TransaksiPenjualanDetailReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\TransaksiPembelianReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TransaksiPembelianReport.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\TransaksiPenjualanReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TransaksiPenjualanReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\VBarang\BarangReportViewer.resx">
-      <DependentUpon>BarangReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VBarang\ListBarang.resx">
       <DependentUpon>ListBarang.cs</DependentUpon>

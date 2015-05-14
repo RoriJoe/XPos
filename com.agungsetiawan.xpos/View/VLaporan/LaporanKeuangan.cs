@@ -19,6 +19,8 @@ namespace com.agungsetiawan.xpos.View.VLaporan
         private static LaporanKeuangan form;
         private PenjualanService penjualanService;
         private PenjualanDetailService penjualanDetailService;
+        private PembelianService pembelianService;
+        private PembelianDetailService pembelianDetailService;
         private BukuBesarService bukuBesarService;
         private LaporanKeuangan()
         {
@@ -26,6 +28,8 @@ namespace com.agungsetiawan.xpos.View.VLaporan
 
             penjualanService = new PenjualanService();
             penjualanDetailService = new PenjualanDetailService();
+            pembelianService = new PembelianService();
+            pembelianDetailService = new PembelianDetailService();
             bukuBesarService = new BukuBesarService();
 
             dateTimePickerTransaksiPenjualan.Format = DateTimePickerFormat.Custom;
@@ -33,6 +37,12 @@ namespace com.agungsetiawan.xpos.View.VLaporan
 
             dateTimePickerTransaksiPenjualanSampai.Format = DateTimePickerFormat.Custom;
             dateTimePickerTransaksiPenjualanSampai.CustomFormat = "dd MMMM yyyy";
+
+            dateTimePickerTransaksiPembelian.Format = DateTimePickerFormat.Custom;
+            dateTimePickerTransaksiPembelian.CustomFormat = "dd MMMM yyyy";
+
+            dateTimePickerTransaksiPembelianSampai.Format = DateTimePickerFormat.Custom;
+            dateTimePickerTransaksiPembelianSampai.CustomFormat = "dd MMMM yyyy";
 
             dateTimePickerBukuBesar.Format = DateTimePickerFormat.Custom;
             dateTimePickerBukuBesar.CustomFormat = "dd MMMM yyyy";
@@ -78,6 +88,36 @@ namespace com.agungsetiawan.xpos.View.VLaporan
 
             LaporanCR laporan = new LaporanCR();
             laporan.setDataReportTransaksiPenjualan(report);
+            laporan.ShowDialog();
+        }
+
+        private void btnCetakTransaksiPembelian_Click(object sender, EventArgs e)
+        {
+            TransaksiPembelianReport report = new TransaksiPembelianReport();
+
+            List<PembelianView> data=null;
+            if (checkBoxTanggalSampaiTransaksiPembelian.Checked)
+            {
+                data = pembelianService.FindByTanggal(dateTimePickerTransaksiPembelian.Value, dateTimePickerTransaksiPembelianSampai.Value);
+            }
+            else
+            {
+                data = pembelianService.FindByTanggal(dateTimePickerTransaksiPembelian.Value);
+            }
+
+            report.SetDataSource(data);
+
+            if (data.Count < 1)
+            {
+                MessageBox.Show("Tidak ada data ditemukan", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            var dataSubReport = pembelianDetailService.GetWithBarang(data);
+            report.Subreports[0].SetDataSource(dataSubReport);
+
+            LaporanCR laporan = new LaporanCR();
+            laporan.setDataReportTransaksiPembelian(report);
             laporan.ShowDialog();
         }
 
@@ -135,5 +175,19 @@ namespace com.agungsetiawan.xpos.View.VLaporan
                 dateTimePickerBukuBesarSampai.Visible = false;
             }
         }
+
+        private void checkBoxTanggalSampaiTransaksiPembelian_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxTanggalSampaiTransaksiPembelian.Checked)
+            {
+                dateTimePickerTransaksiPembelianSampai.Visible = true;
+            }
+            else
+            {
+                dateTimePickerTransaksiPembelianSampai.Visible = false;
+            }
+        }
+
+        
     }
 }

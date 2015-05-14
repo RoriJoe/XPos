@@ -40,7 +40,7 @@ namespace com.agungsetiawan.xpos.Repository
 
         public List<Pembelian> FindByTanggal(DateTime tanggal)
         {
-            var result = (from p in db.Pembelians
+            var result = (from p in db.Pembelians.Include("Pengguna").Include("Supplier")
                           where p.Tanggal.Year == tanggal.Year &&
                               p.Tanggal.Month == tanggal.Month &&
                               p.Tanggal.Day == tanggal.Day
@@ -51,7 +51,7 @@ namespace com.agungsetiawan.xpos.Repository
 
         public List<Pembelian> FindByTanggal(DateTime tanggalAwal, DateTime tanggalAkhir)
         {
-            var result = (from p in db.Pembelians
+            var result = (from p in db.Pembelians.Include("Pengguna").Include("Supplier")
                           where (p.Tanggal.Year >= tanggalAwal.Year && p.Tanggal.Year <= tanggalAkhir.Year) &&
                               (p.Tanggal.Month >= tanggalAwal.Month && p.Tanggal.Month <= tanggalAkhir.Month) &&
                               (p.Tanggal.Day >= tanggalAwal.Day && p.Tanggal.Day <= tanggalAkhir.Day)

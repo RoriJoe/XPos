@@ -26,5 +26,10 @@ namespace com.agungsetiawan.xpos.View.VLaporan
         {
             crystalReportViewer.ReportSource = bukuBesarReport;
         }
+
+        public void setDataReportTransaksiPembelian(Report.TransaksiPembelianReport transaksiPembelianReport)
+        {
+            crystalReportViewer.ReportSource = transaksiPembelianReport;
+        }
     }
 }
