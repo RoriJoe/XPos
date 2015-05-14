@@ -88,6 +88,7 @@ namespace com.agungsetiawan.xpos.View.VPembelian
             {
 
                 int kodeSupplier;
+                
                 bool IsValidKodePelanggan = int.TryParse(textBoxKodeSupplier.Text, out kodeSupplier);
 
                 float diskon;
@@ -453,7 +454,31 @@ namespace com.agungsetiawan.xpos.View.VPembelian
             pembelian.TotalHargaBeli = decimal.Parse(labelTotal.Text, NumberStyles.Number, CultureInfo.GetCultureInfo("de"));
 
             var pengguna = LoginContext.Pengguna;
+
+            if(string.IsNullOrEmpty(textBoxKodeSupplier.Text))
+            {
+                MessageBox.Show("Harap pilih supplier", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            if (!string.IsNullOrEmpty(textBoxKodeSupplier.Text))
+            {
+                int result;
+                bool IsPass = int.TryParse(textBoxKodeSupplier.Text, out result);
+                if (!IsPass)
+                {
+                    MessageBox.Show("Masukkan supplier dengan benar", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+            }
+
             var supplier = supplierService.Get(int.Parse(textBoxKodeSupplier.Text));
+
+            if(supplier==null)
+            {
+                MessageBox.Show("Masukkan supplier dengan benar", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
             pembelian.PenggunaId = pengguna.Id;
             pembelian.SupplierId = supplier.Id;
