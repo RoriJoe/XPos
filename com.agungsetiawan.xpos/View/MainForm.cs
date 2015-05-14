@@ -394,5 +394,13 @@ namespace com.agungsetiawan.xpos.View
             form.Show();
             form.Activate();
         }
+
+        private void navBarDaftarPembelian_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            ListPembelian form = ListPembelian.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
     }
 }

@@ -381,6 +381,7 @@
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Penjualan";
+            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPenjualan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDaftarPenjualan),
@@ -415,6 +416,7 @@
             this.navBarDaftarPembelian.Caption = "Daftar Pembelian";
             this.navBarDaftarPembelian.Enabled = false;
             this.navBarDaftarPembelian.Name = "navBarDaftarPembelian";
+            this.navBarDaftarPembelian.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarDaftarPembelian_LinkClicked);
             // 
             // navBarTransaksiInternal
             // 
@@ -425,7 +427,6 @@
             // navBarGroup4
             // 
             this.navBarGroup4.Caption = "Laporan";
-            this.navBarGroup4.Expanded = true;
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem10),

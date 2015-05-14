@@ -29,7 +29,7 @@ namespace com.agungsetiawan.xpos.Repository
             return result;
         }
 
-        public List<Pembelian> FindByPelanggan(string namaSupplier)
+        public List<Pembelian> FindBySupplier(string namaSupplier)
         {
             var result = (from p in db.Pembelians
                           where p.Supplier.NamaSupplier.ToLower().Contains(namaSupplier.ToLower())

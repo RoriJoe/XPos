@@ -1,4 +1,5 @@
 ﻿using com.agungsetiawan.xpos.Model;
+using com.agungsetiawan.xpos.ModelView;
 using com.agungsetiawan.xpos.Repository;
 using System;
 using System.Collections.Generic;
@@ -47,74 +48,74 @@ namespace com.agungsetiawan.xpos.Service
             pembelianRepository.Post(pembelian);
         }
 
-        //public List<PenjualanView> FindWithPelangganDanPengguna()
-        //{
-        //    var result = pembelianRepository.FindWithSupplierDanPengguna();
-        //    var pembelians = (from p in result
-        //                      select new PenjualanView
-        //                      {
-        //                          Id = p.Id,
-        //                          KodeTransaksi = p.KodeTransaksi,
-        //                          Tanggal = p.Tanggal.ToString("dd MMMM yyyy HH:mm", CultureInfo.GetCultureInfo("id-ID")),
-        //                          TotalHargaJual = p.TotalHargaBeli,
-        //                          Pengguna = p.Pengguna.Nama,
-        //                          Pelanggan = p.Supplier.NamaSupplier
-        //                      }).ToList();
-        //    return pembelians;
-        //}
+        public List<PembelianView> FindWithSupplierDanPengguna()
+        {
+            var result = pembelianRepository.FindWithSupplierDanPengguna();
+            var pembelians = (from p in result
+                              select new PembelianView
+                              {
+                                  Id = p.Id,
+                                  KodeTransaksi = p.KodeTransaksi,
+                                  Tanggal = p.Tanggal.ToString("dd MMMM yyyy HH:mm", CultureInfo.GetCultureInfo("id-ID")),
+                                  TotalHargaBeli = p.TotalHargaBeli,
+                                  Pengguna = p.Pengguna.Nama,
+                                  Supplier = p.Supplier.NamaSupplier
+                              }).ToList();
+            return pembelians;
+        }
 
-        //public List<PenjualanView> FindByKodeTransaksi(string kodeTransaksi)
-        //{
-        //    var penjualans = pembelianRepository.FindByKodeTransaksi(kodeTransaksi);
+        public List<PembelianView> FindByKodeTransaksi(string kodeTransaksi)
+        {
+            var penjualans = pembelianRepository.FindByKodeTransaksi(kodeTransaksi);
 
-        //    var result = (from p in penjualans
-        //                  select new PenjualanView()
-        //                  {
-        //                      Id = p.Id,
-        //                      KodeTransaksi = p.KodeTransaksi,
-        //                      Tanggal = p.Tanggal.ToString("dd MMMM yyyy HH:mm", CultureInfo.GetCultureInfo("id-ID")),
-        //                      TotalHargaJual = p.TotalHargaBeli,
-        //                      Pengguna = p.Pengguna.Nama,
-        //                      Pelanggan = p.Supplier.NamaSupplier
-        //                  }).ToList();
+            var result = (from p in penjualans
+                          select new PembelianView()
+                          {
+                              Id = p.Id,
+                              KodeTransaksi = p.KodeTransaksi,
+                              Tanggal = p.Tanggal.ToString("dd MMMM yyyy HH:mm", CultureInfo.GetCultureInfo("id-ID")),
+                              TotalHargaBeli = p.TotalHargaBeli,
+                              Pengguna = p.Pengguna.Nama,
+                              Supplier = p.Supplier.NamaSupplier
+                          }).ToList();
 
-        //    return result;
-        //}
+            return result;
+        }
 
-        //public List<PenjualanView> FindByPelanggan(string namaPelanggan)
-        //{
-        //    var penjualans = pembelianRepository.FindByPelanggan(namaPelanggan);
+        public List<PembelianView> FindBySupplier(string namaSupplier)
+        {
+            var penjualans = pembelianRepository.FindBySupplier(namaSupplier);
 
-        //    var result = (from p in penjualans
-        //                  select new PenjualanView()
-        //                  {
-        //                      Id = p.Id,
-        //                      KodeTransaksi = p.KodeTransaksi,
-        //                      Tanggal = p.Tanggal.ToString("dd MMMM yyyy HH:mm", CultureInfo.GetCultureInfo("id-ID")),
-        //                      TotalHargaJual = p.TotalHargaBeli,
-        //                      Pengguna = p.Pengguna.Nama,
-        //                      Pelanggan = p.Supplier.NamaSupplier
-        //                  }).ToList();
+            var result = (from p in penjualans
+                          select new PembelianView()
+                          {
+                              Id = p.Id,
+                              KodeTransaksi = p.KodeTransaksi,
+                              Tanggal = p.Tanggal.ToString("dd MMMM yyyy HH:mm", CultureInfo.GetCultureInfo("id-ID")),
+                              TotalHargaBeli = p.TotalHargaBeli,
+                              Pengguna = p.Pengguna.Nama,
+                              Supplier = p.Supplier.NamaSupplier
+                          }).ToList();
 
-        //    return result;
-        //}
+            return result;
+        }
 
-        //public List<PenjualanView> FindByTanggal(DateTime tanggal)
-        //{
-        //    var penjualans = pembelianRepository.FindByTanggal(tanggal);
+        public List<PembelianView> FindByTanggal(DateTime tanggal)
+        {
+            var penjualans = pembelianRepository.FindByTanggal(tanggal);
 
-        //    var result = (from p in penjualans
-        //                  select new PenjualanView()
-        //                  {
-        //                      Id = p.Id,
-        //                      KodeTransaksi = p.KodeTransaksi,
-        //                      Tanggal = p.Tanggal.ToString("dd MMMM yyyy HH:mm", CultureInfo.GetCultureInfo("id-ID")),
-        //                      TotalHargaJual = p.TotalHargaBeli,
-        //                      Pengguna = p.Pengguna.Nama,
-        //                      Pelanggan = p.Supplier.NamaSupplier
-        //                  }).ToList();
+            var result = (from p in penjualans
+                          select new PembelianView()
+                          {
+                              Id = p.Id,
+                              KodeTransaksi = p.KodeTransaksi,
+                              Tanggal = p.Tanggal.ToString("dd MMMM yyyy HH:mm", CultureInfo.GetCultureInfo("id-ID")),
+                              TotalHargaBeli = p.TotalHargaBeli,
+                              Pengguna = p.Pengguna.Nama,
+                              Supplier = p.Supplier.NamaSupplier
+                          }).ToList();
 
-        //    return result;
-        //}
+            return result;
+        }
     }
 }

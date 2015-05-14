@@ -170,6 +170,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelView\BarangView.cs" />
     <Compile Include="ModelView\PelangganView.cs" />
+    <Compile Include="ModelView\PembelianDetailView.cs" />
+    <Compile Include="ModelView\PembelianView.cs" />
     <Compile Include="ModelView\PenggunaView.cs" />
     <Compile Include="ModelView\PenjualanDetailView.cs" />
     <Compile Include="ModelView\PenjualanView.cs" />
@@ -228,6 +230,7 @@
     <Compile Include="Repository\MemberRepository.cs" />
     <Compile Include="Repository\MerekRepository.cs" />
     <Compile Include="Repository\PelangganRepository.cs" />
+    <Compile Include="Repository\PembelianDetailRepository.cs" />
     <Compile Include="Repository\PembelianRepository.cs" />
     <Compile Include="Repository\PenggunaRepository.cs" />
     <Compile Include="Repository\PenjualanDetailRepository.cs" />
@@ -244,6 +247,7 @@
     <Compile Include="Service\MemberService.cs" />
     <Compile Include="Service\MerekService.cs" />
     <Compile Include="Service\PelangganService.cs" />
+    <Compile Include="Service\PembelianDetailService.cs" />
     <Compile Include="Service\PembelianService.cs" />
     <Compile Include="Service\PenggunaService.cs" />
     <Compile Include="Service\PenjualanDetailService.cs" />
@@ -399,6 +403,12 @@
     </Compile>
     <Compile Include="View\VPembelian\CariSupplier.Designer.cs">
       <DependentUpon>CariSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\VPembelian\ListPembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\VPembelian\ListPembelian.Designer.cs">
+      <DependentUpon>ListPembelian.cs</DependentUpon>
     </Compile>
     <Compile Include="View\VPembelian\TransaksiPembelian.cs">
       <SubType>Form</SubType>
@@ -687,6 +697,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\VPembelian\CariSupplier.resx">
       <DependentUpon>CariSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\VPembelian\ListPembelian.resx">
+      <DependentUpon>ListPembelian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\VPembelian\TransaksiPembelian.resx">
       <DependentUpon>TransaksiPembelian.cs</DependentUpon>

@@ -32,5 +32,6 @@ namespace com.agungsetiawan.xpos.Repository
         public DbSet<TransaksiInternal> TransaksiInternals { get; set; }
         public DbSet<BukuBesar> BukuBesars { get; set; }
         public DbSet<Pembelian> Pembelians { get; set; }
+        public DbSet<PembelianDetail> PembelianDetails { get; set; }
     }
 }
