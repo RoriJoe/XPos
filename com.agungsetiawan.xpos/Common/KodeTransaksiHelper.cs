@@ -15,14 +15,14 @@ namespace com.agungsetiawan.xpos.Common
 
             if (!string.IsNullOrEmpty(last))
             {
-                date = last.Substring(2, 8);
+                date = last.Substring(3, 8);
             }
 
             int currentNumber, nextNumber;
 
             if (date.Equals(today))
             {
-                currentNumber = int.Parse(last.Substring(10, 3));
+                currentNumber = int.Parse(last.Substring(11, 3));
                 nextNumber = currentNumber + 1;
                 return GenerateNextCode(nextNumber, tipeTransaksi);
             }
