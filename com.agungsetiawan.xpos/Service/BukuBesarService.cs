@@ -78,7 +78,7 @@ namespace com.agungsetiawan.xpos.Service
         public List<BukuBesar> GetByTanggal(DateTime tanggalAwal, DateTime tanggalAkhir)
         {
             var penjualans = penjualanRepository.FindByTanggal(tanggalAwal, tanggalAkhir);
-
+            
             var bukuBesars = (from p in penjualans
                               select new BukuBesar
                               {
@@ -127,6 +127,32 @@ namespace com.agungsetiawan.xpos.Service
             var result = from b in bukuBesars orderby b.Tanggal select b;
 
             return result.ToList();
+        }
+
+        public decimal GetTotalSaldoSebelumHariIni(DateTime tanggal)
+        {
+            decimal totalPenjualan = penjualanRepository.FindByTanggalSebelumHariIni(tanggal).Sum(p => p.TotalHargaJual);
+            decimal totalPembelian = pembelianRepository.FindByTanggalSebelumHariIni(tanggal).Sum(p => p.TotalHargaBeli);
+
+            var transaksiInternals = transaksiInternalRepository.FindByTanggalSebelumHariIni(tanggal);
+            decimal debet=0, kredit=0, totalInternal=0;
+            foreach (var t in transaksiInternals)
+            {
+                
+                if (t.Jenis.Equals("Debet"))
+                {
+                    debet += t.Jumlah;
+                }
+                else if (t.Jenis.Equals("Kredit"))
+                {
+                    kredit += t.Jumlah;
+                }
+            }
+
+            totalInternal = debet - kredit;
+
+            decimal total = totalPenjualan - totalPembelian + totalInternal;
+            return total;
         }
     }
 }

@@ -35,20 +35,21 @@
             this.checkBoxTanggalSampai = new System.Windows.Forms.CheckBox();
             this.btnCetakTransaksiPenjualan = new DevExpress.XtraEditors.SimpleButton();
             this.dateTimePickerTransaksiPenjualan = new System.Windows.Forms.DateTimePicker();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dateTimePickerBukuBesarSampai = new System.Windows.Forms.DateTimePicker();
-            this.checkBoxTanggalSampaiBukuBesar = new System.Windows.Forms.CheckBox();
-            this.btnCetakBukuBesar = new DevExpress.XtraEditors.SimpleButton();
-            this.dateTimePickerBukuBesar = new System.Windows.Forms.DateTimePicker();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dateTimePickerTransaksiPembelianSampai = new System.Windows.Forms.DateTimePicker();
             this.checkBoxTanggalSampaiTransaksiPembelian = new System.Windows.Forms.CheckBox();
             this.btnCetakTransaksiPembelian = new DevExpress.XtraEditors.SimpleButton();
             this.dateTimePickerTransaksiPembelian = new System.Windows.Forms.DateTimePicker();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dateTimePickerBukuBesarSampai = new System.Windows.Forms.DateTimePicker();
+            this.checkBoxTanggalSampaiBukuBesar = new System.Windows.Forms.CheckBox();
+            this.btnCetakBukuBesar = new DevExpress.XtraEditors.SimpleButton();
+            this.dateTimePickerBukuBesar = new System.Windows.Forms.DateTimePicker();
+            this.labelTotalSaldo = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -116,58 +117,6 @@
             this.dateTimePickerTransaksiPenjualan.Size = new System.Drawing.Size(166, 20);
             this.dateTimePickerTransaksiPenjualan.TabIndex = 0;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.dateTimePickerBukuBesarSampai);
-            this.tabPage2.Controls.Add(this.checkBoxTanggalSampaiBukuBesar);
-            this.tabPage2.Controls.Add(this.btnCetakBukuBesar);
-            this.tabPage2.Controls.Add(this.dateTimePickerBukuBesar);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(743, 243);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Buku Besar";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePickerBukuBesarSampai
-            // 
-            this.dateTimePickerBukuBesarSampai.Location = new System.Drawing.Point(195, 6);
-            this.dateTimePickerBukuBesarSampai.Name = "dateTimePickerBukuBesarSampai";
-            this.dateTimePickerBukuBesarSampai.Size = new System.Drawing.Size(166, 20);
-            this.dateTimePickerBukuBesarSampai.TabIndex = 9;
-            this.dateTimePickerBukuBesarSampai.Visible = false;
-            // 
-            // checkBoxTanggalSampaiBukuBesar
-            // 
-            this.checkBoxTanggalSampaiBukuBesar.AutoSize = true;
-            this.checkBoxTanggalSampaiBukuBesar.Location = new System.Drawing.Point(83, 43);
-            this.checkBoxTanggalSampaiBukuBesar.Name = "checkBoxTanggalSampaiBukuBesar";
-            this.checkBoxTanggalSampaiBukuBesar.Size = new System.Drawing.Size(97, 17);
-            this.checkBoxTanggalSampaiBukuBesar.TabIndex = 8;
-            this.checkBoxTanggalSampaiBukuBesar.Text = "Pakai Rentang";
-            this.checkBoxTanggalSampaiBukuBesar.UseVisualStyleBackColor = true;
-            this.checkBoxTanggalSampaiBukuBesar.CheckedChanged += new System.EventHandler(this.checkBoxTanggalSampaiBukuBesar_CheckedChanged);
-            // 
-            // btnCetakBukuBesar
-            // 
-            this.btnCetakBukuBesar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnCetakBukuBesar.Image = ((System.Drawing.Image)(resources.GetObject("btnCetakBukuBesar.Image")));
-            this.btnCetakBukuBesar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnCetakBukuBesar.Location = new System.Drawing.Point(83, 84);
-            this.btnCetakBukuBesar.Name = "btnCetakBukuBesar";
-            this.btnCetakBukuBesar.Size = new System.Drawing.Size(89, 35);
-            this.btnCetakBukuBesar.TabIndex = 7;
-            this.btnCetakBukuBesar.Text = "Cetak";
-            this.btnCetakBukuBesar.Click += new System.EventHandler(this.btnCetakBukuBesar_Click);
-            // 
-            // dateTimePickerBukuBesar
-            // 
-            this.dateTimePickerBukuBesar.Location = new System.Drawing.Point(6, 6);
-            this.dateTimePickerBukuBesar.Name = "dateTimePickerBukuBesar";
-            this.dateTimePickerBukuBesar.Size = new System.Drawing.Size(166, 20);
-            this.dateTimePickerBukuBesar.TabIndex = 6;
-            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.dateTimePickerTransaksiPembelianSampai);
@@ -220,6 +169,69 @@
             this.dateTimePickerTransaksiPembelian.Size = new System.Drawing.Size(166, 20);
             this.dateTimePickerTransaksiPembelian.TabIndex = 8;
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.labelTotalSaldo);
+            this.tabPage2.Controls.Add(this.dateTimePickerBukuBesarSampai);
+            this.tabPage2.Controls.Add(this.checkBoxTanggalSampaiBukuBesar);
+            this.tabPage2.Controls.Add(this.btnCetakBukuBesar);
+            this.tabPage2.Controls.Add(this.dateTimePickerBukuBesar);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(743, 243);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Buku Besar";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerBukuBesarSampai
+            // 
+            this.dateTimePickerBukuBesarSampai.Location = new System.Drawing.Point(195, 6);
+            this.dateTimePickerBukuBesarSampai.Name = "dateTimePickerBukuBesarSampai";
+            this.dateTimePickerBukuBesarSampai.Size = new System.Drawing.Size(166, 20);
+            this.dateTimePickerBukuBesarSampai.TabIndex = 9;
+            this.dateTimePickerBukuBesarSampai.Visible = false;
+            // 
+            // checkBoxTanggalSampaiBukuBesar
+            // 
+            this.checkBoxTanggalSampaiBukuBesar.AutoSize = true;
+            this.checkBoxTanggalSampaiBukuBesar.Location = new System.Drawing.Point(83, 43);
+            this.checkBoxTanggalSampaiBukuBesar.Name = "checkBoxTanggalSampaiBukuBesar";
+            this.checkBoxTanggalSampaiBukuBesar.Size = new System.Drawing.Size(97, 17);
+            this.checkBoxTanggalSampaiBukuBesar.TabIndex = 8;
+            this.checkBoxTanggalSampaiBukuBesar.Text = "Pakai Rentang";
+            this.checkBoxTanggalSampaiBukuBesar.UseVisualStyleBackColor = true;
+            this.checkBoxTanggalSampaiBukuBesar.CheckedChanged += new System.EventHandler(this.checkBoxTanggalSampaiBukuBesar_CheckedChanged);
+            // 
+            // btnCetakBukuBesar
+            // 
+            this.btnCetakBukuBesar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnCetakBukuBesar.Image = ((System.Drawing.Image)(resources.GetObject("btnCetakBukuBesar.Image")));
+            this.btnCetakBukuBesar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
+            this.btnCetakBukuBesar.Location = new System.Drawing.Point(83, 84);
+            this.btnCetakBukuBesar.Name = "btnCetakBukuBesar";
+            this.btnCetakBukuBesar.Size = new System.Drawing.Size(89, 35);
+            this.btnCetakBukuBesar.TabIndex = 7;
+            this.btnCetakBukuBesar.Text = "Cetak";
+            this.btnCetakBukuBesar.Click += new System.EventHandler(this.btnCetakBukuBesar_Click);
+            // 
+            // dateTimePickerBukuBesar
+            // 
+            this.dateTimePickerBukuBesar.Location = new System.Drawing.Point(6, 6);
+            this.dateTimePickerBukuBesar.Name = "dateTimePickerBukuBesar";
+            this.dateTimePickerBukuBesar.Size = new System.Drawing.Size(166, 20);
+            this.dateTimePickerBukuBesar.TabIndex = 6;
+            // 
+            // labelTotalSaldo
+            // 
+            this.labelTotalSaldo.AutoSize = true;
+            this.labelTotalSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalSaldo.Location = new System.Drawing.Point(6, 187);
+            this.labelTotalSaldo.Name = "labelTotalSaldo";
+            this.labelTotalSaldo.Size = new System.Drawing.Size(92, 31);
+            this.labelTotalSaldo.TabIndex = 10;
+            this.labelTotalSaldo.Text = "label1";
+            // 
             // LaporanKeuangan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,10 +244,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -258,5 +270,6 @@
         private System.Windows.Forms.CheckBox checkBoxTanggalSampaiTransaksiPembelian;
         private DevExpress.XtraEditors.SimpleButton btnCetakTransaksiPembelian;
         private System.Windows.Forms.DateTimePicker dateTimePickerTransaksiPembelian;
+        private System.Windows.Forms.Label labelTotalSaldo;
     }
 }

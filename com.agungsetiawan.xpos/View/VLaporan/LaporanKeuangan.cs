@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -49,6 +50,8 @@ namespace com.agungsetiawan.xpos.View.VLaporan
 
             dateTimePickerBukuBesarSampai.Format = DateTimePickerFormat.Custom;
             dateTimePickerBukuBesarSampai.CustomFormat = "dd MMMM yyyy";
+
+            labelTotalSaldo.Text = "Total Saldo : " + bukuBesarService.GetTotalSaldoSebelumHariIni(DateTime.Today).ToString("N2", CultureInfo.GetCultureInfo("id-ID"));
         }
 
         public static LaporanKeuangan GetForm()
@@ -68,7 +71,7 @@ namespace com.agungsetiawan.xpos.View.VLaporan
             List<PenjualanView> data;
             if(checkBoxTanggalSampai.Checked)
             {
-                data = penjualanService.FindByTanggal(dateTimePickerTransaksiPenjualan.Value, dateTimePickerTransaksiPenjualanSampai.Value);
+                data = penjualanService.FindByTanggal(dateTimePickerTransaksiPenjualan.Value.Date, dateTimePickerTransaksiPenjualanSampai.Value.Date.AddHours(23).AddMinutes(59));
             }
             else
             {
@@ -98,7 +101,7 @@ namespace com.agungsetiawan.xpos.View.VLaporan
             List<PembelianView> data=null;
             if (checkBoxTanggalSampaiTransaksiPembelian.Checked)
             {
-                data = pembelianService.FindByTanggal(dateTimePickerTransaksiPembelian.Value, dateTimePickerTransaksiPembelianSampai.Value);
+                data = pembelianService.FindByTanggal(dateTimePickerTransaksiPembelian.Value.Date, dateTimePickerTransaksiPembelianSampai.Value.Date.AddHours(23).AddMinutes(59));
             }
             else
             {
@@ -128,7 +131,7 @@ namespace com.agungsetiawan.xpos.View.VLaporan
 
             if(checkBoxTanggalSampaiBukuBesar.Checked)
             {
-                data = bukuBesarService.GetByTanggal(dateTimePickerBukuBesar.Value, dateTimePickerBukuBesarSampai.Value);
+                data = bukuBesarService.GetByTanggal(dateTimePickerBukuBesar.Value.Date, dateTimePickerBukuBesarSampai.Value.Date.AddHours(23).AddMinutes(59));
             }
             else
             {
@@ -144,7 +147,7 @@ namespace com.agungsetiawan.xpos.View.VLaporan
                 return;
             }
 
-            decimal val = 10000000;
+            decimal val = bukuBesarService.GetTotalSaldoSebelumHariIni(dateTimePickerBukuBesar.Value.Date);
             report.DataDefinition.FormulaFields["SaldoAwal"].Text = val.ToString();
 
             LaporanCR laporan = new LaporanCR();

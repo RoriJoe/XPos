@@ -29,9 +29,16 @@ namespace com.agungsetiawan.xpos.Repository
         public List<TransaksiInternal> FindByTanggal(DateTime tanggalAwal, DateTime tanggalAkhir)
         {
             var result = (from t in db.TransaksiInternals
-                          where (t.Tanggal.Year >= tanggalAwal.Year && t.Tanggal.Year <= tanggalAkhir.Year) &&
-                              (t.Tanggal.Month >= tanggalAwal.Month && t.Tanggal.Month <= tanggalAkhir.Month) &&
-                              (t.Tanggal.Day >= tanggalAwal.Day && t.Tanggal.Day <= tanggalAwal.Day)
+                          where (t.Tanggal >= tanggalAwal && t.Tanggal <= tanggalAkhir) 
+                          orderby t.Tanggal descending
+                          select t).ToList();
+            return result;
+        }
+
+        public List<TransaksiInternal> FindByTanggalSebelumHariIni(DateTime tanggal)
+        {
+            var result = (from t in db.TransaksiInternals
+                          where t.Tanggal < tanggal
                           orderby t.Tanggal descending
                           select t).ToList();
             return result;
