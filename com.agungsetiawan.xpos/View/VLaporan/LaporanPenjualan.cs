@@ -100,7 +100,21 @@ namespace com.agungsetiawan.xpos.View.VLaporan
 
             if (value.Equals("Barang"))
             {
-                
+                var idBarang = int.Parse(comboBoxKatOrBarang.SelectedValue.ToString());
+                var barang = barangService.Get(idBarang);
+                List<LaporanJumlahPenjualan> data = laporanService.GetLaporanBarang(idBarang);
+
+                ClearChart();
+
+                var namaChart = string.Format("Jumlah Barang Kategori {0} Terjual", barang.NamaBarang);
+                Series series = new Series(namaChart);
+
+                foreach (var d in data)
+                {
+                    series.Points.AddXY(d.Tanggal.ToString("dd MM yyyy"), d.Jumlah);
+                }
+
+                chartPenjualan.Series.Add(series);
             }
             else if (value.Equals("Kategori"))
             {

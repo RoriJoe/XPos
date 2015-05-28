@@ -37,5 +37,19 @@ namespace com.agungsetiawan.xpos.Repository
 
             return laporans;
         }
+
+        public List<LaporanJumlahPenjualan> GetLaporanBarang(int idBarang)
+        {
+            DbRawSqlQuery<LaporanJumlahPenjualan> result = db.Database.SqlQuery<LaporanJumlahPenjualan>
+                                            ("SELECT p.tanggal,  sum(pd.Jumlah) as 'Jumlah' from penjualans p INNER JOIN penjualandetails pd ON (p.Id=pd.penjualanId) INNER JOIN barangs b ON (pd.BarangId=b.Id) group by date(p.tanggal),b.Id HAVING b.Id=" + idBarang);
+            List<LaporanJumlahPenjualan> laporans = new List<LaporanJumlahPenjualan>();
+
+            foreach (var data in result)
+            {
+                laporans.Add(data);
+            }
+
+            return laporans;
+        }
     }
 }

@@ -65,11 +65,6 @@
             this.navBarDaftarPembelian = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarTransaksiInternal = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarItem9 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem10 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem11 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem12 = new DevExpress.XtraNavBar.NavBarItem();
-            this.navBarItem13 = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarLaporanJumlahTransaksi = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarLaporanKeuangan = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup5 = new DevExpress.XtraNavBar.NavBarGroup();
@@ -304,11 +299,6 @@
             this.navBarDaftarPenjualan,
             this.navBarPembelian,
             this.navBarDaftarPembelian,
-            this.navBarItem9,
-            this.navBarItem10,
-            this.navBarItem11,
-            this.navBarItem12,
-            this.navBarItem13,
             this.navBarLaporanJumlahTransaksi,
             this.navBarPelanggan,
             this.navBarSupplier,
@@ -428,40 +418,10 @@
             // 
             this.navBarGroup4.Caption = "Laporan";
             this.navBarGroup4.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem9),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem10),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem11),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem12),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarItem13),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarLaporanJumlahTransaksi),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarLaporanKeuangan)});
             this.navBarGroup4.Name = "navBarGroup4";
             this.navBarGroup4.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup4.SmallImage")));
-            // 
-            // navBarItem9
-            // 
-            this.navBarItem9.Caption = "Gamis (harian)";
-            this.navBarItem9.Name = "navBarItem9";
-            // 
-            // navBarItem10
-            // 
-            this.navBarItem10.Caption = "Jilbab (harian)";
-            this.navBarItem10.Name = "navBarItem10";
-            // 
-            // navBarItem11
-            // 
-            this.navBarItem11.Caption = "Gamis (1 bulan)";
-            this.navBarItem11.Name = "navBarItem11";
-            // 
-            // navBarItem12
-            // 
-            this.navBarItem12.Caption = "Jilbab (1 bulan)";
-            this.navBarItem12.Name = "navBarItem12";
-            // 
-            // navBarItem13
-            // 
-            this.navBarItem13.Caption = "Gamis & Jilbab (1 bulan)";
-            this.navBarItem13.Name = "navBarItem13";
             // 
             // navBarLaporanJumlahTransaksi
             // 
@@ -566,11 +526,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarPembelian;
         private DevExpress.XtraNavBar.NavBarItem navBarDaftarPembelian;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup4;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem9;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem10;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem11;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem12;
-        private DevExpress.XtraNavBar.NavBarItem navBarItem13;
         private DevExpress.XtraNavBar.NavBarItem navBarLaporanJumlahTransaksi;
         private DevExpress.XtraNavBar.NavBarGroup navBarGroup5;
         private DevExpress.XtraNavBar.NavBarItem navBarPelanggan;
