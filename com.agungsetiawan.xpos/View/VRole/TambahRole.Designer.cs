@@ -52,6 +52,7 @@
             this.checkBoxPembelian = new System.Windows.Forms.CheckBox();
             this.checkBoxDaftarPembelian = new System.Windows.Forms.CheckBox();
             this.checkBoxMerek = new System.Windows.Forms.CheckBox();
+            this.checkBoxTransaksiInternal = new System.Windows.Forms.CheckBox();
             this.panelKeterangan.SuspendLayout();
             this.panelNamaRole.SuspendLayout();
             this.SuspendLayout();
@@ -290,11 +291,22 @@
             this.checkBoxMerek.Text = "Merek";
             this.checkBoxMerek.UseVisualStyleBackColor = true;
             // 
+            // checkBoxTransaksiInternal
+            // 
+            this.checkBoxTransaksiInternal.AutoSize = true;
+            this.checkBoxTransaksiInternal.Location = new System.Drawing.Point(244, 262);
+            this.checkBoxTransaksiInternal.Name = "checkBoxTransaksiInternal";
+            this.checkBoxTransaksiInternal.Size = new System.Drawing.Size(110, 17);
+            this.checkBoxTransaksiInternal.TabIndex = 52;
+            this.checkBoxTransaksiInternal.Text = "Transaksi Internal";
+            this.checkBoxTransaksiInternal.UseVisualStyleBackColor = true;
+            // 
             // TambahRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 349);
+            this.Controls.Add(this.checkBoxTransaksiInternal);
             this.Controls.Add(this.checkBoxMerek);
             this.Controls.Add(this.checkBoxDaftarPembelian);
             this.Controls.Add(this.checkBoxPembelian);
@@ -353,5 +365,6 @@
         private System.Windows.Forms.CheckBox checkBoxPembelian;
         private System.Windows.Forms.CheckBox checkBoxDaftarPembelian;
         private System.Windows.Forms.CheckBox checkBoxMerek;
+        private System.Windows.Forms.CheckBox checkBoxTransaksiInternal;
     }
 }

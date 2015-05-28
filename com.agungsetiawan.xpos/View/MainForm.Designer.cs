@@ -381,7 +381,6 @@
             // navBarGroup3
             // 
             this.navBarGroup3.Caption = "Penjualan";
-            this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPenjualan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDaftarPenjualan),
@@ -421,6 +420,7 @@
             // navBarTransaksiInternal
             // 
             this.navBarTransaksiInternal.Caption = "Transaksi Internal";
+            this.navBarTransaksiInternal.Enabled = false;
             this.navBarTransaksiInternal.Name = "navBarTransaksiInternal";
             this.navBarTransaksiInternal.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarTransaksiInternal_LinkClicked);
             // 

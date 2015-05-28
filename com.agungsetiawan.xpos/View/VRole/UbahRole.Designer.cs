@@ -53,6 +53,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.labelHiddenId = new System.Windows.Forms.Label();
             this.checkBoxMerek = new System.Windows.Forms.CheckBox();
+            this.checkBoxTransaksiInternal = new System.Windows.Forms.CheckBox();
             this.panelKeterangan.SuspendLayout();
             this.panelNamaRole.SuspendLayout();
             this.SuspendLayout();
@@ -301,11 +302,22 @@
             this.checkBoxMerek.Text = "Merek";
             this.checkBoxMerek.UseVisualStyleBackColor = true;
             // 
+            // checkBoxTransaksiInternal
+            // 
+            this.checkBoxTransaksiInternal.AutoSize = true;
+            this.checkBoxTransaksiInternal.Location = new System.Drawing.Point(244, 259);
+            this.checkBoxTransaksiInternal.Name = "checkBoxTransaksiInternal";
+            this.checkBoxTransaksiInternal.Size = new System.Drawing.Size(110, 17);
+            this.checkBoxTransaksiInternal.TabIndex = 73;
+            this.checkBoxTransaksiInternal.Text = "Transaksi Internal";
+            this.checkBoxTransaksiInternal.UseVisualStyleBackColor = true;
+            // 
             // UbahRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(390, 337);
+            this.Controls.Add(this.checkBoxTransaksiInternal);
             this.Controls.Add(this.checkBoxMerek);
             this.Controls.Add(this.labelHiddenId);
             this.Controls.Add(this.checkBoxDaftarPembelian);
@@ -366,5 +378,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelHiddenId;
         private System.Windows.Forms.CheckBox checkBoxMerek;
+        private System.Windows.Forms.CheckBox checkBoxTransaksiInternal;
     }
 }

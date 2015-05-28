@@ -127,6 +127,11 @@ namespace com.agungsetiawan.xpos.View
             {
                 navBarMerek.Enabled = true;
             }
+
+            if (permissions.Contains("transaksi internal"))
+            {
+                navBarTransaksiInternal.Enabled = true;
+            }
             //laporan belum
 
             barBtnLogout.Enabled = true;
@@ -292,6 +297,8 @@ namespace com.agungsetiawan.xpos.View
             navBarLaporanKeuangan.Enabled = false;
 
             navBarMerek.Enabled = false;
+
+            navBarTransaksiInternal.Enabled = false;
             //laporan belum
 
             int pagesCount = xtraTabbedMdiManager.Pages.Count;

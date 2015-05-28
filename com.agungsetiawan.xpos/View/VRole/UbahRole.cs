@@ -97,6 +97,11 @@ namespace com.agungsetiawan.xpos.View.VRole
             {
                 checkBoxMerek.Checked = true;
             }
+
+            if (permissions.Contains("transaksi internal"))
+            {
+                checkBoxTransaksiInternal.Checked = true;
+            }
         }
 
         private void btnSimpan_Click(object sender, EventArgs e)
@@ -179,6 +184,11 @@ namespace com.agungsetiawan.xpos.View.VRole
             if (checkBoxMerek.Checked)
             {
                 sbPermissions.Append("merek,");
+            }
+
+            if (checkBoxTransaksiInternal.Checked)
+            {
+                sbPermissions.Append("transaksi internal,");
             }
 
             if (string.IsNullOrEmpty(sbPermissions.ToString()))
