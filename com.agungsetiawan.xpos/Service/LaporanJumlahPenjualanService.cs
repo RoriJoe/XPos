@@ -8,21 +8,21 @@ using System.Threading.Tasks;
 
 namespace com.agungsetiawan.xpos.Service
 {
-    public class LaporanService
+    public class LaporanJumlahPenjualanService
     {
-        LaporanRepository laporanRepository;
+        LaporanJumlahPenjualanRepository laporanRepository;
 
-        public LaporanService()
+        public LaporanJumlahPenjualanService()
         {
-            laporanRepository = new LaporanRepository();
+            laporanRepository = new LaporanJumlahPenjualanRepository();
         }
 
-        public List<Laporan> GetLaporan()
+        public List<LaporanJumlahPenjualan> GetLaporan()
         {
             return laporanRepository.GetLaporan();
         }
 
-        public List<Laporan> GetLaporanKategori(int idKategori)
+        public List<LaporanJumlahPenjualan> GetLaporanKategori(int idKategori)
         {
             return laporanRepository.GetLaporanKategori(idKategori);
         }

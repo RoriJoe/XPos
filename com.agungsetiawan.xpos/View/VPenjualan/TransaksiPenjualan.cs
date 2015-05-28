@@ -443,12 +443,15 @@ namespace com.agungsetiawan.xpos.View.VPenjualan
 
                 var barang = service.FindByKodeBarang(kodeBarang);
 
+                decimal hargaBeli = shuService.FindByBarangIdAndUkuran(barang.Id, ukuran).HargaBeli;
+
                 pDetail = new PenjualanDetail()
                 {
                     Penjualan = penjualan,
                     BarangId = barang.Id,
                     Ukuran=ukuran,
                     Harga = hargaJual,
+                    HargaBeli=hargaBeli,
                     Jumlah = jumlahJual,
                     SubTotal = subtotal,
                     Diskon = diskon,

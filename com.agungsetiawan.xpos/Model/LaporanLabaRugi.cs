@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace com.agungsetiawan.xpos.Model
 {
-    public class Laporan
+    public class LaporanLabaRugi
     {
         public DateTime Tanggal { get; set; }
-        public int Jumlah { get; set; }
+        public decimal Jumlah { get; set; }
     }
 }

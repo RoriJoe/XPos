@@ -18,13 +18,13 @@ namespace com.agungsetiawan.xpos.View.VLaporan
         private static LaporanPenjualan form;
         private KategoriService kategoriService;
         private BarangService barangService;
-        private LaporanService laporanService;
+        private LaporanJumlahPenjualanService laporanService;
         private LaporanPenjualan()
         {
             InitializeComponent();
             kategoriService = new KategoriService();
             barangService = new BarangService();
-            laporanService = new LaporanService();
+            laporanService = new LaporanJumlahPenjualanService();
 
             comboBoxJenis.Items.Add("Kategori");
             comboBoxJenis.Items.Add("Barang");
@@ -44,7 +44,7 @@ namespace com.agungsetiawan.xpos.View.VLaporan
         {
 
             ClearChart();
-            List<Laporan> data = laporanService.GetLaporan();
+            List<LaporanJumlahPenjualan> data = laporanService.GetLaporan();
 
             Series series = new Series("Jumlah Transaksi Penjualan");
 
@@ -107,7 +107,7 @@ namespace com.agungsetiawan.xpos.View.VLaporan
                 
                 var idKategori = int.Parse(comboBoxKatOrBarang.SelectedValue.ToString());
                 var kategori=kategoriService.Get(idKategori);
-                List<Laporan> data = laporanService.GetLaporanKategori(idKategori);
+                List<LaporanJumlahPenjualan> data = laporanService.GetLaporanKategori(idKategori);
 
                 ClearChart();
 

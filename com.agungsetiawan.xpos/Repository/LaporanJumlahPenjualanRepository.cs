@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace com.agungsetiawan.xpos.Repository
 {
-    public class LaporanRepository : GenericRepository<Laporan>
+    public class LaporanJumlahPenjualanRepository : GenericRepository<LaporanJumlahPenjualan>
     {
-        public List<Laporan> GetLaporan()
+        public List<LaporanJumlahPenjualan> GetLaporan()
         {
-            DbRawSqlQuery<Laporan> result = db.Database.SqlQuery<Laporan>
+            DbRawSqlQuery<LaporanJumlahPenjualan> result = db.Database.SqlQuery<LaporanJumlahPenjualan>
                                             ("SELECT p.tanggal, count(*) as 'Jumlah' from penjualans p group by date(p.tanggal)");
-            List<Laporan> laporans = new List<Laporan>();
+            List<LaporanJumlahPenjualan> laporans = new List<LaporanJumlahPenjualan>();
             
             foreach(var data in result)
             {
@@ -24,11 +24,11 @@ namespace com.agungsetiawan.xpos.Repository
             return laporans;
         }
 
-        public List<Laporan> GetLaporanKategori(int idKategori)
+        public List<LaporanJumlahPenjualan> GetLaporanKategori(int idKategori)
         {
-            DbRawSqlQuery<Laporan> result = db.Database.SqlQuery<Laporan>
+            DbRawSqlQuery<LaporanJumlahPenjualan> result = db.Database.SqlQuery<LaporanJumlahPenjualan>
                                             ("SELECT p.tanggal,  sum(pd.Jumlah) as 'Jumlah' from penjualans p INNER JOIN penjualandetails pd ON (p.Id=pd.penjualanId) INNER JOIN barangs b ON (pd.BarangId=b.Id) group by date(p.tanggal),b.KategoriId HAVING b.KategoriId=" + idKategori);
-            List<Laporan> laporans = new List<Laporan>();
+            List<LaporanJumlahPenjualan> laporans = new List<LaporanJumlahPenjualan>();
 
             foreach (var data in result)
             {

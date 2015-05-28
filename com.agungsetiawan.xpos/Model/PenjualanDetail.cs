@@ -19,6 +19,7 @@ namespace com.agungsetiawan.xpos.Model
         [StringLength(10)]
         public string  Ukuran { get; set; }
         public decimal Harga { get; set; }
+        public decimal HargaBeli { get; set; }
         public int Jumlah { get; set; }
         public decimal SubTotal { get; set; }
         public float Diskon { get; set; }

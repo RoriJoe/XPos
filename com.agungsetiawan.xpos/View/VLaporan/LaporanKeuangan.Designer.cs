@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LaporanKeuangan));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerTransaksiPenjualanSampai = new System.Windows.Forms.DateTimePicker();
@@ -41,28 +44,34 @@
             this.btnCetakTransaksiPembelian = new DevExpress.XtraEditors.SimpleButton();
             this.dateTimePickerTransaksiPembelian = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.labelTotalSaldo = new System.Windows.Forms.Label();
             this.dateTimePickerBukuBesarSampai = new System.Windows.Forms.DateTimePicker();
             this.checkBoxTanggalSampaiBukuBesar = new System.Windows.Forms.CheckBox();
             this.btnCetakBukuBesar = new DevExpress.XtraEditors.SimpleButton();
             this.dateTimePickerBukuBesar = new System.Windows.Forms.DateTimePicker();
-            this.labelTotalSaldo = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.chartLabaRugi = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartLabaRugi)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(751, 269);
+            this.tabControl1.Size = new System.Drawing.Size(751, 397);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -74,7 +83,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(743, 243);
+            this.tabPage1.Size = new System.Drawing.Size(743, 371);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Transaksi Penjualan";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -100,10 +109,9 @@
             // 
             // btnCetakTransaksiPenjualan
             // 
-            this.btnCetakTransaksiPenjualan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCetakTransaksiPenjualan.Image = ((System.Drawing.Image)(resources.GetObject("btnCetakTransaksiPenjualan.Image")));
             this.btnCetakTransaksiPenjualan.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnCetakTransaksiPenjualan.Location = new System.Drawing.Point(83, 84);
+            this.btnCetakTransaksiPenjualan.Location = new System.Drawing.Point(83, 80);
             this.btnCetakTransaksiPenjualan.Name = "btnCetakTransaksiPenjualan";
             this.btnCetakTransaksiPenjualan.Size = new System.Drawing.Size(89, 35);
             this.btnCetakTransaksiPenjualan.TabIndex = 5;
@@ -126,7 +134,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(743, 243);
+            this.tabPage3.Size = new System.Drawing.Size(743, 371);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Transaksi Pembelian";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -152,10 +160,9 @@
             // 
             // btnCetakTransaksiPembelian
             // 
-            this.btnCetakTransaksiPembelian.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCetakTransaksiPembelian.Image = ((System.Drawing.Image)(resources.GetObject("btnCetakTransaksiPembelian.Image")));
             this.btnCetakTransaksiPembelian.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnCetakTransaksiPembelian.Location = new System.Drawing.Point(83, 84);
+            this.btnCetakTransaksiPembelian.Location = new System.Drawing.Point(83, 82);
             this.btnCetakTransaksiPembelian.Name = "btnCetakTransaksiPembelian";
             this.btnCetakTransaksiPembelian.Size = new System.Drawing.Size(89, 35);
             this.btnCetakTransaksiPembelian.TabIndex = 9;
@@ -179,10 +186,20 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(743, 243);
+            this.tabPage2.Size = new System.Drawing.Size(743, 371);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Buku Besar";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // labelTotalSaldo
+            // 
+            this.labelTotalSaldo.AutoSize = true;
+            this.labelTotalSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalSaldo.Location = new System.Drawing.Point(6, 144);
+            this.labelTotalSaldo.Name = "labelTotalSaldo";
+            this.labelTotalSaldo.Size = new System.Drawing.Size(92, 31);
+            this.labelTotalSaldo.TabIndex = 10;
+            this.labelTotalSaldo.Text = "label1";
             // 
             // dateTimePickerBukuBesarSampai
             // 
@@ -205,10 +222,9 @@
             // 
             // btnCetakBukuBesar
             // 
-            this.btnCetakBukuBesar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCetakBukuBesar.Image = ((System.Drawing.Image)(resources.GetObject("btnCetakBukuBesar.Image")));
             this.btnCetakBukuBesar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnCetakBukuBesar.Location = new System.Drawing.Point(83, 84);
+            this.btnCetakBukuBesar.Location = new System.Drawing.Point(83, 86);
             this.btnCetakBukuBesar.Name = "btnCetakBukuBesar";
             this.btnCetakBukuBesar.Size = new System.Drawing.Size(89, 35);
             this.btnCetakBukuBesar.TabIndex = 7;
@@ -222,15 +238,36 @@
             this.dateTimePickerBukuBesar.Size = new System.Drawing.Size(166, 20);
             this.dateTimePickerBukuBesar.TabIndex = 6;
             // 
-            // labelTotalSaldo
+            // tabPage4
             // 
-            this.labelTotalSaldo.AutoSize = true;
-            this.labelTotalSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalSaldo.Location = new System.Drawing.Point(6, 187);
-            this.labelTotalSaldo.Name = "labelTotalSaldo";
-            this.labelTotalSaldo.Size = new System.Drawing.Size(92, 31);
-            this.labelTotalSaldo.TabIndex = 10;
-            this.labelTotalSaldo.Text = "label1";
+            this.tabPage4.Controls.Add(this.chartLabaRugi);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(743, 371);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Laba/Rugi";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // chartLabaRugi
+            // 
+            this.chartLabaRugi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.Name = "ChartArea1";
+            this.chartLabaRugi.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartLabaRugi.Legends.Add(legend1);
+            this.chartLabaRugi.Location = new System.Drawing.Point(7, 7);
+            this.chartLabaRugi.Name = "chartLabaRugi";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartLabaRugi.Series.Add(series1);
+            this.chartLabaRugi.Size = new System.Drawing.Size(733, 358);
+            this.chartLabaRugi.TabIndex = 0;
+            this.chartLabaRugi.Text = "chart1";
+            this.chartLabaRugi.FormatNumber += new System.EventHandler<System.Windows.Forms.DataVisualization.Charting.FormatNumberEventArgs>(this.chartLabaRugi_FormatNumber);
             // 
             // LaporanKeuangan
             // 
@@ -248,6 +285,8 @@
             this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartLabaRugi)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -271,5 +310,7 @@
         private DevExpress.XtraEditors.SimpleButton btnCetakTransaksiPembelian;
         private System.Windows.Forms.DateTimePicker dateTimePickerTransaksiPembelian;
         private System.Windows.Forms.Label labelTotalSaldo;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartLabaRugi;
     }
 }

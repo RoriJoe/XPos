@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace com.agungsetiawan.xpos.View.VLaporan
 {
@@ -23,6 +24,8 @@ namespace com.agungsetiawan.xpos.View.VLaporan
         private PembelianService pembelianService;
         private PembelianDetailService pembelianDetailService;
         private BukuBesarService bukuBesarService;
+        private LaporanLabaRugiService laporanLabaRugiService;
+
         private LaporanKeuangan()
         {
             InitializeComponent();
@@ -32,6 +35,7 @@ namespace com.agungsetiawan.xpos.View.VLaporan
             pembelianService = new PembelianService();
             pembelianDetailService = new PembelianDetailService();
             bukuBesarService = new BukuBesarService();
+            laporanLabaRugiService = new LaporanLabaRugiService();
 
             dateTimePickerTransaksiPenjualan.Format = DateTimePickerFormat.Custom;
             dateTimePickerTransaksiPenjualan.CustomFormat = "dd MMMM yyyy";
@@ -52,6 +56,29 @@ namespace com.agungsetiawan.xpos.View.VLaporan
             dateTimePickerBukuBesarSampai.CustomFormat = "dd MMMM yyyy";
 
             labelTotalSaldo.Text = "Total Saldo : " + bukuBesarService.GetTotalSaldoSebelumHariIni(DateTime.Today).ToString("N2", CultureInfo.GetCultureInfo("id-ID"));
+
+            chartLabaRugi.ChartAreas[0].AxisY.Interval = 50000;
+            chartLabaRugi.ChartAreas[0].AxisX.Interval = 1;
+
+            foreach (var s in chartLabaRugi.Series)
+            {
+                s.Points.Clear();
+            }
+            chartLabaRugi.Series.Clear();
+
+            List<LaporanLabaRugi> data = laporanLabaRugiService.GetLaporan();
+
+            Series series = new Series("Laba/Rugi perhari");
+
+            series.LabelFormat = "{0:N2}";
+            series.IsValueShownAsLabel = true;
+            
+            foreach (var d in data)
+            {
+                series.Points.AddXY(d.Tanggal.ToString("dd MM yyyy"), d.Jumlah);
+            }
+
+            chartLabaRugi.Series.Add(series);
         }
 
         public static LaporanKeuangan GetForm()
@@ -188,6 +215,14 @@ namespace com.agungsetiawan.xpos.View.VLaporan
             else
             {
                 dateTimePickerTransaksiPembelianSampai.Visible = false;
+            }
+        }
+
+        private void chartLabaRugi_FormatNumber(object sender, FormatNumberEventArgs e)
+        {
+            if (e.ElementType == ChartElementType.AxisLabels || e.ElementType==ChartElementType.DataPoint)
+            {
+                e.LocalizedValue = e.Value.ToString("N2", CultureInfo.GetCultureInfo("id-ID"));
             }
         }
 

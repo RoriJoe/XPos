@@ -167,6 +167,10 @@
     <Compile Include="Migrations\201505070825377_TambahTabelPembeliansDanPembelianDetails.Designer.cs">
       <DependentUpon>201505070825377_TambahTabelPembeliansDanPembelianDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505280426470_TambahKolomHargaBeli.cs" />
+    <Compile Include="Migrations\201505280426470_TambahKolomHargaBeli.Designer.cs">
+      <DependentUpon>201505280426470_TambahKolomHargaBeli.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ModelView\BarangView.cs" />
     <Compile Include="ModelView\PelangganView.cs" />
@@ -177,7 +181,8 @@
     <Compile Include="ModelView\PenjualanView.cs" />
     <Compile Include="ModelView\TransaksiInternalView.cs" />
     <Compile Include="Model\BukuBesar.cs" />
-    <Compile Include="Model\Laporan.cs" />
+    <Compile Include="Model\LaporanJumlahPenjualan.cs" />
+    <Compile Include="Model\LaporanLabaRugi.cs" />
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\Merek.cs" />
     <Compile Include="Model\Pelanggan.cs" />
@@ -232,7 +237,8 @@
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IGenericRepository.cs" />
     <Compile Include="Repository\KategoriRepository.cs" />
-    <Compile Include="Repository\LaporanRepository.cs" />
+    <Compile Include="Repository\LaporanJumlahPenjualanRepository.cs" />
+    <Compile Include="Repository\LaporanLabaRugiRepository.cs" />
     <Compile Include="Repository\MemberRepository.cs" />
     <Compile Include="Repository\MerekRepository.cs" />
     <Compile Include="Repository\PelangganRepository.cs" />
@@ -249,7 +255,8 @@
     <Compile Include="Service\BarangService.cs" />
     <Compile Include="Service\BukuBesarService.cs" />
     <Compile Include="Service\KategoriService.cs" />
-    <Compile Include="Service\LaporanService.cs" />
+    <Compile Include="Service\LaporanJumlahPenjualanService.cs" />
+    <Compile Include="Service\LaporanLabaRugiService.cs" />
     <Compile Include="Service\MemberService.cs" />
     <Compile Include="Service\MerekService.cs" />
     <Compile Include="Service\PelangganService.cs" />
@@ -595,6 +602,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505070825377_TambahTabelPembeliansDanPembelianDetails.resx">
       <DependentUpon>201505070825377_TambahTabelPembeliansDanPembelianDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505280426470_TambahKolomHargaBeli.resx">
+      <DependentUpon>201505280426470_TambahKolomHargaBeli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\BukuBesarReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
