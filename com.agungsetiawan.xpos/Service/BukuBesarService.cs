@@ -154,5 +154,31 @@ namespace com.agungsetiawan.xpos.Service
             decimal total = totalPenjualan - totalPembelian + totalInternal;
             return total;
         }
+
+        public decimal GetTotalPemasukkanHariIni(DateTime tanggal)
+        {
+            decimal totalPenjualan = penjualanRepository.FindByTanggal(tanggal).Sum(p => p.TotalHargaJual);
+            decimal totalPembelian = pembelianRepository.FindByTanggal(tanggal).Sum(p => p.TotalHargaBeli);
+
+            var transaksiInternals = transaksiInternalRepository.FindByTanggal(tanggal);
+            decimal debet = 0, kredit = 0, totalInternal = 0;
+            foreach (var t in transaksiInternals)
+            {
+
+                if (t.Jenis.Equals("Debet"))
+                {
+                    debet += t.Jumlah;
+                }
+                else if (t.Jenis.Equals("Kredit"))
+                {
+                    kredit += t.Jumlah;
+                }
+            }
+
+            totalInternal = debet - kredit;
+
+            decimal total = totalPenjualan - totalPembelian + totalInternal;
+            return total;
+        }
     }
 }

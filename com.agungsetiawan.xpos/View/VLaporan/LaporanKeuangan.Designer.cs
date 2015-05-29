@@ -44,6 +44,8 @@
             this.btnCetakTransaksiPembelian = new DevExpress.XtraEditors.SimpleButton();
             this.dateTimePickerTransaksiPembelian = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelPemasukkanHariIni = new System.Windows.Forms.Label();
             this.labelTotalSaldo = new System.Windows.Forms.Label();
             this.dateTimePickerBukuBesarSampai = new System.Windows.Forms.DateTimePicker();
             this.checkBoxTanggalSampaiBukuBesar = new System.Windows.Forms.CheckBox();
@@ -55,6 +57,7 @@
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartLabaRugi)).BeginInit();
             this.SuspendLayout();
@@ -178,7 +181,7 @@
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.labelTotalSaldo);
+            this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.dateTimePickerBukuBesarSampai);
             this.tabPage2.Controls.Add(this.checkBoxTanggalSampaiBukuBesar);
             this.tabPage2.Controls.Add(this.btnCetakBukuBesar);
@@ -191,11 +194,35 @@
             this.tabPage2.Text = "Buku Besar";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.panel1.Controls.Add(this.labelPemasukkanHariIni);
+            this.panel1.Controls.Add(this.labelTotalSaldo);
+            this.panel1.Location = new System.Drawing.Point(-4, 140);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(751, 100);
+            this.panel1.TabIndex = 12;
+            // 
+            // labelPemasukkanHariIni
+            // 
+            this.labelPemasukkanHariIni.AutoSize = true;
+            this.labelPemasukkanHariIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPemasukkanHariIni.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
+            this.labelPemasukkanHariIni.Location = new System.Drawing.Point(12, 56);
+            this.labelPemasukkanHariIni.Name = "labelPemasukkanHariIni";
+            this.labelPemasukkanHariIni.Size = new System.Drawing.Size(92, 31);
+            this.labelPemasukkanHariIni.TabIndex = 11;
+            this.labelPemasukkanHariIni.Text = "label1";
+            // 
             // labelTotalSaldo
             // 
             this.labelTotalSaldo.AutoSize = true;
             this.labelTotalSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalSaldo.Location = new System.Drawing.Point(6, 144);
+            this.labelTotalSaldo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
+            this.labelTotalSaldo.Location = new System.Drawing.Point(12, 13);
             this.labelTotalSaldo.Name = "labelTotalSaldo";
             this.labelTotalSaldo.Size = new System.Drawing.Size(92, 31);
             this.labelTotalSaldo.TabIndex = 10;
@@ -285,6 +312,8 @@
             this.tabPage3.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartLabaRugi)).EndInit();
             this.ResumeLayout(false);
@@ -312,5 +341,7 @@
         private System.Windows.Forms.Label labelTotalSaldo;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartLabaRugi;
+        private System.Windows.Forms.Label labelPemasukkanHariIni;
+        private System.Windows.Forms.Panel panel1;
     }
 }

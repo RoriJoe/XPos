@@ -56,6 +56,7 @@ namespace com.agungsetiawan.xpos.View.VLaporan
             dateTimePickerBukuBesarSampai.CustomFormat = "dd MMMM yyyy";
 
             labelTotalSaldo.Text = "Total Saldo : " + bukuBesarService.GetTotalSaldoSebelumHariIni(DateTime.Today).ToString("N2", CultureInfo.GetCultureInfo("id-ID"));
+            labelPemasukkanHariIni.Text="Pemasukkan sementara hari ini : "+bukuBesarService.GetTotalPemasukkanHariIni(DateTime.Today).ToString("N2", CultureInfo.GetCultureInfo("id-ID"));
 
             chartLabaRugi.ChartAreas[0].AxisY.Interval = 50000;
             chartLabaRugi.ChartAreas[0].AxisX.Interval = 1;
