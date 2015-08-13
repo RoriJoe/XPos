@@ -64,6 +64,7 @@
             this.navBarPembelian = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarDaftarPembelian = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarTransaksiInternal = new DevExpress.XtraNavBar.NavBarItem();
+            this.navBarTransaksiEksternal = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarLaporanJumlahTransaksi = new DevExpress.XtraNavBar.NavBarItem();
             this.navBarLaporanKeuangan = new DevExpress.XtraNavBar.NavBarItem();
@@ -304,7 +305,8 @@
             this.navBarSupplier,
             this.navBarMerek,
             this.navBarTransaksiInternal,
-            this.navBarLaporanKeuangan});
+            this.navBarLaporanKeuangan,
+            this.navBarTransaksiEksternal});
             this.navBarControl1.Location = new System.Drawing.Point(0, 142);
             this.navBarControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.navBarControl1.Name = "navBarControl1";
@@ -370,13 +372,14 @@
             // 
             // navBarGroup3
             // 
-            this.navBarGroup3.Caption = "Penjualan";
+            this.navBarGroup3.Caption = "Transaksi";
             this.navBarGroup3.ItemLinks.AddRange(new DevExpress.XtraNavBar.NavBarItemLink[] {
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPenjualan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDaftarPenjualan),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarPembelian),
             new DevExpress.XtraNavBar.NavBarItemLink(this.navBarDaftarPembelian),
-            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarTransaksiInternal)});
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarTransaksiInternal),
+            new DevExpress.XtraNavBar.NavBarItemLink(this.navBarTransaksiEksternal)});
             this.navBarGroup3.Name = "navBarGroup3";
             this.navBarGroup3.SmallImage = ((System.Drawing.Image)(resources.GetObject("navBarGroup3.SmallImage")));
             // 
@@ -399,6 +402,7 @@
             this.navBarPembelian.Caption = "Pembelian";
             this.navBarPembelian.Enabled = false;
             this.navBarPembelian.Name = "navBarPembelian";
+            this.navBarPembelian.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarPembelian_LinkClicked);
             // 
             // navBarDaftarPembelian
             // 
@@ -413,6 +417,13 @@
             this.navBarTransaksiInternal.Enabled = false;
             this.navBarTransaksiInternal.Name = "navBarTransaksiInternal";
             this.navBarTransaksiInternal.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarTransaksiInternal_LinkClicked);
+            // 
+            // navBarTransaksiEksternal
+            // 
+            this.navBarTransaksiEksternal.Caption = "Transaksi Eksternal";
+            this.navBarTransaksiEksternal.Enabled = false;
+            this.navBarTransaksiEksternal.Name = "navBarTransaksiEksternal";
+            this.navBarTransaksiEksternal.LinkClicked += new DevExpress.XtraNavBar.NavBarLinkEventHandler(this.navBarTransaksiEksternal_LinkClicked);
             // 
             // navBarGroup4
             // 
@@ -480,9 +491,10 @@
             this.ClientSize = new System.Drawing.Size(796, 405);
             this.Controls.Add(this.navBarControl1);
             this.Controls.Add(this.ribbonControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "MainForm";
-            this.Text = "XPos Application";
+            this.Text = "Elshanum XPOS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navBarControl1)).EndInit();
@@ -536,5 +548,6 @@
         private DevExpress.XtraNavBar.NavBarItem navBarMerek;
         private DevExpress.XtraNavBar.NavBarItem navBarTransaksiInternal;
         private DevExpress.XtraNavBar.NavBarItem navBarLaporanKeuangan;
+        private DevExpress.XtraNavBar.NavBarItem navBarTransaksiEksternal;
     }
 }

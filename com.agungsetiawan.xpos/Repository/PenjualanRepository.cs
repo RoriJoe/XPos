@@ -62,5 +62,14 @@ namespace com.agungsetiawan.xpos.Repository
                           select p).ToList();
             return result;
         }
+
+        public List<Penjualan> FindByTanggalSampaiHariIni(DateTime tanggal)
+        {
+            var result = (from p in db.Penjualans.Include("Pelanggan").Include("Pengguna")
+                          where p.Tanggal <= tanggal
+                          orderby p.Tanggal descending
+                          select p).ToList();
+            return result;
+        }
     }
 }

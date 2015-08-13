@@ -102,6 +102,11 @@ namespace com.agungsetiawan.xpos.View.VRole
             {
                 checkBoxTransaksiInternal.Checked = true;
             }
+
+            if (permissions.Contains("transaksi eksternal"))
+            {
+                checkBoxTransaksiEksternal.Checked = true;
+            }
         }
 
         private void btnSimpan_Click(object sender, EventArgs e)
@@ -189,6 +194,11 @@ namespace com.agungsetiawan.xpos.View.VRole
             if (checkBoxTransaksiInternal.Checked)
             {
                 sbPermissions.Append("transaksi internal,");
+            }
+
+            if (checkBoxTransaksiEksternal.Checked)
+            {
+                sbPermissions.Append("transaksi eksternal,");
             }
 
             if (string.IsNullOrEmpty(sbPermissions.ToString()))

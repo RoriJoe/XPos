@@ -132,6 +132,11 @@ namespace com.agungsetiawan.xpos.View
             {
                 navBarTransaksiInternal.Enabled = true;
             }
+
+            if (permissions.Contains("transaksi eksternal"))
+            {
+                navBarTransaksiEksternal.Enabled = true;
+            }
             //laporan belum
 
             barBtnLogout.Enabled = true;
@@ -299,6 +304,8 @@ namespace com.agungsetiawan.xpos.View
             navBarMerek.Enabled = false;
 
             navBarTransaksiInternal.Enabled = false;
+
+            navBarTransaksiEksternal.Enabled = false;
             //laporan belum
 
             int pagesCount = xtraTabbedMdiManager.Pages.Count;
@@ -405,6 +412,22 @@ namespace com.agungsetiawan.xpos.View
         private void navBarDaftarPembelian_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
         {
             ListPembelian form = ListPembelian.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
+
+        private void navBarTransaksiEksternal_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            ListTransaksiEksternal form = ListTransaksiEksternal.GetForm();
+            form.MdiParent = this;
+            form.Show();
+            form.Activate();
+        }
+
+        private void navBarPembelian_LinkClicked(object sender, DevExpress.XtraNavBar.NavBarLinkEventArgs e)
+        {
+            TransaksiPembelian form = TransaksiPembelian.GetForm();
             form.MdiParent = this;
             form.Show();
             form.Activate();

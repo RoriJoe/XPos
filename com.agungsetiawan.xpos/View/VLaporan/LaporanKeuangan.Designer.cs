@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LaporanKeuangan));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dateTimePickerTransaksiPenjualanSampai = new System.Windows.Forms.DateTimePicker();
@@ -43,23 +43,32 @@
             this.checkBoxTanggalSampaiTransaksiPembelian = new System.Windows.Forms.CheckBox();
             this.btnCetakTransaksiPembelian = new DevExpress.XtraEditors.SimpleButton();
             this.dateTimePickerTransaksiPembelian = new System.Windows.Forms.DateTimePicker();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.labelPemasukkanHariIni = new System.Windows.Forms.Label();
-            this.labelTotalSaldo = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.chartLabaRugi = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPageBukuBesar = new System.Windows.Forms.TabPage();
             this.dateTimePickerBukuBesarSampai = new System.Windows.Forms.DateTimePicker();
             this.checkBoxTanggalSampaiBukuBesar = new System.Windows.Forms.CheckBox();
             this.btnCetakBukuBesar = new DevExpress.XtraEditors.SimpleButton();
             this.dateTimePickerBukuBesar = new System.Windows.Forms.DateTimePicker();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.chartLabaRugi = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.labelTotalKasKecil = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.listViewKasKecil = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.labelTotalSaldo = new System.Windows.Forms.Label();
+            this.labelPemasukkanHariIni = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartLabaRugi)).BeginInit();
+            this.tabPageBukuBesar.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -69,8 +78,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPageBukuBesar);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -179,54 +189,51 @@
             this.dateTimePickerTransaksiPembelian.Size = new System.Drawing.Size(166, 20);
             this.dateTimePickerTransaksiPembelian.TabIndex = 8;
             // 
-            // tabPage2
+            // tabPage4
             // 
-            this.tabPage2.Controls.Add(this.panel1);
-            this.tabPage2.Controls.Add(this.dateTimePickerBukuBesarSampai);
-            this.tabPage2.Controls.Add(this.checkBoxTanggalSampaiBukuBesar);
-            this.tabPage2.Controls.Add(this.btnCetakBukuBesar);
-            this.tabPage2.Controls.Add(this.dateTimePickerBukuBesar);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(743, 371);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Buku Besar";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage4.Controls.Add(this.chartLabaRugi);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(743, 371);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Laba/Rugi";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // chartLabaRugi
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chartLabaRugi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.panel1.Controls.Add(this.labelPemasukkanHariIni);
-            this.panel1.Controls.Add(this.labelTotalSaldo);
-            this.panel1.Location = new System.Drawing.Point(-4, 140);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(751, 100);
-            this.panel1.TabIndex = 12;
+            chartArea2.Name = "ChartArea1";
+            this.chartLabaRugi.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartLabaRugi.Legends.Add(legend2);
+            this.chartLabaRugi.Location = new System.Drawing.Point(7, 7);
+            this.chartLabaRugi.Name = "chartLabaRugi";
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartLabaRugi.Series.Add(series2);
+            this.chartLabaRugi.Size = new System.Drawing.Size(733, 358);
+            this.chartLabaRugi.TabIndex = 0;
+            this.chartLabaRugi.Text = "chart1";
+            this.chartLabaRugi.FormatNumber += new System.EventHandler<System.Windows.Forms.DataVisualization.Charting.FormatNumberEventArgs>(this.chartLabaRugi_FormatNumber);
             // 
-            // labelPemasukkanHariIni
+            // tabPageBukuBesar
             // 
-            this.labelPemasukkanHariIni.AutoSize = true;
-            this.labelPemasukkanHariIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPemasukkanHariIni.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
-            this.labelPemasukkanHariIni.Location = new System.Drawing.Point(12, 56);
-            this.labelPemasukkanHariIni.Name = "labelPemasukkanHariIni";
-            this.labelPemasukkanHariIni.Size = new System.Drawing.Size(92, 31);
-            this.labelPemasukkanHariIni.TabIndex = 11;
-            this.labelPemasukkanHariIni.Text = "label1";
-            // 
-            // labelTotalSaldo
-            // 
-            this.labelTotalSaldo.AutoSize = true;
-            this.labelTotalSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTotalSaldo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
-            this.labelTotalSaldo.Location = new System.Drawing.Point(12, 13);
-            this.labelTotalSaldo.Name = "labelTotalSaldo";
-            this.labelTotalSaldo.Size = new System.Drawing.Size(92, 31);
-            this.labelTotalSaldo.TabIndex = 10;
-            this.labelTotalSaldo.Text = "label1";
+            this.tabPageBukuBesar.Controls.Add(this.panel1);
+            this.tabPageBukuBesar.Controls.Add(this.dateTimePickerBukuBesarSampai);
+            this.tabPageBukuBesar.Controls.Add(this.checkBoxTanggalSampaiBukuBesar);
+            this.tabPageBukuBesar.Controls.Add(this.btnCetakBukuBesar);
+            this.tabPageBukuBesar.Controls.Add(this.dateTimePickerBukuBesar);
+            this.tabPageBukuBesar.Location = new System.Drawing.Point(4, 22);
+            this.tabPageBukuBesar.Name = "tabPageBukuBesar";
+            this.tabPageBukuBesar.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageBukuBesar.Size = new System.Drawing.Size(743, 371);
+            this.tabPageBukuBesar.TabIndex = 1;
+            this.tabPageBukuBesar.Text = "Buku Besar";
+            this.tabPageBukuBesar.UseVisualStyleBackColor = true;
             // 
             // dateTimePickerBukuBesarSampai
             // 
@@ -265,36 +272,109 @@
             this.dateTimePickerBukuBesar.Size = new System.Drawing.Size(166, 20);
             this.dateTimePickerBukuBesar.TabIndex = 6;
             // 
-            // tabPage4
+            // tabPage5
             // 
-            this.tabPage4.Controls.Add(this.chartLabaRugi);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(743, 371);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Laba/Rugi";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPage5.Controls.Add(this.labelTotalKasKecil);
+            this.tabPage5.Controls.Add(this.label1);
+            this.tabPage5.Controls.Add(this.listViewKasKecil);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(743, 371);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Kas Kecil";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
-            // chartLabaRugi
+            // labelTotalKasKecil
             // 
-            this.chartLabaRugi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelTotalKasKecil.AutoSize = true;
+            this.labelTotalKasKecil.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalKasKecil.Location = new System.Drawing.Point(489, 86);
+            this.labelTotalKasKecil.Name = "labelTotalKasKecil";
+            this.labelTotalKasKecil.Size = new System.Drawing.Size(109, 39);
+            this.labelTotalKasKecil.TabIndex = 2;
+            this.labelTotalKasKecil.Text = "label2";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(487, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(310, 51);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Total Kas Kecil";
+            // 
+            // listViewKasKecil
+            // 
+            this.listViewKasKecil.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.listViewKasKecil.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.listViewKasKecil.GridLines = true;
+            this.listViewKasKecil.Location = new System.Drawing.Point(7, 7);
+            this.listViewKasKecil.Name = "listViewKasKecil";
+            this.listViewKasKecil.Size = new System.Drawing.Size(474, 358);
+            this.listViewKasKecil.TabIndex = 0;
+            this.listViewKasKecil.UseCompatibleStateImageBehavior = false;
+            this.listViewKasKecil.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Tanggal";
+            this.columnHeader1.Width = 120;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Keterangan";
+            this.columnHeader2.Width = 150;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Debet";
+            this.columnHeader4.Width = 100;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Kredit";
+            this.columnHeader5.Width = 100;
+            // 
+            // labelTotalSaldo
+            // 
+            this.labelTotalSaldo.AutoSize = true;
+            this.labelTotalSaldo.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalSaldo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
+            this.labelTotalSaldo.Location = new System.Drawing.Point(12, 13);
+            this.labelTotalSaldo.Name = "labelTotalSaldo";
+            this.labelTotalSaldo.Size = new System.Drawing.Size(92, 31);
+            this.labelTotalSaldo.TabIndex = 10;
+            this.labelTotalSaldo.Text = "label1";
+            // 
+            // labelPemasukkanHariIni
+            // 
+            this.labelPemasukkanHariIni.AutoSize = true;
+            this.labelPemasukkanHariIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPemasukkanHariIni.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(249)))), ((int)(((byte)(253)))));
+            this.labelPemasukkanHariIni.Location = new System.Drawing.Point(12, 56);
+            this.labelPemasukkanHariIni.Name = "labelPemasukkanHariIni";
+            this.labelPemasukkanHariIni.Size = new System.Drawing.Size(92, 31);
+            this.labelPemasukkanHariIni.TabIndex = 11;
+            this.labelPemasukkanHariIni.Text = "label1";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.Name = "ChartArea1";
-            this.chartLabaRugi.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartLabaRugi.Legends.Add(legend1);
-            this.chartLabaRugi.Location = new System.Drawing.Point(7, 7);
-            this.chartLabaRugi.Name = "chartLabaRugi";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartLabaRugi.Series.Add(series1);
-            this.chartLabaRugi.Size = new System.Drawing.Size(733, 358);
-            this.chartLabaRugi.TabIndex = 0;
-            this.chartLabaRugi.Text = "chart1";
-            this.chartLabaRugi.FormatNumber += new System.EventHandler<System.Windows.Forms.DataVisualization.Charting.FormatNumberEventArgs>(this.chartLabaRugi_FormatNumber);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.panel1.Controls.Add(this.labelPemasukkanHariIni);
+            this.panel1.Controls.Add(this.labelTotalSaldo);
+            this.panel1.Location = new System.Drawing.Point(-4, 140);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(751, 59);
+            this.panel1.TabIndex = 12;
             // 
             // LaporanKeuangan
             // 
@@ -310,12 +390,14 @@
             this.tabPage1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartLabaRugi)).EndInit();
+            this.tabPageBukuBesar.ResumeLayout(false);
+            this.tabPageBukuBesar.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage5.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -324,7 +406,7 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPageBukuBesar;
         private System.Windows.Forms.DateTimePicker dateTimePickerTransaksiPenjualan;
         private DevExpress.XtraEditors.SimpleButton btnCetakTransaksiPenjualan;
         private DevExpress.XtraEditors.SimpleButton btnCetakBukuBesar;
@@ -338,10 +420,18 @@
         private System.Windows.Forms.CheckBox checkBoxTanggalSampaiTransaksiPembelian;
         private DevExpress.XtraEditors.SimpleButton btnCetakTransaksiPembelian;
         private System.Windows.Forms.DateTimePicker dateTimePickerTransaksiPembelian;
-        private System.Windows.Forms.Label labelTotalSaldo;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartLabaRugi;
-        private System.Windows.Forms.Label labelPemasukkanHariIni;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.ListView listViewKasKecil;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelTotalKasKecil;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label labelPemasukkanHariIni;
+        private System.Windows.Forms.Label labelTotalSaldo;
     }
 }

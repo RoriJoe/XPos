@@ -167,7 +167,7 @@
             this.Controls.Add(this.buttonCari);
             this.Controls.Add(this.dateTimePickerCari);
             this.Name = "ListPembelian";
-            this.Text = "ListPembelian";
+            this.Text = "Daftar Pembelian";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.ListPembelian_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftarPembelianDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDaftarPembelian)).EndInit();

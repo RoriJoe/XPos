@@ -126,6 +126,11 @@ namespace com.agungsetiawan.xpos.View.VRole
                 sbPermissions.Append("transaksi internal,");
             }
 
+            if (checkBoxTransaksiEksternal.Checked)
+            {
+                sbPermissions.Append("transaksi eksternal,");
+            }
+
             if(string.IsNullOrEmpty(sbPermissions.ToString()))
             {
                 IsPass = false;

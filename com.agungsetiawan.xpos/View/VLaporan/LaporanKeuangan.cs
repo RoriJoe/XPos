@@ -1,4 +1,5 @@
-﻿using com.agungsetiawan.xpos.Model;
+﻿using com.agungsetiawan.xpos.Common;
+using com.agungsetiawan.xpos.Model;
 using com.agungsetiawan.xpos.ModelView;
 using com.agungsetiawan.xpos.Report;
 using com.agungsetiawan.xpos.Service;
@@ -55,8 +56,8 @@ namespace com.agungsetiawan.xpos.View.VLaporan
             dateTimePickerBukuBesarSampai.Format = DateTimePickerFormat.Custom;
             dateTimePickerBukuBesarSampai.CustomFormat = "dd MMMM yyyy";
 
-            labelTotalSaldo.Text = "Total Saldo : " + bukuBesarService.GetTotalSaldoSebelumHariIni(DateTime.Today).ToString("N2", CultureInfo.GetCultureInfo("id-ID"));
-            labelPemasukkanHariIni.Text="Pemasukkan sementara hari ini : "+bukuBesarService.GetTotalPemasukkanHariIni(DateTime.Today).ToString("N2", CultureInfo.GetCultureInfo("id-ID"));
+            labelTotalSaldo.Text = "Total Saldo : " + bukuBesarService.GetTotalSaldoHariIni(DateTime.Today).ToString("N2", CultureInfo.GetCultureInfo("id-ID"));
+            //labelPemasukkanHariIni.Text="Pemasukkan sementara hari ini : "+bukuBesarService.GetTotalPemasukkanHariIni(DateTime.Today).ToString("N2", CultureInfo.GetCultureInfo("id-ID"));
 
             chartLabaRugi.ChartAreas[0].AxisY.Interval = 50000;
             chartLabaRugi.ChartAreas[0].AxisX.Interval = 1;
@@ -80,6 +81,31 @@ namespace com.agungsetiawan.xpos.View.VLaporan
             }
 
             chartLabaRugi.Series.Add(series);
+
+            //Kas Kecil
+            List<BukuBesar> dataKasKecil = bukuBesarService.GetByTanggal(DateTime.Today, false);
+            ListViewItem item;
+            decimal total=0;
+
+            foreach(var kas in dataKasKecil)
+            {
+                item = new ListViewItem(kas.Tanggal.ToString("dd MM yyyy"));
+                item.SubItems.Add(kas.Keterangan);
+                item.SubItems.Add(kas.Debet.ToString("N2", CultureInfo.GetCultureInfo("id-ID")));
+                item.SubItems.Add(kas.Kredit.ToString("N2", CultureInfo.GetCultureInfo("id-ID")));
+
+                total = total + kas.Debet - kas.Kredit;
+
+                listViewKasKecil.Items.Add(item);
+            }
+
+            labelTotalKasKecil.Text = total.ToString("N2", CultureInfo.GetCultureInfo("id-ID"));
+
+            if(!LoginContext.Pengguna.Role.NamaRole.Equals("Administrator"))
+            {
+                tabControl1.TabPages.Remove(tabPageBukuBesar);
+            }
+
         }
 
         public static LaporanKeuangan GetForm()
@@ -163,7 +189,7 @@ namespace com.agungsetiawan.xpos.View.VLaporan
             }
             else
             {
-                data = bukuBesarService.GetByTanggal(dateTimePickerBukuBesar.Value);
+                data = bukuBesarService.GetByTanggal(dateTimePickerBukuBesar.Value, true);
             }
 
             

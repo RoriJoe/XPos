@@ -106,7 +106,7 @@ namespace com.agungsetiawan.xpos.View.VLaporan
 
                 ClearChart();
 
-                var namaChart = string.Format("Jumlah Barang Kategori {0} Terjual", barang.NamaBarang);
+                var namaChart = string.Format("Jumlah Barang {0} Terjual", barang.NamaBarang);
                 Series series = new Series(namaChart);
 
                 foreach (var d in data)

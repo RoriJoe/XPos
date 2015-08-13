@@ -300,7 +300,6 @@ namespace com.agungsetiawan.xpos.View.VBarang
                 return;
 
             int currentRowIndex = dataGridViewSHU.CurrentCell.RowIndex;
-            dataGridViewSHU.Rows.RemoveAt(currentRowIndex);
         }
 
     }

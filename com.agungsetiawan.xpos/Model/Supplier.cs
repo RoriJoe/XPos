@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace com.agungsetiawan.xpos.Model
 
         [Column(TypeName = "varchar")]
         [StringLength(50)]
+        [DisplayName("Nama Supplier")]
         public string NamaSupplier { get; set; }
 
         [Column(TypeName = "varchar")]
@@ -22,6 +24,7 @@ namespace com.agungsetiawan.xpos.Model
 
         [Column(TypeName = "varchar")]
         [StringLength(20)]
+        [DisplayName("No Telepon")]
         public string NoTelepon { get; set; }
         public List<Barang> Barangs { get; set; }
     }

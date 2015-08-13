@@ -14,6 +14,7 @@ namespace com.agungsetiawan.xpos.Service
         private PenjualanRepository penjualanRepository;
         private PembelianRepository pembelianRepository;
         private TransaksiInternalRepository transaksiInternalRepository;
+        private TransaksiEksternalRepository transaksiEksternalRepository;
 
         public BukuBesarService()
         {
@@ -21,9 +22,10 @@ namespace com.agungsetiawan.xpos.Service
             penjualanRepository = new PenjualanRepository();
             pembelianRepository = new PembelianRepository();
             transaksiInternalRepository = new TransaksiInternalRepository();
+            transaksiEksternalRepository = new TransaksiEksternalRepository();
         }
 
-        public List<BukuBesar> GetByTanggal(DateTime tanggal)
+        public List<BukuBesar> GetByTanggal(DateTime tanggal, bool IsBukuBesar)
         {
             var penjualans = penjualanRepository.FindByTanggal(tanggal);
 
@@ -34,40 +36,70 @@ namespace com.agungsetiawan.xpos.Service
                                  Kredit=0
                             }).ToList();
 
-            var pembelians=pembelianRepository.FindByTanggal(tanggal);
-            var bukuBesarPembelian = (from p in pembelians
-                                      select new BukuBesar
-                                      {
-                                          Tanggal = p.Tanggal,
-                                          Keterangan = "Pembelian Pakaian",
-                                          Debet = 0,
-                                          Kredit = p.TotalHargaBeli
-                                      }).ToList();
-
-            bukuBesars.AddRange(bukuBesarPembelian);
-
-            var transaksiInternals = transaksiInternalRepository.FindByTanggal(tanggal);
-
-            BukuBesar bukuBesar;
-            foreach(var t in transaksiInternals)
+            if (IsBukuBesar)
             {
-                bukuBesar = new BukuBesar();
+                var pembelians = pembelianRepository.FindByTanggal(tanggal);
+                var bukuBesarPembelian = (from p in pembelians
+                                          select new BukuBesar
+                                          {
+                                              Tanggal = p.Tanggal,
+                                              Keterangan = "Pembelian Pakaian",
+                                              Debet = 0,
+                                              Kredit = p.TotalHargaBeli
+                                          }).ToList();
 
-                bukuBesar.Tanggal = t.Tanggal;
-                bukuBesar.Keterangan=t.Keterangan;
+                bukuBesars.AddRange(bukuBesarPembelian);
 
-                if(t.Jenis.Equals("Debet"))
+                var transaksiEksternals = transaksiEksternalRepository.FindByTanggal(tanggal);
+
+                BukuBesar bukuBesar;
+                foreach (var t in transaksiEksternals)
                 {
-                    bukuBesar.Debet = t.Jumlah;
-                    bukuBesar.Kredit = 0;
-                }
-                else if(t.Jenis.Equals("Kredit"))
-                {
-                    bukuBesar.Debet = 0;
-                    bukuBesar.Kredit = t.Jumlah;
-                }
+                    bukuBesar = new BukuBesar();
 
-                bukuBesars.Add(bukuBesar);
+                    bukuBesar.Tanggal = t.Tanggal;
+                    bukuBesar.Keterangan = t.Keterangan;
+
+                    if (t.Jenis.Equals("Debet"))
+                    {
+                        bukuBesar.Debet = t.Jumlah;
+                        bukuBesar.Kredit = 0;
+                    }
+                    else if (t.Jenis.Equals("Kredit"))
+                    {
+                        bukuBesar.Debet = 0;
+                        bukuBesar.Kredit = t.Jumlah;
+                    }
+
+                    bukuBesars.Add(bukuBesar);
+                }
+            }
+
+            if(!IsBukuBesar)
+            {
+                var transaksiInternals = transaksiInternalRepository.FindByTanggal(tanggal);
+
+                BukuBesar bukuBesar;
+                foreach (var t in transaksiInternals)
+                {
+                    bukuBesar = new BukuBesar();
+
+                    bukuBesar.Tanggal = t.Tanggal;
+                    bukuBesar.Keterangan = t.Keterangan;
+
+                    if (t.Jenis.Equals("Debet"))
+                    {
+                        bukuBesar.Debet = t.Jumlah;
+                        bukuBesar.Kredit = 0;
+                    }
+                    else if (t.Jenis.Equals("Kredit"))
+                    {
+                        bukuBesar.Debet = 0;
+                        bukuBesar.Kredit = t.Jumlah;
+                    }
+
+                    bukuBesars.Add(bukuBesar);
+                }
             }
 
             var result = from b in bukuBesars orderby b.Tanggal select b;
@@ -100,10 +132,10 @@ namespace com.agungsetiawan.xpos.Service
 
             bukuBesars.AddRange(bukuBesarPembelian);
 
-            var transaksiInternals = transaksiInternalRepository.FindByTanggal(tanggalAwal, tanggalAkhir);
+            var transaksiEksternals = transaksiEksternalRepository.FindByTanggal(tanggalAwal,tanggalAkhir);
 
             BukuBesar bukuBesar;
-            foreach (var t in transaksiInternals)
+            foreach (var t in transaksiEksternals)
             {
                 bukuBesar = new BukuBesar();
 
@@ -123,6 +155,30 @@ namespace com.agungsetiawan.xpos.Service
 
                 bukuBesars.Add(bukuBesar);
             }
+
+            //var transaksiInternals = transaksiInternalRepository.FindByTanggal(tanggalAwal, tanggalAkhir);
+
+            //BukuBesar bukuBesar;
+            //foreach (var t in transaksiInternals)
+            //{
+            //    bukuBesar = new BukuBesar();
+
+            //    bukuBesar.Tanggal = t.Tanggal;
+            //    bukuBesar.Keterangan = t.Keterangan;
+
+            //    if (t.Jenis.Equals("Debet"))
+            //    {
+            //        bukuBesar.Debet = t.Jumlah;
+            //        bukuBesar.Kredit = 0;
+            //    }
+            //    else if (t.Jenis.Equals("Kredit"))
+            //    {
+            //        bukuBesar.Debet = 0;
+            //        bukuBesar.Kredit = t.Jumlah;
+            //    }
+
+            //    bukuBesars.Add(bukuBesar);
+            //}
 
             var result = from b in bukuBesars orderby b.Tanggal select b;
 
@@ -155,29 +211,73 @@ namespace com.agungsetiawan.xpos.Service
             return total;
         }
 
-        public decimal GetTotalPemasukkanHariIni(DateTime tanggal)
+        public decimal GetTotalSaldoHariIni(DateTime tanggal)
         {
-            decimal totalPenjualan = penjualanRepository.FindByTanggal(tanggal).Sum(p => p.TotalHargaJual);
-            decimal totalPembelian = pembelianRepository.FindByTanggal(tanggal).Sum(p => p.TotalHargaBeli);
+            //decimal totalPenjualan = penjualanRepository.FindByTanggalSampaiHariIni(tanggal.AddHours(23).AddMinutes(59)).Sum(p => p.TotalHargaJual);
+            decimal totalPembelian = pembelianRepository.FindByTanggalSampaiHariIni(tanggal.AddHours(23).AddMinutes(59)).Sum(p => p.TotalHargaBeli);
 
-            var transaksiInternals = transaksiInternalRepository.FindByTanggal(tanggal);
-            decimal debet = 0, kredit = 0, totalInternal = 0;
+            var transaksiInternals = transaksiInternalRepository.FindByTanggalSampaiHariIni(tanggal.AddHours(23).AddMinutes(59));
+            decimal debetInternal = 0, kreditInternal = 0, totalInternal = 0;
             foreach (var t in transaksiInternals)
             {
 
                 if (t.Jenis.Equals("Debet"))
                 {
-                    debet += t.Jumlah;
+                    debetInternal += t.Jumlah;
                 }
                 else if (t.Jenis.Equals("Kredit"))
                 {
-                    kredit += t.Jumlah;
+                    kreditInternal += t.Jumlah;
                 }
             }
 
-            totalInternal = debet - kredit;
+            totalInternal = debetInternal - kreditInternal;
 
-            decimal total = totalPenjualan - totalPembelian + totalInternal;
+
+            var transaksiEksternal = transaksiEksternalRepository.FindByTanggalSampaiHariIni(tanggal.AddHours(23).AddMinutes(59));
+            decimal debetEksternal = 0, kreditEKsternal = 0, totalEksternal = 0;
+            foreach (var t in transaksiEksternal)
+            {
+
+                if (t.Jenis.Equals("Debet"))
+                {
+                    debetEksternal += t.Jumlah;
+                }
+                else if (t.Jenis.Equals("Kredit"))
+                {
+                    kreditEKsternal += t.Jumlah;
+                }
+            }
+
+            totalEksternal = debetEksternal - kreditEKsternal;
+
+            decimal total = /*(totalPenjualan - totalPembelian) + */(totalEksternal - totalInternal) - totalPembelian;
+            return total;
+        }
+
+        public decimal GetTotalPemasukkanHariIni(DateTime tanggal)
+        {
+            decimal totalPenjualan = penjualanRepository.FindByTanggal(tanggal).Sum(p => p.TotalHargaJual);
+            decimal totalPembelian = pembelianRepository.FindByTanggal(tanggal).Sum(p => p.TotalHargaBeli);
+
+            //var transaksiInternals = transaksiInternalRepository.FindByTanggal(tanggal);
+            //decimal debet = 0, kredit = 0, totalInternal = 0;
+            //foreach (var t in transaksiInternals)
+            //{
+
+            //    if (t.Jenis.Equals("Debet"))
+            //    {
+            //        debet += t.Jumlah;
+            //    }
+            //    else if (t.Jenis.Equals("Kredit"))
+            //    {
+            //        kredit += t.Jumlah;
+            //    }
+            //}
+
+            //totalInternal = debet - kredit;
+
+            decimal total = totalPenjualan - totalPembelian;// +totalInternal;
             return total;
         }
     }

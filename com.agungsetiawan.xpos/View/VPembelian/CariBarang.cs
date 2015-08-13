@@ -47,25 +47,25 @@ namespace com.agungsetiawan.xpos.View.VPembelian
             if (e.KeyCode == Keys.Enter)
             {
                 string id = dataGridViewCariBarang.SelectedRows[0].Cells[1].Value.ToString();
-                var barang = barangService.FindByKodeBarang(id);
+                //var barang = barangService.FindByKodeBarang(id);
 
-                var stockBarang = shuService.FindByBarangId(barang.Id);
+                //var stockBarang = shuService.FindByBarangId(barang.Id);
 
-                bool IsHabis = true;
-                foreach (var d in stockBarang)
-                {
-                    if (d.Stock > 0)
-                    {
-                        IsHabis = false;
-                        break;
-                    }
-                }
+                //bool IsHabis = true;
+                //foreach (var d in stockBarang)
+                //{
+                //    if (d.Stock > 0)
+                //    {
+                //        IsHabis = false;
+                //        break;
+                //    }
+                //}
 
-                if (IsHabis)
-                {
-                    MessageBox.Show("Stok barang habis", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
+                //if (IsHabis)
+                //{
+                //    MessageBox.Show("Stok barang habis", "Pesan", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //    return;
+                //}
 
                 int row = this.ParentForm.dataGridViewTransaksiPembelian.Rows.Count;
                 this.ParentForm.dataGridViewTransaksiPembelian.Rows[row - 1].Cells[0].Value = id;

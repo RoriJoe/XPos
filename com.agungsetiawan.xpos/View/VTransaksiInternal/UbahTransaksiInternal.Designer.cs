@@ -57,7 +57,7 @@
             this.panelKeterangan.Name = "panelKeterangan";
             this.panelKeterangan.Padding = new System.Windows.Forms.Padding(3);
             this.panelKeterangan.Size = new System.Drawing.Size(240, 22);
-            this.panelKeterangan.TabIndex = 86;
+            this.panelKeterangan.TabIndex = 1;
             // 
             // textBoxKeterangan
             // 
@@ -86,7 +86,7 @@
             this.panelJumlah.Name = "panelJumlah";
             this.panelJumlah.Padding = new System.Windows.Forms.Padding(3);
             this.panelJumlah.Size = new System.Drawing.Size(240, 22);
-            this.panelJumlah.TabIndex = 88;
+            this.panelJumlah.TabIndex = 2;
             // 
             // textBoxJumlah
             // 
@@ -95,7 +95,7 @@
             this.textBoxJumlah.Location = new System.Drawing.Point(6, 5);
             this.textBoxJumlah.Name = "textBoxJumlah";
             this.textBoxJumlah.Size = new System.Drawing.Size(228, 13);
-            this.textBoxJumlah.TabIndex = 8;
+            this.textBoxJumlah.TabIndex = 0;
             // 
             // panelTanggal
             // 
@@ -123,7 +123,7 @@
             this.btnBatal.Location = new System.Drawing.Point(111, 206);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(89, 35);
-            this.btnBatal.TabIndex = 90;
+            this.btnBatal.TabIndex = 5;
             this.btnBatal.Text = "Batal";
             // 
             // btnSimpan
@@ -134,7 +134,7 @@
             this.btnSimpan.Location = new System.Drawing.Point(16, 206);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(89, 35);
-            this.btnSimpan.TabIndex = 89;
+            this.btnSimpan.TabIndex = 4;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
@@ -146,7 +146,7 @@
             this.comboBoxJenis.Location = new System.Drawing.Point(130, 149);
             this.comboBoxJenis.Name = "comboBoxJenis";
             this.comboBoxJenis.Size = new System.Drawing.Size(240, 21);
-            this.comboBoxJenis.TabIndex = 87;
+            this.comboBoxJenis.TabIndex = 3;
             // 
             // label7
             // 

@@ -54,6 +54,7 @@
             this.labelHiddenId = new System.Windows.Forms.Label();
             this.checkBoxMerek = new System.Windows.Forms.CheckBox();
             this.checkBoxTransaksiInternal = new System.Windows.Forms.CheckBox();
+            this.checkBoxTransaksiEksternal = new System.Windows.Forms.CheckBox();
             this.panelKeterangan.SuspendLayout();
             this.panelNamaRole.SuspendLayout();
             this.SuspendLayout();
@@ -222,7 +223,7 @@
             this.btnBatal.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnBatal.Image = ((System.Drawing.Image)(resources.GetObject("btnBatal.Image")));
             this.btnBatal.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnBatal.Location = new System.Drawing.Point(114, 295);
+            this.btnBatal.Location = new System.Drawing.Point(114, 315);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(89, 35);
             this.btnBatal.TabIndex = 56;
@@ -233,7 +234,7 @@
             this.btnSimpan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSimpan.Image = ((System.Drawing.Image)(resources.GetObject("btnSimpan.Image")));
             this.btnSimpan.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnSimpan.Location = new System.Drawing.Point(19, 295);
+            this.btnSimpan.Location = new System.Drawing.Point(19, 315);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(89, 35);
             this.btnSimpan.TabIndex = 55;
@@ -312,11 +313,22 @@
             this.checkBoxTransaksiInternal.Text = "Transaksi Internal";
             this.checkBoxTransaksiInternal.UseVisualStyleBackColor = true;
             // 
+            // checkBoxTransaksiEksternal
+            // 
+            this.checkBoxTransaksiEksternal.AutoSize = true;
+            this.checkBoxTransaksiEksternal.Location = new System.Drawing.Point(244, 283);
+            this.checkBoxTransaksiEksternal.Name = "checkBoxTransaksiEksternal";
+            this.checkBoxTransaksiEksternal.Size = new System.Drawing.Size(119, 17);
+            this.checkBoxTransaksiEksternal.TabIndex = 74;
+            this.checkBoxTransaksiEksternal.Text = "Transaksi Eksternal";
+            this.checkBoxTransaksiEksternal.UseVisualStyleBackColor = true;
+            // 
             // UbahRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 337);
+            this.ClientSize = new System.Drawing.Size(390, 357);
+            this.Controls.Add(this.checkBoxTransaksiEksternal);
             this.Controls.Add(this.checkBoxTransaksiInternal);
             this.Controls.Add(this.checkBoxMerek);
             this.Controls.Add(this.labelHiddenId);
@@ -379,5 +391,6 @@
         private System.Windows.Forms.Label labelHiddenId;
         private System.Windows.Forms.CheckBox checkBoxMerek;
         private System.Windows.Forms.CheckBox checkBoxTransaksiInternal;
+        private System.Windows.Forms.CheckBox checkBoxTransaksiEksternal;
     }
 }

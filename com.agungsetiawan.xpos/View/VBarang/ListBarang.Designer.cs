@@ -33,12 +33,12 @@
             this.btnTambah = new DevExpress.XtraEditors.SimpleButton();
             this.btnUbah = new DevExpress.XtraEditors.SimpleButton();
             this.btnHapus = new DevExpress.XtraEditors.SimpleButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewStokUkuran = new System.Windows.Forms.DataGridView();
             this.panelBarang = new System.Windows.Forms.Panel();
             this.textBoxBarang = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnReset = new DevExpress.XtraEditors.SimpleButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBarang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStokUkuran)).BeginInit();
             this.panelBarang.SuspendLayout();
@@ -46,8 +46,7 @@
             // 
             // dataGridViewBarang
             // 
-            this.dataGridViewBarang.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataGridViewBarang.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewBarang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewBarang.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -97,16 +96,6 @@
             this.btnHapus.TabIndex = 3;
             this.btnHapus.Text = "Hapus";
             this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
-            this.panel1.Location = new System.Drawing.Point(3, 231);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(989, 38);
-            this.panel1.TabIndex = 5;
             // 
             // dataGridViewStokUkuran
             // 
@@ -164,6 +153,16 @@
             this.btnReset.Text = "Reset";
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(146)))), ((int)(((byte)(202)))), ((int)(((byte)(249)))));
+            this.panel1.Location = new System.Drawing.Point(3, 231);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(989, 38);
+            this.panel1.TabIndex = 5;
+            // 
             // ListBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,11 +195,11 @@
         private DevExpress.XtraEditors.SimpleButton btnTambah;
         private DevExpress.XtraEditors.SimpleButton btnUbah;
         private DevExpress.XtraEditors.SimpleButton btnHapus;
-        private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.DataGridView dataGridViewStokUkuran;
         private System.Windows.Forms.Panel panelBarang;
         private System.Windows.Forms.TextBox textBoxBarang;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.SimpleButton btnReset;
+        private System.Windows.Forms.Panel panel1;
     }
 }

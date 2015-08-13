@@ -35,6 +35,7 @@
             this.panelJumlah = new System.Windows.Forms.Panel();
             this.textBoxJumlah = new System.Windows.Forms.TextBox();
             this.panelTanggal = new System.Windows.Forms.Panel();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.btnBatal = new DevExpress.XtraEditors.SimpleButton();
             this.btnSimpan = new DevExpress.XtraEditors.SimpleButton();
             this.comboBoxJenis = new System.Windows.Forms.ComboBox();
@@ -42,7 +43,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.panelKeterangan.SuspendLayout();
             this.panelJumlah.SuspendLayout();
             this.panelTanggal.SuspendLayout();
@@ -56,7 +56,7 @@
             this.panelKeterangan.Name = "panelKeterangan";
             this.panelKeterangan.Padding = new System.Windows.Forms.Padding(3);
             this.panelKeterangan.Size = new System.Drawing.Size(240, 22);
-            this.panelKeterangan.TabIndex = 72;
+            this.panelKeterangan.TabIndex = 1;
             // 
             // textBoxKeterangan
             // 
@@ -65,7 +65,7 @@
             this.textBoxKeterangan.Location = new System.Drawing.Point(6, 4);
             this.textBoxKeterangan.Name = "textBoxKeterangan";
             this.textBoxKeterangan.Size = new System.Drawing.Size(228, 13);
-            this.textBoxKeterangan.TabIndex = 3;
+            this.textBoxKeterangan.TabIndex = 0;
             // 
             // label11
             // 
@@ -85,7 +85,7 @@
             this.panelJumlah.Name = "panelJumlah";
             this.panelJumlah.Padding = new System.Windows.Forms.Padding(3);
             this.panelJumlah.Size = new System.Drawing.Size(240, 22);
-            this.panelJumlah.TabIndex = 74;
+            this.panelJumlah.TabIndex = 2;
             // 
             // textBoxJumlah
             // 
@@ -106,6 +106,13 @@
             this.panelTanggal.Size = new System.Drawing.Size(240, 22);
             this.panelTanggal.TabIndex = 70;
             // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.Location = new System.Drawing.Point(2, 1);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(233, 20);
+            this.dateTimePicker.TabIndex = 0;
+            // 
             // btnBatal
             // 
             this.btnBatal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -115,7 +122,7 @@
             this.btnBatal.Location = new System.Drawing.Point(110, 203);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(89, 35);
-            this.btnBatal.TabIndex = 77;
+            this.btnBatal.TabIndex = 5;
             this.btnBatal.Text = "Batal";
             // 
             // btnSimpan
@@ -126,7 +133,7 @@
             this.btnSimpan.Location = new System.Drawing.Point(15, 203);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(89, 35);
-            this.btnSimpan.TabIndex = 76;
+            this.btnSimpan.TabIndex = 4;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
@@ -138,7 +145,7 @@
             this.comboBoxJenis.Location = new System.Drawing.Point(129, 146);
             this.comboBoxJenis.Name = "comboBoxJenis";
             this.comboBoxJenis.Size = new System.Drawing.Size(240, 21);
-            this.comboBoxJenis.TabIndex = 73;
+            this.comboBoxJenis.TabIndex = 3;
             // 
             // label7
             // 
@@ -181,13 +188,6 @@
             this.label1.Size = new System.Drawing.Size(270, 25);
             this.label1.TabIndex = 78;
             this.label1.Text = "Tambah Transaksi Internal";
-            // 
-            // dateTimePicker
-            // 
-            this.dateTimePicker.Location = new System.Drawing.Point(2, 1);
-            this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(233, 20);
-            this.dateTimePicker.TabIndex = 85;
             // 
             // TambahTransaksiInternal
             // 

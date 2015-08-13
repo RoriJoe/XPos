@@ -61,7 +61,7 @@
             this.comboBoxMember.Location = new System.Drawing.Point(129, 245);
             this.comboBoxMember.Name = "comboBoxMember";
             this.comboBoxMember.Size = new System.Drawing.Size(240, 21);
-            this.comboBoxMember.TabIndex = 38;
+            this.comboBoxMember.TabIndex = 5;
             // 
             // panelNomorTelepon
             // 
@@ -71,7 +71,7 @@
             this.panelNomorTelepon.Name = "panelNomorTelepon";
             this.panelNomorTelepon.Padding = new System.Windows.Forms.Padding(3);
             this.panelNomorTelepon.Size = new System.Drawing.Size(240, 22);
-            this.panelNomorTelepon.TabIndex = 43;
+            this.panelNomorTelepon.TabIndex = 4;
             // 
             // textBoxNomorTelepon
             // 
@@ -90,7 +90,7 @@
             this.panelAlamat.Name = "panelAlamat";
             this.panelAlamat.Padding = new System.Windows.Forms.Padding(3);
             this.panelAlamat.Size = new System.Drawing.Size(240, 88);
-            this.panelAlamat.TabIndex = 42;
+            this.panelAlamat.TabIndex = 3;
             // 
             // textBoxAlamat
             // 
@@ -110,7 +110,7 @@
             this.panelNamaPelanggan.Name = "panelNamaPelanggan";
             this.panelNamaPelanggan.Padding = new System.Windows.Forms.Padding(3);
             this.panelNamaPelanggan.Size = new System.Drawing.Size(240, 22);
-            this.panelNamaPelanggan.TabIndex = 41;
+            this.panelNamaPelanggan.TabIndex = 1;
             // 
             // textBoxNamaPelanggan
             // 
@@ -130,7 +130,7 @@
             this.btnBatal.Location = new System.Drawing.Point(109, 284);
             this.btnBatal.Name = "btnBatal";
             this.btnBatal.Size = new System.Drawing.Size(89, 35);
-            this.btnBatal.TabIndex = 40;
+            this.btnBatal.TabIndex = 7;
             this.btnBatal.Text = "Batal";
             // 
             // btnSimpan
@@ -141,7 +141,7 @@
             this.btnSimpan.Location = new System.Drawing.Point(14, 284);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(89, 35);
-            this.btnSimpan.TabIndex = 39;
+            this.btnSimpan.TabIndex = 6;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
             // 
@@ -215,7 +215,7 @@
             this.panelNomorKtp.Name = "panelNomorKtp";
             this.panelNomorKtp.Padding = new System.Windows.Forms.Padding(3);
             this.panelNomorKtp.Size = new System.Drawing.Size(240, 22);
-            this.panelNomorKtp.TabIndex = 46;
+            this.panelNomorKtp.TabIndex = 2;
             // 
             // textBoxNomorKtp
             // 

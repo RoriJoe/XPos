@@ -43,5 +43,14 @@ namespace com.agungsetiawan.xpos.Repository
                           select t).ToList();
             return result;
         }
+
+        public List<TransaksiInternal> FindByTanggalSampaiHariIni(DateTime tanggal)
+        {
+            var result = (from t in db.TransaksiInternals
+                          where t.Tanggal <= tanggal
+                          orderby t.Tanggal descending
+                          select t).ToList();
+            return result;
+        }
     }
 }
